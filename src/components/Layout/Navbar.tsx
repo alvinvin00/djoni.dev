@@ -30,8 +30,8 @@ export const Navbar = () => {
                 </div>
             </div>
             <div className={navbarMenuClasses}>
-                <Link href="/showcase" className="hover:blue-400 active:blue-600">Showcase</Link>
-                <Link href="/about" className="hover:blue-400 active:blue-600">About</Link>
+                <Link href="/showcase" className="hover:text-blue-400 active:text-blue-600">Showcase</Link>
+                <Link href="/about" className="hover:text-blue-400 active:text-blue-600">About</Link>
             </div>
         </nav>
     )
