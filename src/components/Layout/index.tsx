@@ -14,7 +14,9 @@ export const Layout = ({children}: LayoutProps) => {
                 <main>
                     {children}
                 </main>
-                <Footer/>
+                <div className="bg-gray-400 shadow-gray-200">
+                    <Footer/>
+                </div>
             </div>
         </>
     )

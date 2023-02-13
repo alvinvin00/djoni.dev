@@ -5,7 +5,7 @@ import {useDisclosure} from "@/hooks/useDisclosure";
 import clsx from "clsx";
 
 export const Navbar = () => {
-    const {isOpen, toggle} = useDisclosure()
+    const {isOpen, toggle} = useDisclosure(true)
 
     //TODO: fix bug when isOpen is true while breakpoint changes to above md, the menu did not display
     const navbarMenuClasses = clsx([

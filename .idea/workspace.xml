@@ -4,31 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/about/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/blog/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useDisclosure.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/about.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/blog/[slug].ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/blog/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/showcase.ts" afterDir="false" />
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="fix: text color on hover and active not working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@tanstack-eslint-plugin-query-npm-4.24.0-a28028597e-ffdd5e0dc7.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@tanstack-query-core-npm-4.22.4-481585ea45-01663a36ad.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@tanstack-react-query-devtools-npm-4.23.0-4149897168-6cb4e63d3f.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@tanstack-react-query-npm-4.23.0-94d1c5e90f-166140855f.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/eslint-npm-8.33.0-88a30ca58a-727e63ab8b.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/tailwindcss-npm-3.2.4-5ba810eab4-ec187d180c.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/typescript-npm-4.9.4-51bdca3293-e782fb9e00.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/typescript-patch-7bc527fc0a-1caaea6cb7.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +91,7 @@
       <workItem from="1674970759813" duration="3696000" />
       <workItem from="1675740661654" duration="695000" />
       <workItem from="1675741737796" duration="11000" />
-      <workItem from="1676292584454" duration="6605000" />
+      <workItem from="1676292584454" duration="7943000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -147,7 +128,28 @@
       <option name="project" value="LOCAL" />
       <updated>1674974497918</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="deps: updated dependencies, removed tanstack, added fontawesome">
+      <created>1676300100579</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676300100579</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: added Navbar">
+      <created>1676300119011</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676300119011</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix: text color on hover and active not working">
+      <created>1676300253568</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676300253568</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +157,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="deps: updated dependencies, removed tanstack, added fontawesome" />
+    <MESSAGE value="feat: added Navbar" />
+    <MESSAGE value="fix: text color on hover and active not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: text color on hover and active not working" />
   </component>
 </project>
