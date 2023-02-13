@@ -7,10 +7,9 @@ import clsx from "clsx";
 export const Navbar = () => {
     const {isOpen, toggle} = useDisclosure(true)
 
-    //TODO: fix bug when isOpen is true while breakpoint changes to above md, the menu did not display
     const navbarMenuClasses = clsx([
             'flex-col gap-4 items-center',
-            "md:flex-row"
+            "md:flex-row md:flex"
         ], {
             'hidden': !isOpen,
             'flex': isOpen,
