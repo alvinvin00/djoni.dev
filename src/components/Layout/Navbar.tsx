@@ -9,7 +9,7 @@ export const Navbar = () => {
 
     const navbarMenuClasses = clsx([
             'flex-col gap-4 items-center',
-            "md:flex-row md:flex"
+            "md:flex md:flex-row"
         ], {
             'hidden': !isOpen,
             'flex': isOpen,
