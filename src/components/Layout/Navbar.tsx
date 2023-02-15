@@ -5,7 +5,7 @@ import {useDisclosure} from "@/hooks/useDisclosure";
 import clsx from "clsx";
 
 export const Navbar = () => {
-    const {isOpen, toggle} = useDisclosure(true)
+    const {isOpen, toggle} = useDisclosure()
 
     const navbarMenuClasses = clsx([
             'flex-col gap-4 items-center',

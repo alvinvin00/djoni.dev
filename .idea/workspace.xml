@@ -4,12 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="fix: text color on hover and active not working">
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: Showcase">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.yarn/cache/@tailwindcss-line-clamp-npm-0.4.2-7e8725ef00-26b8135df2.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.yarn/cache/@tailwindcss-typography-npm-0.5.9-c16859b9da-b98e21bdd1.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.yarn/cache/lodash.castarray-npm-4.4.0-f3706198e9-fca8c7047e.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.yarn/cache/lodash.isplainobject-npm-4.0.6-d73937742f-29c6351f28.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.yarn/cache/postcss-selector-parser-npm-6.0.10-a4d7aaa270-46afaa60e3.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Card/BlogEntries/BlogEntries.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/blog/assets/entries/taniyuk-refactor/en.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/blog/assets/entries/taniyuk-refactor/id.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/blog/[slug].tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/showcase.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarn/cache/@types-node-npm-18.11.18-d61e8a4a20-03f17f9480.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarn/cache/@types-react-npm-18.0.27-931b59df28-600fdbc39a.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/blog/[slug].ts" beforeDir="false" afterPath="$PROJECT_DIR$/mdx-components.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/blog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/showcase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/BlogEntries/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,19 +62,23 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;19.5.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.13.0&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;D:\\Projects\\alvinvin00.github.io\\.yarn\\releases\\yarn-3.3.1.cjs&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\alvinvin00.github.io\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\alvinvin00.github.io\src\components\Card\BlogEntries" />
       <recent name="D:\Projects\alvinvin00.github.io\src\pages" />
       <recent name="D:\Projects\alvinvin00.github.io\src\styles" />
     </key>
@@ -92,6 +113,8 @@
       <workItem from="1675740661654" duration="695000" />
       <workItem from="1675741737796" duration="11000" />
       <workItem from="1676292584454" duration="7943000" />
+      <workItem from="1676340395510" duration="4863000" />
+      <workItem from="1676440416222" duration="5816000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -160,6 +183,11 @@
     <MESSAGE value="deps: updated dependencies, removed tanstack, added fontawesome" />
     <MESSAGE value="feat: added Navbar" />
     <MESSAGE value="fix: text color on hover and active not working" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: text color on hover and active not working" />
+    <MESSAGE value="feat: Showcase" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Showcase" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
