@@ -39,7 +39,7 @@ export const BlogEntriesTitle = (props: { children: React.ReactNode }) => {
 
 export const BlogEntriesDescription = (props: { children: React.ReactNode }) => {
     return (
-        <p className="text-xs text-gray-700 line-clamp-3">
+        <p className="text-xs font-light line-clamp-3">
             {props.children}
         </p>
     )

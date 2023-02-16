@@ -5,28 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: Showcase">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.yarn/cache/@tailwindcss-line-clamp-npm-0.4.2-7e8725ef00-26b8135df2.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.yarn/cache/@tailwindcss-typography-npm-0.5.9-c16859b9da-b98e21bdd1.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.yarn/cache/lodash.castarray-npm-4.4.0-f3706198e9-fca8c7047e.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.yarn/cache/lodash.isplainobject-npm-4.0.6-d73937742f-29c6351f28.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.yarn/cache/postcss-selector-parser-npm-6.0.10-a4d7aaa270-46afaa60e3.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/BlogEntries/BlogEntries.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/blog/assets/entries/taniyuk-refactor/en.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/blog/assets/entries/taniyuk-refactor/id.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/blog/[slug].tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/showcase.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Button/Social/Social.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Button/Social/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/NavLink/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Tooltip/Tooltip.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Tooltip/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/socials.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@types-node-npm-18.11.18-d61e8a4a20-03f17f9480.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@types-react-npm-18.0.27-931b59df28-600fdbc39a.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mdx-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mdx-components.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card/BlogEntries/BlogEntries.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/BlogEntries/BlogEntries.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blog/[slug].ts" beforeDir="false" afterPath="$PROJECT_DIR$/mdx-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/showcase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/BlogEntries/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/blog/[slug].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog/[slug].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/showcase.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/showcase.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +72,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\alvinvin00.github.io\src\components\UI\NavLink" />
       <recent name="D:\Projects\alvinvin00.github.io\src\components\Card\BlogEntries" />
       <recent name="D:\Projects\alvinvin00.github.io\src\pages" />
       <recent name="D:\Projects\alvinvin00.github.io\src\styles" />
@@ -114,7 +109,7 @@
       <workItem from="1675741737796" duration="11000" />
       <workItem from="1676292584454" duration="7943000" />
       <workItem from="1676340395510" duration="4863000" />
-      <workItem from="1676440416222" duration="5816000" />
+      <workItem from="1676440416222" duration="16205000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -172,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676300253568</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: Showcase">
+      <created>1676447623804</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676447623804</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -3,6 +3,9 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 import {useDisclosure} from "@/hooks/useDisclosure";
 import clsx from "clsx";
+import React from "react";
+import {NavLink} from "@/components/UI/NavLink";
+
 
 export const Navbar = () => {
     const {isOpen, toggle} = useDisclosure()
@@ -19,7 +22,9 @@ export const Navbar = () => {
     return (
         <nav className="container sticky top-0 flex flex-col md:flex-row p-4 text-xl">
             <div className="flex flex-grow justify-between items-center">
-                <Link href='/' className="text-xl inline">Alvin&apos;s Blog</Link>
+                <Link href='/' className="text-xl inline hover:text-blue-400 transition">
+                    Alvin&apos;s Blog
+                </Link>
                 <div className="inline md:hidden">
                     <button className="rounded-2xl p-1" onClick={() => {
                         toggle()
@@ -29,8 +34,12 @@ export const Navbar = () => {
                 </div>
             </div>
             <div className={navbarMenuClasses}>
-                <Link href="/showcase" className="hover:text-blue-400 active:text-blue-600">Showcase</Link>
-                <Link href="/about" className="hover:text-blue-400 active:text-blue-600">About</Link>
+                <NavLink href="/showcase">
+                    Showcase
+                </NavLink>
+                <NavLink href="/about">
+                    About
+                </NavLink>
             </div>
         </nav>
     )

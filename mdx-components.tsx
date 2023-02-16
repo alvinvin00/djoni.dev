@@ -1,3 +1,3 @@
-export const useMDXComponents = (components) => {
+export const useMDXComponents = (components: any) => {
     return {...components}
 }

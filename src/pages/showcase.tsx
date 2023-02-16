@@ -8,10 +8,16 @@ const Page = () => {
             <Head>
                 <title>Showcase</title>
             </Head>
-            <div className="flex flex-col items-center py-1 bg-blue-500">
-                <h1 className={"text-xl"}>Hello There</h1>
-                <h1 className={"text-xl font-bold"}>This is home page</h1>
-                <h1 className={"text-xl underline"}>Coming Soon</h1>
+            <div className="flex flex-col items-center py-2 bg-blue-100">
+                <h5 className="text-lg font-bold">
+                    Blog
+                </h5>
+                <p className="text-md">
+                    I&apos;m uploading my blog entries here.
+                </p>
+                <p className="text-sm">
+                    Writing all about programming and video games.
+                </p>
             </div>
             <div className="py-4 bg-blue-200">
                 <div className="container grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 z-10">

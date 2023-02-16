@@ -1,4 +1,6 @@
-const Page = (props) => {
+import {NextPage} from "next";
+
+const Page = (props: NextPage) => {
     return (
         <>
         </>
