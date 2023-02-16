@@ -22,7 +22,7 @@ export const Navbar = () => {
     return (
         <nav className="container sticky top-0 flex flex-col md:flex-row p-4 text-xl">
             <div className="flex flex-grow justify-between items-center">
-                <Link href='/' className="text-xl inline hover:text-blue-400 transition">
+                <Link href='/' className="text-lg font-bold inline hover:text-blue-400 transition-all hover:scale-110">
                     Alvin&apos;s Blog
                 </Link>
                 <div className="inline md:hidden">
