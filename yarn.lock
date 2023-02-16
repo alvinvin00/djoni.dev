@@ -3527,13 +3527,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/eslint-plugin-query@npm:^4.24.7":
-  version: 4.24.7
-  resolution: "@tanstack/eslint-plugin-query@npm:4.24.7"
-  checksum: b083988e0b8f866f65bc194c6ba01b5e0ab77e1f71c054bcb1c54ccde362d2f1155089b3837fd87f80f38c92999f7163918c3a40db132b7f314141fc7384be51
-  languageName: node
-  linkType: hard
-
 "@tanstack/match-sorter-utils@npm:^8.7.0":
   version: 8.7.6
   resolution: "@tanstack/match-sorter-utils@npm:8.7.6"
@@ -3860,12 +3853,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:18.0.10":
-  version: 18.0.10
-  resolution: "@types/react-dom@npm:18.0.10"
+"@types/react-dom@npm:18.0.11":
+  version: 18.0.11
+  resolution: "@types/react-dom@npm:18.0.11"
   dependencies:
     "@types/react": "*"
-  checksum: ff8282d5005a0b1cd95fb65bf79d3d8485e4cfe2aaf052129033a178684b940014a3f4536bc20d573f8a01cf4c6f4770c74988cef7c2b5cac3041d9f172647e3
+  checksum: 579691e4d5ec09688087568037c35edf8cfb1ab3e07f6c60029280733ee7b5c06d66df6fcc90786702c93ac8cb13bc7ff16c79ddfc75d082938fbaa36e1cdbf4
   languageName: node
   linkType: hard
 
@@ -4639,12 +4632,11 @@ __metadata:
     "@storybook/testing-library": ^0.0.13
     "@tailwindcss/line-clamp": ^0.4.2
     "@tailwindcss/typography": ^0.5.9
-    "@tanstack/eslint-plugin-query": ^4.24.7
     "@tanstack/react-query": ^4.24.6
     "@tanstack/react-query-devtools": ^4.24.6
     "@types/node": 18.13.0
     "@types/react": 18.0.28
-    "@types/react-dom": 18.0.10
+    "@types/react-dom": 18.0.11
     autoprefixer: ^10.4.13
     babel-loader: ^9.1.2
     eslint: 8.34.0

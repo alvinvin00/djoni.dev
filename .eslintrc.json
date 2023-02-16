@@ -1,11 +1,7 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:@tanstack/eslint-plugin-query/recommended",
     "plugin:storybook/recommended"
-  ],
-  "plugins": [
-    "@tanstack/query"
   ],
   "rules": {
     "no-restricted-imports": [
