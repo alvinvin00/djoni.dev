@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: Showcase">
-      <change afterPath="$PROJECT_DIR$/src/components/Button/Social/Social.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button/Social/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/NavLink/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Tooltip/Tooltip.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Tooltip/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/socials.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mdx-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mdx-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/BlogEntries/BlogEntries.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/BlogEntries/BlogEntries.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blog/[slug].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog/[slug].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/showcase.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/showcase.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: added new components" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +23,9 @@
         <option value="TypeScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -109,7 +95,7 @@
       <workItem from="1675741737796" duration="11000" />
       <workItem from="1676292584454" duration="7943000" />
       <workItem from="1676340395510" duration="4863000" />
-      <workItem from="1676440416222" duration="16205000" />
+      <workItem from="1676440416222" duration="16536000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -174,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676447623804</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: added new components">
+      <created>1676529356093</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676529356093</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +179,8 @@
     <MESSAGE value="feat: added Navbar" />
     <MESSAGE value="fix: text color on hover and active not working" />
     <MESSAGE value="feat: Showcase" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Showcase" />
+    <MESSAGE value="feat: added new components" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added new components" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
