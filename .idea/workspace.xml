@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="fix: remove empty file">
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: tweak some style">
+      <change afterPath="$PROJECT_DIR$/src/components/Button/DarkMode/DarkMode.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Button/DarkMode/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useDarkMode.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useLocalStorage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/_document.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/Social/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/Social/Social.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Tooltip/Tooltip.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Tooltip/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/showcase.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/showcase.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/blog/assets/entries/taniyuk-refactor/en.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/blogs/taniyuk-refactor/en.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/blog/assets/entries/taniyuk-refactor/id.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/blogs/taniyuk-refactor/id.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +35,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -66,6 +74,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\alvinvin00.github.io\src" />
       <recent name="D:\Projects\alvinvin00.github.io\src\components\UI\NavLink" />
       <recent name="D:\Projects\alvinvin00.github.io\src\components\Card\BlogEntries" />
       <recent name="D:\Projects\alvinvin00.github.io\src\pages" />
@@ -103,7 +112,8 @@
       <workItem from="1675741737796" duration="11000" />
       <workItem from="1676292584454" duration="7943000" />
       <workItem from="1676340395510" duration="4863000" />
-      <workItem from="1676440416222" duration="20670000" />
+      <workItem from="1676440416222" duration="21045000" />
+      <workItem from="1676597832998" duration="5786000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -207,7 +217,8 @@
     <MESSAGE value="feat: Showcase" />
     <MESSAGE value="feat: added new components" />
     <MESSAGE value="fix: remove empty file" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: remove empty file" />
+    <MESSAGE value="feat: tweak some style" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: tweak some style" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

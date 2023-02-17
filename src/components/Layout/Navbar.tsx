@@ -5,7 +5,11 @@ import {useDisclosure} from "@/hooks/useDisclosure";
 import clsx from "clsx";
 import React from "react";
 import {NavLink} from "@/components/UI/NavLink";
+import dynamic from "next/dynamic";
 
+const DarkModeToggle = dynamic(() => {
+    return import('@/components/Button/DarkMode').then(mod => mod.DarkMode);
+}, {ssr: false})
 
 export const Navbar = () => {
     const {isOpen, toggle} = useDisclosure()
@@ -21,12 +25,13 @@ export const Navbar = () => {
 
     return (
         <nav className="container sticky top-0 flex flex-col md:flex-row p-4 text-xl">
-            <div className="flex flex-grow justify-between items-center">
+            <div className="flex flex-grow justify-between items-center ">
                 <Link href='/' className="text-lg font-bold inline hover:text-blue-400 transition-all hover:scale-110">
                     Alvin&apos;s Blog
                 </Link>
-                <div className="inline md:hidden">
-                    <button className="rounded-2xl p-1" onClick={() => {
+                <div className="inline-flex gap-4 md:mr-4">
+                    <DarkModeToggle/>
+                    <button className="rounded-2xl p-1 md:hidden" onClick={() => {
                         toggle()
                     }}>
                         <FontAwesomeIcon icon={faBars}/>

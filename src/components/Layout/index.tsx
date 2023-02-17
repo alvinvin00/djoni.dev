@@ -8,7 +8,7 @@ export const Layout = ({children}: LayoutProps) => {
     return (
         <>
             <div className="w-full">
-                <div className="shadow-gray-200 shadow-lg">
+                <div className="shadow-gray-200 shadow-lg dark:bg-gray-700 transition-colors ease-out duration-500">
                     <Navbar/>
                 </div>
                 <main>
