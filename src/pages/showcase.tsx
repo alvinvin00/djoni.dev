@@ -8,7 +8,7 @@ const Page = () => {
             <Head>
                 <title>Showcase</title>
             </Head>
-            <div className="bg-blue-200 flex flex-col gap-4 py-2">
+            <div className="flex flex-col gap-4 py-2">
                 <div className="container flex flex-col items-center bg-white shadow-lg rounded-xl">
                     <h5 className="text-lg font-bold">
                         Blog

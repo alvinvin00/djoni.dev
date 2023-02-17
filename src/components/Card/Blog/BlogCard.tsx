@@ -14,11 +14,11 @@ export const BlogCard = (props: BlogEntriesProps) => {
     return (
         <Card>
             <div className="relative aspect-video w-full min-h-fit h-full max-h-40 object-fill">
-                <Image
-                    src={props.imageUrl}
-                    alt={props.imageDescription}
-                    fill
-                />
+                {/*<Image*/}
+                {/*    src={props.imageUrl}*/}
+                {/*    alt={props.imageDescription}*/}
+                {/*    fill*/}
+                {/*/>*/}
             </div>
             <h3 className="text-lg font-bold whitespace-nowrap overflow-clip overflow-ellipsis">
                 {props.title}

@@ -5,21 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: tweak some style">
-      <change afterPath="$PROJECT_DIR$/src/components/Button/DarkMode/DarkMode.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button/DarkMode/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useDarkMode.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useLocalStorage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/_document.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/Layout.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/font.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/Social/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/Social/Social.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card/Blog/BlogCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Blog/BlogCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/blog/assets/entries/taniyuk-refactor/en.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/blogs/taniyuk-refactor/en.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/blog/assets/entries/taniyuk-refactor/id.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/blogs/taniyuk-refactor/id.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useDarkMode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useDarkMode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_document.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/showcase.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/showcase.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -81,8 +80,11 @@
       <recent name="D:\Projects\alvinvin00.github.io\src\styles" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="Debug" type="JavascriptDebugType" engineId="37cae5b9-e8b2-4949-9172-aafa37fbc09c" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -92,11 +94,10 @@
       <envs />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.dev" />
-      </list>
-    </recent_temporary>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug" />
+      <item itemvalue="npm.dev" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -219,6 +220,18 @@
     <MESSAGE value="fix: remove empty file" />
     <MESSAGE value="feat: tweak some style" />
     <option name="LAST_COMMIT_MESSAGE" value="feat: tweak some style" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/hooks/useDarkMode.ts</url>
+          <line>8</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
