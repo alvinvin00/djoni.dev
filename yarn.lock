@@ -1966,13 +1966,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/font@npm:^13.3.0":
-  version: 13.3.0
-  resolution: "@next/font@npm:13.3.0"
-  checksum: 8b3ffee19a30e98050ae06bbf96655cce29b62de014f96d38512f914ec86a1f8319bdbdb5408f26e359d69b351585ac87002aa9faee6fe19ec1d06dd6bae5eae
-  languageName: node
-  linkType: hard
-
 "@next/mdx@npm:^13.3.0":
   version: 13.3.0
   resolution: "@next/mdx@npm:13.3.0"
@@ -4282,7 +4275,6 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.4.0
     "@fortawesome/react-fontawesome": ^0.2.0
     "@mdx-js/react": ^2.3.0
-    "@next/font": ^13.3.0
     "@next/mdx": ^13.3.0
     "@storybook/addon-actions": ^7.0.2
     "@storybook/addon-docs": ^7.0.2
