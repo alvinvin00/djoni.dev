@@ -10,7 +10,7 @@ const Page = () => {
                         Showcase
                     </h5>
                     <p className="text-md">
-                        Here's all the projects that I have worked on
+                        Here&apos;s all the projects that I have worked on
                     </p>
                 </div>
                 <div className="container grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 z-10">
