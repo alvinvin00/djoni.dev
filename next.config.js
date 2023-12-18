@@ -3,7 +3,6 @@ const withMdx = require('@next/mdx')({});
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    appDir: true,
     mdxRs: true,
   },
   i18n: {

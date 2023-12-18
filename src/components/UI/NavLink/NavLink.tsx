@@ -1,18 +1,19 @@
+'use client'
 import React, {ReactNode} from "react";
 import Link from "next/link";
-import {useRouter} from "next/router";
 import clsx from "clsx";
+import {usePathname} from "next/navigation";
 
 export const NavLink = function ({href, children}: { href: string, children: ReactNode }) {
-    const router = useRouter();
+    const pathname = usePathname()
 
     const linkClasses = clsx([
         "text-md font-semibold",
         "dark:text-white",
         "group-hover:text-blue-600",
-        {
-            "text-blue-400": router.pathname === href,
-        }
+        'active:text-blue-400',
+        'visited:text-purple-500',
+        {"text-blue-400": pathname === href}
     ]);
 
     return (

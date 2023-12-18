@@ -1,18 +1,25 @@
+'use client'
+
 import Link from 'next/link'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
-import {useDisclosure} from "@/hooks/useDisclosure";
 import clsx from "clsx";
-import React from "react";
+import React, {useEffect} from "react";
 import {NavLink} from "@/components/UI/NavLink";
-import dynamic from "next/dynamic";
-
-const DarkModeToggle = dynamic(() => {
-    return import('@/components/Button/DarkMode').then(mod => mod.DarkMode);
-}, {ssr: false})
+import {faMoon, faSun} from "@fortawesome/free-regular-svg-icons";
+import {useLocalStorage, useToggle} from "@uidotdev/usehooks";
 
 export const Navbar = () => {
-    const {isOpen, toggle} = useDisclosure()
+    const [isOpen, setOpen] = useToggle(false);
+    const [darkMode, setDarkMode] = useLocalStorage('darkMode', false);
+
+    useEffect(() => {
+        if (darkMode) {
+            window.document.body.classList.add('dark');
+        } else {
+            window.document.body.classList.remove('dark');
+        }
+    }, [darkMode]);
 
     const navbarMenuClasses = clsx([
             'flex-col gap-4 items-center',
@@ -30,9 +37,16 @@ export const Navbar = () => {
                     Alvin&apos;s Blog
                 </Link>
                 <div className="inline-flex gap-4 md:mr-4">
-                    <DarkModeToggle/>
+                    <button
+                        className="transition-all hover:text-blue-400 active:scale-75"
+                        title={'Toggle Dark Moda'}
+                        onClick={() => {
+                            setDarkMode((prevState) => !prevState);
+                        }}>
+                        <FontAwesomeIcon icon={darkMode ? faMoon : faSun}/>
+                    </button>
                     <button className="rounded-2xl p-1 md:hidden" onClick={() => {
-                        toggle()
+                        setOpen(!isOpen)
                     }}>
                         <FontAwesomeIcon icon={faBars}/>
                     </button>
@@ -41,6 +55,9 @@ export const Navbar = () => {
             <div className={navbarMenuClasses}>
                 <NavLink href="/showcase">
                     Showcase
+                </NavLink>
+                <NavLink href="/blog">
+                    Blog
                 </NavLink>
                 <NavLink href="/about">
                     About

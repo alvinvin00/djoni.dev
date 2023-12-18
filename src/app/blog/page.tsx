@@ -1,13 +1,9 @@
 import {BlogCard} from "@/components/Card/Blog";
 import React from "react";
-import Head from "next/head";
 
 const Page = () => {
     return (
         <>
-            <Head>
-                <title>Showcase</title>
-            </Head>
             <div className="flex flex-col gap-4 py-2">
                 <div className="container flex flex-col items-center bg-white shadow-lg rounded-xl">
                     <h5 className="text-lg font-bold">
@@ -48,6 +44,8 @@ const Page = () => {
     )
 }
 
-//TODO: Query Markdown files and display them here
+export const metadata = {
+    title: 'Blog'
+}
 
-export default Page;
+export default Page

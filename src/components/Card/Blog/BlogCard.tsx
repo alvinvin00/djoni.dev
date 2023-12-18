@@ -20,12 +20,14 @@ export const BlogCard = (props: BlogEntriesProps) => {
                 {/*    fill*/}
                 {/*/>*/}
             </div>
+            <div className={'mx-1'}>
             <h3 className="text-lg font-bold whitespace-nowrap overflow-clip overflow-ellipsis">
                 {props.title}
             </h3>
             <p className="text-xs font-light line-clamp-3">
                 {props.summary}
             </p>
+            </div>
         </Card>
     )
 }
