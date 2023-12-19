@@ -8,8 +8,11 @@ import React, {useEffect} from "react";
 import {NavLink} from "@/components/UI/NavLink";
 import {faMoon, faSun} from "@fortawesome/free-regular-svg-icons";
 import {useLocalStorage, useToggle} from "@uidotdev/usehooks";
+import {useParams} from "next/navigation";
 
 export const Navbar = () => {
+    const {lang} = useParams<{ lang: string }>();
+
     const [isOpen, setOpen] = useToggle(false);
     const [darkMode, setDarkMode] = useLocalStorage('darkMode', false);
 
@@ -53,13 +56,13 @@ export const Navbar = () => {
                 </div>
             </div>
             <div className={navbarMenuClasses}>
-                <NavLink href="/showcase">
+                <NavLink href={`/${lang}/showcase`}>
                     Showcase
                 </NavLink>
-                <NavLink href="/blog">
+                <NavLink href={`/${lang}/blog`}>
                     Blog
                 </NavLink>
-                <NavLink href="/about">
+                <NavLink href={`/${lang}/about`}>
                     About
                 </NavLink>
             </div>

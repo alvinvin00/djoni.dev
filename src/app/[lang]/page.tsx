@@ -12,8 +12,13 @@ const Page = async ({params: {lang}}: { params: { lang: string } }) => {
     )
 }
 
-export const metadata = {
-    title: "Halaman Utama",
+export const generateMetadata = async ({params: {lang}}: { params: { lang: string } }) => {
+    const dict = await getDictionary(lang as 'en' | 'id')
+
+    return {
+        title: dict.home.title,
+    }
 }
+
 
 export default Page

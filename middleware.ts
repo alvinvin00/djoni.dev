@@ -6,14 +6,11 @@ const supportedLocales = [
 ]
 
 const getLocale = (request: NextRequest) => {
-    const {pathname} = request.nextUrl;
-    const pathnameHasLocale = supportedLocales.some((locale) => pathname.startsWith(`/${locale}`) || pathname === `/${locale}`);
+    const {nextUrl, headers} = request;
 
-    if (pathnameHasLocale) {
-        return pathname.split('/')[1];
-    }
+    const lang = headers.get('Accept-Language');
 
-    return 'en-US';
+    return lang ?? 'en-US';
 }
 
 export const middleware = (request: NextRequest) => {

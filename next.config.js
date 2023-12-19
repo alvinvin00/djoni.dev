@@ -5,10 +5,6 @@ const nextConfig = {
   experimental: {
     mdxRs: true,
   },
-  i18n: {
-    locales: ['en-US', 'id'],
-    defaultLocale: 'id',
-  },
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   reactStrictMode: true,
   images: {
