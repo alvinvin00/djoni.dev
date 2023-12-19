@@ -4,27 +4,28 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="deps: updated dependencies">
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/blog/[slug]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="refactor!: moved files to accommodate i18n pattern">
+      <change afterPath="$PROJECT_DIR$/src/assets/blogs/en/taniyuk-refactor.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/blogs/id/taniyuk-refactor.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/projects/en/eliteguard.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/projects/en/laksa-online.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/projects/en/simponi.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/projects/en/taniyuk.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/projects/id/eliteguard.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/projects/id/laksa-online.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/projects/id/simponi.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/projects/id/taniyuk.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dictionaries/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dictionaries/id.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dictionaries/type.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/DarkMode/DarkMode.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/DarkMode/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/Blog/BlogCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Blog/BlogCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/blogs/taniyuk-refactor/en.md" beforeDir="false" afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/blogs/taniyuk-refactor/id.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/dictionaries.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useDarkMode.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useLocalStorage.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_document.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/about/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blog/[slug].tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/blog/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/showcase.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/showcase/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +68,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JavaScript Debug.Debug.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -79,7 +81,7 @@
     "javascript.nodejs.core.library.configured.version": "20.5.1",
     "javascript.nodejs.core.library.typings.version": "20.5.9",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Projects/alvinvin00.github.io",
+    "last_opened_file_path": "D:/Projects/alvinvin00.github.io/src/assets/blogs/id",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -87,6 +89,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "D:\\Projects\\alvinvin00.github.io\\.yarn\\releases\\yarn-3.3.1.cjs",
+    "npm.dev.executor": "Run",
     "settings.editor.selected.configurable": "vcs.Git",
     "ts.external.directory.path": "D:\\Projects\\alvinvin00.github.io\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -102,15 +105,22 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\alvinvin00.github.io\src\assets\blogs\id" />
+      <recent name="D:\Projects\alvinvin00.github.io\src\assets\projects\id" />
+      <recent name="D:\Projects\alvinvin00.github.io\src\assets\projects\en" />
+      <recent name="D:\Projects\alvinvin00.github.io\src\assets\projects\taniyuk" />
+      <recent name="D:\Projects\alvinvin00.github.io\src\assets\projects\simponi" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\alvinvin00.github.io\src\assets\blogs" />
+      <recent name="D:\Projects\alvinvin00.github.io\src\app\[lang]" />
       <recent name="D:\Projects\alvinvin00.github.io\src" />
       <recent name="D:\Projects\alvinvin00.github.io\src\components\UI\NavLink" />
       <recent name="D:\Projects\alvinvin00.github.io\src\components\Card\BlogEntries" />
-      <recent name="D:\Projects\alvinvin00.github.io\src\pages" />
-      <recent name="D:\Projects\alvinvin00.github.io\src\styles" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="Debug" type="JavascriptDebugType" engineId="37cae5b9-e8b2-4949-9172-aafa37fbc09c" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -121,6 +131,7 @@
         <script value="dev" />
       </scripts>
       <node-interpreter value="project" />
+      <package-manager value="D:\Projects\alvinvin00.github.io\.yarn\releases\yarn-4.0.1.cjs" />
       <envs />
       <method v="2" />
     </configuration>
@@ -147,6 +158,7 @@
       <workItem from="1702436422937" duration="47000" />
       <workItem from="1702454684997" duration="37000" />
       <workItem from="1702537587577" duration="13000" />
+      <workItem from="1702954023945" duration="2025000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -260,7 +272,8 @@
     <MESSAGE value="fix: remove empty file" />
     <MESSAGE value="feat: tweak some style" />
     <MESSAGE value="deps: updated dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="deps: updated dependencies" />
+    <MESSAGE value="refactor!: moved files to accommodate i18n pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor!: moved files to accommodate i18n pattern" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

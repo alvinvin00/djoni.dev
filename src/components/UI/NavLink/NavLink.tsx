@@ -18,7 +18,7 @@ export const NavLink = function ({href, children}: { href: string, children: Rea
 
     return (
         <div className="group transition-all flex flex-col">
-            <Link href={href} className={linkClasses}>
+            <Link href={href} className={linkClasses} >
                 {children}
             </Link>
             <span className="block h-0.5 bg-blue-400 max-w-0 group-hover:max-w-full duration-500 ease-out"></span>
