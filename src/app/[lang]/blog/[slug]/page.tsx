@@ -1,6 +1,17 @@
 import React from 'react';
 
-const Page = () => {
+type BlogContentProps = {
+    params: {
+        lang: string,
+        slug: string
+    }
+};
+
+export const generateStaticParams = () => {
+
+}
+
+const Page = ({params: {lang, slug}}: BlogContentProps) => {
     return <></>
 }
 
