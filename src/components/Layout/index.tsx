@@ -11,7 +11,7 @@ export const Layout = ({children}: LayoutProps) => {
                 <Navbar/>
             </div>
             <div
-                className="py-1 bg-gradient-to-b from-blue-100 via-blue-300 to-blue-500 dark:from-gray-700 dark:via-gray-900 dark:to-black transition-colors ease-out duration-500">
+                className="py-1 bg-gradient-to-b from-white via-blue-400 to-blue-700 dark:from-gray-700 dark:via-gray-900 dark:to-black transition-colors ease-out duration-500">
                 <main>
                     {children}
                 </main>

@@ -1,16 +1,18 @@
 import {NextRequest} from "next/server";
+import Negotiator from "negotiator";
+import {match} from "@formatjs/intl-localematcher";
 
 const supportedLocales = [
     'en-US',
     'id'
 ]
 
+const headers = {'accept-language': 'en-US,en;q=0.5'}
+
 const getLocale = (request: NextRequest) => {
-    const {nextUrl, headers} = request;
+    const negotiator = new Negotiator({headers});
 
-    const lang = headers.get('Accept-Language');
-
-    return lang ?? 'en-US';
+    return match(negotiator.languages(), supportedLocales, 'en-US')
 }
 
 export const middleware = (request: NextRequest) => {

@@ -25,7 +25,7 @@ export const Navbar = () => {
     }, [darkMode]);
 
     const navbarMenuClasses = clsx([
-            'flex-col gap-4 items-center',
+            'flex-col gap-4 items-center transition transition-all duration-500',
             "md:flex md:flex-row",
         ], {
             'hidden': !isOpen,
@@ -35,8 +35,8 @@ export const Navbar = () => {
 
     return (
         <nav className="container sticky top-0 flex flex-col md:flex-row p-4 text-xl">
-            <div className="flex flex-grow justify-between items-center text-black hover:text-blue-400 dark:text-white">
-                <Link href='/' className="text-lg font-bold inline transition-all hover:scale-110">
+            <div className="flex flex-grow justify-between items-center text-black dark:text-white">
+                <Link href='/' className="text-lg font-bold inline transition-all hover:text-blue-400 hover:scale-110">
                     Alvin&apos;s Blog
                 </Link>
                 <div className="inline-flex gap-4 md:mr-4">
