@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="refactor!: moved files to accommodate i18n pattern">
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="chore: added MD metadata">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/[lang]/blog/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/blog/[slug]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/blogs/en/taniyuk-refactor.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/blog/en/taniyuk-refactor.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/blogs/id/taniyuk-refactor.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/blog/id/taniyuk-refactor.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/projects/en/eliteguard.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/projects/en/eliteguard.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/projects/en/laksa-online.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/projects/en/laksa-online.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/projects/en/simponi.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/projects/en/simponi.md" afterDir="false" />
@@ -16,7 +17,6 @@
       <change beforePath="$PROJECT_DIR$/src/assets/projects/id/laksa-online.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/projects/id/laksa-online.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/projects/id/simponi.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/projects/id/simponi.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/projects/id/taniyuk.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/projects/id/taniyuk.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +148,7 @@
       <workItem from="1702436422937" duration="47000" />
       <workItem from="1702454684997" duration="37000" />
       <workItem from="1702537587577" duration="13000" />
-      <workItem from="1702954023945" duration="4793000" />
+      <workItem from="1702954023945" duration="9552000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -243,7 +243,23 @@
       <option name="project" value="LOCAL" />
       <updated>1702957991373</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="chore: added MD metadata">
+      <option name="closed" value="true" />
+      <created>1702962355970</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702962355970</updated>
+    </task>
+    <task id="LOCAL-00015" summary="chore: added MD metadata">
+      <option name="closed" value="true" />
+      <created>1702964533851</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702964533851</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +287,8 @@
     <MESSAGE value="feat: tweak some style" />
     <MESSAGE value="deps: updated dependencies" />
     <MESSAGE value="refactor!: moved files to accommodate i18n pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor!: moved files to accommodate i18n pattern" />
+    <MESSAGE value="chore: added MD metadata" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: added MD metadata" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
