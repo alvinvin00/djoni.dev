@@ -1,18 +1,23 @@
-import {NextRequest} from "next/server";
+import type {NextRequest} from 'next/server'
+import {NextResponse} from "next/server";
 import Negotiator from "negotiator";
 import {match} from "@formatjs/intl-localematcher";
 
 const supportedLocales = [
-    'en-US',
+    'en',
     'id'
 ]
 
-const headers = {'accept-language': 'en-US,en;q=0.5'}
-
 const getLocale = (request: NextRequest) => {
-    const negotiator = new Negotiator({headers});
+    const headers: Record<string, string> = {};
 
-    return match(negotiator.languages(), supportedLocales, 'en-US')
+    request.headers.forEach((value, key) => (headers[key] = value))
+
+    const negotiator = new Negotiator({headers})
+
+    const requestedLocales = negotiator.languages();
+
+    return match(requestedLocales, supportedLocales, 'en')
 }
 
 export const middleware = (request: NextRequest) => {
@@ -28,14 +33,9 @@ export const middleware = (request: NextRequest) => {
     request.nextUrl.pathname = `/${locale}${pathname}`
     // e.g. incoming request is /products
     // The new URL is now /en-US/products
-    return Response.redirect(`${request.nextUrl}`)
+    return NextResponse.redirect(`${request.nextUrl}`)
 }
 
 export const config = {
-    matcher: [
-        // Skip all internal paths (_next)
-        '/((?!_next).*)',
-        // Optional: only run on root (/) URL
-        '/'
-    ],
+    matcher: ['/((?!_next).*)', '/'],
 }

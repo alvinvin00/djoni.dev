@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="chore: added MD metadata">
-      <change beforePath="$PROJECT_DIR$/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,15 +94,15 @@
       <recent name="D:\Projects\alvinvin00.github.io\src\assets\projects\simponi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\alvinvin00.github.io\src" />
       <recent name="D:\Projects\alvinvin00.github.io\src\assets\blogs" />
       <recent name="D:\Projects\alvinvin00.github.io\src\app\[lang]" />
-      <recent name="D:\Projects\alvinvin00.github.io\src" />
       <recent name="D:\Projects\alvinvin00.github.io\src\components\UI\NavLink" />
       <recent name="D:\Projects\alvinvin00.github.io\src\components\Card\BlogEntries" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
-    <configuration name="Debug" type="JavascriptDebugType" engineId="37cae5b9-e8b2-4949-9172-aafa37fbc09c" uri="http://localhost:3000">
+  <component name="RunManager" selected="JavaScript Debug.Debug">
+    <configuration name="Debug" type="JavascriptDebugType" engineId="37cae5b9-e8b2-4949-9172-aafa37fbc09c" uri="http://localhost:3000" useFirstLineBreakpoints="true">
       <method v="2" />
     </configuration>
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
@@ -118,6 +116,10 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug" />
+      <item itemvalue="npm.dev" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -142,6 +144,8 @@
       <workItem from="1702454684997" duration="37000" />
       <workItem from="1702537587577" duration="13000" />
       <workItem from="1702954023945" duration="12035000" />
+      <workItem from="1703041000337" duration="3420000" />
+      <workItem from="1703056340364" duration="824000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -298,6 +302,22 @@
     <MESSAGE value="refactor!: moved files to accommodate i18n pattern" />
     <MESSAGE value="chore: added MD metadata" />
     <option name="LAST_COMMIT_MESSAGE" value="chore: added MD metadata" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/middleware.ts</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/middleware.ts</url>
+          <line>20</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -42,7 +42,7 @@ export const Navbar = () => {
                 <div className="inline-flex gap-4 md:mr-4">
                     <button
                         className="transition-all hover:text-blue-400 active:scale-75"
-                        title={'Toggle Dark Moda'}
+                        title={'Toggle Dark Mode'}
                         onClick={() => {
                             setDarkMode((prevState) => !prevState);
                         }}>
