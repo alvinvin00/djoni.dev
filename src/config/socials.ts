@@ -1,35 +1,44 @@
-import {IconName} from "@fortawesome/fontawesome-svg-core";
+import {IconDefinition} from "@fortawesome/fontawesome-svg-core";
+import {faFacebook, faInstagram, faLinkedin, faSteam, faTwitter} from "@fortawesome/free-brands-svg-icons";
 
 type Social = {
     name: string;
     url: string;
-    icon: IconName;
+    icon: IconDefinition;
+    color: string;
+    title?: string
 }
 
 export const socials: Social[] = [
     {
         name: 'Facebook',
         url: 'https://www.facebook.com/alvinvin00',
-        icon: 'facebook'
+        icon: faFacebook,
+        color: 'blue',
     },
     {
         name: 'Instagram',
         url: 'https://www.instagram.com/alvinvin00',
-        icon: 'instagram'
+        icon: faInstagram,
+        color: 'pink',
     },
     {
         name: 'Linkedin',
         url: 'https://www.linkedin.com/in/alvinvin00',
-        icon: 'linkedin'
+        icon: faLinkedin,
+        color: 'darkblue',
     },
     {
         name: 'Steam',
         url: 'https://steamcommunity.com/id/alvinvin00/',
-        icon: 'steam'
+        icon: faSteam,
+        color: 'grey',
     },
     {
         name: 'Twitter',
         url: 'https://www.twitter.com/alvinvin00',
-        icon: 'twitter'
+        icon: faTwitter,
+        color: 'lightblue',
+        title: 'I refused to call it X'
     },
 ]
