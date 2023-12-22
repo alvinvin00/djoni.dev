@@ -6,7 +6,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 
 config.autoAddCss = false
 
-export const generateStaticParams = async () => [{lang: 'en-US'}, {lang: 'id'}];
+export const generateStaticParams = async () => [{lang: 'en'}, {lang: 'id'}];
 
 type RootLayoutProps = { params: { lang: string } };
 
