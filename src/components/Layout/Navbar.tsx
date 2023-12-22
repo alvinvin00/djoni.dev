@@ -29,7 +29,9 @@ export const Navbar = () => {
         <nav className="container sticky top-0 flex flex-col md:flex-row p-4 text-xl">
             <div className="flex flex-grow justify-between items-center text-black dark:text-white">
                 <Link href='/' className="text-lg font-bold inline transition-all hover:text-blue-400 hover:scale-110">
-                    Alvin&apos;s Blog
+                    <h6>
+                        Djoni&apos;s Den
+                    </h6>
                 </Link>
                 <div className="inline-flex gap-4 md:mr-4">
                     <button>
@@ -54,7 +56,7 @@ export const Navbar = () => {
                                 className={'fixed top-3 left-0 right-0 p-2 max-w-full mx-4 rounded-2xl bg-blue-300 dark:bg-gray-700 z-50'}
                             >
                                 <div className={'flex flex-row justify-between'}>
-                                    <h6 className={'text-black dark:text-white'}>Alvin&apos;s Blog</h6>
+                                    <h6 className={'text-black dark:text-white'}>Djoni&apos;s Den</h6>
                                     <Button className={'text-black dark:text-white'} onPress={() => {
                                         setOpen(false)
                                     }}>

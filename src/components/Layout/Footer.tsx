@@ -9,17 +9,21 @@ export const Footer = () => {
     const {lang} = useParams<{ lang: string }>()
 
     return (
-        <footer className={"py-4 text-black dark:text-white"}>
+        <footer className={"py-4 text-white"}>
             <div className={'flex flex-row justify-between'}>
-                <div className={'col-span-4'}>
+                <div className={'col-span-6'}>
+                    <p>
+                        &copy; 2023 Djoni&apos;s Den, All Rights Reserved. <br/>
+                        Made with love and NextJS, hosted on Vercel
+                    </p>
+                </div>
+                <div className={'col-span-6 flex flex-row items-center gap-1'}>
                     <p>
                         Find me on Cyberspace:
                     </p>
-                </div>
-                <div className={'col-span-8 flex flex-row gap-1'}>
                     {
                         socials.map((social) => (
-                            <Link href={social.url}>
+                            <Link key={social.id} href={social.url}>
                                 <div className={'rounded p-1 size-8 grid place-items-center'}
                                      title={social.title ?? social.name} style={{
                                     backgroundColor: social.color,
