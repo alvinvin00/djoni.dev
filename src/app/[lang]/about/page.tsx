@@ -1,7 +1,6 @@
 import React from "react";
-import {NextPage} from "next";
 
-const Page = (props: NextPage) => {
+const Page = () => {
     return (
         <div className="container">
             <h1 className="text-4xl font-bold">
