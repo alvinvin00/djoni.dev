@@ -12,13 +12,11 @@ type BlogContentProps = {
 };
 
 export const generateStaticParams = ({params: {lang}}: { params: { lang: string } }) => {
-    const blogDir = path.join(process.cwd(), '/src/assets/blog');
+    const blogDir = path.join(process.cwd(), `/src/assets/blog/${lang}`);
 
-    return fs.readdirSync(`${blogDir}/${lang}`).map((file) => {
-        const fileName = file.replace(/\.md$/, '');
-
+    return fs.readdirSync(`${blogDir}`).map((file) => {
         // Read markdown file as string
-        const fullPath = path.join(blogDir, fileName);
+        const fullPath = path.join(blogDir, file);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
 
         // Use gray-matter to parse the post metadata section
@@ -30,8 +28,20 @@ export const generateStaticParams = ({params: {lang}}: { params: { lang: string 
     });
 }
 
+const readBlogFileFromAssets = (lang: string, slug: string) => {
+    const filepath = path.join(process.cwd(), `/src/assets/blog/${lang}/${slug}.md`);
+
+    const fileContent = fs.readFileSync(filepath, 'utf8');
+
+    return matter(fileContent);
+}
+
 const Page = ({params: {lang, slug}}: BlogContentProps) => {
-    return <></>
+    const matterResult = readBlogFileFromAssets(lang, slug);
+
+    return <>
+        {matterResult.content}
+    </>
 }
 
 export default Page;
