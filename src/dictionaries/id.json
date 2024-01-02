@@ -1,6 +1,8 @@
 {
   "home": {
     "title": "Beranda",
-    "description": "Ini halaman beranda."
+    "description": "Ini halaman beranda.",
+    "welcome_text": "Selamat datang di blog Djoni!",
+    "welcome_text_2": "Test"
   }
 }
