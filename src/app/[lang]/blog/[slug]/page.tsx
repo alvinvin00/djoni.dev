@@ -36,6 +36,16 @@ const readBlogFileFromAssets = (lang: string, slug: string) => {
     return matter(fileContent);
 }
 
+export const generateMetadata = ({params: {lang, slug}}: BlogContentProps) => {
+    const matterResult = readBlogFileFromAssets(lang, slug);
+
+    return {
+        title: matterResult.data['title'],
+        description: matterResult.data['description'],
+        keywords: matterResult.data['keywords'],
+    }
+}
+
 const Page = ({params: {lang, slug}}: BlogContentProps) => {
     const matterResult = readBlogFileFromAssets(lang, slug);
 
