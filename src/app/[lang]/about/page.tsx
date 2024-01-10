@@ -1,6 +1,10 @@
 import React from "react";
+import {getAboutData} from "@/utils/greymatter";
+import Markdown from "react-markdown";
 
-const Page = () => {
+const Page = ({params: {lang}}: { params: { lang: string } }) => {
+    const aboutData = getAboutData(lang as 'en' | 'id')
+
     return (
         <div className="container">
             <div
@@ -11,15 +15,11 @@ const Page = () => {
                 <h2 className={'text-sm font-semibold'}>
                     Software Engineer
                 </h2>
+                <br/>
                 <div className='my-4 text-justify'>
-                    <p>
-                        I&apos;m a software engineer with 4 years of experience in web development and 2 years in mobile
-                        development. My current focus is on web development, especially with NextJS.
-                    </p>
-                    <p>
-                        I&apos;m also a tech enthusiast, I love to learn new things and try new technologies.
-                    </p>
-
+                    <Markdown>
+                        {aboutData.content}
+                    </Markdown>
                 </div>
             </div>
         </div>

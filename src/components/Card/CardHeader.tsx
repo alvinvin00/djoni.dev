@@ -2,7 +2,7 @@ import React from "react";
 
 export const CardHeader = ({children}: { children: React.ReactNode }) => {
     return (
-        <div>
+        <div className={'px-2'}>
             {children}
         </div>
     )

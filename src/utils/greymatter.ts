@@ -2,44 +2,43 @@ import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
 
-export const getBlogData = (lang: string, slug: string) => {
-    const filepath = path.join(process.cwd(), `/src/assets/blog/${lang}/${slug}.md`);
+const getMatterFromFile = (filePath: string) => {
+    const filepath = path.join(process.cwd(), `/src/assets/${filePath}`);
 
     const fileContent = fs.readFileSync(filepath, 'utf8');
 
     return matter(fileContent);
+}
+
+const getMatterFromFolder = (folderPath: string) => {
+    const cwDir = path.join(process.cwd(), `/src/assets/${folderPath}`);
+
+    return fs.readdirSync(`${cwDir}`).map((file) => {
+        // Read markdown file as string
+        const fullPath = path.join(cwDir, file);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+        // Use gray-matter to parse the post metadata section
+        return matter(fileContents)
+    });
+}
+
+export const getBlogData = (lang: string, slug: string) => {
+    return getMatterFromFile(`/blog/${lang}/${slug}.md`);
 }
 
 export const getBlogs = (lang: string) => {
-    const blogDir = path.join(process.cwd(), `/src/assets/blog/${lang}`);
-
-    return fs.readdirSync(`${blogDir}`).map((file) => {
-        // Read markdown file as string
-        const fullPath = path.join(blogDir, file);
-        const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-        // Use gray-matter to parse the post metadata section
-        return matter(fileContents)
-    });
+    return getMatterFromFolder(`/blog/${lang}`);
 }
 
 export const getProjectData = (lang: string, slug: string) => {
-    const filepath = path.join(process.cwd(), `/src/assets/projects/${lang}/${slug}.md`);
-
-    const fileContent = fs.readFileSync(filepath, 'utf8');
-
-    return matter(fileContent);
+    return getMatterFromFile(`/projects/${lang}/${slug}.md`);
 }
 
 export const getProjects = (lang: string) => {
-    const blogDir = path.join(process.cwd(), `/src/assets/projects/${lang}`);
+    return getMatterFromFolder(`/projects/${lang}`);
+}
 
-    return fs.readdirSync(`${blogDir}`).map((file) => {
-        // Read markdown file as string
-        const fullPath = path.join(blogDir, file);
-        const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-        // Use gray-matter to parse the post metadata section
-        return matter(fileContents)
-    });
+export const getAboutData = (lang: string) => {
+    return getMatterFromFile(`/about/${lang}.md`);
 }

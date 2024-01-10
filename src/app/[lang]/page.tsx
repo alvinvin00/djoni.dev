@@ -2,7 +2,7 @@ import {getDictionary} from "@/app/[lang]/dictionaries";
 import React from "react";
 import {BetaDisclaimer} from "@/components/Layout/BetaDisclaimer";
 import {BlogCarousel} from "@/app/[lang]/BlogCarousel";
-import {ProjectShowcase} from "@/app/[lang]/ProjectShowcase";
+import {ProjectCarousel} from "@/app/[lang]/ProjectCarousel";
 
 const Page = async ({params: {lang}}: { params: { lang: string } }) => {
     const dict = await getDictionary(lang as 'en' | 'id')
@@ -17,7 +17,7 @@ const Page = async ({params: {lang}}: { params: { lang: string } }) => {
                     {dict.home.welcome_text_2}
                 </p>
             </section>
-            <ProjectShowcase lang={lang}/>
+            <ProjectCarousel lang={lang}/>
             <BlogCarousel lang={lang}/>
         </main>
     )

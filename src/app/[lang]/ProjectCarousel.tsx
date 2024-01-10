@@ -2,12 +2,11 @@ import React from "react";
 import {Card, CardContent, CardHeader} from "@/components/Card";
 import {getProjects} from "@/utils/greymatter";
 
-
 interface ProjectShowcaseProps {
     lang: string
 }
 
-export const ProjectShowcase = ({lang}: ProjectShowcaseProps) => {
+export const ProjectCarousel = ({lang}: ProjectShowcaseProps) => {
     const projects = getProjects(lang).slice(0, 4)
 
     return (

@@ -11,6 +11,25 @@ import {Button, DialogTrigger, Modal, ModalOverlay} from "react-aria-components"
 import {ClientOnly} from "@/components/UI/ClientOnly";
 import {DarkModeButton} from "@/components/Button/DarkMode";
 
+const Navlinks = (props: { lang: string }) => {
+    return (
+        <>
+            <NavLink href={`/${props.lang}/projects`}>
+                Projects
+            </NavLink>
+            {/*<NavLink href={`/${lang}/now`}>*/}
+            {/*    Now*/}
+            {/*</NavLink>*/}
+            {/*<NavLink href={`/${lang}/blog`}>*/}
+            {/*    Blog*/}
+            {/*</NavLink>*/}
+            <NavLink href={`/${props.lang}/about`}>
+                About
+            </NavLink>
+        </>
+    );
+};
+
 export const Navbar = () => {
     const {lang} = useParams<{ lang: string }>();
 
@@ -48,15 +67,7 @@ export const Navbar = () => {
                                 </div>
                                 <hr/>
                                 <div className={'flex flex-col gap-4'}>
-                                    <NavLink href={`/${lang}/showcase`}>
-                                        Showcase
-                                    </NavLink>
-                                    {/*<NavLink href={`/${lang}/blog`}>*/}
-                                    {/*    Blog*/}
-                                    {/*</NavLink>*/}
-                                    <NavLink href={`/${lang}/about`}>
-                                        About
-                                    </NavLink>
+                                    <Navlinks lang={lang}/>
                                 </div>
                             </Modal>
                         </ModalOverlay>
@@ -64,15 +75,7 @@ export const Navbar = () => {
                 </div>
             </div>
             <div className={'hidden md:flex md:flex-row gap-4 transition duration-500'}>
-                <NavLink href={`/${lang}/showcase`}>
-                    Showcase
-                </NavLink>
-                {/*<NavLink href={`/${lang}/blog`}>*/}
-                {/*    Blog*/}
-                {/*</NavLink>*/}
-                <NavLink href={`/${lang}/about`}>
-                    About
-                </NavLink>
+                <Navlinks lang={lang}/>
             </div>
         </nav>
     )

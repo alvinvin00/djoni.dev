@@ -10,7 +10,7 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
             <div className="flex flex-col gap-4 py-2">
                 <div className="container flex flex-col items-center bg-white shadow-lg rounded-xl">
                     <h5 className="text-lg font-bold">
-                        Showcase
+                        Projects
                     </h5>
                     <p className="text-md">
                         Here&apos;s all the projects that I have worked on
@@ -27,7 +27,7 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
                                     </h3>
                                 </CardHeader>
                                 <CardContent>
-                                    <p className="text-xs font-light line-clamp-3">
+                                    <p className="text-md font-light line-clamp-3">
                                         {metadata.description}
                                     </p>
                                 </CardContent>
