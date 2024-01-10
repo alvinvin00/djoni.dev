@@ -1,9 +1,12 @@
 import React from "react";
 import {getProjects} from "@/utils/greymatter";
 import {Card, CardContent, CardHeader} from "@/components/Card";
+import dayjs from "dayjs";
 
 const Page = ({params: {lang}}: { params: { lang: string } }) => {
-    const projects = getProjects(lang)
+    const projects = getProjects(lang).sort((a, b) => {
+        return dayjs(a.data['date']).diff(b.data['date'], 'day')
+    })
 
     return (
         <>
@@ -20,7 +23,7 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
                     {projects.map((project) => {
                         const metadata = project.data
                         return (
-                            <Card key={metadata.slug}>
+                            <Card key={metadata.slug} className={'h-auto'}>
                                 <CardHeader>
                                     <h3 className="text-lg font-bold whitespace-nowrap overflow-clip overflow-ellipsis">
                                         {metadata.title}
