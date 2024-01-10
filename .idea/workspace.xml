@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="fix: useIsClient">
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/layout.tsx" afterDir="false" />
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: Vercel Analytics">
+      <change afterPath="$PROJECT_DIR$/src/components/Button/DarkMode.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/ClientOnly.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -154,7 +156,7 @@
       <workItem from="1704159564413" duration="575000" />
       <workItem from="1704160197991" duration="3986000" />
       <workItem from="1704791364773" duration="693000" />
-      <workItem from="1704854501702" duration="3822000" />
+      <workItem from="1704854501702" duration="4221000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -377,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704858296125</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="feat: Vercel Analytics">
+      <option name="closed" value="true" />
+      <created>1704858492402</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1704858492402</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +426,8 @@
     <MESSAGE value="feat: add generateMetadata" />
     <MESSAGE value="feat: Home Page" />
     <MESSAGE value="fix: useIsClient" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: useIsClient" />
+    <MESSAGE value="feat: Vercel Analytics" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Vercel Analytics" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
