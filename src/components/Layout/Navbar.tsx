@@ -6,7 +6,7 @@ import {faBars, faClose} from "@fortawesome/free-solid-svg-icons";
 import React, {useEffect} from "react";
 import {NavLink} from "@/components/UI/NavLink";
 import {faMoon, faSun} from "@fortawesome/free-regular-svg-icons";
-import {useLocalStorage, useToggle} from "@uidotdev/usehooks";
+import {useIsClient, useLocalStorage, useToggle} from "@uidotdev/usehooks";
 import {useParams} from "next/navigation";
 import {Button, DialogTrigger, Modal, ModalOverlay} from "react-aria-components";
 
@@ -16,6 +16,8 @@ export const Navbar = () => {
     const [isOpen, setOpen] = useToggle(false);
     const [darkMode, setDarkMode] = useLocalStorage('darkMode', false);
 
+    const isClient = useIsClient()
+
     useEffect(() => {
         if (darkMode) {
             window.document.body.classList.add('dark');
@@ -24,6 +26,10 @@ export const Navbar = () => {
         }
     }, [darkMode]);
 
+
+    if (!isClient) {
+        return null
+    }
 
     return (
         <nav className="container sticky top-0 flex flex-col md:flex-row p-4 text-xl">

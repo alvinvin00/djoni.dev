@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: add generateMetadata">
-      <change afterPath="$PROJECT_DIR$/src/app/[lang]/BlogCarousel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/[lang]/ProjectShowcase.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/BetaDisclaimer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/greymatter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2024_08_41_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2024_08_41__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/CardContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/CardContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/CardHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/CardHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dictionaries/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dictionaries/id.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/id.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dictionaries/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/type.ts" afterDir="false" />
-    </list>
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: Home Page" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,7 +152,7 @@
       <workItem from="1704159564413" duration="575000" />
       <workItem from="1704160197991" duration="3986000" />
       <workItem from="1704791364773" duration="693000" />
-      <workItem from="1704854501702" duration="3184000" />
+      <workItem from="1704854501702" duration="3514000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -373,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704164009143</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="feat: Home Page">
+      <option name="closed" value="true" />
+      <created>1704857902437</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1704857902437</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,10 +402,10 @@
     <MESSAGE value="fix: wrong param" />
     <MESSAGE value="deps: updated dependencies" />
     <MESSAGE value="chore: commit .idea files" />
-    <MESSAGE value="feat: Home Page" />
     <MESSAGE value="feat: Blog Page" />
     <MESSAGE value="feat: add generateMetadata" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add generateMetadata" />
+    <MESSAGE value="feat: Home Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Home Page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
