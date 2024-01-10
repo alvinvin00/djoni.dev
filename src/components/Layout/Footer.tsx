@@ -13,7 +13,7 @@ export const Footer = () => {
             <div className={'flex flex-row justify-between'}>
                 <div className={'col-span-6'}>
                     <p>
-                        &copy; 2023 Djoni&apos;s Den, All Rights Reserved. <br/>
+                        &copy; 2024 Djoni&apos;s Den, All Rights Reserved. <br/>
                         Made with love and NextJS, hosted on Vercel
                     </p>
                 </div>

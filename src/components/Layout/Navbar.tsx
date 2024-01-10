@@ -16,7 +16,6 @@ export const Navbar = () => {
 
     const [isOpen, setOpen] = useToggle(false);
 
-
     return (
         <nav className="container sticky top-0 flex flex-col md:flex-row p-4 text-xl">
             <div className="flex flex-grow justify-between items-center text-black dark:text-white">
@@ -52,9 +51,9 @@ export const Navbar = () => {
                                     <NavLink href={`/${lang}/showcase`}>
                                         Showcase
                                     </NavLink>
-                                    <NavLink href={`/${lang}/blog`}>
-                                        Blog
-                                    </NavLink>
+                                    {/*<NavLink href={`/${lang}/blog`}>*/}
+                                    {/*    Blog*/}
+                                    {/*</NavLink>*/}
                                     <NavLink href={`/${lang}/about`}>
                                         About
                                     </NavLink>

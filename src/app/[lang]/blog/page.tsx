@@ -1,7 +1,10 @@
-import {BlogCard} from "@/components/Card/Blog";
 import React from "react";
+import {getBlogs} from "@/utils/greymatter";
+import {Card, CardContent, CardHeader} from "@/components/Card";
 
-const Page = () => {
+const Page = ({params: {lang}}: { params: { lang: string } }) => {
+    const blogs = getBlogs(lang)
+
     return (
         <>
             <div className="flex flex-col gap-4 py-2">
@@ -17,27 +20,30 @@ const Page = () => {
                     </p>
                 </div>
                 <div className="container grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 z-10">
-                    <BlogCard
-                        title={'Lorem ipsum dolor.'}
-                        summary={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, beatae dolores eveniet id libero perferendis soluta totam? A accusantium, animi earum incidunt, labore, nemo neque nesciunt porro possimus soluta voluptas.'}
-                        imageUrl={'https://via.placeholder.com/400'}
-                        imageDescription={'Test'}
-                        createdAt={new Date()}
-                    />
-                    <BlogCard
-                        title={'Lorem ipsum dolor.'}
-                        summary={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, beatae dolores eveniet id libero perferendis soluta totam? A accusantium, animi earum incidunt, labore, nemo neque nesciunt porro possimus soluta voluptas.'}
-                        imageUrl={'https://via.placeholder.com/400'}
-                        imageDescription={'Test'}
-                        createdAt={new Date()}
-                    />
-                    <BlogCard
-                        title={'Lorem ipsum dolor.'}
-                        summary={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, beatae dolores eveniet id libero perferendis soluta totam? A accusantium, animi earum incidunt, labore, nemo neque nesciunt porro possimus soluta voluptas.'}
-                        imageUrl={'https://via.placeholder.com/400'}
-                        imageDescription={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, beatae dolores eveniet id libero perferendis soluta totam? A accusantium, animi earum incidunt, labore, nemo neque nesciunt porro possimus soluta voluptas.'}
-                        createdAt={new Date()}
-                    />
+                    {blogs.map((blog) => {
+                        const metadata = blog.data
+                        return (
+                            <Card key={metadata.slug} className="flex flex-col gap-2">
+                                <CardHeader>
+                                    <h3 className="text-lg font-bold line-clamp-2 overflow-clip overflow-ellipsis ">
+                                        {metadata.title}
+                                    </h3>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-md font-light line-clamp-3">
+                                        {metadata.description}
+                                    </p>
+                                </CardContent>
+                                <div className="flex flex-col gap-2">
+                                    <p className="text-xs font-light">
+                                    {metadata.date}
+                                    </p>
+                                    {/*<p className="text-xs font-light">*/}
+                                    {/*    {metadata.read_time}*/}
+                                    {/*</p>*/}
+                                </div>
+                            </Card>)
+                    })}
                 </div>
             </div>
         </>

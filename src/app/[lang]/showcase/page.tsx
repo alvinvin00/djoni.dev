@@ -1,7 +1,10 @@
-import {BlogCard} from "@/components/Card/Blog";
 import React from "react";
+import {getProjects} from "@/utils/greymatter";
+import {Card, CardContent, CardHeader} from "@/components/Card";
 
-const Page = () => {
+const Page = ({params: {lang}}: { params: { lang: string } }) => {
+    const projects = getProjects(lang)
+
     return (
         <>
             <div className="flex flex-col gap-4 py-2">
@@ -14,27 +17,22 @@ const Page = () => {
                     </p>
                 </div>
                 <div className="container grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 z-10">
-                    <BlogCard
-                        title={'Lorem ipsum dolor.'}
-                        summary={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, beatae dolores eveniet id libero perferendis soluta totam? A accusantium, animi earum incidunt, labore, nemo neque nesciunt porro possimus soluta voluptas.'}
-                        imageUrl={'https://via.placeholder.com/400'}
-                        imageDescription={'Test'}
-                        createdAt={new Date()}
-                    />
-                    <BlogCard
-                        title={'Lorem ipsum dolor.'}
-                        summary={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, beatae dolores eveniet id libero perferendis soluta totam? A accusantium, animi earum incidunt, labore, nemo neque nesciunt porro possimus soluta voluptas.'}
-                        imageUrl={'https://via.placeholder.com/400'}
-                        imageDescription={'Test'}
-                        createdAt={new Date()}
-                    />
-                    <BlogCard
-                        title={'Lorem ipsum dolor.'}
-                        summary={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, beatae dolores eveniet id libero perferendis soluta totam? A accusantium, animi earum incidunt, labore, nemo neque nesciunt porro possimus soluta voluptas.'}
-                        imageUrl={'https://via.placeholder.com/400'}
-                        imageDescription={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, beatae dolores eveniet id libero perferendis soluta totam? A accusantium, animi earum incidunt, labore, nemo neque nesciunt porro possimus soluta voluptas.'}
-                        createdAt={new Date()}
-                    />
+                    {projects.map((project) => {
+                        const metadata = project.data
+                        return (
+                            <Card key={metadata.slug}>
+                                <CardHeader>
+                                    <h3 className="text-lg font-bold whitespace-nowrap overflow-clip overflow-ellipsis">
+                                        {metadata.title}
+                                    </h3>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-xs font-light line-clamp-3">
+                                        {metadata.description}
+                                    </p>
+                                </CardContent>
+                            </Card>)
+                    })}
                 </div>
             </div>
         </>
@@ -42,9 +40,7 @@ const Page = () => {
 }
 
 export const metadata = {
-    title: 'Showcase'
+    title: "Showcase | Djoni's Den"
 }
-
-//TODO: Query Markdown files and display them here
 
 export default Page;
