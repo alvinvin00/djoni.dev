@@ -1,14 +1,26 @@
 import {getDictionary} from "@/app/[lang]/dictionaries";
+import React from "react";
+import {BetaDisclaimer} from "@/components/Layout/BetaDisclaimer";
+import {BlogCarousel} from "@/app/[lang]/BlogCarousel";
+import {ProjectShowcase} from "@/app/[lang]/ProjectShowcase";
 
 const Page = async ({params: {lang}}: { params: { lang: string } }) => {
     const dict = await getDictionary(lang as 'en' | 'id')
 
     return (
-        <div className="container bg-white shadow-lg flex flex-col items-center my-1 p-1 rounded-lg">
-            <h1 className={"text-xl"}>Hello There</h1>
-            <h1 className={"text-xl font-bold"}>{dict.home.title}</h1>
-            <h1 className={"text-xl underline"}>Coming Soon</h1>
-        </div>
+        <main className="w-full text-black dark:text-white">
+            <BetaDisclaimer lang={lang}/>
+            <section className="mb-8 rounded-2xl dark:text-black dark:bg-white p-2 w-3/4 mx-auto">
+                <h1 className="text-2xl font-bold mb-2">
+                    {dict.home.welcome_text}
+                </h1>
+                <p className="text-lg">
+                    {dict.home.welcome_text_2}
+                </p>
+            </section>
+            <ProjectShowcase lang={lang}/>
+            <BlogCarousel lang={lang}/>
+        </main>
     )
 }
 

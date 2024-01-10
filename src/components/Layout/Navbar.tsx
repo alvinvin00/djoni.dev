@@ -3,26 +3,18 @@
 import Link from 'next/link'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars, faClose} from "@fortawesome/free-solid-svg-icons";
-import React, {useEffect} from "react";
+import React from "react";
 import {NavLink} from "@/components/UI/NavLink";
-import {faMoon, faSun} from "@fortawesome/free-regular-svg-icons";
-import {useLocalStorage, useToggle} from "@uidotdev/usehooks";
+import {useToggle} from "@uidotdev/usehooks";
 import {useParams} from "next/navigation";
 import {Button, DialogTrigger, Modal, ModalOverlay} from "react-aria-components";
+import {ClientOnly} from "@/components/UI/ClientOnly";
+import {DarkModeButton} from "@/components/Button/DarkMode";
 
 export const Navbar = () => {
     const {lang} = useParams<{ lang: string }>();
 
     const [isOpen, setOpen] = useToggle(false);
-    const [darkMode, setDarkMode] = useLocalStorage('darkMode', false);
-
-    useEffect(() => {
-        if (darkMode) {
-            window.document.body.classList.add('dark');
-        } else {
-            window.document.body.classList.remove('dark');
-        }
-    }, [darkMode]);
 
 
     return (
@@ -34,17 +26,9 @@ export const Navbar = () => {
                     </h6>
                 </Link>
                 <div className="inline-flex gap-4 md:mr-4">
-                    <button>
-
-                    </button>
-                    <button
-                        className="transition-all hover:text-blue-400 active:scale-75"
-                        title={'Toggle Dark Mode'}
-                        onClick={() => {
-                            setDarkMode((prevState) => !prevState);
-                        }}>
-                        <FontAwesomeIcon icon={darkMode ? faMoon : faSun}/>
-                    </button>
+                    <ClientOnly>
+                        <DarkModeButton/>
+                    </ClientOnly>
                     <DialogTrigger>
                         <Button className="rounded-2xl p-1 md:hidden" onPress={() => {
                             setOpen(true)

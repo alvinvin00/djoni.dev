@@ -3,6 +3,7 @@ import {Layout} from "@/components/Layout";
 import {PropsWithChildren} from "react";
 import '../../styles/globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import {Analytics} from "@vercel/analytics/react";
 
 config.autoAddCss = false
 
@@ -16,6 +17,7 @@ const RootLayout = ({children, params}: PropsWithChildren<RootLayoutProps>) => (
     <Layout>
         {children}
     </Layout>
+    <Analytics/>
     </body>
     </html>
 );

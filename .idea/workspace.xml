@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: Menu Modal">
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: Vercel Analytics">
+      <change afterPath="$PROJECT_DIR$/src/components/Button/DarkMode.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/ClientOnly.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,12 +26,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -48,7 +54,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.Debug.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Debug.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
@@ -56,7 +62,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;v0&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.5.1&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.5.9&quot;,
@@ -93,11 +99,11 @@
       <recent name="D:\Projects\alvinvin00.github.io\src\assets\projects\simponi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\alvinvin00.github.io\src\components\Layout" />
       <recent name="D:\Projects\alvinvin00.github.io\src" />
       <recent name="D:\Projects\alvinvin00.github.io\src\assets\blogs" />
       <recent name="D:\Projects\alvinvin00.github.io\src\app\[lang]" />
       <recent name="D:\Projects\alvinvin00.github.io\src\components\UI\NavLink" />
-      <recent name="D:\Projects\alvinvin00.github.io\src\components\Card\BlogEntries" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -146,7 +152,11 @@
       <workItem from="1703041000337" duration="3420000" />
       <workItem from="1703056340364" duration="824000" />
       <workItem from="1703126880100" duration="4580000" />
-      <workItem from="1703211448193" duration="4747000" />
+      <workItem from="1703211448193" duration="5965000" />
+      <workItem from="1704159564413" duration="575000" />
+      <workItem from="1704160197991" duration="3986000" />
+      <workItem from="1704791364773" duration="693000" />
+      <workItem from="1704854501702" duration="4221000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -289,7 +299,95 @@
       <option name="project" value="LOCAL" />
       <updated>1703217705933</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feat: Renamed blog and added JSX key">
+      <option name="closed" value="true" />
+      <created>1703223609687</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1703223609687</updated>
+    </task>
+    <task id="LOCAL-00021" summary="chore: remove NextPage">
+      <option name="closed" value="true" />
+      <created>1703223833998</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1703223833998</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fix: wrong param">
+      <option name="closed" value="true" />
+      <created>1703224168808</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1703224168808</updated>
+    </task>
+    <task id="LOCAL-00023" summary="deps: updated dependencies">
+      <option name="closed" value="true" />
+      <created>1704162241949</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1704162241949</updated>
+    </task>
+    <task id="LOCAL-00024" summary="chore: commit .idea files">
+      <option name="closed" value="true" />
+      <created>1704162315701</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1704162315701</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat: Home Page">
+      <option name="closed" value="true" />
+      <created>1704162328808</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1704162328808</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: Blog Page">
+      <option name="closed" value="true" />
+      <created>1704163884891</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1704163884891</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: add generateMetadata">
+      <option name="closed" value="true" />
+      <created>1704164009143</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1704164009143</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: Home Page">
+      <option name="closed" value="true" />
+      <created>1704857902437</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1704857902437</updated>
+    </task>
+    <task id="LOCAL-00029" summary="fix: useIsClient">
+      <option name="closed" value="true" />
+      <created>1704858296125</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1704858296125</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat: Vercel Analytics">
+      <option name="closed" value="true" />
+      <created>1704858492402</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1704858492402</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,12 +413,21 @@
     <MESSAGE value="feat: added new components" />
     <MESSAGE value="fix: remove empty file" />
     <MESSAGE value="feat: tweak some style" />
-    <MESSAGE value="deps: updated dependencies" />
     <MESSAGE value="refactor!: moved files to accommodate i18n pattern" />
     <MESSAGE value="chore: added MD metadata" />
     <MESSAGE value="deps: add react-aria" />
     <MESSAGE value="feat: Menu Modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Menu Modal" />
+    <MESSAGE value="feat: Renamed blog and added JSX key" />
+    <MESSAGE value="chore: remove NextPage" />
+    <MESSAGE value="fix: wrong param" />
+    <MESSAGE value="deps: updated dependencies" />
+    <MESSAGE value="chore: commit .idea files" />
+    <MESSAGE value="feat: Blog Page" />
+    <MESSAGE value="feat: add generateMetadata" />
+    <MESSAGE value="feat: Home Page" />
+    <MESSAGE value="fix: useIsClient" />
+    <MESSAGE value="feat: Vercel Analytics" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Vercel Analytics" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
