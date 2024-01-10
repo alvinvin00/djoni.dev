@@ -8,7 +8,7 @@ interface ProjectShowcaseProps {
 }
 
 export const ProjectShowcase = ({lang}: ProjectShowcaseProps) => {
-    const projects = getProjects(lang)
+    const projects = getProjects(lang).slice(0, 4)
 
     return (
         <section className="mx-1">

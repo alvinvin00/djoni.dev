@@ -9,7 +9,6 @@ const Page = async ({params: {lang}}: { params: { lang: string } }) => {
 
     return (
         <main className="w-full text-black dark:text-white">
-            <BetaDisclaimer lang={lang}/>
             <section className="mb-8 rounded-2xl dark:text-black dark:bg-white p-2 w-3/4 mx-auto">
                 <h1 className="text-2xl font-bold mb-2">
                     {dict.home.welcome_text}

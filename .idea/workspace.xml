@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="fix: isClient">
-      <change afterPath="$PROJECT_DIR$/src/components/Card/CardMedia.tsx" afterDir="false" />
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: Showcase and Blog">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/blog/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/blog/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/showcase/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/showcase/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/ProjectShowcase.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/ProjectShowcase.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/about/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +159,7 @@
       <workItem from="1704159564413" duration="575000" />
       <workItem from="1704160197991" duration="3986000" />
       <workItem from="1704791364773" duration="693000" />
-      <workItem from="1704854501702" duration="6528000" />
+      <workItem from="1704854501702" duration="8447000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -398,7 +398,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704858849597</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="feat: Showcase and Blog">
+      <option name="closed" value="true" />
+      <created>1704861860206</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1704861860206</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +447,8 @@
     <MESSAGE value="fix: useIsClient" />
     <MESSAGE value="feat: Vercel Analytics" />
     <MESSAGE value="fix: isClient" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: isClient" />
+    <MESSAGE value="feat: Showcase and Blog" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Showcase and Blog" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

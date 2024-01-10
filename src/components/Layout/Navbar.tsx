@@ -67,9 +67,9 @@ export const Navbar = () => {
                 <NavLink href={`/${lang}/showcase`}>
                     Showcase
                 </NavLink>
-                <NavLink href={`/${lang}/blog`}>
-                    Blog
-                </NavLink>
+                {/*<NavLink href={`/${lang}/blog`}>*/}
+                {/*    Blog*/}
+                {/*</NavLink>*/}
                 <NavLink href={`/${lang}/about`}>
                     About
                 </NavLink>

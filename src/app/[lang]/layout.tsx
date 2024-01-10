@@ -1,9 +1,10 @@
 import {config} from "@fortawesome/fontawesome-svg-core";
 import {Layout} from "@/components/Layout";
-import {PropsWithChildren} from "react";
+import React, {PropsWithChildren} from "react";
 import '../../styles/globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import {Analytics} from "@vercel/analytics/react";
+import {BetaDisclaimer} from "@/components/Layout/BetaDisclaimer";
 
 config.autoAddCss = false
 
@@ -15,6 +16,7 @@ const RootLayout = ({children, params}: PropsWithChildren<RootLayoutProps>) => (
     <html lang={params.lang}>
     <body className={`text-black dark:text-white scroll-smooth`}>
     <Layout>
+        <BetaDisclaimer lang={params.lang}/>
         {children}
     </Layout>
     <Analytics/>
