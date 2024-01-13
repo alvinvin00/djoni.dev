@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: About page">
-      <change afterPath="$PROJECT_DIR$/src/app/[lang]/now/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/[lang]/withLang.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/about/en.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/about/id.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/now/en.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/now/id.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/ProjectShowcase.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/ProjectCarousel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/about/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/showcase/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/projects/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/CardContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/CardContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/CardHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/CardHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/greymatter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/greymatter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/alvinvin00.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djoni.dev.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +39,13 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -90,7 +84,7 @@
     "nodejs_package_manager_path": "D:\\Projects\\alvinvin00.github.io\\.yarn\\releases\\yarn-3.3.1.cjs",
     "npm.dev.executor": "Run",
     "settings.editor.selected.configurable": "vcs.Git",
-    "ts.external.directory.path": "D:\\Projects\\alvinvin00.github.io\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Program Files (x86)\\JetBrains\\WebStorm 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

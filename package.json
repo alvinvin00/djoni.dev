@@ -37,7 +37,6 @@
     "react-markdown": "^9.0.1",
     "typescript": "5.3.3"
   },
-  "packageManager": "yarn@4.0.1",
   "devDependencies": {
     "@babel/core": "^7.23.7",
     "@mdx-js/react": "^3.0.0",
