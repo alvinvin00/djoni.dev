@@ -1,7 +1,11 @@
 import React from "react";
+import clsx from "clsx";
 
-export const CardMedia = ({children}: {
+export const CardMedia = ({className, children}: {
+    className?: string,
     children: React.ReactNode
 }) => {
-    return <div className={'relative aspect-video w-full min-h-fit h-full max-h-40 object-fill'}>{children}</div>
+    const classes = clsx('relative aspect-video w-full object-fill', className);
+
+    return <div className={classes}>{children}</div>
 }

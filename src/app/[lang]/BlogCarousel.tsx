@@ -9,7 +9,7 @@ export const BlogCarousel = ({lang}: { lang: string }) => {
         return (
             <section className="my-1">
                 <h2 className="text-2xl font-bold mb-4">Latest Post</h2>
-                <div className={'grid grid-cols-4 gap-1'}>
+                <div className={'grid grid-cols-2 md:grid-cols-4 gap-1'}>
                     {projects.map((blog) => {
                         const metadata = blog.data;
 

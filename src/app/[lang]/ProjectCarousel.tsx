@@ -1,7 +1,8 @@
 import React from "react";
-import {Card, CardContent, CardHeader} from "@/components/Card";
+import {Card, CardContent, CardHeader, CardMedia} from "@/components/Card";
 import {getProjects} from "@/utils/greymatter";
 import dayjs from "dayjs";
+import Image from "next/image";
 
 interface ProjectShowcaseProps {
     lang: string
@@ -15,19 +16,25 @@ export const ProjectCarousel = ({lang}: ProjectShowcaseProps) => {
     return (
         <section className="mx-1">
             <h2 className="text-2xl font-bold mb-4">My Projects</h2>
-            <div className={'grid grid-cols-4 gap-2'}>
+            <div className={'grid grid-cols-2 md:grid-cols-4 gap-2'}>
                 {projects.map((project) => {
                     const metadata = project.data;
 
                     return (
-                        <Card key={project.data['slug']} className={'h-auto text-black'}>
+                        <Card key={metadata.slug} className={'h-auto text-black'}>
+                            <CardMedia className={'h-40'}>
+                                {metadata.thumbnail !== undefined
+                                    ? <Image src={metadata.thumbnail} alt={metadata.title} fill/>
+                                    : <div className={'h-40 bg-black'}></div>
+                                }
+                            </CardMedia>
                             <CardHeader>
                                 <h3 className="text-xl font-bold">
                                     {metadata.title}
                                 </h3>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-sm">
+                                <p className="text-sm line-clamp-3">
                                     {metadata.description}
                                 </p>
                             </CardContent>

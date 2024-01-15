@@ -2,8 +2,10 @@ import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
 
+const CONTENT_PATH = '/src/contents'
+
 const getMatterFromFile = (filePath: string) => {
-    const filepath = path.join(process.cwd(), `/src/assets/${filePath}`);
+    const filepath = path.join(process.cwd(), `${CONTENT_PATH}/${filePath}`);
 
     const fileContent = fs.readFileSync(filepath, 'utf8');
 
@@ -11,7 +13,7 @@ const getMatterFromFile = (filePath: string) => {
 }
 
 const getMatterFromFolder = (folderPath: string) => {
-    const cwDir = path.join(process.cwd(), `/src/assets/${folderPath}`);
+    const cwDir = path.join(process.cwd(), `${CONTENT_PATH}/${folderPath}`);
 
     return fs.readdirSync(`${cwDir}`).map((file) => {
         // Read markdown file as string
