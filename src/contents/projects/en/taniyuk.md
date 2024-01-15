@@ -5,7 +5,11 @@ description: A web platform designed to simplify and bring transparency to the p
 thumbnail: /media/projects/taniyuk.png
 author: Alvin Leonardo
 date: 2022-3-01
-categories: [ web, gatsby, react, nextjs ]
+categories:
+  - web
+  - react
+  - nextjs
+  - gatsby
 ---
 
 # Taniyuk
