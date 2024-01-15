@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: About page">
-      <change beforePath="$PROJECT_DIR$/.idea/alvinvin00.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djoni.dev.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/blog/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/blog/[slug]/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +31,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="v0" />
@@ -39,13 +39,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="main" />
-      </list>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -81,10 +74,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "D:\\Projects\\alvinvin00.github.io\\.yarn\\releases\\yarn-3.3.1.cjs",
+    "nodejs_package_manager_path": "pnpm",
     "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "ts.external.directory.path": "C:\\Program Files (x86)\\JetBrains\\WebStorm 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "ts.external.directory.path": "D:\\Projects\\djoni.dev\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
