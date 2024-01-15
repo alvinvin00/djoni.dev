@@ -14,8 +14,8 @@ export const ProjectCarousel = ({lang}: ProjectShowcaseProps) => {
     }).slice(0, 4)
 
     return (
-        <section className="mx-1">
-            <h2 className="text-2xl font-bold mb-4">My Projects</h2>
+        <section className="my-2">
+            <h2 className="text-2xl font-bold mb-4 text-center">My Projects</h2>
             <div className={'grid grid-cols-2 md:grid-cols-4 gap-2'}>
                 {projects.map((project) => {
                     const metadata = project.data;

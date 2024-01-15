@@ -7,9 +7,9 @@ export const BlogCarousel = ({lang}: { lang: string }) => {
     const projects = getBlogs(lang).slice(0, 4);
 
     return (
-        <section className="my-1">
-            <h2 className="text-2xl font-bold mb-4">Latest Post</h2>
-            <div className={'grid grid-cols-2 md:grid-cols-4 gap-1'}>
+        <section className="my-2">
+            <h2 className="text-2xl font-bold mb-4 text-center">Latest Post</h2>
+            <div className={'grid grid-cols-2 md:grid-cols-4 gap-2'}>
                 {projects.map((blog) => {
                     const metadata = blog.data;
 

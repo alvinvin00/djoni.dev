@@ -4,24 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: About page">
-      <change afterPath="$PROJECT_DIR$/contentlayer.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: Contentlayer and added translation key, also minor tweak to design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contents/blog/en/taniyuk-refactor.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/blog/en/taniyuk-refactor.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contents/blog/id/taniyuk-refactor.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/blog/id/taniyuk-refactor.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contents/projects/en/eliteguard.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/en/eliteguard.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contents/projects/en/laksa-online.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/en/laksa-online.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contents/projects/en/simponi.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/en/simponi.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contents/projects/en/taniyuk.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/en/taniyuk.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contents/projects/id/eliteguard.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/id/eliteguard.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contents/projects/id/laksa-online.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/id/laksa-online.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contents/projects/id/simponi.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/id/simponi.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contents/projects/id/taniyuk.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/id/taniyuk.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/BlogCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/BlogCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/ProjectCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/ProjectCarousel.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -426,7 +412,23 @@
       <option name="project" value="LOCAL" />
       <updated>1704864996965</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="feat: Contentlayer">
+      <option name="closed" value="true" />
+      <created>1705323728229</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1705323728229</updated>
+    </task>
+    <task id="LOCAL-00035" summary="feat: Contentlayer and added translation key, also minor tweak to design">
+      <option name="closed" value="true" />
+      <created>1705330435667</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1705330435667</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,8 +446,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
-    <MESSAGE value="deps: updated dependencies, removed tanstack, added fontawesome" />
     <MESSAGE value="feat: added Navbar" />
     <MESSAGE value="fix: text color on hover and active not working" />
     <MESSAGE value="feat: Showcase" />
@@ -469,7 +469,9 @@
     <MESSAGE value="fix: isClient" />
     <MESSAGE value="feat: Showcase and Blog" />
     <MESSAGE value="feat: About page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: About page" />
+    <MESSAGE value="feat: Contentlayer" />
+    <MESSAGE value="feat: Contentlayer and added translation key, also minor tweak to design" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Contentlayer and added translation key, also minor tweak to design" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
