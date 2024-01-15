@@ -9,8 +9,8 @@ export const Footer = () => {
     const {lang} = useParams<{ lang: string }>()
 
     return (
-        <footer className={"py-4 text-white"}>
-            <div className={'flex flex-row justify-between'}>
+        <footer className={"mt-2 py-4 text-white bg-blue-400 dark:bg-transparent"}>
+            <div className={'flex flex-row justify-between container lg:max-w-screen-lg'}>
                 <div className={'col-span-6'}>
                     <p>
                         &copy; 2024 Djoni&apos;s Den, All Rights Reserved. <br/>
@@ -23,14 +23,14 @@ export const Footer = () => {
                     </p>
                     {
                         socials.map((social) => (
-                            <Link key={social.id} href={social.url}>
-                                <div className={'rounded p-1 size-8 grid place-items-center'}
-                                     title={social.title ?? social.name} style={{
-                                    backgroundColor: social.color,
-                                    color: 'white',
-                                }}>
+                            <Link key={social.id} href={social.url} title={social.title ?? social.name}>
+                                <span className={'rounded p-2 size-8 grid place-items-center'}
+                                     style={{
+                                         backgroundColor: social.color,
+                                         color: 'white',
+                                     }}>
                                     <FontAwesomeIcon icon={social.icon}/>
-                                </div>
+                                </span>
                             </Link>
                         ))
                     }

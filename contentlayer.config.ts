@@ -7,14 +7,13 @@ export const Blog = defineDocumentType(() => ({
         title: {type: 'string', required: true},
         date: {type: 'date', required: true},
         categories: {type: 'list', of: {type: 'string'}, required: true},
+        slug: {type: 'string', required: true},
         author: {type: 'string', required: true},
     },
     computedFields: {
         url: {
             type: 'string',
-            resolve: (doc) => {
-                return `/blog/${doc._raw.flattenedPath}`;
-            }
+            resolve: (doc) => `${doc._raw.flattenedPath}`
         },
     },
 }))
@@ -34,9 +33,7 @@ export const Projects = defineDocumentType(() => ({
     computedFields: {
         url: {
             type: 'string',
-            resolve: (doc) => {
-                return `/blog/${doc._raw.flattenedPath}`;
-            }
+            resolve: (doc) => `${doc._raw.flattenedPath}`
         },
     },
 }))
@@ -51,9 +48,7 @@ export const About = defineDocumentType(() => ({
     computedFields: {
         url: {
             type: 'string',
-            resolve: (doc) => {
-                return `/about/${doc._raw.flattenedPath}`;
-            }
+            resolve: (doc) => `${doc._raw.flattenedPath}`
         },
     },
 }))
@@ -68,9 +63,7 @@ export const Now = defineDocumentType(() => ({
     computedFields: {
         url: {
             type: 'string',
-            resolve: (doc) => {
-                return `/now/${doc._raw.flattenedPath}`;
-            }
+            resolve: (doc) => `${doc._raw.flattenedPath}`
         },
     },
 }))

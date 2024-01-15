@@ -10,18 +10,16 @@ export const NavLink = function ({href, children}: { href: string, children: Rea
     const linkClasses = clsx([
         "text-md font-semibold",
         "dark:text-white",
-        "group-hover:text-blue-600",
-        'active:text-blue-400',
-        'visited:text-purple-500',
+        "group-hover:drop-shadow-2xl",
+        "duration-300 ease-in-out",
         {"text-blue-400": pathname === href}
     ]);
 
     return (
         <div className="group transition-all flex flex-col">
-            <Link href={href} className={linkClasses} >
+            <Link href={href} className={linkClasses}>
                 {children}
             </Link>
-            <span className="block h-0.5 bg-blue-400 max-w-0 group-hover:max-w-full duration-500 ease-out"></span>
         </div>
     );
 };

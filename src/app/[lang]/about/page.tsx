@@ -8,9 +8,9 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
     return (
         <div className="container">
             <div
-                className={'w-3/4 mx-auto rounded-lg p-2 bg-white text-center dark:bg-black text-black dark:text-white'}>
-                <h1 className={'text-lg font-bold'}>
-                    Alvin Leonardo <span className={'text-blue-700'}>Djoni</span>
+                className={'rounded-lg p-2 text-center shadow-lg bg-white dark:bg-gray-600 text-black dark:text-white'}>
+                <h1 className={'text-xl font-bold'}>
+                    Alvin Leonardo <span className={'text-blue-800 dark:text-blue-200'}>Djoni</span>
                 </h1>
                 <h2 className={'text-sm font-semibold'}>
                     Software Engineer
