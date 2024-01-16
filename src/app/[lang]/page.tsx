@@ -15,7 +15,7 @@ const Page = async ({params: {lang}}: { params: { lang: string } }) => {
                 <Image src={'/assets/home-bg.jpg'} alt={'Photo of a code snippet, courtesy of Unsplash'} fill/>
             </div>
             <section className="container">
-                <div className="mb-6 rounded-2xl dark:text-black dark:bg-white p-2 w-3/4 mx-auto relative top-[-50px]">
+                <div className="mb-6 rounded-2xl shadow-xl dark:bg-gray-700 p-2 w-3/4 mx-auto relative top-[-50px]">
                     <h1 className="text-2xl text-center font-bold mb-2">
                         {dict.home.welcome_text}
                     </h1>
