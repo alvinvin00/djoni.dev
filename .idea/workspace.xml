@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: Contentlayer and added translation key, also minor tweak to design">
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="fix: add gap and fix margin orientation">
+      <change afterPath="$PROJECT_DIR$/public/assets/home-bg.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/[lang]/BlogCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/BlogCarousel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/ProjectCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/ProjectCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/BetaDisclaimer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/BetaDisclaimer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dictionaries/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dictionaries/id.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/id.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dictionaries/type.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,10 +74,10 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.5.1&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.5.9&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;21.5.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.11.4&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/alvinvin00.github.io/src/assets/about&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/djoni.dev/public/assets&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -77,7 +86,7 @@
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
     &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\djoni.dev\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -93,11 +102,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\djoni.dev\public\assets" />
       <recent name="D:\Projects\alvinvin00.github.io\src\assets\about" />
       <recent name="D:\Projects\alvinvin00.github.io\src\assets\projects\id" />
       <recent name="D:\Projects\alvinvin00.github.io\src\assets\blogs\id" />
       <recent name="D:\Projects\alvinvin00.github.io\src\assets\projects\en" />
-      <recent name="D:\Projects\alvinvin00.github.io\src\assets\projects\taniyuk" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\alvinvin00.github.io\src\components\Layout" />
@@ -158,6 +167,9 @@
       <workItem from="1704160197991" duration="3986000" />
       <workItem from="1704791364773" duration="693000" />
       <workItem from="1704854501702" duration="12479000" />
+      <workItem from="1705407033570" duration="1215000" />
+      <workItem from="1705409920665" duration="2046000" />
+      <workItem from="1705412021188" duration="2618000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -428,7 +440,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705330435667</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fix: add gap and fix margin orientation">
+      <option name="closed" value="true" />
+      <created>1705330766287</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1705330766287</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,7 +466,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: added Navbar" />
     <MESSAGE value="fix: text color on hover and active not working" />
     <MESSAGE value="feat: Showcase" />
     <MESSAGE value="feat: added new components" />
@@ -471,7 +490,8 @@
     <MESSAGE value="feat: About page" />
     <MESSAGE value="feat: Contentlayer" />
     <MESSAGE value="feat: Contentlayer and added translation key, also minor tweak to design" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Contentlayer and added translation key, also minor tweak to design" />
+    <MESSAGE value="fix: add gap and fix margin orientation" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: add gap and fix margin orientation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

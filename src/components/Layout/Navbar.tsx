@@ -14,15 +14,15 @@ import {DarkModeButton} from "@/components/Button/DarkMode";
 const Navlinks = (props: { lang: string }) => {
     return (
         <>
+            <NavLink href={`/${props.lang}/now`}>
+                Now
+            </NavLink>
             <NavLink href={`/${props.lang}/projects`}>
                 Projects
             </NavLink>
-            {/*<NavLink href={`/${lang}/now`}>*/}
-            {/*    Now*/}
-            {/*</NavLink>*/}
-            {/*<NavLink href={`/${lang}/blog`}>*/}
-            {/*    Blog*/}
-            {/*</NavLink>*/}
+            <NavLink href={`/${props.lang}/blog`}>
+                Blog
+            </NavLink>
             <NavLink href={`/${props.lang}/about`}>
                 About
             </NavLink>
@@ -38,8 +38,8 @@ export const Navbar = () => {
     return (
         <nav className="container sticky top-0 flex flex-col md:flex-row p-4 text-xl">
             <div className="flex flex-grow justify-between items-center text-black dark:text-white">
-                <Link href='/' className="text-lg font-bold inline transition-all hover:text-blue-400 hover:scale-110">
-                    <h6>
+                <Link href='/' className="inline transition-all hover:text-blue-400 hover:scale-110">
+                    <h6 className={'text-lg font-bold'}>
                         Djoni&apos;s Den
                     </h6>
                 </Link>
@@ -57,8 +57,8 @@ export const Navbar = () => {
                             <Modal
                                 className={'fixed top-3 left-0 right-0 p-2 max-w-full mx-4 rounded-2xl bg-blue-300 dark:bg-gray-700 z-50'}
                             >
-                                <div className={'flex flex-row justify-between'}>
-                                    <h6 className={'text-black dark:text-white'}>Djoni&apos;s Den</h6>
+                                <div className={'flex flex-row justify-between text-black dark:text-white'}>
+                                    <h6 className={'text-lg font-bold'}>Djoni&apos;s Den</h6>
                                     <Button className={'text-black dark:text-white'} onPress={() => {
                                         setOpen(false)
                                     }}>

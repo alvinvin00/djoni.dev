@@ -3,8 +3,11 @@
     "beta_disclaimer": "Situs ini masih dalam tahap pengembangan. Situs ini dapat berubah kapan saja. Terima kasih atas pengertiannya.",
     "description": "Ini halaman beranda.",
     "project_header": "Proyek Saya",
-    "title": "Beranda",
     "welcome_text": "Selamat datang di blog Djoni!",
-    "welcome_text_2": "Di sini Anda dapat menemukan beberapa proyek dan postingan blog terbaru saya. Jangan ragu untuk menjelajahi dan menghubungi jika Anda ingin berkolaborasi!"
+    "welcome_text_2": "Di sini Anda dapat menemukan beberapa proyek dan postingan blog terbaru saya. Jangan ragu untuk menjelajahi dan menghubungi jika Anda ingin berkolaborasi!",
+    "project_button": "Lihat projek saya",
+    "now_button": "Lagi apa sekarang?",
+    "blog_button": "Baca blog saya",
+    "thanks_text": "Terima kasih telah mengunjungi situs saya!"
   }
 }

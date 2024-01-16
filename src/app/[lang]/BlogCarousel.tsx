@@ -9,10 +9,9 @@ export const BlogCarousel = ({lang}: { lang: string }) => {
     return (
         <section className="my-2">
             <h2 className="text-2xl font-bold mb-4 text-center">Latest Post</h2>
-            <div className={'grid grid-cols-2 md:grid-cols-4 gap-2'}>
+            <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2'}>
                 {projects.map((blog) => {
                     const metadata = blog.data;
-
                     return (
                         <Card key={metadata.slug} className={'h-20 text-black'}>
                             <CardHeader>

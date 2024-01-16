@@ -8,7 +8,7 @@ export const BetaDisclaimer = async ({lang}: { lang: string }) => {
 
     return (
         <section
-            className={"flex gap-2 text-sm font-bold p-2 w-3/4 mx-auto bg-yellow-300 text-black my-1"}>
+            className={"container flex gap-2 text-sm font-bold p-2 w-3/4 mx-auto bg-yellow-300 text-black my-1"}>
             <div>
                 <FontAwesomeIcon icon={faTriangleExclamation} size={"sm"}/>
             </div>

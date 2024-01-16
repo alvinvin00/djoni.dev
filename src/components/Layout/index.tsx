@@ -13,11 +13,9 @@ export const Layout = ({children}: LayoutProps) => {
             </div>
             <div
                 className="py-1 dark:bg-gradient-to-b dark:from-gray-700 dark:via-gray-900 dark:to-black transition-colors ease-out duration-500">
-                <div className={'container lg:max-w-screen-lg'}>
-                    <main>
-                        {children}
-                    </main>
-                </div>
+                <main>
+                    {children}
+                </main>
                 <Footer/>
             </div>
         </div>
