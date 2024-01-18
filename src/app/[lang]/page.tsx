@@ -11,8 +11,13 @@ const Page = async ({params: {lang}}: { params: { lang: string } }) => {
 
     return (
         <div className="text-black dark:text-white">
-            <div className={'relative w-full h-auto max-h-60 aspect-video object-cover'}>
-                <Image src={'/assets/home-bg.jpg'} alt={'Photo of a code snippet, courtesy of Unsplash'} fill/>
+            <div className={'relative w-full h-auto max-h-60 aspect-video -z-50'}>
+                <Image
+                    src={'/assets/home-bg.jpg'}
+                       alt={'Photo of a code snippet, courtesy of Unsplash'}
+                       className={'object-cover'}
+                       fill
+                />
             </div>
             <section className="container">
                 <div className="mb-6 rounded-2xl shadow-xl dark:bg-gray-700 p-2 w-3/4 mx-auto relative top-[-50px]">

@@ -9,10 +9,10 @@ export const NavLink = function ({href, children}: { href: string, children: Rea
 
     const linkClasses = clsx([
         "text-md font-semibold",
-        "dark:text-white",
+        "text-black dark:text-white",
         "group-hover:drop-shadow-2xl",
         "duration-300 ease-in-out",
-        {"text-blue-400": pathname === href}
+        {"text-blue-400 dark:text-blue-400": pathname === href}
     ]);
 
     return (

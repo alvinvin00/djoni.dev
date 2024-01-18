@@ -10,7 +10,7 @@ export const Footer = () => {
 
     return (
         <footer className={"mt-2 py-4 text-white bg-blue-400 dark:bg-transparent"}>
-            <div className={'flex flex-row justify-between container lg:max-w-screen-lg'}>
+            <div className={'flex flex-row justify-between container'}>
                 <div className={'col-span-6'}>
                     <p>
                         &copy; 2024 Djoni&apos;s Den, All Rights Reserved. <br/>
