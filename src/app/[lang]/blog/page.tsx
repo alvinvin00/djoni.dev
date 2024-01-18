@@ -6,9 +6,10 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
     const blogs = getBlogs(lang)
 
     return (
-        <>
-            <div className="flex flex-col gap-4 py-2">
-                <div className="container flex flex-col items-center bg-white shadow-lg rounded-xl">
+        <div className={'container'}>
+            <div className="flex flex-col gap-4 my-2">
+                <div
+                    className="flex flex-col items-center bg-white dark:bg-gray-700 dark:text-white py-2 shadow-lg rounded-xl">
                     <h5 className="text-lg font-bold">
                         Blog
                     </h5>
@@ -19,11 +20,12 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
                         Writing all about programming and video games.
                     </p>
                 </div>
-                <div className="container grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 z-10">
+                <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 z-10">
                     {blogs.map((blog) => {
                         const metadata = blog.data
                         return (
-                            <Card key={metadata.slug} className="flex flex-col gap-2">
+                            <Card key={metadata.slug}
+                                  className="flex flex-col gap-2 bg-white dark:bg-gray-700 dark:text-white">
                                 <CardHeader>
                                     <h3 className="text-lg font-bold line-clamp-2 overflow-clip overflow-ellipsis ">
                                         {metadata.title}
@@ -33,20 +35,21 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
                                     <p className="text-md font-light line-clamp-3">
                                         {metadata.description}
                                     </p>
+                                    <div className="flex flex-col gap-2">
+                                        <p className="text-xs font-light">
+                                            {metadata.date}
+                                        </p>
+                                        {/*<p className="text-xs font-light">*/}
+                                        {/*    {metadata.read_time}*/}
+                                        {/*</p>*/}
+                                    </div>
                                 </CardContent>
-                                <div className="flex flex-col gap-2">
-                                    <p className="text-xs font-light">
-                                    {metadata.date}
-                                    </p>
-                                    {/*<p className="text-xs font-light">*/}
-                                    {/*    {metadata.read_time}*/}
-                                    {/*</p>*/}
-                                </div>
+
                             </Card>)
                     })}
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

@@ -14,7 +14,7 @@ type RootLayoutProps = { params: { lang: string } };
 
 const RootLayout = ({children, params}: PropsWithChildren<RootLayoutProps>) => (
     <html lang={params.lang}>
-    <body className={`text-black dark:text-white scroll-smooth`}>
+    <body className={`text-black dark:text-white scroll-smooth min-h-screen`}>
     <Layout>
         <BetaDisclaimer lang={params.lang}/>
         {children}
