@@ -10,7 +10,7 @@ export const Footer = () => {
 
     return (
         <footer className={"mt-2 py-4 text-white bg-blue-400 dark:bg-transparent"}>
-            <div className={'flex flex-row justify-between container'}>
+            <div className={'container flex flex-col-reverse md:flex-row justify-between gap-2'}>
                 <div className={'col-span-6'}>
                     <p>
                         &copy; 2024 Djoni&apos;s Den, All Rights Reserved. <br/>
@@ -18,17 +18,16 @@ export const Footer = () => {
                     </p>
                 </div>
                 <div className={'col-span-6 flex flex-row items-center gap-1'}>
-                    <p>
+                    <h6 className={'font-bold'}>
                         Find me on Cyberspace:
-                    </p>
+                    </h6>
                     {
                         socials.map((social) => (
                             <Link key={social.id} href={social.url} title={social.title ?? social.name}>
-                                <span className={'rounded p-2 size-8 grid place-items-center'}
-                                     style={{
-                                         backgroundColor: social.color,
-                                         color: 'white',
-                                     }}>
+                                <span className={'rounded p-2 size-8 grid place-items-center text-white'}
+                                      style={{
+                                          backgroundColor: social.color,
+                                      }}>
                                     <FontAwesomeIcon icon={social.icon}/>
                                 </span>
                             </Link>

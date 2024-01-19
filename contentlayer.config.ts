@@ -22,13 +22,17 @@ export const Projects = defineDocumentType(() => ({
     name: 'Projects',
     filePathPattern: `projects/**/*.md`,
     fields: {
-        title: {type: 'string', required: true},
-        slug: {type: 'string', required: true},
-        description: {type: 'string', required: true},
         author: {type: 'string', required: true},
-        thumbnail: {type: 'string'},
-        date: {type: 'date', required: true},
         categories: {type: 'list', of: {type: 'string'}, required: true},
+        date: {type: 'date', required: true},
+        description: {type: 'string', required: true},
+        github: {type: 'string'},
+        link: {type: 'string'},
+        slug: {type: 'string', required: true},
+        status: {type: 'enum', options: ['active', 'inactive', 'archived']},
+        tags: {type: 'list', of: {type: 'string'}},
+        thumbnail: {type: 'string'},
+        title: {type: 'string', required: true},
     },
     computedFields: {
         url: {

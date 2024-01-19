@@ -1,23 +1,19 @@
 'use client'
 import React, {ReactNode} from "react";
 import Link from "next/link";
-import clsx from "clsx";
 import {usePathname} from "next/navigation";
 
 export const NavLink = function ({href, children}: { href: string, children: ReactNode }) {
     const pathname = usePathname()
 
-    const linkClasses = clsx([
-        "text-md font-semibold",
-        "text-black dark:text-white",
-        "group-hover:drop-shadow-2xl",
-        "duration-300 ease-in-out",
-        {"text-blue-400 dark:text-blue-400": pathname === href}
-    ]);
-
     return (
         <div className="group transition-all flex flex-col">
-            <Link href={href} className={linkClasses}>
+            <Link
+                href={href}
+                className={`text-md font-semibold text-black dark:text-white data-[current=true]:text-blue-400 data-[current=true]:dark:text-blue-400 group-hover:text-blue-400 group-hover:drop-shadow-2xl group-hover:drop-shadow-blue-400 duration-300 ease-in-out`
+                }
+                data-current={pathname === href}
+            >
                 {children}
             </Link>
         </div>

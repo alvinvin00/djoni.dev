@@ -13,11 +13,11 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
                     <h5 className="text-lg font-bold">
                         Blog
                     </h5>
-                    <p className="text-md">
-                        I&apos;m uploading my blog entries here.
-                    </p>
                     <p className="text-sm">
                         Writing all about programming and video games.
+                    </p>
+                    <p className={'text-yellow-200 font-bold'}>
+                        DISCLAIMER: All opinions expressed here are solely author's opinion and not representing anyone
                     </p>
                 </div>
                 <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 z-10">

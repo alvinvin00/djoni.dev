@@ -1,7 +1,8 @@
 import React from "react";
 import {getProjects} from "@/utils/greymatter";
-import {Card, CardContent, CardHeader} from "@/components/Card";
+import {Card, CardContent, CardHeader, CardMedia} from "@/components/Card";
 import dayjs from "dayjs";
+import Image from "next/image";
 
 const Page = ({params: {lang}}: { params: { lang: string } }) => {
     const projects = getProjects(lang).sort((a, b) => {
@@ -11,7 +12,8 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
     return (
         <div className='container'>
             <div className="flex flex-col gap-4 py-2">
-                <div className="flex flex-col items-center bg-white dark:bg-gray-700 dark:text-white shadow-lg rounded-xl">
+                <div
+                    className="flex flex-col items-center bg-white dark:bg-gray-700 dark:text-white shadow-lg rounded-xl">
                     <h5 className="text-lg font-bold">
                         Projects
                     </h5>
@@ -24,6 +26,9 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
                         const metadata = project.data
                         return (
                             <Card key={metadata.slug} className={'h-auto bg-white dark:bg-gray-700 dark:text-white'}>
+                                <CardMedia>
+                                    <Image src={metadata.thumbnail} alt={metadata.title} className={'object-cover'} fill/>
+                                </CardMedia>
                                 <CardHeader>
                                     <h3 className="text-lg font-bold whitespace-nowrap overflow-clip overflow-ellipsis">
                                         {metadata.title}
@@ -34,7 +39,8 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
                                         {metadata.description}
                                     </p>
                                 </CardContent>
-                            </Card>)
+                            </Card>
+                        )
                     })}
                 </div>
             </div>

@@ -4,15 +4,28 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="deps: updated dependencies">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="fix: invert colors on dark mode">
+      <change afterPath="$PROJECT_DIR$/public/media/projects/simponi/screen-0.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/projects/simponi/screen-1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/projects/simponi/screen-2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/projects/simponi/screen-3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/projects/simponi/screen-4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/projects/simponi/screen-5.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/media/projects/simponi/screen-6.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/BlogCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/BlogCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contentlayer.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/contentlayer.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/media/projects/taniyuk.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/media/projects/taniyuk/taniyuk.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/[lang]/blog/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/blog/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/now/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/now/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/BetaDisclaimer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/BetaDisclaimer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/projects/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/projects/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contents/projects/en/simponi.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/en/simponi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contents/projects/id/simponi.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/id/simponi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contents/projects/id/taniyuk.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/id/taniyuk.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +86,8 @@
     "javascript.nodejs.core.library.configured.version": "20.5.1",
     "javascript.nodejs.core.library.typings.version": "20.5.9",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Projects/synergy-test",
+    "last.edited.regexp": "_next/test",
+    "last_opened_file_path": "D:/Projects/djoni.dev/public/assets",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -105,11 +119,11 @@
       <recent name="D:\Projects\alvinvin00.github.io\src\assets\projects\en" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\djoni.dev\public\media\projects\taniyuk" />
       <recent name="D:\Projects\alvinvin00.github.io\src\components\Layout" />
       <recent name="D:\Projects\alvinvin00.github.io\src" />
       <recent name="D:\Projects\alvinvin00.github.io\src\assets\blogs" />
       <recent name="D:\Projects\alvinvin00.github.io\src\app\[lang]" />
-      <recent name="D:\Projects\alvinvin00.github.io\src\components\UI\NavLink" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -166,7 +180,8 @@
       <workItem from="1705407033570" duration="1215000" />
       <workItem from="1705409920665" duration="2046000" />
       <workItem from="1705412021188" duration="2618000" />
-      <workItem from="1705554502622" duration="5057000" />
+      <workItem from="1705554502622" duration="6285000" />
+      <workItem from="1705634943046" duration="8634000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -453,7 +468,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705559536700</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fix: invert colors on dark mode">
+      <option name="closed" value="true" />
+      <created>1705562284496</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1705562284496</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,8 +494,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: text color on hover and active not working" />
-    <MESSAGE value="feat: Showcase" />
     <MESSAGE value="feat: added new components" />
     <MESSAGE value="fix: remove empty file" />
     <MESSAGE value="feat: tweak some style" />
@@ -496,7 +517,9 @@
     <MESSAGE value="feat: Contentlayer and added translation key, also minor tweak to design" />
     <MESSAGE value="fix: add gap and fix margin orientation" />
     <MESSAGE value="deps: updated dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="deps: updated dependencies" />
+    <MESSAGE value="fix: inverted colors on dark mode" />
+    <MESSAGE value="fix: invert colors on dark mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: invert colors on dark mode" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
