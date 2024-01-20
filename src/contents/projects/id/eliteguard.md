@@ -10,4 +10,10 @@ categories:
   - laravel
   - flutter
   - android
+tags:
+  - mobile
+  - web
+  - laravel
+  - flutter
+  - android
 ---

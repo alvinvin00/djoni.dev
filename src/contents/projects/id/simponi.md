@@ -10,6 +10,13 @@ categories:
   - mobile
   - flutter
   - android
+images:
+  - /media/projects/simponi/screen-1.webp
+  - /media/projects/simponi/screen-2.webp
+  - /media/projects/simponi/screen-3.webp
+  - /media/projects/simponi/screen-4.webp
+  - /media/projects/simponi/screen-5.webp
+  - /media/projects/simponi/screen-6.webp
 tags:
   - mobile
   - flutter

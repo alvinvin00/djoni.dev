@@ -28,6 +28,7 @@ export const Projects = defineDocumentType(() => ({
         description: {type: 'string', required: true},
         github: {type: 'string'},
         link: {type: 'string'},
+        images: {type: 'list', of: {type: 'string'}},
         slug: {type: 'string', required: true},
         status: {type: 'enum', options: ['active', 'inactive', 'archived']},
         tags: {type: 'list', of: {type: 'string'}},
