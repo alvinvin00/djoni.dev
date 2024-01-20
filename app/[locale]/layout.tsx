@@ -39,18 +39,25 @@ export const generateMetadata = async ({params: {locale}}: { params: { locale: s
     const t = await getTranslations({locale, namespace: 'Metadata'})
 
     return {
-        title: t('title'),
-        description: t('description'),
-        metadataBase: new URL('https://djoni.dev'),
         alternates: {
             canonical: '/',
             languages: {
                 id: '/id',
             }
         },
+        description: t('description'),
+        metadataBase: new URL('https://djoni.dev'),
         openGraph: {
             images: '/assets/og/semarang-red.jpg',
             url: 'https://djoni.dev'
+        },
+        title: {
+            template: "'%s | Djoni's Den",
+            default: t('title')
+        },
+        twitter: {
+            creator: '@alvinvin00',
+            site: '@alvinvin00'
         },
     } satisfies Metadata
 }
