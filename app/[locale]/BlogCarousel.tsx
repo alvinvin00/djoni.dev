@@ -1,7 +1,8 @@
 import React from "react";
 import {getBlogs} from "@/utils/greymatter";
-import {Card, CardContent, CardHeader} from "@/components/Card";
+import {Card, CardContent, CardHeader, CardMedia} from "@/components/Card";
 import dayjs from "dayjs";
+import Image from "next/image";
 
 export const BlogCarousel = ({locale}: { locale: string }) => {
     const projects = getBlogs(locale).slice(0, 4);
@@ -13,7 +14,12 @@ export const BlogCarousel = ({locale}: { locale: string }) => {
                 {projects.map((blog) => {
                     const metadata = blog.data;
                     return (
-                        <Card key={metadata.slug} className={'h-20 bg-white dark:bg-gray-700 dark:text-white'}>
+                        <Card key={metadata.slug} className={'bg-white dark:bg-gray-700 dark:text-white'}>
+                            <CardMedia className={'h-20'}>
+                                <Image src={metadata.thumbnail} alt={metadata.title} fill
+                                       className={'object-cover object-top'}
+                                />
+                            </CardMedia>
                             <CardHeader>
                                 <h3 className="text-lg font-bold">
                                     {metadata.title}

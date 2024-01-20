@@ -1,13 +1,10 @@
 'use client';
 
 import {socials} from "@/config/socials";
-import {useParams} from "next/navigation";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 export const Footer = () => {
-    const {lang} = useParams<{ lang: string }>()
-
     return (
         <footer className={"mt-2 py-4 text-white bg-blue-400 dark:bg-transparent"}>
             <div className={'container flex flex-col-reverse md:flex-row justify-between gap-2'}>

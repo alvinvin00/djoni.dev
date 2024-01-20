@@ -6,7 +6,6 @@ import {faBars, faClose} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import {NavLink} from "@/components/UI/NavLink";
 import {useToggle} from "@uidotdev/usehooks";
-import {useParams} from "next/navigation";
 import {Button, DialogTrigger, Modal, ModalOverlay} from "react-aria-components";
 import {ClientOnly} from "@/components/UI/ClientOnly";
 import {DarkModeButton} from "@/components/Button/DarkMode";
@@ -31,8 +30,6 @@ const Navlinks = () => {
 };
 
 export const Navbar = () => {
-    const {lang} = useParams<{ lang: string }>();
-
     const [isOpen, setOpen] = useToggle(false);
 
     return (
