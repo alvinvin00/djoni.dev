@@ -1,8 +1,11 @@
 import React from "react";
 import {getBlogs} from "@/utils/greymatter";
 import {Card, CardContent, CardHeader} from "@/components/Card";
+import {unstable_setRequestLocale} from "next-intl/server";
 
 const Page = ({params: {locale}}: { params: { locale: string } }) => {
+    unstable_setRequestLocale(locale);
+
     const blogs = getBlogs(locale)
 
     return (

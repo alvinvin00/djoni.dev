@@ -1,5 +1,6 @@
 import React from 'react';
 import {getBlogData, getBlogs} from "@/utils/greymatter";
+import {unstable_setRequestLocale} from "next-intl/server";
 
 type BlogContentProps = {
     params: {
@@ -9,6 +10,8 @@ type BlogContentProps = {
 };
 
 export const generateStaticParams = ({params: {locale}}: { params: { locale: string } }) => {
+    unstable_setRequestLocale(locale);
+
     const blogs = getBlogs(locale);
 
     return blogs.map((blog) => {
@@ -21,6 +24,8 @@ export const generateStaticParams = ({params: {locale}}: { params: { locale: str
 }
 
 export const generateMetadata = ({params: {locale, slug}}: BlogContentProps) => {
+    unstable_setRequestLocale(locale);
+
     const matterResult = getBlogData(locale, slug);
 
     return {
@@ -31,6 +36,8 @@ export const generateMetadata = ({params: {locale, slug}}: BlogContentProps) => 
 }
 
 const Page = ({params: {locale, slug}}: BlogContentProps) => {
+    unstable_setRequestLocale(locale);
+
     const matterResult = getBlogData(locale, slug);
 
     return <>

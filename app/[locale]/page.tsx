@@ -9,6 +9,8 @@ import {useTranslations} from "next-intl";
 import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
 
 const Page = ({params: {locale}}: { params: { locale: string } }) => {
+    unstable_setRequestLocale(locale);
+
     const t = useTranslations('Home')
 
     return (

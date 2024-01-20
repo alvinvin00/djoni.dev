@@ -1,7 +1,10 @@
 import {allNows} from "contentlayer/generated";
 import dayjs from "dayjs";
+import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
 
 const NowPage = ({params: {locale}}: { params: { locale: string } }) => {
+    unstable_setRequestLocale(locale);
+
     const now = allNows.filter((now) => now._raw.flattenedPath === `now/${locale}`).at(0)
 
     return (
@@ -16,8 +19,14 @@ const NowPage = ({params: {locale}}: { params: { locale: string } }) => {
     )
 }
 
-export const generateMetadata = () => ({
-    title: "What I'm doing now | Djoni's Den"
-})
+export const generateMetadata = async ({params: {locale}}: { params: { locale: string } }) => {
+    unstable_setRequestLocale(locale);
+
+    const t = await getTranslations({locale, namespace: 'Now'})
+
+    return ({
+        title: t('title')
+    });
+}
 
 export default NowPage

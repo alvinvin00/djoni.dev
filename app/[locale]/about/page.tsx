@@ -1,8 +1,11 @@
 import React from "react";
 import {getAboutData} from "@/utils/greymatter";
 import Markdown from "react-markdown";
+import {unstable_setRequestLocale} from "next-intl/server";
 
 const Page = ({params: {locale}}: { params: { locale: string } }) => {
+    unstable_setRequestLocale(locale);
+
     const aboutData = getAboutData(locale as 'en' | 'id')
 
     return (

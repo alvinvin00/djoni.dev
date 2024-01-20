@@ -3,8 +3,11 @@ import {getProjects} from "@/utils/greymatter";
 import {Card, CardContent, CardHeader, CardMedia} from "@/components/Card";
 import dayjs from "dayjs";
 import Image from "next/image";
+import {unstable_setRequestLocale} from "next-intl/server";
 
 const Page = ({params: {locale}}: { params: { locale: string } }) => {
+    unstable_setRequestLocale(locale);
+
     const projects = getProjects(locale).sort((a, b) => {
         return dayjs(a.data['date']).diff(b.data['date'], 'day')
     })

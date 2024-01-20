@@ -17,17 +17,21 @@ export const generateStaticParams = async () => {
 
 type RootLayoutProps = { params: { locale: string } };
 
-const RootLayout = ({children, params: {locale}}: PropsWithChildren<RootLayoutProps>) => (
-    <html lang={locale}>
-    <body className={`text-black dark:text-white scroll-smooth min-h-screen`}>
-    <Layout>
-        <BetaDisclaimer/>
-        {children}
-    </Layout>
-    <Analytics/>
-    </body>
-    </html>
-);
+const RootLayout = ({children, params: {locale}}: PropsWithChildren<RootLayoutProps>) => {
+    unstable_setRequestLocale(locale);
+
+    return (
+        <html lang={locale}>
+        <body className={`text-black dark:text-white scroll-smooth min-h-screen`}>
+        <Layout>
+            <BetaDisclaimer/>
+            {children}
+        </Layout>
+        <Analytics/>
+        </body>
+        </html>
+    );
+};
 
 export const generateMetadata = async ({params: {locale}}: { params: { locale: string } }) => {
     unstable_setRequestLocale(locale);
