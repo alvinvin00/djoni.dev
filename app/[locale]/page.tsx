@@ -6,7 +6,7 @@ import {Button} from "react-aria-components";
 import Link from "next/link";
 import homeBg from '/public/assets/home-bg.jpg'
 import {useTranslations} from "next-intl";
-import {getTranslations} from "next-intl/server";
+import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
 
 const Page = ({params: {locale}}: { params: { locale: string } }) => {
     const t = useTranslations('Home')
@@ -66,6 +66,8 @@ const Page = ({params: {locale}}: { params: { locale: string } }) => {
 }
 
 export const generateMetadata = async ({params: {locale}}: { params: { locale: string } }): Promise<Metadata> => {
+    unstable_setRequestLocale(locale);
+
     const t = await getTranslations({locale, namespace: 'Home'})
 
     return {

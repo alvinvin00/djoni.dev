@@ -6,7 +6,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import {Analytics} from "@vercel/analytics/react";
 import {BetaDisclaimer} from "@/components/Layout/BetaDisclaimer";
 import locales from "@/config/locale";
-import {getTranslations} from "next-intl/server";
+import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
 import {Metadata} from "next";
 
 config.autoAddCss = false
@@ -30,6 +30,8 @@ const RootLayout = ({children, params: {locale}}: PropsWithChildren<RootLayoutPr
 );
 
 export const generateMetadata = async ({params: {locale}}: { params: { locale: string } }) => {
+    unstable_setRequestLocale(locale);
+
     const t = await getTranslations({locale, namespace: 'Metadata'})
 
     return {
