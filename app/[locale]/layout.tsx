@@ -8,6 +8,7 @@ import {BetaDisclaimer} from "@/components/Layout/BetaDisclaimer";
 import locales from "@/config/locale";
 import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
 import type {Metadata} from "next";
+import {SpeedInsights} from "@vercel/speed-insights/next";
 
 config.autoAddCss = false
 
@@ -28,6 +29,7 @@ const RootLayout = ({children, params: {locale}}: PropsWithChildren<RootLayoutPr
             {children}
         </Layout>
         <Analytics/>
+        <SpeedInsights/>
         </body>
         </html>
     );
