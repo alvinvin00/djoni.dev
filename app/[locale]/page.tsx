@@ -67,14 +67,14 @@ const Page = ({params: {locale}}: { params: { locale: string } }) => {
     )
 }
 
-export const generateMetadata = async ({params: {locale}}: { params: { locale: string } }): Promise<Metadata> => {
+export const generateMetadata = async ({params: {locale}}: { params: { locale: string } }) => {
     unstable_setRequestLocale(locale);
 
     const t = await getTranslations({locale, namespace: 'Home'})
 
     return {
         title: t('title'),
-    }
+    } satisfies Metadata
 }
 
 

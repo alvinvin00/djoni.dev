@@ -1,6 +1,6 @@
 import React from 'react';
-import {getBlogData, getBlogs} from "@/utils/greymatter";
 import {unstable_setRequestLocale} from "next-intl/server";
+import {allBlogs} from "contentlayer/generated";
 
 type BlogContentProps = {
     params: {
@@ -12,37 +12,34 @@ type BlogContentProps = {
 export const generateStaticParams = ({params: {locale}}: { params: { locale: string } }) => {
     unstable_setRequestLocale(locale);
 
-    const blogs = getBlogs(locale);
-
-    return blogs.map((blog) => {
-        const metadata = blog.data;
-
-        return ({
-            slug: metadata.slug
-        });
-    })
+    return allBlogs.map((blog) =>
+        ({
+            slug: blog.slug
+        }))
 }
 
 export const generateMetadata = ({params: {locale, slug}}: BlogContentProps) => {
     unstable_setRequestLocale(locale);
 
-    const matterResult = getBlogData(locale, slug);
+    const blog = allBlogs.find((blog) => blog._raw.flattenedPath === `blog/${locale}/${slug}`);
 
     return {
-        title: matterResult.data['title'],
-        description: matterResult.data['description'],
-        keywords: matterResult.data['keywords'],
+        title: blog?.title,
+        description: blog?.body.raw,
+        keywords: blog?.categories ?? [],
     }
 }
 
 const Page = ({params: {locale, slug}}: BlogContentProps) => {
     unstable_setRequestLocale(locale);
 
-    const matterResult = getBlogData(locale, slug);
+    const blog = allBlogs.find((blog) => blog._raw.flattenedPath === `blog/${locale}/${slug}`);
 
-    return <>
-        {matterResult.content}
-    </>
+    return (
+        <div className={'container'}>
+            {blog?.body?.raw}
+        </div>
+    )
 }
 
 export default Page;

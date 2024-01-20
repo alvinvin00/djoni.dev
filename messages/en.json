@@ -16,6 +16,16 @@
     "thanks_text": "Thank you for visiting my website!"
   },
   "Now": {
-    "title": "What I'm doing now? | Djoni's Den"
+    "title": "What I'm doing now?"
+  },
+  "Projects": {
+    "title": "My Projects",
+    "description": "This is the projects page.",
+    "project_button": "Look at my projects"
+  },
+  "Blog": {
+    "title": "My Blog",
+    "description": "Writing all about programming and video games, occasionally wrote out of topic that made me interested.",
+    "disclaimer_text": "DISCLAIMER: All opinions expressed here are solely author's opinion and not representing anyone"
   }
 }

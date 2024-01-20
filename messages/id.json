@@ -16,6 +16,18 @@
     "thanks_text": "Terima kasih telah mengunjungi situs saya!"
   },
   "Now": {
-    "title": "Lagi ngapain sekarang? | Djoni's Den"
+    "title": "Lagi ngapain sekarang?"
+  },
+  "Projects": {
+    "title": "Projek Saya",
+    "description": "Ini halaman projek saya.",
+    "project_header": "Projek Saya",
+    "project_text": "Di sini Anda dapat menemukan beberapa proyek dan postingan blog terbaru saya. Jangan ragu untuk menjelajahi dan menghubungi jika Anda ingin berkolaborasi!",
+    "project_button": "Lihat projek saya"
+  },
+  "Blog": {
+    "title": "Blog Saya",
+    "description": "Menulis semua tentang pemrograman dan video game, kadang-kadang menulis topik lain yang membuat saya tertarik.",
+    "disclaimer_text": "DISCLAIMER: Semua pendapat yang diungkapkan di sini adalah murni pendapat penulis dan tidak mewakili siapa pun"
   }
 }

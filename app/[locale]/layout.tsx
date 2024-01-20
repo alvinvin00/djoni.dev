@@ -7,7 +7,7 @@ import {Analytics} from "@vercel/analytics/react";
 import {BetaDisclaimer} from "@/components/Layout/BetaDisclaimer";
 import locales from "@/config/locale";
 import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
-import {Metadata} from "next";
+import type {Metadata} from "next";
 
 config.autoAddCss = false
 
@@ -52,7 +52,7 @@ export const generateMetadata = async ({params: {locale}}: { params: { locale: s
             url: 'https://djoni.dev'
         },
         title: {
-            template: "'%s | Djoni's Den",
+            template: "%s | Djoni's Den",
             default: t('title')
         },
         twitter: {

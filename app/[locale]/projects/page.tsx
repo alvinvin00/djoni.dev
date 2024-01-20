@@ -1,16 +1,14 @@
 import React from "react";
-import {getProjects} from "@/utils/greymatter";
 import {Card, CardContent, CardHeader, CardMedia} from "@/components/Card";
 import dayjs from "dayjs";
 import Image from "next/image";
-import {unstable_setRequestLocale} from "next-intl/server";
+import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
+import {allProjects} from "contentlayer/generated";
 
 const Page = ({params: {locale}}: { params: { locale: string } }) => {
     unstable_setRequestLocale(locale);
 
-    const projects = getProjects(locale).sort((a, b) => {
-        return dayjs(a.data['date']).diff(b.data['date'], 'day')
-    })
+    const projects = allProjects.filter((project) => project._raw.flattenedPath.includes(locale)).sort((a, b) => dayjs(a.date).diff(b.date, 'day'))
 
     return (
         <div className='container'>
@@ -26,21 +24,20 @@ const Page = ({params: {locale}}: { params: { locale: string } }) => {
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {projects.map((project) => {
-                        const metadata = project.data
                         return (
-                            <Card key={metadata.slug} className='bg-white dark:bg-gray-700 dark:text-white'>
+                            <Card key={project.slug} className='bg-white dark:bg-gray-700 dark:text-white'>
                                 <CardMedia className='max-h-60'>
-                                    <Image src={metadata.thumbnail} alt={metadata.title} className='object-cover object-top'
-                                           fill/>
+                                    <Image src={project.thumbnail ?? ''} alt={project.title} fill
+                                           className='object-cover object-top'/>
                                 </CardMedia>
                                 <CardHeader>
                                     <h3 className="text-lg font-bold whitespace-nowrap overflow-clip overflow-ellipsis">
-                                        {metadata.title}
+                                        {project.title}
                                     </h3>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-md font-light line-clamp-3">
-                                        {metadata.description}
+                                        {project.description}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -52,8 +49,15 @@ const Page = ({params: {locale}}: { params: { locale: string } }) => {
     )
 }
 
-export const metadata = {
-    title: "Showcase | Djoni's Den"
+export const generateMetadata = async ({params: {locale}}: { params: { locale: string } }) => {
+    unstable_setRequestLocale(locale);
+
+    const t = await getTranslations({locale, namespace: 'Projects'})
+
+    return {
+        title: t('title'),
+        description: t('description'),
+    }
 }
 
 export default Page;

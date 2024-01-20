@@ -8,6 +8,7 @@ export const Blog = defineDocumentType(() => ({
         date: {type: 'date', required: true},
         categories: {type: 'list', of: {type: 'string'}, required: true},
         slug: {type: 'string', required: true},
+        thumbnail: {type: 'string', required: true},
         author: {type: 'string', required: true},
     },
     computedFields: {

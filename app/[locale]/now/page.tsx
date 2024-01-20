@@ -5,7 +5,7 @@ import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
 const NowPage = ({params: {locale}}: { params: { locale: string } }) => {
     unstable_setRequestLocale(locale);
 
-    const now = allNows.filter((now) => now._raw.flattenedPath === `now/${locale}`).at(0)
+    const now = allNows.find((now) => now._raw.flattenedPath === `now/${locale}`)
 
     return (
         <div className={'container'}>
