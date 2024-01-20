@@ -3,13 +3,13 @@ import {getBlogData, getBlogs} from "@/utils/greymatter";
 
 type BlogContentProps = {
     params: {
-        lang: string,
+        locale: string,
         slug: string
     }
 };
 
-export const generateStaticParams = ({params: {lang}}: { params: { lang: string } }) => {
-    const blogs = getBlogs(lang);
+export const generateStaticParams = ({params: {locale}}: { params: { locale: string } }) => {
+    const blogs = getBlogs(locale);
 
     return blogs.map((blog) => {
         const metadata = blog.data;
@@ -20,8 +20,8 @@ export const generateStaticParams = ({params: {lang}}: { params: { lang: string 
     })
 }
 
-export const generateMetadata = ({params: {lang, slug}}: BlogContentProps) => {
-    const matterResult = getBlogData(lang, slug);
+export const generateMetadata = ({params: {locale, slug}}: BlogContentProps) => {
+    const matterResult = getBlogData(locale, slug);
 
     return {
         title: matterResult.data['title'],
@@ -30,8 +30,8 @@ export const generateMetadata = ({params: {lang, slug}}: BlogContentProps) => {
     }
 }
 
-const Page = ({params: {lang, slug}}: BlogContentProps) => {
-    const matterResult = getBlogData(lang, slug);
+const Page = ({params: {locale, slug}}: BlogContentProps) => {
+    const matterResult = getBlogData(locale, slug);
 
     return <>
         {matterResult.content}

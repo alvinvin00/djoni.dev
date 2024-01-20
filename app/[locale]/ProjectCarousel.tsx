@@ -5,11 +5,11 @@ import dayjs from "dayjs";
 import Image from "next/image";
 
 interface ProjectShowcaseProps {
-    lang: string
+    locale: string
 }
 
-export const ProjectCarousel = ({lang}: ProjectShowcaseProps) => {
-    const projects = getProjects(lang).sort((a, b) => {
+export const ProjectCarousel = ({locale}: ProjectShowcaseProps) => {
+    const projects = getProjects(locale).sort((a, b) => {
         return dayjs(a.data['date']).diff(b.data['date'], 'day')
     }).slice(0, 4)
 

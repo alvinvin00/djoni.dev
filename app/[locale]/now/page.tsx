@@ -1,4 +1,4 @@
-const Page = ({params: {lang}}: { params: { lang: string } }) => {
+const Page = ({params: {locale}}: { params: { locale: string } }) => {
 
     return (
         <div className={'container'}>

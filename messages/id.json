@@ -1,5 +1,6 @@
 {
-  "home": {
+  "Home": {
+    "title": "Djoni's Den",
     "beta_disclaimer": "Situs ini masih dalam tahap pengembangan. Situs ini dapat berubah kapan saja. Terima kasih atas pengertiannya.",
     "description": "Ini halaman beranda.",
     "project_header": "Proyek Saya",

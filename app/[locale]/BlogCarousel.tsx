@@ -3,8 +3,8 @@ import {getBlogs} from "@/utils/greymatter";
 import {Card, CardContent, CardHeader} from "@/components/Card";
 import dayjs from "dayjs";
 
-export const BlogCarousel = ({lang}: { lang: string }) => {
-    const projects = getBlogs(lang).slice(0, 4);
+export const BlogCarousel = ({locale}: { locale: string }) => {
+    const projects = getBlogs(locale).slice(0, 4);
 
     return (
         <section className="my-2">

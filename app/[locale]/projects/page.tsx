@@ -4,8 +4,8 @@ import {Card, CardContent, CardHeader, CardMedia} from "@/components/Card";
 import dayjs from "dayjs";
 import Image from "next/image";
 
-const Page = ({params: {lang}}: { params: { lang: string } }) => {
-    const projects = getProjects(lang).sort((a, b) => {
+const Page = ({params: {locale}}: { params: { locale: string } }) => {
+    const projects = getProjects(locale).sort((a, b) => {
         return dayjs(a.data['date']).diff(b.data['date'], 'day')
     })
 
@@ -21,13 +21,14 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
                         Here&apos;s all the projects that I have worked on
                     </p>
                 </div>
-                <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {projects.map((project) => {
                         const metadata = project.data
                         return (
-                            <Card key={metadata.slug} className={'h-auto bg-white dark:bg-gray-700 dark:text-white'}>
-                                <CardMedia>
-                                    <Image src={metadata.thumbnail} alt={metadata.title} className={'object-cover'} fill/>
+                            <Card key={metadata.slug} className='bg-white dark:bg-gray-700 dark:text-white'>
+                                <CardMedia className='max-h-60'>
+                                    <Image src={metadata.thumbnail} alt={metadata.title} className='object-cover object-top'
+                                           fill/>
                                 </CardMedia>
                                 <CardHeader>
                                     <h3 className="text-lg font-bold whitespace-nowrap overflow-clip overflow-ellipsis">

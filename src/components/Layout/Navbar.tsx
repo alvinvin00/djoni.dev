@@ -11,19 +11,19 @@ import {Button, DialogTrigger, Modal, ModalOverlay} from "react-aria-components"
 import {ClientOnly} from "@/components/UI/ClientOnly";
 import {DarkModeButton} from "@/components/Button/DarkMode";
 
-const Navlinks = (props: { lang: string }) => {
+const Navlinks = () => {
     return (
         <>
-            <NavLink href={`/${props.lang}/now`}>
+            <NavLink href={`/now`}>
                 Now
             </NavLink>
-            <NavLink href={`/${props.lang}/projects`}>
+            <NavLink href={`/projects`}>
                 Projects
             </NavLink>
-            <NavLink href={`/${props.lang}/blog`}>
+            <NavLink href={`/blog`}>
                 Blog
             </NavLink>
-            <NavLink href={`/${props.lang}/about`}>
+            <NavLink href={`/about`}>
                 About
             </NavLink>
         </>
@@ -67,7 +67,7 @@ export const Navbar = () => {
                                 </div>
                                 <hr/>
                                 <div className={'flex flex-col gap-4'}>
-                                    <Navlinks lang={lang}/>
+                                    <Navlinks/>
                                 </div>
                             </Modal>
                         </ModalOverlay>
@@ -75,7 +75,7 @@ export const Navbar = () => {
                 </div>
             </div>
             <div className={'hidden md:flex md:flex-row gap-4 transition duration-500'}>
-                <Navlinks lang={lang}/>
+                <Navlinks/>
             </div>
         </nav>
     )

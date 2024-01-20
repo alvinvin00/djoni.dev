@@ -2,8 +2,8 @@ import React from "react";
 import {getAboutData} from "@/utils/greymatter";
 import Markdown from "react-markdown";
 
-const Page = ({params: {lang}}: { params: { lang: string } }) => {
-    const aboutData = getAboutData(lang as 'en' | 'id')
+const Page = ({params: {locale}}: { params: { locale: string } }) => {
+    const aboutData = getAboutData(locale as 'en' | 'id')
 
     return (
         <div className="container">

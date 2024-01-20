@@ -1,14 +1,15 @@
 import React from "react";
-import {getDictionary} from "./dictionaries";
 import {BlogCarousel} from "./BlogCarousel";
 import type {Metadata} from "next";
 import Image from "next/image";
 import {Button} from "react-aria-components";
 import Link from "next/link";
 import homeBg from '/public/assets/home-bg.jpg'
+import {useTranslations} from "next-intl";
+import {getTranslations} from "next-intl/server";
 
-const Page = async ({params: {lang}}: { params: { lang: string } }) => {
-    const dict = await getDictionary(lang as 'en' | 'id')
+const Page = ({params: {locale}}: { params: { locale: string } }) => {
+    const t = useTranslations('Home')
 
     return (
         <div className="text-black dark:text-white">
@@ -22,52 +23,53 @@ const Page = async ({params: {lang}}: { params: { lang: string } }) => {
                 />
             </div>
             <section className="container">
-                <div className="rounded-2xl shadow-xl bg-white dark:bg-gray-700 p-2 w-auto xl:w-max mx-auto relative top-[-50px]">
+                <div
+                    className="rounded-2xl shadow-xl bg-white dark:bg-gray-700 p-2 w-auto xl:w-max mx-auto relative top-[-50px]">
                     <h1 className="text-2xl text-center font-bold mb-2">
-                        {dict.home.welcome_text}
+                        {t('welcome_text')}
                     </h1>
                     <p className="text-lg text-wrap">
-                        {dict.home.welcome_text_2}
+                        {t('welcome_text_2')}
                     </p>
                     <div
                         className={'flex flex-row justify-center gap-2 transition-all ease-in-out duration-300 m-2'}>
-                        <Link href={`${lang}/now`}>
+                        <Link href={`/now`}>
                             <Button className={
                                 'text-white font-bold p-2 rounded-xl bg-gradient-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 ease-in-out duration-300'
                             }>
-                                {dict.home.now_button}
+                                {t('now_button')}
                             </Button>
                         </Link>
-                        <Link href={`${lang}/projects`}>
+                        <Link href={`/projects`}>
                             <Button className={
                                 'text-white font-bold p-2 rounded-xl bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 ease-in-out duration-300'
                             }>
-                                {dict.home.project_button}
+                                {t('project_button')}
                             </Button>
                         </Link>
-                        <Link href={`${lang}/blog`}>
+                        <Link href={`/blog`}>
                             <Button className={
                                 'text-white font-bold p-2 rounded-xl bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 ease-in-out duration-300'
                             }>
-                                {dict.home.blog_button}
+                                {t('blog_button')}
                             </Button>
                         </Link>
                     </div>
                     <p className={'text-lg font-bold text-center'}>
-                        {dict.home.thanks_text}
+                        {t('thanks_text')}
                     </p>
                 </div>
-                <BlogCarousel lang={lang}/>
+                <BlogCarousel locale={locale}/>
             </section>
         </div>
     )
 }
 
-export const generateMetadata = async ({params: {lang}}: { params: { lang: string } }): Promise<Metadata> => {
-    const dict = await getDictionary(lang as 'en' | 'id')
+export const generateMetadata = async ({params: {locale}}: { params: { locale: string } }): Promise<Metadata> => {
+    const t = await getTranslations({locale, namespace: 'Home'})
 
     return {
-        title: "Djoni's Den",
+        title: t('title'),
     }
 }
 

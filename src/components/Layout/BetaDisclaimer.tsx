@@ -1,10 +1,10 @@
-import {getDictionary} from "@/app/[lang]/dictionaries";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTriangleExclamation} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import {useTranslations} from "next-intl";
 
-export const BetaDisclaimer = async ({lang}: { lang: string }) => {
-    const dict = await getDictionary(lang as 'en' | 'id')
+export const BetaDisclaimer = () => {
+    const t = useTranslations('Home')
 
     return (
         <section
@@ -14,7 +14,7 @@ export const BetaDisclaimer = async ({lang}: { lang: string }) => {
             </div>
             <div className={"w-auto"}>
                 <h1>
-                    {dict.home.beta_disclaimer}
+                    {t('beta_disclaimer')}
                 </h1>
             </div>
         </section>

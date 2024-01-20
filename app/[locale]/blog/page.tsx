@@ -2,8 +2,8 @@ import React from "react";
 import {getBlogs} from "@/utils/greymatter";
 import {Card, CardContent, CardHeader} from "@/components/Card";
 
-const Page = ({params: {lang}}: { params: { lang: string } }) => {
-    const blogs = getBlogs(lang)
+const Page = ({params: {locale}}: { params: { locale: string } }) => {
+    const blogs = getBlogs(locale)
 
     return (
         <div className={'container'}>
@@ -16,8 +16,9 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
                     <p className="text-sm">
                         Writing all about programming and video games.
                     </p>
-                    <p className={'text-yellow-200 font-bold'}>
-                        DISCLAIMER: All opinions expressed here are solely author's opinion and not representing anyone
+                    <p className='text-yellow-200 font-bold'>
+                        DISCLAIMER: All opinions expressed here are solely author&apos;s opinion and not representing
+                        anyone
                     </p>
                 </div>
                 <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 z-10">
@@ -27,7 +28,7 @@ const Page = ({params: {lang}}: { params: { lang: string } }) => {
                             <Card key={metadata.slug}
                                   className="flex flex-col gap-2 bg-white dark:bg-gray-700 dark:text-white">
                                 <CardHeader>
-                                    <h3 className="text-lg font-bold line-clamp-2 overflow-clip overflow-ellipsis ">
+                                    <h3 className="text-lg font-bold line-clamp-2 overflow-clip overflow-ellipsis">
                                         {metadata.title}
                                     </h3>
                                 </CardHeader>

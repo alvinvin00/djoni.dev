@@ -2,7 +2,7 @@
 title: Taniyuk
 slug: taniyuk
 description: A web platform designed to simplify and bring transparency to the process of selling rubber for rubber farmer.
-thumbnail: /media/projects/taniyuk.png
+thumbnail: /media/projects/taniyuk/taniyuk.png
 author: Alvin Leonardo
 link: https://taniyuk.com
 date: 2022-3-01
