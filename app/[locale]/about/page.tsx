@@ -1,12 +1,12 @@
 import React from "react";
-import {getAboutData} from "@/utils/greymatter";
 import Markdown from "react-markdown";
 import {unstable_setRequestLocale} from "next-intl/server";
+import {allAbouts} from "contentlayer/generated";
 
 const Page = ({params: {locale}}: { params: { locale: string } }) => {
     unstable_setRequestLocale(locale);
 
-    const aboutData = getAboutData(locale as 'en' | 'id')
+    const aboutData = allAbouts.find((about) => about._raw.flattenedPath.includes(locale))
 
     return (
         <div className="container">
@@ -21,7 +21,7 @@ const Page = ({params: {locale}}: { params: { locale: string } }) => {
                 <br/>
                 <div className='my-4 text-justify'>
                     <Markdown>
-                        {aboutData.content}
+                        {aboutData?.body?.raw}
                     </Markdown>
                 </div>
             </div>
@@ -29,8 +29,14 @@ const Page = ({params: {locale}}: { params: { locale: string } }) => {
     )
 }
 
-export const metadata = {
-    title: "About Me",
+export const generateMetadata = ({params: {locale}}: { params: { locale: string } }) => {
+    unstable_setRequestLocale(locale);
+
+    const aboutData = allAbouts.find((about) => about._raw.flattenedPath.includes(locale))
+
+    return {
+        title: aboutData?.title,
+    }
 }
 
 export default Page
