@@ -69,4 +69,5 @@ export const generateMetadata = async ({params: {locale}}: { params: { locale: s
     });
 }
 
+
 export default Page
