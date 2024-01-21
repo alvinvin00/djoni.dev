@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="deps: add Vercel Speed Insights">
-      <change afterPath="$PROJECT_DIR$/app/[locale]/blog/sitemap.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/[locale]/projects/sitemap.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/sitemap.ts" afterDir="false" />
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: add sitemap">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[locale]/blog/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/blog/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/blog/sitemap.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/projects/sitemap.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sitemap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/sitemap.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +172,7 @@
       <workItem from="1705495165800" duration="843000" />
       <workItem from="1705667889079" duration="1912000" />
       <workItem from="1705741810239" duration="7138000" />
-      <workItem from="1705813548986" duration="5665000" />
+      <workItem from="1705813548986" duration="6365000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -501,7 +499,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705747324750</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="feat: add sitemap">
+      <option name="closed" value="true" />
+      <created>1705845939498</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1705845939498</updated>
+    </task>
+    <task id="LOCAL-00044" summary="feat: add sitemap">
+      <option name="closed" value="true" />
+      <created>1705845978477</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1705845978477</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +533,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chore: added MD metadata" />
     <MESSAGE value="deps: add react-aria" />
     <MESSAGE value="feat: Menu Modal" />
     <MESSAGE value="feat: Renamed blog and added JSX key" />
@@ -544,7 +557,8 @@
     <MESSAGE value="chore: metadata" />
     <MESSAGE value="chore: metadata and migrate over to Contentlayer" />
     <MESSAGE value="deps: add Vercel Speed Insights" />
-    <option name="LAST_COMMIT_MESSAGE" value="deps: add Vercel Speed Insights" />
+    <MESSAGE value="feat: add sitemap" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add sitemap" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
