@@ -34,12 +34,10 @@ export const BlogCarousel = ({locale}: {locale: string}) => {
                 <h3 className="text-lg font-bold">{blog.title}</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-sm line-clamp-3">{blog.body.raw}</p>
-                <div
-                  className={
-                    'flex flex-row flex-nowrap justify-between text-sm text-gray-400'
-                  }
-                >
+                <p className="text-sm line-clamp-3">
+                  {blog.description || 'No description'}
+                </p>
+                <div className="flex flex-row flex-nowrap justify-between text-sm text-gray-400">
                   <p>{dayjs(blog.date).format('DD-MM-YYYY')}</p>
                   <p>5 minute read</p>
                 </div>

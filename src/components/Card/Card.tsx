@@ -8,7 +8,8 @@ type CardProps = PropsWithChildren<{
 export const Card = ({children, className}: CardProps) => {
     const cardClasses = clsx([
         className,
-        "bg-white drop-shadow-md rounded-lg hover:scale-105 transition pb-2"
+        "flex flex-col gap-2",
+        "bg-white drop-shadow-md rounded-lg hover:scale-105 transition"
     ])
 
     return (
