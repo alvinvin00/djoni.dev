@@ -4,13 +4,14 @@ export const Blog = defineDocumentType(() => ({
   name: 'Blog',
   filePathPattern: `blog/**/*.md`,
   fields: {
-    title: {type: 'string', required: true},
-    date: {type: 'date', required: true},
-    categories: {type: 'list', of: {type: 'string'}, required: true},
-    tags: {type: 'list', of: {type: 'string'}},
-    slug: {type: 'string', required: true},
-    thumbnail: {type: 'string', required: true},
     author: {type: 'string', required: true},
+    categories: {type: 'list', of: {type: 'string'}, required: true},
+    date: {type: 'date', required: true},
+    description: {type: 'string'},
+    slug: {type: 'string', required: true},
+    tags: {type: 'list', of: {type: 'string'}},
+    thumbnail: {type: 'string', required: true},
+    title: {type: 'string', required: true},
   },
   computedFields: {
     url: {

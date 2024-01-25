@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="fix: add setRequestLocale">
-      <change afterPath="$PROJECT_DIR$/app/[locale]/projects/[slug]/page.tsx" afterDir="false" />
+    <list default="true" id="235c46c7-7bcb-4c8e-ace4-26c12495d920" name="Changes" comment="feat: add new blog entry">
+      <change afterPath="$PROJECT_DIR$/public/media/projects/eliteguard/home.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/blog/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/blog/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contentlayer.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/contentlayer.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messages/id.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/id.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/media/resume.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/public/media/resume.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contents/blog/en/taniyuk-refactor.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/blog/en/taniyuk-refactor.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contents/blog/id/taniyuk-refactor.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/blog/id/refacktorisasi-taniyuk.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contents/projects/en/eliteguard.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/en/eliteguard.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contents/projects/id/eliteguard.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/contents/projects/id/eliteguard.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +33,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -61,36 +67,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.Debug.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.5.1&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.5.9&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last.edited.regexp&quot;: &quot;/_next/&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/djoni.dev/src/messages&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\djoni.dev\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.Debug.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.nodejs.core.library.configured.version": "21.5.0",
+    "javascript.nodejs.core.library.typings.version": "20.11.4",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Projects/djoni.dev/public/media",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "pnpm",
+    "npm.dev.executor": "Run",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "ts.external.directory.path": "D:\\Projects\\djoni.dev\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -102,18 +107,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\djoni.dev\src\messages" />
+      <recent name="D:\Projects\djoni.dev\public\media" />
+      <recent name="D:\Projects\djoni.dev\public\media\projects\eliteguard" />
+      <recent name="D:\Projects\djoni.dev\app\[locale]" />
       <recent name="D:\Projects\djoni.dev\public\assets" />
       <recent name="D:\Projects\alvinvin00.github.io\src\assets\about" />
-      <recent name="D:\Projects\alvinvin00.github.io\src\assets\projects\id" />
-      <recent name="D:\Projects\alvinvin00.github.io\src\assets\blogs\id" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projects\djoni.dev\public\assets\og" />
-      <recent name="D:\Projects\djoni.dev\public" />
-      <recent name="D:\Projects\djoni.dev" />
-      <recent name="D:\Projects\djoni.dev\public\media\projects\taniyuk" />
+      <recent name="D:\Projects\djoni.dev\app" />
       <recent name="D:\Projects\alvinvin00.github.io\src\components\Layout" />
+      <recent name="D:\Projects\alvinvin00.github.io\src" />
+      <recent name="D:\Projects\alvinvin00.github.io\src\assets\blogs" />
+      <recent name="D:\Projects\alvinvin00.github.io\src\app\[lang]" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -169,13 +174,14 @@
       <workItem from="1704854501702" duration="12479000" />
       <workItem from="1705407033570" duration="1215000" />
       <workItem from="1705409920665" duration="2046000" />
-      <workItem from="1705412021188" duration="2618000" />
-      <workItem from="1705554502622" duration="6285000" />
-      <workItem from="1705634943046" duration="8634000" />
-      <workItem from="1705719167335" duration="2949000" />
-      <workItem from="1705722259942" duration="28000" />
-      <workItem from="1705722340613" duration="9153000" />
-      <workItem from="1705890689940" duration="1421000" />
+      <workItem from="1705412021188" duration="4136000" />
+      <workItem from="1705495165800" duration="843000" />
+      <workItem from="1705667889079" duration="1912000" />
+      <workItem from="1705741810239" duration="7138000" />
+      <workItem from="1705813548986" duration="7483000" />
+      <workItem from="1705926281486" duration="4728000" />
+      <workItem from="1706100402122" duration="51000" />
+      <workItem from="1706188520297" duration="691000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674971793585</created>
@@ -454,87 +460,95 @@
       <option name="project" value="LOCAL" />
       <updated>1705330766287</updated>
     </task>
-    <task id="LOCAL-00037" summary="deps: updated dependencies">
+    <task id="LOCAL-00037" summary="feat: Home makeover">
       <option name="closed" value="true" />
-      <created>1705559536700</created>
+      <created>1705415129815</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1705559536700</updated>
+      <updated>1705415129815</updated>
     </task>
-    <task id="LOCAL-00038" summary="fix: invert colors on dark mode">
+    <task id="LOCAL-00038" summary="feat: add box shadow">
       <option name="closed" value="true" />
-      <created>1705562284496</created>
+      <created>1705416807813</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1705562284496</updated>
+      <updated>1705416807813</updated>
     </task>
-    <task id="LOCAL-00039" summary="deps: add typescript-eslint">
+    <task id="LOCAL-00039" summary="deps: remove negotiator">
       <option name="closed" value="true" />
-      <created>1705721892239</created>
+      <created>1705743740703</created>
       <option name="number" value="00039" />
       <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1705721892239</updated>
+      <updated>1705743740703</updated>
     </task>
-    <task id="LOCAL-00040" summary="chore: add metadata">
+    <task id="LOCAL-00040" summary="chore: metadata">
       <option name="closed" value="true" />
-      <created>1705721914492</created>
+      <created>1705743758478</created>
       <option name="number" value="00040" />
       <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1705721914492</updated>
+      <updated>1705743758478</updated>
     </task>
-    <task id="LOCAL-00041" summary="refactor!: use next-intl">
+    <task id="LOCAL-00041" summary="chore: metadata and migrate over to Contentlayer">
       <option name="closed" value="true" />
-      <created>1705724075613</created>
+      <created>1705746981271</created>
       <option name="number" value="00041" />
       <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
-      <updated>1705724075613</updated>
+      <updated>1705746981271</updated>
     </task>
-    <task id="LOCAL-00042" summary="refactor!: use next-intl">
+    <task id="LOCAL-00042" summary="deps: add Vercel Speed Insights">
       <option name="closed" value="true" />
-      <created>1705727869641</created>
+      <created>1705747324750</created>
       <option name="number" value="00042" />
       <option name="presentableId" value="LOCAL-00042" />
       <option name="project" value="LOCAL" />
-      <updated>1705727869641</updated>
+      <updated>1705747324750</updated>
     </task>
-    <task id="LOCAL-00043" summary="refactor!: use next-intl">
+    <task id="LOCAL-00043" summary="feat: add sitemap">
       <option name="closed" value="true" />
-      <created>1705729540377</created>
+      <created>1705845939498</created>
       <option name="number" value="00043" />
       <option name="presentableId" value="LOCAL-00043" />
       <option name="project" value="LOCAL" />
-      <updated>1705729540377</updated>
+      <updated>1705845939498</updated>
     </task>
-    <task id="LOCAL-00044" summary="chore: remove unused variable">
+    <task id="LOCAL-00044" summary="feat: add sitemap">
       <option name="closed" value="true" />
-      <created>1705730718278</created>
+      <created>1705845978477</created>
       <option name="number" value="00044" />
       <option name="presentableId" value="LOCAL-00044" />
       <option name="project" value="LOCAL" />
-      <updated>1705730718278</updated>
+      <updated>1705845978477</updated>
     </task>
-    <task id="LOCAL-00045" summary="feat: added site-wide metadata">
+    <task id="LOCAL-00045" summary="revert: remove sitemap">
       <option name="closed" value="true" />
-      <created>1705731847910</created>
+      <created>1705846786046</created>
       <option name="number" value="00045" />
       <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1705731847910</updated>
+      <updated>1705846786046</updated>
     </task>
-    <task id="LOCAL-00046" summary="fix: add setRequestLocale">
+    <task id="LOCAL-00046" summary="feat: add localized title">
       <option name="closed" value="true" />
-      <created>1705732528614</created>
+      <created>1705847044664</created>
       <option name="number" value="00046" />
       <option name="presentableId" value="LOCAL-00046" />
       <option name="project" value="LOCAL" />
-      <updated>1705732528614</updated>
+      <updated>1705847044664</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="feat: add new blog entry">
+      <option name="closed" value="true" />
+      <created>1705930837922</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1705930837922</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,10 +566,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Menu Modal" />
-    <MESSAGE value="feat: Renamed blog and added JSX key" />
     <MESSAGE value="chore: remove NextPage" />
     <MESSAGE value="fix: wrong param" />
+    <MESSAGE value="deps: updated dependencies" />
     <MESSAGE value="chore: commit .idea files" />
     <MESSAGE value="feat: Blog Page" />
     <MESSAGE value="feat: add generateMetadata" />
@@ -568,16 +581,17 @@
     <MESSAGE value="feat: Contentlayer" />
     <MESSAGE value="feat: Contentlayer and added translation key, also minor tweak to design" />
     <MESSAGE value="fix: add gap and fix margin orientation" />
-    <MESSAGE value="deps: updated dependencies" />
-    <MESSAGE value="fix: inverted colors on dark mode" />
-    <MESSAGE value="fix: invert colors on dark mode" />
-    <MESSAGE value="deps: add typescript-eslint" />
-    <MESSAGE value="chore: add metadata" />
-    <MESSAGE value="refactor!: use next-intl" />
-    <MESSAGE value="chore: remove unused variable" />
-    <MESSAGE value="feat: added site-wide metadata" />
-    <MESSAGE value="fix: add setRequestLocale" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: add setRequestLocale" />
+    <MESSAGE value="feat: Home makeover" />
+    <MESSAGE value="feat: add box shadow" />
+    <MESSAGE value="deps: remove negotiator" />
+    <MESSAGE value="chore: metadata" />
+    <MESSAGE value="chore: metadata and migrate over to Contentlayer" />
+    <MESSAGE value="deps: add Vercel Speed Insights" />
+    <MESSAGE value="feat: add sitemap" />
+    <MESSAGE value="revert: remove sitemap" />
+    <MESSAGE value="feat: add localized title" />
+    <MESSAGE value="feat: add new blog entry" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add new blog entry" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -21,7 +21,7 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
         <div className="flex flex-col items-center bg-white dark:bg-gray-700 dark:text-white py-2 shadow-lg rounded-xl">
           <h5 className="text-lg font-bold">{t('title')}</h5>
           <p className="text-sm">{t('description')}</p>
-          <p className="text-yellow-200 font-bold">{t('disclaimer_text')}</p>
+          <p className="text-black dark:text-yellow-200 font-bold">{t('disclaimer_text')}</p>
         </div>
         <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 z-10">
           {blogs.map((blog) => {
@@ -37,7 +37,7 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-md font-light line-clamp-3">
-                    {blog.body.raw}
+                    {blog.description || 'No description'}
                   </p>
                   <div className="flex flex-col gap-2">
                     <p className="text-xs font-light">

@@ -4,6 +4,7 @@ author: Alvin Leonardo
 date: 2023-12-1
 slug: refaktorisasi-taniyuk
 thumbnail: /images/taniyuk-refactor.png
+description: Cerita yang saya hadapi ketika melakukan refaktorisasi Taniyuk.
 categories:
   - web
   - blog

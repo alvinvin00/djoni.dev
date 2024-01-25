@@ -4,6 +4,7 @@ author: Alvin Leonardo
 date: 2023-12-1
 slug: taniyuk-refactor
 thumbnail: /images/taniyuk-refactor.png
+description: A backstory during the time I refactored Taniyuk.
 categories:
   - web
   - blog
