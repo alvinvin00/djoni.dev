@@ -9,6 +9,7 @@ import {Button} from 'react-aria-components';
 import {BlogCarousel} from './BlogCarousel';
 import homeBg from '/public/assets/home-bg.jpg';
 
+
 const Page = ({params: {locale}}: {params: {locale: string}}) => {
   unstable_setRequestLocale(locale);
 
@@ -31,40 +32,24 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
             {t('welcome_text')}
           </h1>
           <p className="text-lg text-wrap">{t('welcome_text_2')}</p>
-          <div
-            className={
-              'flex flex-row justify-center gap-2 transition-all ease-in-out duration-300 m-2'
-            }
-          >
+          <div className="flex flex-row justify-center gap-2 transition-all ease-in-out duration-300 m-2">
             <Link href={`/now`}>
-              <Button
-                className={
-                  'text-white font-bold p-2 rounded-xl bg-gradient-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 ease-in-out duration-300'
-                }
-              >
+              <Button className="text-white font-bold p-2 rounded-xl bg-gradient-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 ease-in-out duration-300 ">
                 {t('now_button')}
               </Button>
             </Link>
             <Link href={`/projects`}>
-              <Button
-                className={
-                  'text-white font-bold p-2 rounded-xl bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 ease-in-out duration-300'
-                }
-              >
+              <Button className="text-white font-bold p-2 rounded-xl bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 ease-in-out duration-300">
                 {t('project_button')}
               </Button>
             </Link>
             <Link href={`/blog`}>
-              <Button
-                className={
-                  'text-white font-bold p-2 rounded-xl bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 ease-in-out duration-300'
-                }
-              >
+              <Button className="text-white font-bold p-2 rounded-xl bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 ease-in-out duration-300">
                 {t('blog_button')}
               </Button>
             </Link>
           </div>
-          <p className={'text-lg font-bold text-center'}>{t('thanks_text')}</p>
+          <p className="text-lg font-bold text-center">{t('thanks_text')}</p>
         </div>
         <BlogCarousel locale={locale} />
       </section>
