@@ -38,9 +38,9 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
                   />
                 </CardMedia>
                 <CardHeader>
-                  <h3 className="text-lg font-bold whitespace-nowrap overflow-clip overflow-ellipsis">
+                  <h2 className="text-xl font-bold whitespace-nowrap overflow-clip overflow-ellipsis">
                     {project.title}
-                  </h3>
+                  </h2>
                 </CardHeader>
                 <CardContent>
                   <p className="text-md font-light line-clamp-3">
