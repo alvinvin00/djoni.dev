@@ -17,7 +17,7 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
     <div className="container">
       <div className="flex flex-col gap-4 py-2">
         <div className="flex flex-col items-center bg-white dark:bg-gray-700 dark:text-white shadow-lg rounded-xl">
-          <h5 className="text-lg font-bold">Projects</h5>
+          <h1 className="text-lg font-bold">Projects</h1>
           <p className="text-md">
             Here&apos;s all the projects that I have worked on
           </p>
@@ -38,9 +38,9 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
                   />
                 </CardMedia>
                 <CardHeader>
-                  <h2 className="text-xl font-bold whitespace-nowrap overflow-clip overflow-ellipsis">
+                  <h5 className="text-xl font-bold whitespace-nowrap overflow-clip overflow-ellipsis">
                     {project.title}
-                  </h2>
+                  </h5>
                 </CardHeader>
                 <CardContent>
                   <p className="text-md font-light line-clamp-3">
