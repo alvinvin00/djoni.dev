@@ -12,7 +12,7 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
   const t = useTranslations('Blog');
 
   const blogs = allBlogs
-    .filter((blog) => blog._raw.flattenedPath.includes(locale))
+    .filter((blog) => blog.lang === locale)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
@@ -58,8 +58,8 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
 };
 
 export const generateMetadata = async ({
-  params: {locale},
-}: {
+                                         params: {locale},
+                                       }: {
   params: {locale: string};
 }) => {
   unstable_setRequestLocale(locale);

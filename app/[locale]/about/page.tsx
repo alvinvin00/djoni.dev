@@ -7,7 +7,7 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
   unstable_setRequestLocale(locale);
 
   const aboutData = allAbouts.find((about) =>
-    about._raw.flattenedPath.includes(locale),
+    about.lang === locale,
   );
 
   return (
@@ -32,8 +32,8 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
 };
 
 export const generateMetadata = ({
-  params: {locale},
-}: {
+                                   params: {locale},
+                                 }: {
   params: {locale: string};
 }) => {
   unstable_setRequestLocale(locale);

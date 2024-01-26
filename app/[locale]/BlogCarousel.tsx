@@ -7,7 +7,7 @@ import {Card, CardContent, CardHeader, CardMedia} from '@/components/Card';
 
 export const BlogCarousel = ({locale}: {locale: string}) => {
   const projects = allBlogs
-    .filter((blog) => blog._raw.flattenedPath.includes(locale))
+    .filter((blog) => blog.lang === locale)
     .slice(0, 4);
 
   return (

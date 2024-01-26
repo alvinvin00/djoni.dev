@@ -18,6 +18,11 @@ export const Blog = defineDocumentType(() => ({
       type: 'string',
       resolve: (doc) => `${doc._raw.flattenedPath}`,
     },
+    lang: {
+      type: 'enum',
+      options: ['en', 'id'],
+      resolve: (doc) => doc._raw.flattenedPath.split('/')[1],
+    },
   },
 }));
 
@@ -43,6 +48,11 @@ export const Projects = defineDocumentType(() => ({
       type: 'string',
       resolve: (doc) => `${doc._raw.flattenedPath}`,
     },
+    lang: {
+      type: 'enum',
+      options: ['en', 'id'],
+      resolve: (doc) => doc._raw.flattenedPath.split('/')[1],
+    },
   },
 }));
 
@@ -57,6 +67,11 @@ export const About = defineDocumentType(() => ({
     url: {
       type: 'string',
       resolve: (doc) => `${doc._raw.flattenedPath}`,
+    },
+    lang: {
+      type: 'enum',
+      options: ['en', 'id'],
+      resolve: (doc) => doc._raw.flattenedPath.split('/')[1],
     },
   },
 }));
@@ -73,7 +88,15 @@ export const Now = defineDocumentType(() => ({
       type: 'string',
       resolve: (doc) => `${doc._raw.flattenedPath}`,
     },
+    lang: {
+      type: 'enum',
+      options: ['en', 'id'],
+      resolve: (doc) => doc._raw.flattenedPath.split('/')[1],
+    },
   },
 }));
 
-export default makeSource({contentDirPath: 'src/contents', documentTypes: [Blog, Projects, About, Now]});
+export default makeSource({
+  contentDirPath: 'src/contents',
+  documentTypes: [Blog, Projects, About, Now],
+});

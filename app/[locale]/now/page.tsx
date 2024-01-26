@@ -5,7 +5,7 @@ import {getTranslations, unstable_setRequestLocale} from 'next-intl/server';
 const NowPage = ({params: {locale}}: {params: {locale: string}}) => {
   unstable_setRequestLocale(locale);
 
-  const now = allNows.find((now) => now._raw.flattenedPath === `now/${locale}`);
+  const now = allNows.find((now) => now.lang === locale);
 
   return (
     <div className={'container'}>
@@ -26,8 +26,8 @@ const NowPage = ({params: {locale}}: {params: {locale: string}}) => {
 };
 
 export const generateMetadata = async ({
-  params: {locale},
-}: {
+                                         params: {locale},
+                                       }: {
   params: {locale: string};
 }) => {
   unstable_setRequestLocale(locale);

@@ -4,7 +4,7 @@ import {getTranslations, unstable_setRequestLocale} from 'next-intl/server';
 import Image from 'next/image';
 import React from 'react';
 
-import {Card, CardFooter, CardContent, CardHeader, CardMedia} from '@/components/Card';
+import {Card, CardContent, CardFooter, CardHeader, CardMedia} from '@/components/Card';
 import {faGlobe} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Link} from 'react-aria-components';
@@ -13,7 +13,7 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
   unstable_setRequestLocale(locale);
 
   const projects = allProjects
-    .filter((project) => project._raw.flattenedPath.includes(locale))
+    .filter((project) => project.lang === locale)
     .sort((a, b) => dayjs(a.date).diff(b.date, 'day'));
 
   return (
