@@ -30,14 +30,14 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
             return (
               <Card
                 key={project.slug}
-                className="bg-white dark:bg-gray-700 dark:text-white min-h-50"
+                className="bg-white dark:bg-gray-700 dark:text-white min-h-60"
               >
-                <CardMedia className="max-h-60">
+                <CardMedia className="max-h-60 overflow-hidden">
                   <Image
                     src={project.thumbnail ?? ''}
                     alt={project.title}
                     fill
-                    className="object-cover object-top overflow-hidden "
+                    className="object-cover object-top"
                   />
                 </CardMedia>
                 <CardHeader>
@@ -49,20 +49,20 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
                   </span>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-md font-light line-clamp-3 flex-1">
+                  <p className="text-md font-light line-clamp-3 overflow-hidden">
                     {project.description}
                   </p>
                 </CardContent>
-                <CardFooter>
-                  {project.link && (
+                {project.link && (
+                  <CardFooter>
                     <Link
                       href={project.link}
                       className={'p-2 rounded-lg size-8 grid place-items-center text-white bg-blue-400 dark:bg-black hover:scale-105'}
                     >
                       <FontAwesomeIcon icon={faGlobe} />
                     </Link>
-                  )}
-                </CardFooter>
+                  </CardFooter>
+                )}
               </Card>
             );
           })}
