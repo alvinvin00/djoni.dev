@@ -6,7 +6,6 @@ thumbnail: /media/projects/taniyuk/taniyuk.png
 author: Alvin Leonardo
 link: https://taniyuk.com
 date: 2022-3-01
-link: https://taniyuk.com
 categories:
   - web
   - react
