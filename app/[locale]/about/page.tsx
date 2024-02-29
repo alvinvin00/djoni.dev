@@ -1,4 +1,5 @@
 import {allAbouts} from 'contentlayer/generated';
+// import {about} from './velite';
 import {unstable_setRequestLocale} from 'next-intl/server';
 import React from 'react';
 import Markdown from 'react-markdown';
