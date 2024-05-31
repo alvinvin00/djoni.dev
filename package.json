@@ -43,6 +43,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.24.6",
+    "@eslint/compat": "^1.0.3",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.3.0",
     "@mdx-js/react": "^3.0.1",
     "@storybook/addon-actions": "^8.1.5",
     "@storybook/addon-docs": "^8.1.5",
@@ -54,6 +57,7 @@
     "@storybook/react": "^8.1.5",
     "@tailwindcss/typography": "^0.5.13",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/eslint__js": "^8.42.3",
     "@types/negotiator": "^0.6.3",
     "@typescript-eslint/eslint-plugin": "^7.11.0",
     "@typescript-eslint/parser": "^7.11.0",
@@ -66,6 +70,7 @@
     "storybook": "^8.1.5",
     "tailwindcss": "^3.4.3",
     "typescript": "5.4.5",
+    "typescript-eslint": "^7.11.0",
     "velite": "0.1.0-rc.3"
   }
 }
