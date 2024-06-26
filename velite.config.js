@@ -13,7 +13,9 @@ const authorable = s.object({
 });
 
 const blogs = defineCollection({
-  name: 'Blog', pattern: 'blog/**/*.md', schema: authorable.extend({
+  name: 'Blog',
+  pattern: 'blog/**/*.md',
+  schema: authorable.extend({
     slug: s.slug('blog'),
     tags: s.array(s.string()).default([]),
     thumbnail: s.string(),
@@ -21,7 +23,9 @@ const blogs = defineCollection({
 });
 
 const projects = defineCollection({
-  name: 'Projects', pattern: 'projects/**/*.md', schema: authorable.extend({
+  name: 'Projects',
+  pattern: 'projects/**/*.md',
+  schema: authorable.extend({
     github: s.string().url().optional(),
     images: s.array(s.image({absoluteRoot: `${publicRootDir}`})),
     link: s.string().url(),
@@ -33,7 +37,9 @@ const projects = defineCollection({
 });
 
 const about = defineCollection({
-  name: 'About', pattern: `about/**/*.md`, // single: true,
+  name: 'About',
+  pattern: `about/**/*.md`,
+  single: true,
   schema: s.object({
     title: s.string(), date: s.string(),
   }),
@@ -50,5 +56,6 @@ export const now = defineCollection({
 
 /** @type {import('velite').UserConfig} */
 export default defineConfig({
-  root: 'src/contents', collections: {about, blog: blogs, now, projects},
+  root: 'src/contents',
+  collections: {about, blog: blogs, now, projects},
 });
