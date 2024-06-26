@@ -1,4 +1,4 @@
-import {allBlogs} from 'contentlayer/generated';
+import {blog as blogs} from '.velite';
 import {unstable_setRequestLocale} from 'next-intl/server';
 import React from 'react';
 
@@ -9,24 +9,20 @@ type BlogContentProps = {
   };
 };
 
-export const generateStaticParams = ({
-  params: {locale},
-}: {
+export const generateStaticParams = ({params: {locale}}: {
   params: {locale: string};
 }) => {
   unstable_setRequestLocale(locale);
 
-  return allBlogs.map((blog) => ({
+  return blogs.map((blog) => ({
     slug: blog.slug,
   }));
 };
 
-export const generateMetadata = ({
-  params: {locale, slug},
-}: BlogContentProps) => {
+export const generateMetadata = ({params: {locale, slug}}: BlogContentProps) => {
   unstable_setRequestLocale(locale);
 
-  const blog = allBlogs.find(
+  const blog = blogs.find(
     (blog) => blog._raw.flattenedPath === `blog/${locale}/${slug}`,
   );
 
@@ -40,7 +36,7 @@ export const generateMetadata = ({
 const Page = ({params: {locale, slug}}: BlogContentProps) => {
   unstable_setRequestLocale(locale);
 
-  const blog = allBlogs.find(
+  const blog = blogs.find(
     (blog) => blog._raw.flattenedPath === `blog/${locale}/${slug}`,
   );
 
