@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db4f35c2-e8fe-4668-9a36-bef403b8a2d1" name="Changes" comment="fix: remove MDX Components">
+    <list default="true" id="db4f35c2-e8fe-4668-9a36-bef403b8a2d1" name="Changes" comment="chore: migrated Storybook config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[locale]/blog/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/blog/[slug]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/velite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/velite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
@@ -46,33 +49,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.5.1&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.5.9&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/alvinvin00.github.io&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;npm.velite:build.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\alvinvin00.github.io\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.nodejs.core.library.configured.version": "20.5.1",
+    "javascript.nodejs.core.library.typings.version": "20.5.9",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Projects/djoni.dev",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "pnpm",
+    "npm.velite:build.executor": "Run",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater",
+    "show.migrate.to.gradle.popup": "false",
+    "ts.external.directory.path": "D:\\Projects\\alvinvin00.github.io\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -97,7 +103,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.17890.13" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23339.15" />
       </set>
     </attachedChunks>
   </component>
@@ -113,6 +119,20 @@
       <workItem from="1717165841704" duration="3931000" />
       <workItem from="1717469225579" duration="732000" />
       <workItem from="1719283918941" duration="2812000" />
+      <workItem from="1719370798498" duration="931000" />
+      <workItem from="1719468928421" duration="243000" />
+      <workItem from="1721014261989" duration="989000" />
+      <workItem from="1721015817744" duration="334000" />
+      <workItem from="1721016407247" duration="7000" />
+      <workItem from="1721016491721" duration="24000" />
+      <workItem from="1721017223891" duration="7000" />
+      <workItem from="1721017370092" duration="107000" />
+      <workItem from="1721017487284" duration="442000" />
+      <workItem from="1721635425662" duration="5000" />
+      <workItem from="1722502110850" duration="230000" />
+      <workItem from="1723455250964" duration="690000" />
+      <workItem from="1727660697586" duration="8000" />
+      <workItem from="1727660744807" duration="1187000" />
     </task>
     <task id="LOCAL-00001" summary="deps: updated dependencies">
       <option name="closed" value="true" />
@@ -146,17 +166,60 @@
       <option name="project" value="LOCAL" />
       <updated>1717169346351</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="deps: updated dependencies">
+      <option name="closed" value="true" />
+      <created>1719370952043</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719370952043</updated>
+    </task>
+    <task id="LOCAL-00006" summary="chore: updated IDEA config">
+      <option name="closed" value="true" />
+      <created>1719370964824</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719370964824</updated>
+    </task>
+    <task id="LOCAL-00007" summary="refactor: use Velite">
+      <option name="closed" value="true" />
+      <created>1719370980209</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719370980209</updated>
+    </task>
+    <task id="LOCAL-00008" summary="deps: updated dependencies">
+      <option name="closed" value="true" />
+      <created>1723455651811</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723455651811</updated>
+    </task>
+    <task id="LOCAL-00009" summary="chore: migrated Storybook config">
+      <option name="closed" value="true" />
+      <created>1723455677383</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723455677383</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="deps: updated dependencies" />
     <MESSAGE value="deps: migrated to ESLint 9" />
     <MESSAGE value="chore: cleanup Velite config" />
     <MESSAGE value="fix: remove MDX Components" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: remove MDX Components" />
+    <MESSAGE value="chore: updated IDEA config" />
+    <MESSAGE value="refactor: use Velite" />
+    <MESSAGE value="deps: updated dependencies" />
+    <MESSAGE value="chore: migrated Storybook config" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: migrated Storybook config" />
   </component>
 </project>
