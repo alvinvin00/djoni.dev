@@ -1,6 +1,6 @@
 import {allProjects} from 'contentlayer/generated';
 import dayjs from 'dayjs';
-import {getTranslations, unstable_setRequestLocale} from 'next-intl/server';
+import {getTranslations, setRequestLocale} from 'next-intl/server';
 import Image from 'next/image';
 import React from 'react';
 
@@ -11,13 +11,9 @@ import Link from 'next/link';
 import projectsBg from '/public/assets/projects-bg.jpg';
 
 const Page = async (props: {params: Promise<{locale: string}>}) => {
-  const params = await props.params;
+  const {locale} = await props.params;
 
-  const {
-    locale,
-  } = params;
-
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const projects = allProjects
     .filter((project) => project.lang === locale)
@@ -96,7 +92,7 @@ export const generateMetadata = async (
   },
 ) => {
   const {locale} = await props.params;
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const t = await getTranslations({locale, namespace: 'Projects'});
 

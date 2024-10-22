@@ -1,5 +1,5 @@
 import {blog as blogs} from '.velite';
-import {unstable_setRequestLocale} from 'next-intl/server';
+import {setRequestLocale} from 'next-intl/server';
 import React from 'react';
 
 type BlogContentProps = {
@@ -12,7 +12,7 @@ type BlogContentProps = {
 export const generateStaticParams = ({params: {locale}}: {
   params: {locale: string};
 }) => {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   return blogs.map((blog) => ({
     slug: blog.slug,
@@ -21,7 +21,7 @@ export const generateStaticParams = ({params: {locale}}: {
 
 export const generateMetadata = async (props: BlogContentProps) => {
   const {locale, slug} = await props.params;
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const blog = blogs.find(
     (blog) => blog._raw.flattenedPath === `blog/${locale}/${slug}`,
@@ -42,7 +42,7 @@ const Page = async (props: BlogContentProps) => {
     slug,
   } = params;
 
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const blog = blogs.find(
     (blog) => blog._raw.flattenedPath === `blog/${locale}/${slug}`,

@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {useTranslations} from 'next-intl';
-import {getTranslations, unstable_setRequestLocale} from 'next-intl/server';
+import {getTranslations, setRequestLocale} from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, {use} from 'react';
@@ -10,13 +10,9 @@ import homeBg from '/public/assets/home-bg.jpg';
 
 
 const Page = (props: {params: Promise<{locale: string}>}) => {
-  const params = use(props.params);
+  const {locale} = use(props.params);
 
-  const {
-    locale,
-  } = params;
-
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const t = useTranslations('Home');
 
@@ -72,7 +68,8 @@ export const generateMetadata = async (
   },
 ) => {
   const {locale} = await props.params;
-  unstable_setRequestLocale(locale);
+
+  setRequestLocale(locale);
 
   const t = await getTranslations({locale, namespace: 'Home'});
 

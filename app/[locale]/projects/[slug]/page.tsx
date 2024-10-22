@@ -1,6 +1,6 @@
 import {allProjects} from 'contentlayer/generated';
 import {Metadata} from 'next';
-import {unstable_setRequestLocale} from 'next-intl/server';
+import {setRequestLocale} from 'next-intl/server';
 import React from 'react';
 
 export const generateStaticParams = ({params: {locale}}: {
@@ -8,7 +8,7 @@ export const generateStaticParams = ({params: {locale}}: {
     locale: string;
   };
 }) => {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   return allProjects.map((blog) => ({
     slug: blog.slug,
@@ -24,7 +24,7 @@ export const generateMetadata = async (
   },
 ) => {
   const {locale, slug} = await props.params;
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const project = allProjects.find(
     (blog) => blog._raw.flattenedPath === `projects/${locale}/${slug}`,

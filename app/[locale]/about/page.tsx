@@ -1,6 +1,6 @@
 import {allAbouts} from 'contentlayer/generated';
 // import {about} from './velite';
-import {unstable_setRequestLocale} from 'next-intl/server';
+import {setRequestLocale} from 'next-intl/server';
 import React from 'react';
 import Markdown from 'react-markdown';
 
@@ -8,10 +8,10 @@ const Page = async (props: {params: Promise<{locale: string}>}) => {
   const params = await props.params;
 
   const {
-    locale
+    locale,
   } = params;
 
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const aboutData = allAbouts.find((about) =>
     about.lang === locale,
@@ -41,10 +41,11 @@ const Page = async (props: {params: Promise<{locale: string}>}) => {
 export const generateMetadata = async (
   props: {
     params: Promise<{locale: string}>;
-  }
+  },
 ) => {
-  const params = await props.params;
-  unstable_setRequestLocale(locale);
+  const {locale} = await props.params;
+
+  setRequestLocale(locale);
 
   const aboutData = allAbouts.find((about) =>
     about._raw.flattenedPath.includes(locale),

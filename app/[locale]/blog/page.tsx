@@ -1,7 +1,7 @@
 import {allBlogs} from 'contentlayer/generated';
 import dayjs from 'dayjs';
 import {useTranslations} from 'next-intl';
-import {getTranslations, unstable_setRequestLocale} from 'next-intl/server';
+import {getTranslations, setRequestLocale} from 'next-intl/server';
 import React, {use} from 'react';
 
 import {Card, CardContent, CardHeader} from '@/components/Card';
@@ -15,7 +15,7 @@ const Page = (props: {params: Promise<{locale: string}>}) => {
     locale,
   } = params;
 
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const t = useTranslations('Blog');
 
@@ -80,7 +80,8 @@ export const generateMetadata = async (
   },
 ) => {
   const {locale} = await props.params;
-  unstable_setRequestLocale(locale);
+
+  setRequestLocale(locale);
 
   const t = await getTranslations({locale, namespace: 'Blog'});
 

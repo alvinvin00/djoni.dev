@@ -3,7 +3,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import {Analytics} from '@vercel/analytics/react';
 import {SpeedInsights} from '@vercel/speed-insights/next';
 import type {Metadata} from 'next';
-import {getTranslations, unstable_setRequestLocale} from 'next-intl/server';
+import {getTranslations, setRequestLocale} from 'next-intl/server';
 import React, {PropsWithChildren} from 'react';
 
 import {Layout} from '@/components/Layout';
@@ -20,18 +20,8 @@ export const generateStaticParams = async () => {
 
 type RootLayoutProps = {params: {locale: string}};
 
-const RootLayout = async (props: PropsWithChildren<RootLayoutProps>) => {
-  const params = props.params;
-
-  const {
-    locale,
-  } = params;
-
-  const {
-    children,
-  } = props;
-
-  unstable_setRequestLocale(locale);
+const RootLayout = async ({children, params: {locale}}: PropsWithChildren<RootLayoutProps>) => {
+  setRequestLocale(locale);
 
   return (
     <html lang={locale}>
@@ -53,7 +43,7 @@ export const generateMetadata = async (
   },
 ) => {
   const {locale} = await props.params;
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const t = await getTranslations({locale, namespace: 'Metadata'});
 
