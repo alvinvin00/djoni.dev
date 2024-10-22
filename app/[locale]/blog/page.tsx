@@ -2,13 +2,19 @@ import {allBlogs} from 'contentlayer/generated';
 import dayjs from 'dayjs';
 import {useTranslations} from 'next-intl';
 import {getTranslations, unstable_setRequestLocale} from 'next-intl/server';
-import React from 'react';
+import React, {use} from 'react';
 
 import {Card, CardContent, CardHeader} from '@/components/Card';
 import Image from 'next/image';
 import blogBg from '/public/assets/blog-bg.jpg';
 
-const Page = ({params: {locale}}: {params: {locale: string}}) => {
+const Page = (props: {params: Promise<{locale: string}>}) => {
+  const params = use(props.params);
+
+  const {
+    locale,
+  } = params;
+
   unstable_setRequestLocale(locale);
 
   const t = useTranslations('Blog');
@@ -68,11 +74,12 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
   );
 };
 
-export const generateMetadata = async ({
-                                         params: {locale},
-                                       }: {
-  params: {locale: string};
-}) => {
+export const generateMetadata = async (
+  props: {
+    params: Promise<{locale: string}>;
+  },
+) => {
+  const {locale} = await props.params;
   unstable_setRequestLocale(locale);
 
   const t = await getTranslations({locale, namespace: 'Blog'});

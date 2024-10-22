@@ -4,7 +4,13 @@ import {unstable_setRequestLocale} from 'next-intl/server';
 import React from 'react';
 import Markdown from 'react-markdown';
 
-const Page = ({params: {locale}}: {params: {locale: string}}) => {
+const Page = async (props: {params: Promise<{locale: string}>}) => {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   unstable_setRequestLocale(locale);
 
   const aboutData = allAbouts.find((about) =>
@@ -32,11 +38,12 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
   );
 };
 
-export const generateMetadata = ({
-                                   params: {locale},
-                                 }: {
-  params: {locale: string};
-}) => {
+export const generateMetadata = async (
+  props: {
+    params: Promise<{locale: string}>;
+  }
+) => {
+  const params = await props.params;
   unstable_setRequestLocale(locale);
 
   const aboutData = allAbouts.find((about) =>

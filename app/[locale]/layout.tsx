@@ -20,31 +20,39 @@ export const generateStaticParams = async () => {
 
 type RootLayoutProps = {params: {locale: string}};
 
-const RootLayout = ({
-  children,
-  params: {locale},
-}: PropsWithChildren<RootLayoutProps>) => {
+const RootLayout = async (props: PropsWithChildren<RootLayoutProps>) => {
+  const params = props.params;
+
+  const {
+    locale,
+  } = params;
+
+  const {
+    children,
+  } = props;
+
   unstable_setRequestLocale(locale);
 
   return (
     <html lang={locale}>
-      <body className={`text-black dark:text-white scroll-smooth min-h-screen`}>
-        <Layout>
-          <BetaDisclaimer />
-          {children}
-        </Layout>
-        <Analytics />
-        <SpeedInsights />
-      </body>
+    <body className={`text-black dark:text-white scroll-smooth min-h-screen`}>
+    <Layout>
+      <BetaDisclaimer />
+      {children}
+    </Layout>
+    <Analytics />
+    <SpeedInsights />
+    </body>
     </html>
   );
 };
 
-export const generateMetadata = async ({
-  params: {locale},
-}: {
-  params: {locale: string};
-}) => {
+export const generateMetadata = async (
+  props: {
+    params: Promise<{locale: string}>;
+  },
+) => {
+  const {locale} = await props.params;
   unstable_setRequestLocale(locale);
 
   const t = await getTranslations({locale, namespace: 'Metadata'});
@@ -63,7 +71,7 @@ export const generateMetadata = async ({
       url: 'https://djoni.dev',
     },
     title: {
-      template: "%s | Djoni's Den",
+      template: '%s | Djoni\'s Den',
       default: t('title'),
     },
     twitter: {

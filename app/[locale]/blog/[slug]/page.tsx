@@ -3,10 +3,10 @@ import {unstable_setRequestLocale} from 'next-intl/server';
 import React from 'react';
 
 type BlogContentProps = {
-  params: {
+  params: Promise<{
     locale: string;
     slug: string;
-  };
+  }>;
 };
 
 export const generateStaticParams = ({params: {locale}}: {
@@ -19,7 +19,8 @@ export const generateStaticParams = ({params: {locale}}: {
   }));
 };
 
-export const generateMetadata = ({params: {locale, slug}}: BlogContentProps) => {
+export const generateMetadata = async (props: BlogContentProps) => {
+  const {locale, slug} = await props.params;
   unstable_setRequestLocale(locale);
 
   const blog = blogs.find(
@@ -33,7 +34,14 @@ export const generateMetadata = ({params: {locale, slug}}: BlogContentProps) => 
   };
 };
 
-const Page = ({params: {locale, slug}}: BlogContentProps) => {
+const Page = async (props: BlogContentProps) => {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug,
+  } = params;
+
   unstable_setRequestLocale(locale);
 
   const blog = blogs.find(

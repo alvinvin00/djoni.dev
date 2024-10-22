@@ -3,13 +3,19 @@ import {useTranslations} from 'next-intl';
 import {getTranslations, unstable_setRequestLocale} from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, {use} from 'react';
 
 import {BlogCarousel} from './BlogCarousel';
 import homeBg from '/public/assets/home-bg.jpg';
 
 
-const Page = ({params: {locale}}: {params: {locale: string}}) => {
+const Page = (props: {params: Promise<{locale: string}>}) => {
+  const params = use(props.params);
+
+  const {
+    locale,
+  } = params;
+
   unstable_setRequestLocale(locale);
 
   const t = useTranslations('Home');
@@ -60,11 +66,12 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
   );
 };
 
-export const generateMetadata = async ({
-                                         params: {locale},
-                                       }: {
-  params: {locale: string};
-}) => {
+export const generateMetadata = async (
+  props: {
+    params: Promise<{locale: string}>;
+  },
+) => {
+  const {locale} = await props.params;
   unstable_setRequestLocale(locale);
 
   const t = await getTranslations({locale, namespace: 'Home'});

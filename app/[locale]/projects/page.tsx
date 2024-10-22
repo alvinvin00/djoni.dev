@@ -10,7 +10,13 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import projectsBg from '/public/assets/projects-bg.jpg';
 
-const Page = ({params: {locale}}: {params: {locale: string}}) => {
+const Page = async (props: {params: Promise<{locale: string}>}) => {
+  const params = await props.params;
+
+  const {
+    locale,
+  } = params;
+
   unstable_setRequestLocale(locale);
 
   const projects = allProjects
@@ -84,9 +90,12 @@ const Page = ({params: {locale}}: {params: {locale: string}}) => {
   );
 };
 
-export const generateMetadata = async ({params: {locale}}: {
-  params: {locale: string};
-}) => {
+export const generateMetadata = async (
+  props: {
+    params: Promise<{locale: string}>;
+  },
+) => {
+  const {locale} = await props.params;
   unstable_setRequestLocale(locale);
 
   const t = await getTranslations({locale, namespace: 'Projects'});

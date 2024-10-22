@@ -2,7 +2,13 @@ import {allNows} from 'contentlayer/generated';
 import dayjs from 'dayjs';
 import {getTranslations, unstable_setRequestLocale} from 'next-intl/server';
 
-const NowPage = ({params: {locale}}: {params: {locale: string}}) => {
+const NowPage = async (props: {params: Promise<{locale: string}>}) => {
+  const params = await props.params;
+
+  const {
+    locale,
+  } = params;
+
   unstable_setRequestLocale(locale);
 
   const now = allNows.find((now) => now.lang === locale);
@@ -25,11 +31,12 @@ const NowPage = ({params: {locale}}: {params: {locale: string}}) => {
   );
 };
 
-export const generateMetadata = async ({
-                                         params: {locale},
-                                       }: {
-  params: {locale: string};
-}) => {
+export const generateMetadata = async (
+  props: {
+    params: Promise<{locale: string}>;
+  },
+) => {
+  const {locale} = await props.params;
   unstable_setRequestLocale(locale);
 
   const t = await getTranslations({locale, namespace: 'Now'});

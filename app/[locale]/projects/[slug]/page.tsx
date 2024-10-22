@@ -15,12 +15,15 @@ export const generateStaticParams = ({params: {locale}}: {
   }));
 };
 
-export const generateMetadata = ({params: {locale, slug}}: {
-  params: {
-    locale: string;
-    slug: string;
-  };
-}) => {
+export const generateMetadata = async (
+  props: {
+    params: Promise<{
+      locale: string;
+      slug: string;
+    }>;
+  },
+) => {
+  const {locale, slug} = await props.params;
   unstable_setRequestLocale(locale);
 
   const project = allProjects.find(
@@ -33,12 +36,21 @@ export const generateMetadata = ({params: {locale, slug}}: {
   } satisfies Metadata;
 };
 
-const ProjectDetailPage = ({params: {locale, slug}}: {
-  params: {
-    locale: string;
-    slug: string;
-  };
-}) => {
+const ProjectDetailPage = async (
+  props: {
+    params: Promise<{
+      locale: string;
+      slug: string;
+    }>;
+  },
+) => {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug,
+  } = params;
+
   const project = allProjects.find(
     (blog) => blog._raw.flattenedPath === `projects/${locale}/${slug}`,
   );
