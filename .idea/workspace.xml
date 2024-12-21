@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db4f35c2-e8fe-4668-9a36-bef403b8a2d1" name="Changes" comment="chore: migrated Storybook config">
+    <list default="true" id="db4f35c2-e8fe-4668-9a36-bef403b8a2d1" name="Changes" comment="refactor: remove unstable_setRequestLocale">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.storybook/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.storybook/preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/preview.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
@@ -21,6 +23,13 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,6 +63,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
@@ -73,9 +83,9 @@
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "pnpm",
     "npm.velite:build.executor": "Run",
-    "settings.editor.selected.configurable": "AndroidSdkUpdater",
+    "settings.editor.selected.configurable": "vcs.Git",
     "show.migrate.to.gradle.popup": "false",
-    "ts.external.directory.path": "D:\\Projects\\alvinvin00.github.io\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "D:\\Projects\\djoni.dev\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -99,11 +109,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.velite:build" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23339.15" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.112" />
       </set>
     </attachedChunks>
   </component>
@@ -132,7 +147,15 @@
       <workItem from="1722502110850" duration="230000" />
       <workItem from="1723455250964" duration="690000" />
       <workItem from="1727660697586" duration="8000" />
-      <workItem from="1727660744807" duration="1187000" />
+      <workItem from="1727660744807" duration="2279000" />
+      <workItem from="1728102645066" duration="773000" />
+      <workItem from="1728457999245" duration="23000" />
+      <workItem from="1729568446919" duration="6611000" />
+      <workItem from="1730862423420" duration="58000" />
+      <workItem from="1730862497282" duration="751000" />
+      <workItem from="1731393171062" duration="2307000" />
+      <workItem from="1731468755790" duration="4000" />
+      <workItem from="1734748718590" duration="981000" />
     </task>
     <task id="LOCAL-00001" summary="deps: updated dependencies">
       <option name="closed" value="true" />
@@ -206,7 +229,39 @@
       <option name="project" value="LOCAL" />
       <updated>1723455677383</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="deps: updated dependencies">
+      <option name="closed" value="true" />
+      <created>1727662504742</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1727662504742</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat!: upgrade to React 19 and Next.js 15">
+      <option name="closed" value="true" />
+      <created>1729569322213</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729569322214</updated>
+    </task>
+    <task id="LOCAL-00012" summary="deps: use Velite and updated Storybook">
+      <option name="closed" value="true" />
+      <created>1729570673601</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729570673601</updated>
+    </task>
+    <task id="LOCAL-00013" summary="refactor: remove unstable_setRequestLocale">
+      <option name="closed" value="true" />
+      <created>1729579279547</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729579279547</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,8 +273,16 @@
     <MESSAGE value="fix: remove MDX Components" />
     <MESSAGE value="chore: updated IDEA config" />
     <MESSAGE value="refactor: use Velite" />
-    <MESSAGE value="deps: updated dependencies" />
     <MESSAGE value="chore: migrated Storybook config" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: migrated Storybook config" />
+    <MESSAGE value="deps: updated dependencies" />
+    <MESSAGE value="feat!: upgrade to React 19 and NextJS 15" />
+    <MESSAGE value="feat!: upgrade to React 19 and Next.js 15" />
+    <MESSAGE value="deps: use Velite and updated Storybook" />
+    <MESSAGE value="refactor: remove unstable_setRequestLocale" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: remove unstable_setRequestLocale" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
