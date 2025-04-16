@@ -54,8 +54,13 @@ export const now = defineCollection({
   }),
 });
 
-/** @type {import('velite').UserConfig} */
 export default defineConfig({
   root: 'src/contents',
   collections: {about, blog: blogs, now, projects},
+  // prepare: (data) => {
+  //   data.collections.about.lang = 'en';
+  //   data.collections.blog.lang = 'en';
+  //   data.collections.now.lang = 'en';
+  //   data.collections.projects.lang = 'en';
+  // },
 });
