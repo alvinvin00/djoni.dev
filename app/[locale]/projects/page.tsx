@@ -56,7 +56,7 @@ const Page = async (props: {params: Promise<{locale: string}>}) => {
                 />
               </CardMedia>
               <CardHeader>
-                <h5 className="text-xl font-bold whitespace-nowrap overflow-clip overflow-ellipsis">
+                <h5 className="text-xl font-bold whitespace-nowrap overflow-clip text-ellipsis">
                   {project.title}
                 </h5>
                 <span className="text-sm font-semibold">

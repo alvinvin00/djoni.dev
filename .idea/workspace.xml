@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db4f35c2-e8fe-4668-9a36-bef403b8a2d1" name="Changes" comment="refactor: remove unstable_setRequestLocale">
+    <list default="true" id="db4f35c2-e8fe-4668-9a36-bef403b8a2d1" name="Changes" comment="refactor!: migrate Tailwind to v4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.storybook/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.storybook/preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/preview.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/blog/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/blog/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/projects/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/projects/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +41,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -58,37 +67,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "javascript.nodejs.core.library.configured.version": "20.5.1",
-    "javascript.nodejs.core.library.typings.version": "20.5.9",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Projects/djoni.dev",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "pnpm",
-    "npm.velite:build.executor": "Run",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "show.migrate.to.gradle.popup": "false",
-    "ts.external.directory.path": "D:\\Projects\\djoni.dev\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.5.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.5.9&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/elysia-js-hello&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;npm.velite:build.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\djoni.dev\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -118,7 +127,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.112" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
       </set>
     </attachedChunks>
   </component>
@@ -155,7 +164,12 @@
       <workItem from="1730862497282" duration="751000" />
       <workItem from="1731393171062" duration="2307000" />
       <workItem from="1731468755790" duration="4000" />
-      <workItem from="1734748718590" duration="981000" />
+      <workItem from="1734748718590" duration="3638000" />
+      <workItem from="1734917719793" duration="723000" />
+      <workItem from="1734928586729" duration="636000" />
+      <workItem from="1735006047864" duration="1881000" />
+      <workItem from="1735284467570" duration="2172000" />
+      <workItem from="1744792188526" duration="803000" />
     </task>
     <task id="LOCAL-00001" summary="deps: updated dependencies">
       <option name="closed" value="true" />
@@ -261,7 +275,39 @@
       <option name="project" value="LOCAL" />
       <updated>1729579279547</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="deps: updated dependencies">
+      <option name="closed" value="true" />
+      <created>1734749901340</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1734749901340</updated>
+    </task>
+    <task id="LOCAL-00015" summary="deps: updated dependencies">
+      <option name="closed" value="true" />
+      <created>1734750238374</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1734750238374</updated>
+    </task>
+    <task id="LOCAL-00016" summary="refactor: rename config files to TypeScript and update dependencies">
+      <option name="closed" value="true" />
+      <created>1744792593205</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1744792593205</updated>
+    </task>
+    <task id="LOCAL-00017" summary="refactor: rename config files to TypeScript and update dependencies">
+      <option name="closed" value="true" />
+      <created>1744792692145</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1744792692145</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,12 +320,14 @@
     <MESSAGE value="chore: updated IDEA config" />
     <MESSAGE value="refactor: use Velite" />
     <MESSAGE value="chore: migrated Storybook config" />
-    <MESSAGE value="deps: updated dependencies" />
     <MESSAGE value="feat!: upgrade to React 19 and NextJS 15" />
     <MESSAGE value="feat!: upgrade to React 19 and Next.js 15" />
     <MESSAGE value="deps: use Velite and updated Storybook" />
     <MESSAGE value="refactor: remove unstable_setRequestLocale" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: remove unstable_setRequestLocale" />
+    <MESSAGE value="deps: updated dependencies" />
+    <MESSAGE value="refactor: rename config files to TypeScript and update dependencies" />
+    <MESSAGE value="refactor!: migrate Tailwind to v4" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor!: migrate Tailwind to v4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

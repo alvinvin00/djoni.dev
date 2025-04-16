@@ -34,7 +34,7 @@ export const Navbar = () => {
 
     return (
         <nav className="container sticky top-0 flex flex-col md:flex-row p-4 text-xl">
-            <div className="flex flex-grow justify-between items-center text-black dark:text-white">
+            <div className="flex grow justify-between items-center text-black dark:text-white">
                 <Link href='/' className="inline transition-all hover:text-blue-400 hover:scale-110">
                     <h6 className={'text-lg font-bold'}>
                         Djoni&apos;s Den
@@ -50,7 +50,7 @@ export const Navbar = () => {
                         }}>
                             <FontAwesomeIcon icon={faBars}/>
                         </Button>
-                        <ModalOverlay className={'fixed backdrop-blur-sm inset-0 z-50'} isOpen={isOpen}>
+                        <ModalOverlay className={'fixed backdrop-blur-xs inset-0 z-50'} isOpen={isOpen}>
                             <Modal
                                 className={'fixed top-3 left-0 right-0 p-2 max-w-full mx-4 rounded-2xl bg-blue-300 dark:bg-gray-700 z-50'}
                             >

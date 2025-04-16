@@ -37,19 +37,19 @@ const Page = (props: {params: Promise<{locale: string}>}) => {
           <div className="flex flex-row justify-center gap-2 transition-all ease-in-out duration-300 m-2">
             <Link href={`/now`}>
               <button
-                className="text-white font-bold p-2 rounded-xl bg-gradient-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 ease-in-out duration-300 ">
+                className="text-white font-bold p-2 rounded-xl bg-linear-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 ease-in-out duration-300 ">
                 {t('now_button')}
               </button>
             </Link>
             <Link href={`/projects`}>
               <button
-                className="text-white font-bold p-2 rounded-xl bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 ease-in-out duration-300">
+                className="text-white font-bold p-2 rounded-xl bg-linear-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 ease-in-out duration-300">
                 {t('project_button')}
               </button>
             </Link>
             <Link href={`/blog`}>
               <button
-                className="text-white font-bold p-2 rounded-xl bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 ease-in-out duration-300">
+                className="text-white font-bold p-2 rounded-xl bg-linear-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 ease-in-out duration-300">
                 {t('blog_button')}
               </button>
             </Link>

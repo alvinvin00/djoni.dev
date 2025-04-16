@@ -29,12 +29,12 @@ const Page = (props: {params: Promise<{locale: string}>}) => {
         <Image
           src={blogBg}
           alt={'Photo of a notebook and a laptop, courtesy of Unsplash'}
-          className={'object-cover blur-sm'}
+          className={'object-cover blur-xs'}
           placeholder={'blur'}
           fill
         />
         <div className="absolute h-full w-full grid place-items-center">
-          <div className="flex flex-col text-center text-white backdrop-blur-sm">
+          <div className="flex flex-col text-center text-white backdrop-blur-xs">
             <h5 className="text-2xl font-bold">{t('title')}</h5>
             <p className="text-xl">{t('description')}</p>
             <p className="text-yellow-500 text-lg font-bold">{t('disclaimer_text')}</p>
@@ -49,7 +49,7 @@ const Page = (props: {params: Promise<{locale: string}>}) => {
               className="flex flex-col gap-2 bg-white dark:bg-gray-700 dark:text-white"
             >
               <CardHeader>
-                <h3 className="text-lg font-bold line-clamp-2 overflow-clip overflow-ellipsis">
+                <h3 className="text-lg font-bold line-clamp-2 overflow-clip text-ellipsis">
                   {blog.title}
                 </h3>
               </CardHeader>

@@ -21,7 +21,7 @@ export const Footer = () => {
                     {
                         socials.map((social) => (
                             <Link key={social.id} href={social.url} title={social.title ?? social.name}>
-                                <span className={'rounded p-2 size-8 grid place-items-center text-white'}
+                                <span className={'rounded-sm p-2 size-8 grid place-items-center text-white'}
                                       style={{
                                           backgroundColor: social.color,
                                       }}>

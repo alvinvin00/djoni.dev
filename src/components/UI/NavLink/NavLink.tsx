@@ -10,7 +10,7 @@ export const NavLink = function ({href, children}: { href: string, children: Rea
         <div className="group transition-all flex flex-col">
             <Link
                 href={href}
-                className={`text-md font-semibold text-black dark:text-white data-[current=true]:text-blue-400 data-[current=true]:dark:text-blue-400 group-hover:text-blue-400 group-hover:drop-shadow-2xl group-hover:drop-shadow-blue-400 duration-300 ease-in-out`
+                className={`text-md font-semibold text-black dark:text-white data-[current=true]:text-blue-400 dark:data-[current=true]:text-blue-400 group-hover:text-blue-400 group-hover:drop-shadow-2xl group-hover:drop-shadow-blue-400 duration-300 ease-in-out`
                 }
                 data-current={pathname === href}
             >
