@@ -3,25 +3,33 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import {Analytics} from '@vercel/analytics/react';
 import {SpeedInsights} from '@vercel/speed-insights/next';
 import type {Metadata} from 'next';
-import {getTranslations, setRequestLocale} from 'next-intl/server';
-import React, {PropsWithChildren} from 'react';
+import {getTranslations} from 'next-intl/server';
+import React from 'react';
 
 import {Layout} from '@/components/Layout';
 import {BetaDisclaimer} from '@/components/Layout/BetaDisclaimer';
 
 import locales from '@/config/locale';
 import '@/styles/globals.css';
+import {hasLocale} from 'next-intl';
+import {routing} from '@/i18n/routing';
+import {notFound} from 'next/navigation';
 
 config.autoAddCss = false;
 
-export const generateStaticParams = async () => {
+export const generateStaticParams = () => {
   return locales.map((locale) => ({locale}));
 };
 
-type RootLayoutProps = {params: {locale: string}};
 
-const RootLayout = async ({children, params: {locale}}: PropsWithChildren<RootLayoutProps>) => {
-  setRequestLocale(locale);
+const RootLayout = async ({children, params}: {
+  children: React.ReactNode;
+  params: Promise<{locale: string}>;
+}) => {
+  const {locale} = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
 
   return (
     <html lang={locale}>
@@ -38,12 +46,11 @@ const RootLayout = async ({children, params: {locale}}: PropsWithChildren<RootLa
 };
 
 export const generateMetadata = async (
-  props: {
+  {params}: {
     params: Promise<{locale: string}>;
   },
-) => {
-  const {locale} = await props.params;
-  setRequestLocale(locale);
+): Promise<Metadata> => {
+  const {locale} = await params;
 
   const t = await getTranslations({locale, namespace: 'Metadata'});
 

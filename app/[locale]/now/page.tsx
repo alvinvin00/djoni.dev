@@ -1,4 +1,4 @@
-import {allNows} from 'contentlayer/generated';
+import {allNows} from 'content-collections';
 import dayjs from 'dayjs';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 

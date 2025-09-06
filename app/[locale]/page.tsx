@@ -5,12 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, {use} from 'react';
 
-import {BlogCarousel} from './BlogCarousel';
-import homeBg from '/public/assets/home-bg.jpg';
+import {BlogCarousel} from '@/components/BlogCarousel';
+import homeBg from '../../public/assets/home-bg.jpg';
 
 
-const Page = (props: {params: Promise<{locale: string}>}) => {
-  const {locale} = use(props.params);
+const Page = ({params}) => {
+  const {locale} = use(params);
 
   setRequestLocale(locale);
 
@@ -63,13 +63,9 @@ const Page = (props: {params: Promise<{locale: string}>}) => {
 };
 
 export const generateMetadata = async (
-  props: {
-    params: Promise<{locale: string}>;
-  },
-) => {
-  const {locale} = await props.params;
-
-  setRequestLocale(locale);
+  {params},
+): Promise<Metadata> => {
+  const {locale} = await params;
 
   const t = await getTranslations({locale, namespace: 'Home'});
 

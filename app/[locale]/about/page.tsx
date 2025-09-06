@@ -1,4 +1,4 @@
-import {allAbouts} from 'contentlayer/generated';
+import {allAbouts} from 'content-collections';
 // import {about} from './velite';
 import {setRequestLocale} from 'next-intl/server';
 import React from 'react';

@@ -1,4 +1,4 @@
-import {allBlogs} from 'contentlayer/generated';
+import {allBlogs} from 'content-collections';
 import dayjs from 'dayjs';
 import Image from 'next/image';
 import React from 'react';

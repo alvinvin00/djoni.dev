@@ -1,6 +1,7 @@
 ---
 title: Eliteguard
 slug: eliteguard
+lang: id
 description: Aplikasi untuk mengontrol dan memantau absensi satpam.
 author: Alvin Leonardo
 thumbnail: /media/projects/eliteguard/home.webp

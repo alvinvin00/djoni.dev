@@ -1,6 +1,8 @@
 ---
 title: Tentang Saya
 date: 2024-01-10
+lang: id
+description: Perkenalan singkat tentang saya, latar belakang saya, dan minat saya
 ---
 
 I'm a software engineer with 4 years of experience in web development and 2 years in mobile

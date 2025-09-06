@@ -1,6 +1,6 @@
 import {blog as blogs} from '.velite';
 import {setRequestLocale} from 'next-intl/server';
-import React from 'react';
+import React, {use} from 'react';
 
 type BlogContentProps = {
   params: Promise<{
@@ -9,9 +9,11 @@ type BlogContentProps = {
   }>;
 };
 
-export const generateStaticParams = ({params: {locale}}: {
-  params: {locale: string};
+export const generateStaticParams = ({params}: {
+  params: Promise<{locale: string}>;
 }) => {
+  const {locale} = use(params);
+
   setRequestLocale(locale);
 
   return blogs.map((blog) => ({

@@ -1,15 +1,9 @@
 import {NextConfig} from 'next';
 
-// const withNextIntl = require('next-intl/plugin');
-import withNextIntl from 'next-intl/plugin';
+import {withContentCollections} from '@content-collections/next';
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const isDev = process.argv.indexOf('dev') !== -1;
-const isBuild = process.argv.indexOf('build') !== -1;
-if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
-  process.env.VELITE_STARTED = '1';
-  const {build} = await import('velite');
-  await build({watch: isDev, clean: !isDev});
-}
+const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   experimental: {
@@ -21,10 +15,10 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'via.placeholder.com',
+        hostname: 'placehold.co',
       },
     ],
   },
 };
 
-module.exports = withNextIntl()(nextConfig);
+module.exports = withContentCollections(withNextIntl(nextConfig));

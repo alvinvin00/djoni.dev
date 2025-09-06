@@ -1,6 +1,7 @@
 ---
 title: Simponi Mobile
 slug: simponi
+lang: en
 description: 2nd generation of "Interactive Online Learning System" mobile app at MDP University powered by Flutter.
 thumbnail: /media/projects/simponi/screen-1.webp
 author: Alvin Leonardo
@@ -16,6 +17,7 @@ images:
   - /media/projects/simponi/screen-6.webp
 categories:
   - mobile
+tags:
   - flutter
   - android
 ---

@@ -1,29 +1,28 @@
-//@ts-check
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import storybook from 'eslint-plugin-storybook';
-import {fixupConfigRules, fixupPluginRules} from '@eslint/compat';
+import {dirname} from 'path';
+import {fileURLToPath} from 'url';
 import {FlatCompat} from '@eslint/eslintrc';
+import storybook from 'eslint-plugin-storybook';
+import tseslint from 'typescript-eslint';
 
-const compat = new FlatCompat();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...fixupConfigRules(compat.extends('plugin:@next/next/core-web-vitals')),
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+const eslintConfig = tseslint.config([
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
-    plugins: {
-      storybook: fixupPluginRules(storybook),
-    },
-    rules: {
-      'no-restricted-imports': [
-        'error',
-        {
-          'patterns': [
-            '@/features/*/*',
-          ],
-        },
-      ],
-    },
+    ignores: [
+      'node_modules/**',
+      '.next/**',
+      'out/**',
+      'build/**',
+      'next-env.d.ts',
+    ],
   },
-);
+  storybook.configs['flat/recommended'],
+]);
+
+export default eslintConfig;

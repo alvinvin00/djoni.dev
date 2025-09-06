@@ -1,4 +1,4 @@
-import {allProjects} from 'contentlayer/generated';
+import {allProjects} from 'content-collections';
 import dayjs from 'dayjs';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import Image from 'next/image';
@@ -88,7 +88,7 @@ const Page = async (props: {params: Promise<{locale: string}>}) => {
 
 export const generateMetadata = async (
   props: {
-    params: Promise<{locale: string}>;
+    params: Promise<{locale: Locale}>;
   },
 ) => {
   const {locale} = await props.params;

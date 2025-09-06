@@ -1,4 +1,4 @@
-import {allBlogs} from 'contentlayer/generated';
+import {allBlogs} from 'content-collections';
 import dayjs from 'dayjs';
 import {useTranslations} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';

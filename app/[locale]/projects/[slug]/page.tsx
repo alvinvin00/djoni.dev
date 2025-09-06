@@ -1,4 +1,4 @@
-import {allProjects} from 'contentlayer/generated';
+import {allProjects} from 'content-collections';
 import {Metadata} from 'next';
 import {setRequestLocale} from 'next-intl/server';
 import React from 'react';

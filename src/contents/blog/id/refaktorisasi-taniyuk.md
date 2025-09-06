@@ -2,6 +2,7 @@
 title: Refaktorisasi Taniyuk, Motivasi dan Halangan
 author: Alvin Leonardo
 date: 2023-12-1
+lang: id
 slug: refaktorisasi-taniyuk
 thumbnail: /images/taniyuk-refactor.png
 description: Cerita yang saya hadapi ketika melakukan refaktorisasi Taniyuk.
