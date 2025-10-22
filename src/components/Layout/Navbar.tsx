@@ -1,14 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBars, faClose} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import {NavLink} from "@/components/UI/NavLink";
-import {useToggle} from "@uidotdev/usehooks";
-import {Button, DialogTrigger, Modal, ModalOverlay} from "react-aria-components";
-import {ClientOnly} from "@/components/UI/ClientOnly";
-import {DarkModeButton} from "@/components/Button/DarkMode";
+import { NavLink } from "@/components/UI/NavLink";
+import { useToggle } from "@uidotdev/usehooks";
+import { ClientOnly } from "@/components/UI/ClientOnly";
+import { DarkModeButton } from "@/components/Button/DarkMode";
+import { Dialog } from "@base-ui-components/react/dialog";
 
 const Navlinks = () => {
     return (
@@ -42,37 +42,32 @@ export const Navbar = () => {
                 </Link>
                 <div className="inline-flex gap-4 md:mr-4">
                     <ClientOnly>
-                        <DarkModeButton/>
+                        <DarkModeButton />
                     </ClientOnly>
-                    <DialogTrigger>
-                        <Button className="rounded-2xl p-1 md:hidden" onPress={() => {
-                            setOpen(true)
-                        }}>
-                            <FontAwesomeIcon icon={faBars}/>
-                        </Button>
-                        <ModalOverlay className={'fixed backdrop-blur-xs inset-0 z-50'} isOpen={isOpen}>
-                            <Modal
-                                className={'fixed top-3 left-0 right-0 p-2 max-w-full mx-4 rounded-2xl bg-blue-300 dark:bg-gray-700 z-50'}
-                            >
-                                <div className={'flex flex-row justify-between text-black dark:text-white'}>
+                    <Dialog.Root open={isOpen} onOpenChange={setOpen}>
+                        <Dialog.Trigger className="rounded-2xl p-1 md:hidden">
+                            <FontAwesomeIcon icon={faBars} />
+                        </Dialog.Trigger>
+                        <Dialog.Portal>
+                            <Dialog.Backdrop className={'fixed backdrop-blur-xs inset-0 z-50'} />
+                            <Dialog.Popup className={'fixed top-3 left-0 right-0 p-2 max-w-full mx-4 rounded-2xl bg-blue-300 dark:bg-gray-700 z-50'}>
+                                <div className={'flex flex-row justify-between items-center text-black dark:text-white'}>
                                     <h6 className={'text-lg font-bold'}>Djoni&apos;s Den</h6>
-                                    <Button className={'text-black dark:text-white'} onPress={() => {
-                                        setOpen(false)
-                                    }}>
-                                        <FontAwesomeIcon icon={faClose}/>
-                                    </Button>
+                                    <Dialog.Close className={'text-black dark:text-white p-1 rounded'}>
+                                        <FontAwesomeIcon icon={faClose} />
+                                    </Dialog.Close>
                                 </div>
-                                <hr/>
+                                <hr />
                                 <div className={'flex flex-col gap-4'}>
-                                    <Navlinks/>
+                                    <Navlinks />
                                 </div>
-                            </Modal>
-                        </ModalOverlay>
-                    </DialogTrigger>
+                            </Dialog.Popup>
+                        </Dialog.Portal>
+                    </Dialog.Root>
                 </div>
             </div>
             <div className={'hidden md:flex md:flex-row gap-4 transition duration-500'}>
-                <Navlinks/>
+                <Navlinks />
             </div>
         </nav>
     )

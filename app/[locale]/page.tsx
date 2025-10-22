@@ -4,7 +4,7 @@ import {getTranslations, setRequestLocale} from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, {use} from 'react';
-
+import {} from '@base-ui-components/react';
 import {BlogCarousel} from '@/components/BlogCarousel';
 import homeBg from '../../public/assets/home-bg.jpg';
 

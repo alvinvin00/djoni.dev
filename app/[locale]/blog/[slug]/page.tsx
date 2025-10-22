@@ -1,6 +1,6 @@
-import {blog as blogs} from '.velite';
+import {allBlogs} from 'content-collections';
 import {setRequestLocale} from 'next-intl/server';
-import React, {use} from 'react';
+import React from 'react';
 
 type BlogContentProps = {
   params: Promise<{
@@ -9,14 +9,14 @@ type BlogContentProps = {
   }>;
 };
 
-export const generateStaticParams = ({params}: {
+export const generateStaticParams = async ({params}: {
   params: Promise<{locale: string}>;
 }) => {
-  const {locale} = use(params);
+  const {locale} = await params;
 
   setRequestLocale(locale);
 
-  return blogs.map((blog) => ({
+  return allBlogs.map((blog) => ({
     slug: blog.slug,
   }));
 };
@@ -25,13 +25,13 @@ export const generateMetadata = async (props: BlogContentProps) => {
   const {locale, slug} = await props.params;
   setRequestLocale(locale);
 
-  const blog = blogs.find(
-    (blog) => blog._raw.flattenedPath === `blog/${locale}/${slug}`,
+  const blog = allBlogs.find(
+    (blog) => blog._meta.filePath === `blog/${locale}/${slug}`,
   );
 
   return {
     title: blog?.title,
-    description: blog?.body.raw,
+    description: blog?.description,
     keywords: blog?.categories ?? [],
   };
 };
@@ -46,11 +46,11 @@ const Page = async (props: BlogContentProps) => {
 
   setRequestLocale(locale);
 
-  const blog = blogs.find(
-    (blog) => blog._raw.flattenedPath === `blog/${locale}/${slug}`,
+  const blog = allBlogs.find(
+    (blog) => blog._meta.filePath === `blog/${locale}/${slug}`,
   );
 
-  return <div className={'container'}>{blog?.body?.raw}</div>;
+  return <div className={'container'}>{blog?.content}</div>;
 };
 
 export default Page;

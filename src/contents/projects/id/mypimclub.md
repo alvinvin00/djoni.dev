@@ -6,8 +6,9 @@ description: Aplikasi loyalty untuk pelanggan Palembang Indah Mall.
 author: Alvin Leonardo
 date: 2024-09-01
 status: active
-tags:
+categories:
   - mobile
+tags:
   - flutter
-  - android
+  - dart
 ---
