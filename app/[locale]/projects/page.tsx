@@ -14,7 +14,7 @@ import {
 import {faGlobe} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import projectsBg from '/public/assets/projects-bg.jpg';
+import projectsBg from '../../public/assets/projects-bg.jpg';
 
 const Page = async (props: {params: Promise<{locale: string}>}) => {
   const {locale} = await props.params;
@@ -29,7 +29,7 @@ const Page = async (props: {params: Promise<{locale: string}>}) => {
     <div className="flex flex-col gap-4 py-2">
       <div className="relative w-full h-auto max-h-60 aspect-video">
         <Image
-          src={projectsBg}
+          src="/assets/projects-bg.jpg"
           alt={
             'Photo of a code snippet in a monitor and a laptop, courtesy of Unsplash'
           }

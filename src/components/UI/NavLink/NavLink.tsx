@@ -1,7 +1,8 @@
 'use client';
 import React, {ReactNode} from 'react';
-import Link from 'next/link';
+import {NavLink as MantineNavLink} from '@mantine/core';
 import {usePathname} from 'next/navigation';
+import Link from 'next/link';
 
 export const NavLink = function ({
   href,
@@ -13,14 +14,11 @@ export const NavLink = function ({
   const pathname = usePathname();
 
   return (
-    <div className="group transition-all flex flex-col">
-      <Link
-        href={href}
-        className={`text-md font-semibold text-black dark:text-white data-[current=true]:text-blue-400 dark:data-[current=true]:text-blue-400 group-hover:text-blue-400 group-hover:drop-shadow-2xl group-hover:drop-shadow-blue-400 duration-300 ease-in-out`}
-        data-current={pathname === href}
-      >
-        {children}
-      </Link>
-    </div>
+    <MantineNavLink
+      component={Link}
+      href={href}
+      label={children}
+      active={pathname === href}
+    />
   );
 };

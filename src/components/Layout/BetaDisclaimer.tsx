@@ -1,30 +1,27 @@
-import {faTriangleExclamation} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useTranslations} from 'next-intl';
 import React from 'react';
+import {Alert, Anchor} from '@mantine/core';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faTriangleExclamation} from '@fortawesome/free-solid-svg-icons';
 
 export const BetaDisclaimer = () => {
   const t = useTranslations('Home');
 
   return (
-    <section
-      className={
-        'container flex gap-2 text-sm font-bold p-2 rounded-lg bg-yellow-300 text-black my-1'
-      }
+    <Alert
+      variant="light"
+      color="yellow"
+      title={t('beta_disclaimer')}
+      icon={<FontAwesomeIcon icon={faTriangleExclamation} />}
+      className="container my-2"
     >
-      <div>
-        <FontAwesomeIcon icon={faTriangleExclamation} size={'sm'} />
-      </div>
-      <div className={'w-full flex justify-between'}>
-        <h1>{t('beta_disclaimer')}</h1>
-        <a
-          href={'https://github.com/alvinvin00/djoni.dev/commits/main/'}
-          className={'underline text-blue-600 hover:text-blue-800'}
-          target={'_blank'}
-        >
-          {t('changelog_link')}
-        </a>
-      </div>
-    </section>
+      <Anchor
+        href="https://github.com/alvinvin00/djoni.dev/commits/main/"
+        target="_blank"
+        size="sm"
+      >
+        {t('changelog_link')}
+      </Anchor>
+    </Alert>
   );
 };

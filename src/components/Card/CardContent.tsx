@@ -1,5 +1,6 @@
 import React from 'react';
+import {Stack} from '@mantine/core';
 
 export const CardContent = ({children}: {children: React.ReactNode}) => {
-  return <div className={'flex flex-col flex-auto px-2 gap-1'}>{children}</div>;
+  return <Stack gap="xs">{children}</Stack>;
 };

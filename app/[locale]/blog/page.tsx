@@ -6,7 +6,7 @@ import React, {use} from 'react';
 
 import {Card, CardContent, CardHeader} from '@/components/Card';
 import Image from 'next/image';
-import blogBg from '/public/assets/blog-bg.jpg';
+import blogBg from '../../public/assets/blog-bg.jpg';
 
 const Page = (props: {params: Promise<{locale: string}>}) => {
   const params = use(props.params);
@@ -25,7 +25,7 @@ const Page = (props: {params: Promise<{locale: string}>}) => {
     <div className="flex flex-col gap-4 my-2">
       <div className="relative w-full h-auto max-h-60 aspect-video">
         <Image
-          src={blogBg}
+          src="/assets/blog-bg.jpg"
           alt={'Photo of a notebook and a laptop, courtesy of Unsplash'}
           className={'object-cover blur-xs'}
           placeholder={'blur'}

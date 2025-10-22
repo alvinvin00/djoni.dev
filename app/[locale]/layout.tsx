@@ -5,12 +5,12 @@ import {SpeedInsights} from '@vercel/speed-insights/next';
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
 import React from 'react';
+import {ColorSchemeScript, MantineProvider} from '@mantine/core';
+import '@mantine/core/styles.css';
 
-import {Layout} from '@/components/Layout';
-import {BetaDisclaimer} from '@/components/Layout/BetaDisclaimer';
+import {AppLayout} from '@/components/Layout/AppLayout';
 
 import locales from '@/config/locale';
-import '@/styles/globals.css';
 import {hasLocale} from 'next-intl';
 import {routing} from '@/i18n/routing';
 import {notFound} from 'next/navigation';
@@ -22,9 +22,9 @@ export const generateStaticParams = () => {
 };
 
 const RootLayout = async ({
-  children,
-  params,
-}: {
+                            children,
+                            params,
+                          }: {
   children: React.ReactNode;
   params: Promise<{locale: string}>;
 }) => {
@@ -35,22 +35,22 @@ const RootLayout = async ({
 
   return (
     <html lang={locale}>
-      <body className={`text-black dark:text-white scroll-smooth min-h-screen`}>
-        <Layout>
-          <BetaDisclaimer />
-          {children}
-        </Layout>
-        <Analytics />
-        <SpeedInsights />
-      </body>
+    <head>
+      <ColorSchemeScript defaultColorScheme="auto" />
+    </head>
+    <body>
+    <MantineProvider defaultColorScheme="auto">
+      <AppLayout>{children}</AppLayout>
+    </MantineProvider>
+    <Analytics />
+    <SpeedInsights />
+    </body>
     </html>
   );
 };
 
-export const generateMetadata = async ({
-  params,
-}: {
-  params: Promise<{locale: string}>;
+export const generateMetadata = async ({params}: {
+  params: Promise<{locale: 'en' | 'id'}>;
 }): Promise<Metadata> => {
   const {locale} = await params;
 
@@ -70,7 +70,7 @@ export const generateMetadata = async ({
       url: 'https://djoni.dev',
     },
     title: {
-      template: "%s | Djoni's Den",
+      template: '%s | Djoni\'s Den',
       default: t('title'),
     },
     twitter: {

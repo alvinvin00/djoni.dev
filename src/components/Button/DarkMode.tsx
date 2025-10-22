@@ -1,30 +1,21 @@
 'use client';
 
-import {useLocalStorage} from '@uidotdev/usehooks';
-import React, {useEffect} from 'react';
+import React from 'react';
+import {ActionIcon, useMantineColorScheme} from '@mantine/core';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMoon, faSun} from '@fortawesome/free-regular-svg-icons';
 
 export const DarkModeButton = () => {
-  const [darkMode, setDarkMode] = useLocalStorage('darkMode', false);
-
-  useEffect(() => {
-    if (darkMode) {
-      window.document.body.classList.add('dark');
-    } else {
-      window.document.body.classList.remove('dark');
-    }
-  }, [darkMode]);
+  const {colorScheme, toggleColorScheme} = useMantineColorScheme();
 
   return (
-    <button
-      className="transition-all hover:text-blue-400 active:scale-75 hover:cursor-pointer"
-      title={'Toggle Dark Mode'}
-      onClick={() => {
-        setDarkMode((prevState) => !prevState);
-      }}
+    <ActionIcon
+      onClick={() => toggleColorScheme()}
+      variant="default"
+      size="lg"
+      aria-label="Toggle color scheme"
     >
-      <FontAwesomeIcon icon={darkMode ? faMoon : faSun} />
-    </button>
+      <FontAwesomeIcon icon={colorScheme === 'dark' ? faMoon : faSun} />
+    </ActionIcon>
   );
 };

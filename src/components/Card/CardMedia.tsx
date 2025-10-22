@@ -1,5 +1,5 @@
 import React from 'react';
-import clsx from 'clsx';
+import {Card} from '@mantine/core';
 
 export const CardMedia = ({
   className,
@@ -8,10 +8,9 @@ export const CardMedia = ({
   className?: string;
   children: React.ReactNode;
 }) => {
-  const classes = clsx(
-    'relative aspect-video w-full h-auto overflow-hidden',
-    className,
+  return (
+    <Card.Section className={className} style={{position: 'relative', aspectRatio: '16/9', overflow: 'hidden'}}>
+      {children}
+    </Card.Section>
   );
-
-  return <div className={classes}>{children}</div>;
 };

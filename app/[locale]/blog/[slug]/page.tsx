@@ -1,20 +1,18 @@
 import {allBlogs} from 'content-collections';
 import {setRequestLocale} from 'next-intl/server';
-import React from 'react';
+import type {Metadata} from 'next';
 
 type BlogContentProps = {
   params: Promise<{
-    locale: string;
+    locale: 'en' | 'id';
     slug: string;
   }>;
 };
 
-export const generateStaticParams = async ({
-  params,
-}: {
-  params: Promise<{locale: string}>;
+export const generateStaticParams = async ({params}: {
+  params: {locale: 'en' | 'id'; slug: string};
 }) => {
-  const {locale} = await params;
+  const {locale} = params;
 
   setRequestLocale(locale);
 
@@ -23,7 +21,7 @@ export const generateStaticParams = async ({
   }));
 };
 
-export const generateMetadata = async (props: BlogContentProps) => {
+export const generateMetadata = async (props: BlogContentProps): Promise<Metadata> => {
   const {locale, slug} = await props.params;
   setRequestLocale(locale);
 

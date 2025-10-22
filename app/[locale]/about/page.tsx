@@ -1,10 +1,12 @@
 import {allAbouts} from 'content-collections';
-// import {about} from './velite';
 import {setRequestLocale} from 'next-intl/server';
-import React from 'react';
 import Markdown from 'react-markdown';
+import {hasLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
+import {routing} from '@/i18n/routing';
+import type {Metadata} from 'next';
 
-const Page = async (props: {params: Promise<{locale: string}>}) => {
+const Page = async (props: {params: Promise<{locale: 'en' | 'id'}>}) => {
   const params = await props.params;
 
   const {locale} = params;
@@ -36,13 +38,17 @@ const Page = async (props: {params: Promise<{locale: string}>}) => {
 
 export const generateMetadata = async (props: {
   params: Promise<{locale: string}>;
-}) => {
+}): Promise<Metadata> => {
   const {locale} = await props.params;
 
-  setRequestLocale(locale);
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale as Locale);
 
   const aboutData = allAbouts.find((about) =>
-    about._raw.flattenedPath.includes(locale),
+    about._meta.flattenedPath.includes(locale),
   );
 
   return {
