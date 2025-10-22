@@ -9,7 +9,9 @@ type BlogContentProps = {
   }>;
 };
 
-export const generateStaticParams = async ({params}: {
+export const generateStaticParams = async ({
+  params,
+}: {
   params: Promise<{locale: string}>;
 }) => {
   const {locale} = await params;
@@ -39,10 +41,7 @@ export const generateMetadata = async (props: BlogContentProps) => {
 const Page = async (props: BlogContentProps) => {
   const params = await props.params;
 
-  const {
-    locale,
-    slug,
-  } = params;
+  const {locale, slug} = params;
 
   setRequestLocale(locale);
 

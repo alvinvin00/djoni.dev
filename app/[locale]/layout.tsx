@@ -21,8 +21,10 @@ export const generateStaticParams = () => {
   return locales.map((locale) => ({locale}));
 };
 
-
-const RootLayout = async ({children, params}: {
+const RootLayout = async ({
+  children,
+  params,
+}: {
   children: React.ReactNode;
   params: Promise<{locale: string}>;
 }) => {
@@ -33,23 +35,23 @@ const RootLayout = async ({children, params}: {
 
   return (
     <html lang={locale}>
-    <body className={`text-black dark:text-white scroll-smooth min-h-screen`}>
-    <Layout>
-      <BetaDisclaimer />
-      {children}
-    </Layout>
-    <Analytics />
-    <SpeedInsights />
-    </body>
+      <body className={`text-black dark:text-white scroll-smooth min-h-screen`}>
+        <Layout>
+          <BetaDisclaimer />
+          {children}
+        </Layout>
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 };
 
-export const generateMetadata = async (
-  {params}: {
-    params: Promise<{locale: string}>;
-  },
-): Promise<Metadata> => {
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{locale: string}>;
+}): Promise<Metadata> => {
   const {locale} = await params;
 
   const t = await getTranslations({locale, namespace: 'Metadata'});
@@ -68,7 +70,7 @@ export const generateMetadata = async (
       url: 'https://djoni.dev',
     },
     title: {
-      template: '%s | Djoni\'s Den',
+      template: "%s | Djoni's Den",
       default: t('title'),
     },
     twitter: {

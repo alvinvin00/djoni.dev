@@ -1,12 +1,12 @@
 module.exports = {
-  'stories': ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  'addons': [
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: [
     '@storybook/addon-links',
     '@chromatic-com/storybook',
-    '@storybook/addon-docs'
+    '@storybook/addon-docs',
   ],
 
-  'framework': {
+  framework: {
     name: '@storybook/nextjs',
     options: {},
   },

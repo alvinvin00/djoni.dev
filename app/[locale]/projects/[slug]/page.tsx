@@ -3,7 +3,9 @@ import {Metadata} from 'next';
 import {setRequestLocale} from 'next-intl/server';
 import React from 'react';
 
-export const generateStaticParams = ({params: {locale}}: {
+export const generateStaticParams = ({
+  params: {locale},
+}: {
   params: {
     locale: string;
   };
@@ -15,14 +17,12 @@ export const generateStaticParams = ({params: {locale}}: {
   }));
 };
 
-export const generateMetadata = async (
-  props: {
-    params: Promise<{
-      locale: string;
-      slug: string;
-    }>;
-  },
-) => {
+export const generateMetadata = async (props: {
+  params: Promise<{
+    locale: string;
+    slug: string;
+  }>;
+}) => {
   const {locale, slug} = await props.params;
   setRequestLocale(locale);
 
@@ -36,20 +36,15 @@ export const generateMetadata = async (
   } satisfies Metadata;
 };
 
-const ProjectDetailPage = async (
-  props: {
-    params: Promise<{
-      locale: string;
-      slug: string;
-    }>;
-  },
-) => {
+const ProjectDetailPage = async (props: {
+  params: Promise<{
+    locale: string;
+    slug: string;
+  }>;
+}) => {
   const params = await props.params;
 
-  const {
-    locale,
-    slug,
-  } = params;
+  const {locale, slug} = params;
 
   const project = allProjects.find(
     (blog) => blog._raw.flattenedPath === `projects/${locale}/${slug}`,

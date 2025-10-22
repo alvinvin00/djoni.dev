@@ -27,11 +27,9 @@ const NowPage = async (props: {params: Promise<{locale: string}>}) => {
   );
 };
 
-export const generateMetadata = async (
-  props: {
-    params: Promise<{locale: string}>;
-  },
-) => {
+export const generateMetadata = async (props: {
+  params: Promise<{locale: string}>;
+}) => {
   const {locale} = await props.params;
 
   setRequestLocale(locale);

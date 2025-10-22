@@ -1,7 +1,7 @@
+// content-collections.ts
 import {defineCollection, defineConfig} from '@content-collections/core';
 import {z} from 'zod';
-
-const blogCollection = defineCollection({
+var blogCollection = defineCollection({
   name: 'blog',
   directory: './src/contents/blog',
   include: '**/*.md',
@@ -18,8 +18,7 @@ const blogCollection = defineCollection({
     url: z.string().optional(),
   }),
 });
-
-const projectsCollection = defineCollection({
+var projectsCollection = defineCollection({
   name: 'projects',
   directory: './src/contents/projects',
   include: '**/*.md',
@@ -40,8 +39,7 @@ const projectsCollection = defineCollection({
     url: z.string().optional(),
   }),
 });
-
-const aboutCollection = defineCollection({
+var aboutCollection = defineCollection({
   name: 'about',
   directory: './src/contents/about',
   include: '**/*.md',
@@ -52,8 +50,7 @@ const aboutCollection = defineCollection({
     url: z.string().optional(),
   }),
 });
-
-const nowCollection = defineCollection({
+var nowCollection = defineCollection({
   name: 'now',
   directory: './src/contents/now',
   include: '**/*.md',
@@ -65,15 +62,13 @@ const nowCollection = defineCollection({
   }),
   transform: (content) => {
     const lang = content._meta.filePath.split('/')[4];
-
     return {
       ...content,
       lang,
     };
   },
 });
-
-export default defineConfig({
+var content_collections_default = defineConfig({
   collections: [
     blogCollection,
     projectsCollection,
@@ -81,3 +76,4 @@ export default defineConfig({
     nowCollection,
   ],
 });
+export {content_collections_default as default};

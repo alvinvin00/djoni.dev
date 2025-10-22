@@ -3,7 +3,6 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useTranslations} from 'next-intl';
 import React from 'react';
 
-
 export const BetaDisclaimer = () => {
   const t = useTranslations('Home');
 

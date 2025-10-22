@@ -1,8 +1,8 @@
-import {useIsClient} from "@uidotdev/usehooks";
-import React from "react";
+import {useIsClient} from '@uidotdev/usehooks';
+import React from 'react';
 
-export const ClientOnly = ({children}: { children: React.ReactNode }) => {
-    const isClient = useIsClient();
+export const ClientOnly = ({children}: {children: React.ReactNode}) => {
+  const isClient = useIsClient();
 
-    return isClient ? <>{children}</> : null;
-}
+  return isClient ? <>{children}</> : null;
+};

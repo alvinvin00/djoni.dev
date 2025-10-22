@@ -4,7 +4,13 @@ import {getTranslations, setRequestLocale} from 'next-intl/server';
 import Image from 'next/image';
 import React from 'react';
 
-import {Card, CardContent, CardFooter, CardHeader, CardMedia} from '@/components/Card';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardMedia,
+} from '@/components/Card';
 import {faGlobe} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
@@ -24,14 +30,15 @@ const Page = async (props: {params: Promise<{locale: string}>}) => {
       <div className="relative w-full h-auto max-h-60 aspect-video">
         <Image
           src={projectsBg}
-          alt={'Photo of a code snippet in a monitor and a laptop, courtesy of Unsplash'}
+          alt={
+            'Photo of a code snippet in a monitor and a laptop, courtesy of Unsplash'
+          }
           className={'object-cover blur-md'}
           placeholder={'blur'}
           fill
         />
         <div className="absolute h-full w-full grid place-items-center">
-          <div
-            className="flex flex-col items-center text-white">
+          <div className="flex flex-col items-center text-white">
             <h1 className="text-2xl font-bold">Projects</h1>
             <p className="text-xl">
               Here&apos;s all the projects that I have worked on
@@ -60,8 +67,8 @@ const Page = async (props: {params: Promise<{locale: string}>}) => {
                   {project.title}
                 </h5>
                 <span className="text-sm font-semibold">
-                    {dayjs(project.date).year()}
-                  </span>
+                  {dayjs(project.date).year()}
+                </span>
               </CardHeader>
               <CardContent>
                 <p className="text-md font-light line-clamp-3 overflow-hidden">
@@ -72,7 +79,9 @@ const Page = async (props: {params: Promise<{locale: string}>}) => {
                 <CardFooter>
                   <Link
                     href={project.link}
-                    className={'p-2 rounded-lg size-8 grid place-items-center text-white bg-blue-400 dark:bg-black hover:scale-105'}
+                    className={
+                      'p-2 rounded-lg size-8 grid place-items-center text-white bg-blue-400 dark:bg-black hover:scale-105'
+                    }
                   >
                     <FontAwesomeIcon icon={faGlobe} />
                   </Link>
@@ -86,11 +95,9 @@ const Page = async (props: {params: Promise<{locale: string}>}) => {
   );
 };
 
-export const generateMetadata = async (
-  props: {
-    params: Promise<{locale: Locale}>;
-  },
-) => {
+export const generateMetadata = async (props: {
+  params: Promise<{locale: Locale}>;
+}) => {
   const {locale} = await props.params;
   setRequestLocale(locale);
 

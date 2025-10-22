@@ -8,7 +8,6 @@ import {} from '@base-ui-components/react';
 import {BlogCarousel} from '@/components/BlogCarousel';
 import homeBg from '../../public/assets/home-bg.jpg';
 
-
 const Page = ({params}) => {
   const {locale} = use(params);
 
@@ -28,28 +27,24 @@ const Page = ({params}) => {
         />
       </div>
       <section className="container">
-        <div
-          className="rounded-2xl shadow-xl bg-white dark:bg-gray-700 p-2 w-auto xl:w-max mx-auto relative top-[-50px]">
+        <div className="rounded-2xl shadow-xl bg-white dark:bg-gray-700 p-2 w-auto xl:w-max mx-auto relative top-[-50px]">
           <h1 className="text-2xl text-center font-bold mb-2">
             {t('welcome_text')}
           </h1>
           <p className="text-lg text-wrap">{t('welcome_text_2')}</p>
           <div className="flex flex-row justify-center gap-2 transition-all ease-in-out duration-300 m-2">
             <Link href={`/now`}>
-              <button
-                className="text-white font-bold p-2 rounded-xl bg-linear-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 ease-in-out duration-300 ">
+              <button className="text-white font-bold p-2 rounded-xl bg-linear-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 ease-in-out duration-300 ">
                 {t('now_button')}
               </button>
             </Link>
             <Link href={`/projects`}>
-              <button
-                className="text-white font-bold p-2 rounded-xl bg-linear-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 ease-in-out duration-300">
+              <button className="text-white font-bold p-2 rounded-xl bg-linear-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 ease-in-out duration-300">
                 {t('project_button')}
               </button>
             </Link>
             <Link href={`/blog`}>
-              <button
-                className="text-white font-bold p-2 rounded-xl bg-linear-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 ease-in-out duration-300">
+              <button className="text-white font-bold p-2 rounded-xl bg-linear-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 ease-in-out duration-300">
                 {t('blog_button')}
               </button>
             </Link>
@@ -62,9 +57,7 @@ const Page = ({params}) => {
   );
 };
 
-export const generateMetadata = async (
-  {params},
-): Promise<Metadata> => {
+export const generateMetadata = async ({params}): Promise<Metadata> => {
   const {locale} = await params;
 
   const t = await getTranslations({locale, namespace: 'Home'});

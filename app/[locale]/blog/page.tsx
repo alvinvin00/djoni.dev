@@ -11,9 +11,7 @@ import blogBg from '/public/assets/blog-bg.jpg';
 const Page = (props: {params: Promise<{locale: string}>}) => {
   const params = use(props.params);
 
-  const {
-    locale,
-  } = params;
+  const {locale} = params;
 
   setRequestLocale(locale);
 
@@ -37,7 +35,9 @@ const Page = (props: {params: Promise<{locale: string}>}) => {
           <div className="flex flex-col text-center text-white backdrop-blur-xs">
             <h5 className="text-2xl font-bold">{t('title')}</h5>
             <p className="text-xl">{t('description')}</p>
-            <p className="text-yellow-500 text-lg font-bold">{t('disclaimer_text')}</p>
+            <p className="text-yellow-500 text-lg font-bold">
+              {t('disclaimer_text')}
+            </p>
           </div>
         </div>
       </div>
@@ -74,11 +74,9 @@ const Page = (props: {params: Promise<{locale: string}>}) => {
   );
 };
 
-export const generateMetadata = async (
-  props: {
-    params: Promise<{locale: string}>;
-  },
-) => {
+export const generateMetadata = async (props: {
+  params: Promise<{locale: string}>;
+}) => {
   const {locale} = await props.params;
 
   setRequestLocale(locale);

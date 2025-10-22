@@ -7,15 +7,11 @@ import Markdown from 'react-markdown';
 const Page = async (props: {params: Promise<{locale: string}>}) => {
   const params = await props.params;
 
-  const {
-    locale,
-  } = params;
+  const {locale} = params;
 
   setRequestLocale(locale);
 
-  const aboutData = allAbouts.find((about) =>
-    about.lang === locale,
-  );
+  const aboutData = allAbouts.find((about) => about.lang === locale);
 
   return (
     <div className="container">
@@ -38,11 +34,9 @@ const Page = async (props: {params: Promise<{locale: string}>}) => {
   );
 };
 
-export const generateMetadata = async (
-  props: {
-    params: Promise<{locale: string}>;
-  },
-) => {
+export const generateMetadata = async (props: {
+  params: Promise<{locale: string}>;
+}) => {
   const {locale} = await props.params;
 
   setRequestLocale(locale);

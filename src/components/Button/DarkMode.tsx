@@ -22,7 +22,8 @@ export const DarkModeButton = () => {
       title={'Toggle Dark Mode'}
       onClick={() => {
         setDarkMode((prevState) => !prevState);
-      }}>
+      }}
+    >
       <FontAwesomeIcon icon={darkMode ? faMoon : faSun} />
     </button>
   );

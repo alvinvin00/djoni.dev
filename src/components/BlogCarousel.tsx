@@ -6,9 +6,7 @@ import React from 'react';
 import {Card, CardContent, CardHeader, CardMedia} from '@/components/Card';
 
 export const BlogCarousel = ({locale}: {locale: string}) => {
-  const projects = allBlogs
-    .filter((blog) => blog.lang === locale)
-    .slice(0, 4);
+  const projects = allBlogs.filter((blog) => blog.lang === locale).slice(0, 4);
 
   return (
     <section className="my-2">
