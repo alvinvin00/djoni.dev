@@ -83,9 +83,6 @@ importers:
       next-intl:
         specifier: ^4.4.0
         version: 4.4.0(next@16.0.0(@babel/core@7.28.4)(@opentelemetry/api@1.8.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(typescript@5.9.3)
-      postcss-preset-mantine:
-        specifier: ^1.18.0
-        version: 1.18.0(postcss@8.5.6)
       react:
         specifier: 19.2.0
         version: 19.2.0
@@ -147,6 +144,12 @@ importers:
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
+      postcss-preset-mantine:
+        specifier: ^1.18.0
+        version: 1.18.0(postcss@8.5.6)
+      postcss-simple-vars:
+        specifier: ^7.0.1
+        version: 7.0.1(postcss@8.5.6)
       storybook:
         specifier: ^9.1.13
         version: 9.1.13(@testing-library/dom@10.4.0)(prettier@3.6.2)

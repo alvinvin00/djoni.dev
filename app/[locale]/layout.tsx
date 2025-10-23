@@ -1,13 +1,16 @@
 import {config} from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import {ColorSchemeScript, MantineProvider} from '@mantine/core';
 import {Analytics} from '@vercel/analytics/react';
 import {SpeedInsights} from '@vercel/speed-insights/next';
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
 import type React from 'react';
 import '@mantine/core/styles.css';
-
+import {
+  ColorSchemeScript,
+  MantineProvider,
+  mantineHtmlProps,
+} from '@mantine/core';
 import {notFound} from 'next/navigation';
 import {hasLocale, NextIntlClientProvider} from 'next-intl';
 import {AppLayout} from '@/components/Layout/AppLayout';
@@ -25,13 +28,14 @@ type LocaleLayoutProps = {
 };
 
 const LocaleLayout = async ({children, params}: LocaleLayoutProps) => {
+  // Ensure that the incoming `locale` is valid
   const {locale} = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript defaultColorScheme="auto" />
       </head>

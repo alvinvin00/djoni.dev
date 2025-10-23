@@ -1,17 +1,19 @@
+'use client';
 import {AppShell, Burger, Drawer, Group} from '@mantine/core';
 import {useDisclosure} from '@mantine/hooks';
-import {Navbar} from './Navbar';
-import {Footer} from './Footer';
+import type React from 'react';
 import {BetaDisclaimer} from './BetaDisclaimer';
+import {Footer} from './Footer';
+import {Navbar} from './Navbar';
 import {Navlinks} from './Navlinks';
 
-export function AppLayout({ children }: { children: React.ReactNode }) {
-  const [opened, { toggle }] = useDisclosure();
+export function AppLayout({children}: {children: React.ReactNode}) {
+  const [opened, {toggle}] = useDisclosure();
 
   return (
     <AppShell
-      header={{ height: 60 }}
-      navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
+      header={{height: 60}}
+      navbar={{width: 300, breakpoint: 'sm', collapsed: {mobile: !opened}}}
       padding="md"
     >
       <AppShell.Header>
@@ -34,7 +36,12 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         <Footer />
       </AppShell.Footer>
 
-      <Drawer opened={opened} onClose={toggle} title="Djoni's Den" hiddenFrom="sm">
+      <Drawer
+        opened={opened}
+        onClose={toggle}
+        title="Djoni's Den"
+        hiddenFrom="sm"
+      >
         <Navlinks />
       </Drawer>
     </AppShell>
