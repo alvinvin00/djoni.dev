@@ -4,9 +4,8 @@ import {useTranslations} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import React, {use} from 'react';
 
-import {Card, CardContent, CardHeader} from '@/components/Card';
+import {Card, Group, Stack, Text} from '@mantine/core';
 import Image from 'next/image';
-import blogBg from '../../public/assets/blog-bg.jpg';
 
 const Page = (props: {params: Promise<{locale: string}>}) => {
   const params = use(props.params);
@@ -46,14 +45,18 @@ const Page = (props: {params: Promise<{locale: string}>}) => {
           return (
             <Card
               key={blog.slug}
+              shadow="sm"
+              padding="lg"
+              radius="md"
+              withBorder
               className="flex flex-col gap-2 bg-white dark:bg-gray-700 dark:text-white"
             >
-              <CardHeader>
+              <Group>
                 <h3 className="text-lg font-bold line-clamp-2 overflow-clip text-ellipsis">
                   {blog.title}
                 </h3>
-              </CardHeader>
-              <CardContent>
+              </Group>
+              <Stack>
                 <p className="text-md font-light line-clamp-3">
                   {blog.description || 'No description'}
                 </p>
@@ -65,7 +68,7 @@ const Page = (props: {params: Promise<{locale: string}>}) => {
                   {/*    {metadata.read_time}*/}
                   {/*</p>*/}
                 </div>
-              </CardContent>
+              </Stack>
             </Card>
           );
         })}

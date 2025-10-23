@@ -2,8 +2,7 @@ import {allBlogs} from 'content-collections';
 import dayjs from 'dayjs';
 import Image from 'next/image';
 import React from 'react';
-
-import {Card, CardContent, CardHeader, CardMedia} from '@/components/Card';
+import {Card, Group, Stack} from '@mantine/core';
 
 export const BlogCarousel = ({locale}: {locale: string}) => {
   const projects = allBlogs.filter((blog) => blog.lang === locale).slice(0, 4);
@@ -18,20 +17,24 @@ export const BlogCarousel = ({locale}: {locale: string}) => {
           return (
             <Card
               key={blog.slug}
+              shadow="sm"
+              padding="lg"
+              radius="md"
+              withBorder
               className={'bg-white dark:bg-gray-700 dark:text-white'}
             >
-              <CardMedia className={'h-20'}>
+              <Card.Section className={'h-20 relative'}>
                 <Image
                   src={blog.thumbnail}
                   alt={blog.title}
                   fill
                   className={'object-cover object-top'}
                 />
-              </CardMedia>
-              <CardHeader>
+              </Card.Section>
+              <Group>
                 <h3 className="text-lg font-bold">{blog.title}</h3>
-              </CardHeader>
-              <CardContent>
+              </Group>
+              <Stack>
                 <p className="text-sm line-clamp-3">
                   {blog.description || 'No description'}
                 </p>
@@ -39,7 +42,7 @@ export const BlogCarousel = ({locale}: {locale: string}) => {
                   <p>{dayjs(blog.date).format('DD-MM-YYYY')}</p>
                   <p>5 minute read</p>
                 </div>
-              </CardContent>
+              </Stack>
             </Card>
           );
         })}

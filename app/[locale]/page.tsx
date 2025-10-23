@@ -1,16 +1,14 @@
+import {Button, Container, Group, Paper, Text, Title} from '@mantine/core';
 import type {Metadata} from 'next';
-import {useTranslations} from 'next-intl';
-import {getTranslations, setRequestLocale} from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
+import {useTranslations} from 'next-intl';
+import {getTranslations, setRequestLocale} from 'next-intl/server';
 import React, {use} from 'react';
-
 import {BlogCarousel} from '@/components/BlogCarousel';
-import homeBg from '../../public/assets/home-bg.jpg';
+import homeBg from '@/public/assets/home-bg.jpg';
 
-const Page = ({params}: {
-  params: {locale: 'en' | 'id'};
-}) => {
+const Page = ({params}: {params: {locale: 'en' | 'id'}}) => {
   const {locale} = use(params);
 
   setRequestLocale(locale);
@@ -18,52 +16,71 @@ const Page = ({params}: {
   const t = useTranslations('Home');
 
   return (
-    <div className="text-black dark:text-white">
-      <div className={'relative w-full h-auto max-h-60 aspect-video'}>
+    <Container fluid p={0}>
+      <div style={{position: 'relative', height: '240px'}}>
         <Image
           src={homeBg}
           alt={'Photo of a code snippet, courtesy of Unsplash'}
-          className={'object-cover'}
           placeholder={'blur'}
-          fill
         />
       </div>
-      <section className="container">
-        <div
-          className="rounded-2xl shadow-xl bg-white dark:bg-gray-700 p-2 w-auto xl:w-max mx-auto relative top-[-50px]">
-          <h1 className="text-2xl text-center font-bold mb-2">
+      <Container>
+        <Paper
+          shadow="xl"
+          p="md"
+          radius="lg"
+          style={{
+            position: 'relative',
+            top: '-50px',
+            margin: '0 auto',
+            maxWidth: '800px',
+          }}
+        >
+          <Title order={1} ta="center" mb="md">
             {t('welcome_text')}
-          </h1>
-          <p className="text-lg text-wrap">{t('welcome_text_2')}</p>
-          <div className="flex flex-row justify-center gap-2 transition-all ease-in-out duration-300 m-2">
-            <Link href={`/now`}>
-              <button
-                className="text-white font-bold p-2 rounded-xl bg-linear-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 ease-in-out duration-300 ">
-                {t('now_button')}
-              </button>
-            </Link>
-            <Link href={`/projects`}>
-              <button
-                className="text-white font-bold p-2 rounded-xl bg-linear-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 ease-in-out duration-300">
-                {t('project_button')}
-              </button>
-            </Link>
-            <Link href={`/blog`}>
-              <button
-                className="text-white font-bold p-2 rounded-xl bg-linear-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 ease-in-out duration-300">
-                {t('blog_button')}
-              </button>
-            </Link>
-          </div>
-          <p className="text-lg font-bold text-center">{t('thanks_text')}</p>
-        </div>
+          </Title>
+          <Text size="lg" ta="center">
+            {t('welcome_text_2')}
+          </Text>
+          <Group grow mt="md">
+            <Button
+              component={Link}
+              href={`/now`}
+              variant="gradient"
+              gradient={{from: 'red', to: 'orange'}}
+            >
+              {t('now_button')}
+            </Button>
+            <Button
+              component={Link}
+              href={`/projects`}
+              variant="gradient"
+              gradient={{from: 'green', to: 'lime'}}
+            >
+              {t('project_button')}
+            </Button>
+            <Button
+              component={Link}
+              href={`/blog`}
+              variant="gradient"
+              gradient={{from: 'blue', to: 'cyan'}}
+            >
+              {t('blog_button')}
+            </Button>
+          </Group>
+          <Text size="lg" fw={700} ta="center" mt="md">
+            {t('thanks_text')}
+          </Text>
+        </Paper>
         <BlogCarousel locale={locale} />
-      </section>
-    </div>
+      </Container>
+    </Container>
   );
 };
 
-export const generateMetadata = async ({params}: {
+export const generateMetadata = async ({
+  params,
+}: {
   params: Promise<{locale: 'en' | 'id'}>;
 }): Promise<Metadata> => {
   const {locale} = await params;
