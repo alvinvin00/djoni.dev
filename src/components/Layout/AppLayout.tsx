@@ -1,9 +1,9 @@
-import { AppShell, Burger, Group, UnstyledButton, Drawer } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { Navbar } from './Navbar';
-import { Footer } from './Footer';
-import { BetaDisclaimer } from './BetaDisclaimer';
-import { Navlinks } from './Navlinks';
+import {AppShell, Burger, Drawer, Group} from '@mantine/core';
+import {useDisclosure} from '@mantine/hooks';
+import {Navbar} from './Navbar';
+import {Footer} from './Footer';
+import {BetaDisclaimer} from './BetaDisclaimer';
+import {Navlinks} from './Navlinks';
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
   const [opened, { toggle }] = useDisclosure();

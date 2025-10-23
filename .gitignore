@@ -46,3 +46,6 @@ next-env.d.ts
 
 # Content Collections
 /.content-collections/
+
+# Next Intl
+messages/*.d.json.ts
