@@ -43,3 +43,6 @@ next-env.d.ts
 
 # Velite
 /.velite/
+
+# Content Collections
+/.content-collections/
