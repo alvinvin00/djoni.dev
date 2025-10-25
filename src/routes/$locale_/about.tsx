@@ -2,7 +2,7 @@ import {allAbouts} from 'content-collections';
 import Markdown from 'react-markdown';
 import {createFileRoute} from '@tanstack/react-router';
 
-export const Route = createFileRoute('/about')({
+export const Route = createFileRoute('/$locale_/about')({
   component: AboutRoute,
 });
 
@@ -22,7 +22,7 @@ function AboutRoute() {
         <h2 className={'text-sm font-semibold'}>Software Engineer</h2>
         <br />
         <div className="my-4 text-justify">
-          <Markdown>{aboutData?.body?.raw}</Markdown>
+          <Markdown>{aboutData?.content}</Markdown>
         </div>
       </div>
     </div>

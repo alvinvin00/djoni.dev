@@ -2,7 +2,7 @@ import {Button, Container, Group, Paper, Text, Title} from '@mantine/core';
 import {BlogCarousel} from '@/components/BlogCarousel';
 import {createFileRoute} from '@tanstack/react-router';
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute('/$locale_/')({
   component: HomeRoute,
 });
 

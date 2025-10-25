@@ -1,9 +1,8 @@
-'use client';
+import {socials} from '@/config/socials';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-import { socials } from '@/config/socials';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
-import { Group, ActionIcon, Text } from '@mantine/core';
+import {ActionIcon, Group, Text} from '@mantine/core';
+import {Link} from '@tanstack/react-router';
 
 export const Footer = () => {
   return (

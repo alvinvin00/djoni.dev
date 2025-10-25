@@ -7,7 +7,7 @@ import {faGlobe} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {createFileRoute} from '@tanstack/react-router';
 
-export const Route = createFileRoute('/projects')({
+export const Route = createFileRoute('/$locale_/projects/')({
   component: ProjectsPage,
 });
 

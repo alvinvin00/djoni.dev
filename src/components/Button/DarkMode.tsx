@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import {ActionIcon, useMantineColorScheme} from '@mantine/core';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';

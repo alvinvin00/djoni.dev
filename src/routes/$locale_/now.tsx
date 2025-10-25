@@ -2,7 +2,7 @@ import {allNows} from 'content-collections';
 import dayjs from 'dayjs';
 import {createFileRoute} from '@tanstack/react-router';
 
-export const Route = createFileRoute('/now')({
+export const Route = createFileRoute('/$locale_/now')({
   component: NowRoute,
 });
 
@@ -21,7 +21,7 @@ function NowRoute() {
           Last Updated: {dayjs(now?.date).format('DD MM YYYY')}
         </p>
         <hr />
-        {now?.body.raw}
+        {now?.content}
       </div>
     </div>
   );

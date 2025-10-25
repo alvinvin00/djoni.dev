@@ -1,9 +1,8 @@
-'use client';
 
-import Link from 'next/link';
 import React from 'react';
 import { Group } from '@mantine/core';
 import { DarkModeButton } from '@/components/Button/DarkMode';
+import {Link} from '@tanstack/react-router';
 
 export const Navbar = () => {
   return (

@@ -4,7 +4,11 @@ import React from 'react';
 
 import { Card, Group, Stack } from '@mantine/core';
 
-export function Route() {
+import { createFileRoute } from '@tanstack/react-router';
+
+export const Route = createFileRoute('/$locale_/blog/')({ component: BlogIndex });
+
+export function BlogIndex() {
   const blogs = allBlogs
     .filter((blog) => blog.lang === 'en')
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
