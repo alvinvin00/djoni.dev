@@ -1,41 +1,28 @@
-import {allBlogs} from 'content-collections';
+import { allBlogs } from 'content-collections';
 import dayjs from 'dayjs';
-import {useTranslations} from 'next-intl';
-import {getTranslations, setRequestLocale} from 'next-intl/server';
-import React, {use} from 'react';
+import React from 'react';
 
-import {Card, Group, Stack, Text} from '@mantine/core';
-import Image from 'next/image';
+import { Card, Group, Stack } from '@mantine/core';
 
-const Page = (props: {params: Promise<{locale: string}>}) => {
-  const params = use(props.params);
-
-  const {locale} = params;
-
-  setRequestLocale(locale);
-
-  const t = useTranslations('Blog');
-
+export function Route() {
   const blogs = allBlogs
-    .filter((blog) => blog.lang === locale)
+    .filter((blog) => blog.lang === 'en')
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <div className="flex flex-col gap-4 my-2">
       <div className="relative w-full h-auto max-h-60 aspect-video">
-        <Image
+        <img
           src="/assets/blog-bg.jpg"
-          alt={'Photo of a notebook and a laptop, courtesy of Unsplash'}
-          className={'object-cover blur-xs'}
-          placeholder={'blur'}
-          fill
+          alt={'notebook and a laptop, courtesy of Unsplash'}
+          className={'object-cover blur-xs w-full h-full'}
         />
         <div className="absolute h-full w-full grid place-items-center">
           <div className="flex flex-col text-center text-white backdrop-blur-xs">
-            <h5 className="text-2xl font-bold">{t('title')}</h5>
-            <p className="text-xl">{t('description')}</p>
+            <h5 className="text-2xl font-bold">Blog</h5>
+            <p className="text-xl">Welcome to my blog!</p>
             <p className="text-yellow-500 text-lg font-bold">
-              {t('disclaimer_text')}
+              This is still a work in progress.
             </p>
           </div>
         </div>
@@ -64,9 +51,6 @@ const Page = (props: {params: Promise<{locale: string}>}) => {
                   <p className="text-xs font-light">
                     {dayjs(blog.date).format('DD-MM-YYYY')}
                   </p>
-                  {/*<p className="text-xs font-light">*/}
-                  {/*    {metadata.read_time}*/}
-                  {/*</p>*/}
                 </div>
               </Stack>
             </Card>
@@ -75,21 +59,4 @@ const Page = (props: {params: Promise<{locale: string}>}) => {
       </div>
     </div>
   );
-};
-
-export const generateMetadata = async (props: {
-  params: Promise<{locale: string}>;
-}) => {
-  const {locale} = await props.params;
-
-  setRequestLocale(locale);
-
-  const t = await getTranslations({locale, namespace: 'Blog'});
-
-  return {
-    title: t('title'),
-    description: t('description'),
-  };
-};
-
-export default Page;
+}

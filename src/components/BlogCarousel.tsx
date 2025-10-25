@@ -1,11 +1,10 @@
 import {allBlogs} from 'content-collections';
 import dayjs from 'dayjs';
-import Image from 'next/image';
 import React from 'react';
 import {Card, Group, Stack} from '@mantine/core';
 
-export const BlogCarousel = ({locale}: {locale: string}) => {
-  const projects = allBlogs.filter((blog) => blog.lang === locale).slice(0, 4);
+export const BlogCarousel = () => {
+  const projects = allBlogs.slice(0, 4);
 
   return (
     <section className="my-2">
@@ -24,11 +23,10 @@ export const BlogCarousel = ({locale}: {locale: string}) => {
               className={'bg-white dark:bg-gray-700 dark:text-white'}
             >
               <Card.Section className={'h-20 relative'}>
-                <Image
+                <img
                   src={blog.thumbnail}
                   alt={blog.title}
-                  fill
-                  className={'object-cover object-top'}
+                  className={'object-cover object-top w-full h-full'}
                 />
               </Card.Section>
               <Group>

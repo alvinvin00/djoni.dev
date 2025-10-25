@@ -1,4 +1,3 @@
-'use client';
 import {AppShell, Burger, Drawer, Group} from '@mantine/core';
 import {useDisclosure} from '@mantine/hooks';
 import type React from 'react';
