@@ -2,40 +2,38 @@ import {config} from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import type React from 'react';
 import '@mantine/core/styles.css';
-import {mantineHtmlProps, MantineProvider} from '@mantine/core';
+import '@mantine/carousel/styles.css';
+import {MantineProvider, mantineHtmlProps} from '@mantine/core';
+import {
+  createRootRoute,
+  HeadContent,
+  Outlet,
+  Scripts,
+} from '@tanstack/react-router';
 import {AppLayout} from '@/components/Layout/AppLayout';
-import {createRootRoute, HeadContent, Outlet, Scripts} from '@tanstack/react-router';
 
 config.autoAddCss = false;
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
+  head: () => {
+    const meta = [
       {charSet: 'utf-8'},
-      {title: 'Djoni\'s Den'},
+      {title: "Djoni's Den"},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-    ],
-    // alternates: {
-    //   canonical: '/',
-    //   languages: {
-    //     id: '/id',
-    //   },
-    // },
-    // description: 'Testing Djoni\'s Den Personal Website',
-    // metadataBase: new URL('https://djoni.dev'),
-    // openGraph: {
-    //   images: '/assets/og/semarang-red.jpg',
-    //   url: 'https://djoni.dev',
-    // },
-    // title: {
-    //   template: '%s | Djoni\'s Den',
-    //   default: 'Djoni\'s Den',
-    // },
-    // twitter: {
-    //   creator: '@alvinvin00',
-    //   site: '@alvinvin00',
-    // },
-  }),
+      {name: 'description', content: "Djoni's Den Personal Website"},
+      {property: 'og:image', content: '/assets/og/semarang-red.jpg'},
+      {property: 'og:url', content: 'https://djoni.dev'},
+      {name: 'twitter:creator', content: '@alvinvin00'},
+      {name: 'twitter:site', content: '@alvinvin00'},
+    ];
+
+    const links = [
+      {rel: 'canonical', href: '/'},
+      {rel: 'alternate', href: '/id', hrefLang: 'id'},
+    ];
+
+    return {meta, links};
+  },
   component: RootLayout,
   notFoundComponent: function NotFound() {
     return (
@@ -49,18 +47,18 @@ export const Route = createRootRoute({
 
 function RootLayout() {
   return (
-    <html lang="en"  {...mantineHtmlProps}>
-    <head>
-      <HeadContent />
-    </head>
-    <body>
-    <MantineProvider defaultColorScheme="auto">
-      <AppLayout>
-        <Outlet />
-      </AppLayout>
-    </MantineProvider>
-    <Scripts />
-    </body>
+    <html lang="en" {...mantineHtmlProps}>
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        <MantineProvider defaultColorScheme="auto">
+          <AppLayout>
+            <Outlet />
+          </AppLayout>
+        </MantineProvider>
+        <Scripts />
+      </body>
     </html>
   );
-};
+}

@@ -1,15 +1,14 @@
-import {socials} from '@/config/socials';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-
 import {ActionIcon, Group, Text} from '@mantine/core';
 import {Link} from '@tanstack/react-router';
+import {socials} from '@/config/socials';
 
 export const Footer = () => {
   return (
     <Group justify="space-between">
       <Text>
-        &copy; 2024 Djoni&apos;s Den, All Rights Reserved. <br />
-        Made with love and NextJS, hosted on Vercel
+        &copy; 2025 Djoni&apos;s Den, All Rights Reserved. <br />
+        Made with love, Mantine, and Tanstack Start, hosted on Vercel
       </Text>
       <Group>
         <Text fw={500}>Find me on Cyberspace:</Text>

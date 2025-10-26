@@ -1,11 +1,9 @@
-
-import React from 'react';
-import {Alert, Anchor} from '@mantine/core';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTriangleExclamation} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {Alert, Anchor} from '@mantine/core';
+import React from 'react';
 
 export const BetaDisclaimer = () => {
-
   return (
     <Alert
       variant="light"
@@ -18,6 +16,8 @@ export const BetaDisclaimer = () => {
         target="_blank"
         size="sm"
       >
+        This site is still in development, it may change overtime. Thank you for
+        your understanding!
       </Anchor>
     </Alert>
   );

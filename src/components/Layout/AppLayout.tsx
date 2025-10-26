@@ -1,10 +1,10 @@
-import {AppShell, Burger, Drawer, Group} from '@mantine/core';
+import {AppShell, Burger, Group} from '@mantine/core';
 import {useDisclosure} from '@mantine/hooks';
+import {Link} from '@tanstack/react-router';
 import type React from 'react';
+import classes from './AppLayout.module.css';
 import {BetaDisclaimer} from './BetaDisclaimer';
 import {Footer} from './Footer';
-import {Navbar} from './Navbar';
-import {Navlinks} from './Navlinks';
 
 export function AppLayout({children}: {children: React.ReactNode}) {
   const [opened, {toggle}] = useDisclosure();
@@ -12,37 +12,94 @@ export function AppLayout({children}: {children: React.ReactNode}) {
   return (
     <AppShell
       header={{height: 60}}
-      navbar={{width: 300, breakpoint: 'sm', collapsed: {mobile: !opened}}}
+      navbar={{
+        width: 300,
+        breakpoint: 'sm',
+        collapsed: {desktop: true, mobile: !opened},
+      }}
       padding="md"
     >
       <AppShell.Header>
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <Navbar />
+          <Group justify="space-between" style={{flex: 1}}>
+            <Link
+              to="/$locale"
+              params={{locale: 'en'}}
+              className={classes.navLink}
+            >
+              <h2>Djoni&apos;s Den</h2>
+            </Link>
+            <Group ml={'xl'} gap={0} visibleFrom={'sm'}>
+              <Link
+                to={`/$locale/now`}
+                params={{locale: 'en'}}
+                className={classes.navLink}
+              >
+                Now
+              </Link>
+              <Link
+                to={`/$locale/projects`}
+                params={{locale: 'en'}}
+                className={classes.navLink}
+              >
+                Projects
+              </Link>
+              <Link
+                to={`/$locale/blog`}
+                params={{locale: 'en'}}
+                className={classes.navLink}
+              >
+                Blog
+              </Link>
+              <Link
+                to={`/$locale/about`}
+                params={{locale: 'en'}}
+                className={classes.navLink}
+              >
+                About
+              </Link>
+            </Group>
+          </Group>
         </Group>
       </AppShell.Header>
 
-      <AppShell.Navbar p="md">
-        <Navlinks />
+      <AppShell.Navbar py="md" px={4}>
+        <Link
+          to={`/$locale/now`}
+          params={{locale: 'en'}}
+          className={classes.navLink}
+        >
+          Now
+        </Link>
+        <Link
+          to={`/$locale/projects`}
+          params={{locale: 'en'}}
+          className={classes.navLink}
+        >
+          Projects
+        </Link>
+        <Link
+          to={`/$locale/blog`}
+          params={{locale: 'en'}}
+          className={classes.navLink}
+        >
+          Blog
+        </Link>
+        <Link
+          to={`/$locale/about`}
+          params={{locale: 'en'}}
+          className={classes.navLink}
+        >
+          About
+        </Link>
       </AppShell.Navbar>
 
       <AppShell.Main>
         <BetaDisclaimer />
         {children}
-      </AppShell.Main>
-
-      <AppShell.Footer p="md">
         <Footer />
-      </AppShell.Footer>
-
-      <Drawer
-        opened={opened}
-        onClose={toggle}
-        title="Djoni's Den"
-        hiddenFrom="sm"
-      >
-        <Navlinks />
-      </Drawer>
+      </AppShell.Main>
     </AppShell>
   );
 }

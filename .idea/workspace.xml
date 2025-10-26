@@ -4,16 +4,23 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db4f35c2-e8fe-4668-9a36-bef403b8a2d1" name="Changes" comment="refactor!: migrate Tailwind to v4">
-      <change afterPath="$PROJECT_DIR$/src/routes/__root.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vite.config.mjs" afterDir="false" />
+    <list default="true" id="db4f35c2-e8fe-4668-9a36-bef403b8a2d1" name="Changes" comment="refactor: migrate to Vite and restructure routing with TanStack integration">
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/AppLayout.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BlogCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BlogCarousel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout/AppLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/AppLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/BetaDisclaimer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/BetaDisclaimer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Navbar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Navlinks.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/ClientOnly.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/NavLink/NavLink.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/NavLink/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/$locale_/blog/$slug.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/$locale_/blog/$slug.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/$locale_/blog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/$locale_/blog/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/__root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/__root.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,12 +52,12 @@
     &quot;assignee&quot;: &quot;alvinvin00&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/alvinvin00/djoni.dev.git",
-    "accountId": "f5c3535e-282f-4ca4-b74a-0bc14348239a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/alvinvin00/djoni.dev.git&quot;,
+    &quot;accountId&quot;: &quot;f5c3535e-282f-4ca4-b74a-0bc14348239a&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -76,8 +83,8 @@
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "refactor/tanstack",
     "ignore.virus.scanning.warn.message": "true",
-    "javascript.nodejs.core.library.configured.version": "22.20.0",
-    "javascript.nodejs.core.library.typings.version": "22.18.12",
+    "javascript.nodejs.core.library.configured.version": "24.10.0",
+    "javascript.nodejs.core.library.typings.version": "24.9.1",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "kotlin-language-version-configured": "true",
@@ -93,7 +100,7 @@
     "npm.Next.js: server-side.executor": "Debug",
     "npm.build.executor": "Run",
     "npm.velite:build.executor": "Run",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "Settings.Biome",
     "show.migrate.to.gradle.popup": "false",
     "ts.external.directory.path": "C:\\Projects\\djoni.dev\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -107,6 +114,11 @@
         <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\djoni.dev\src\routes\[locale]" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
@@ -195,7 +207,9 @@
       <workItem from="1735006047864" duration="1881000" />
       <workItem from="1735284467570" duration="2172000" />
       <workItem from="1744792188526" duration="803000" />
-      <workItem from="1761382672659" duration="4566000" />
+      <workItem from="1761382672659" duration="8509000" />
+      <workItem from="1761398584738" duration="1635000" />
+      <workItem from="1761466367460" duration="3041000" />
     </task>
     <task id="LOCAL-00001" summary="deps: updated dependencies">
       <option name="closed" value="true" />
@@ -333,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744792692145</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="refactor: migrate to Vite and restructure routing with TanStack integration">
+      <option name="closed" value="true" />
+      <created>1761388218093</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1761388218093</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +375,8 @@
     <MESSAGE value="deps: updated dependencies" />
     <MESSAGE value="refactor: rename config files to TypeScript and update dependencies" />
     <MESSAGE value="refactor!: migrate Tailwind to v4" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor!: migrate Tailwind to v4" />
+    <MESSAGE value="refactor: migrate to Vite and restructure routing with TanStack integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: migrate to Vite and restructure routing with TanStack integration" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

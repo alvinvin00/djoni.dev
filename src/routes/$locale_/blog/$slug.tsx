@@ -1,10 +1,10 @@
-import {allBlogs} from 'content-collections';
+import {Container} from '@mantine/core';
 import {createFileRoute} from '@tanstack/react-router';
+import {allBlogs} from 'content-collections';
 
 export const Route = createFileRoute('/$locale_/blog/$slug')({
   component: BlogContentPage,
 });
-
 
 function BlogContentPage() {
   const {slug} = Route.useParams();
@@ -13,5 +13,5 @@ function BlogContentPage() {
     (blog) => blog.slug === slug && blog.lang === 'en',
   );
 
-  return <div className={'container'}>{blog?.content}</div>;
+  return <Container>{blog?.content}</Container>;
 }
