@@ -1,11 +1,9 @@
-import {allProjects} from 'content-collections';
-import dayjs from 'dayjs';
-import React from 'react';
-
-import {Card} from '@mantine/core';
 import {faGlobe} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {Card} from '@mantine/core';
 import {createFileRoute} from '@tanstack/react-router';
+import {allProjects} from 'content-collections';
+import dayjs from 'dayjs';
 
 export const Route = createFileRoute('/$locale_/projects/')({
   component: ProjectsPage,
@@ -21,9 +19,7 @@ function ProjectsPage() {
       <div className="relative w-full h-auto max-h-60 aspect-video">
         <img
           src="/assets/projects-bg.jpg"
-          alt={
-            'code snippet in a monitor and a laptop, courtesy of Unsplash'
-          }
+          alt={'code snippet in a monitor and a laptop, courtesy of Unsplash'}
           className={'object-cover blur-md w-full h-full'}
         />
         <div className="absolute h-full w-full grid place-items-center">
@@ -81,4 +77,4 @@ function ProjectsPage() {
       </div>
     </div>
   );
-};
+}

@@ -1,6 +1,6 @@
+import {createFileRoute} from '@tanstack/react-router';
 import {allNows} from 'content-collections';
 import dayjs from 'dayjs';
-import {createFileRoute} from '@tanstack/react-router';
 
 export const Route = createFileRoute('/$locale_/now')({
   component: NowRoute,

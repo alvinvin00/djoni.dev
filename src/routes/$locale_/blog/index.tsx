@@ -2,7 +2,6 @@ import {Card, Image, Stack, Text} from '@mantine/core';
 import {createFileRoute} from '@tanstack/react-router';
 import {allBlogs} from 'content-collections';
 import dayjs from 'dayjs';
-import React from 'react';
 
 export const Route = createFileRoute('/$locale_/blog/')({
   component: BlogIndexPage,

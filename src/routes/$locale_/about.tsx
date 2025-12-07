@@ -1,6 +1,6 @@
+import {createFileRoute} from '@tanstack/react-router';
 import {allAbouts} from 'content-collections';
 import Markdown from 'react-markdown';
-import {createFileRoute} from '@tanstack/react-router';
 
 export const Route = createFileRoute('/$locale_/about')({
   component: AboutRoute,
@@ -17,7 +17,8 @@ function AboutRoute() {
         }
       >
         <h1 className={'text-xl font-bold'}>
-          Alvin Leonardo <span className={'text-blue-800 dark:text-blue-200'}>Djoni</span>
+          Alvin Leonardo{' '}
+          <span className={'text-blue-800 dark:text-blue-200'}>Djoni</span>
         </h1>
         <h2 className={'text-sm font-semibold'}>Software Engineer</h2>
         <br />

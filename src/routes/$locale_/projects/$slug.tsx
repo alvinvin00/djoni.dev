@@ -1,5 +1,5 @@
-import {allProjects} from 'content-collections';
 import {createFileRoute} from '@tanstack/react-router';
+import {allProjects} from 'content-collections';
 
 export const Route = createFileRoute('/$locale_/projects/$slug')({
   component: ProjectDetailPage,

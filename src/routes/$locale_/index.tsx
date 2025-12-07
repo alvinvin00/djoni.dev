@@ -1,6 +1,6 @@
 import {Button, Container, Group, Paper, Text, Title} from '@mantine/core';
-import {BlogCarousel} from '@/components/BlogCarousel';
 import {createFileRoute} from '@tanstack/react-router';
+import {BlogCarousel} from '@/components/BlogCarousel';
 
 export const Route = createFileRoute('/$locale_/')({
   component: HomeRoute,
@@ -69,4 +69,3 @@ function HomeRoute() {
     </Container>
   );
 }
-

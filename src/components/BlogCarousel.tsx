@@ -1,4 +1,3 @@
-import React from 'react';
 import {Carousel} from '@mantine/carousel';
 import {Card, Group, Image, Stack} from '@mantine/core';
 import {allBlogs} from 'content-collections';

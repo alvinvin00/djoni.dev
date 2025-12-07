@@ -1,6 +1,5 @@
 import {config} from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import type React from 'react';
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
 import {MantineProvider, mantineHtmlProps} from '@mantine/core';
@@ -9,6 +8,7 @@ import {
   HeadContent,
   Outlet,
   Scripts,
+  useMatches,
 } from '@tanstack/react-router';
 import {AppLayout} from '@/components/Layout/AppLayout';
 
@@ -46,8 +46,12 @@ export const Route = createRootRoute({
 });
 
 function RootLayout() {
+  const matches = useMatches();
+  const localeMatch = matches.find((match) => match.params.locale);
+  const locale = localeMatch?.params.locale || 'en';
+
   return (
-    <html lang="en" {...mantineHtmlProps}>
+    <html lang={locale} {...mantineHtmlProps}>
       <head>
         <HeadContent />
       </head>

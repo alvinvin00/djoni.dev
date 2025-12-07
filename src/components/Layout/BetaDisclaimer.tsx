@@ -1,7 +1,6 @@
 import {faTriangleExclamation} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Alert, Anchor} from '@mantine/core';
-import React from 'react';
 
 export const BetaDisclaimer = () => {
   return (
