@@ -48,3 +48,7 @@ To run the project locally, follow these steps:
 *   `format`: Formats the code using Biome.
 *   `storybook`: Starts the Storybook development server.
 *   `build-storybook`: Builds the Storybook for deployment.
+
+## Tanstack Start
+
+When dealing with Tanstack Start, refer to the official documentation for more details: https://context7.com/websites/tanstack_start_framework_react/llms.txt?tokens=10000
