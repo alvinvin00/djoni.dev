@@ -1,12 +1,15 @@
 import {Button, Container, Group, Paper, Text, Title} from '@mantine/core';
-import {createFileRoute} from '@tanstack/react-router';
+import {createFileRoute, Link} from '@tanstack/react-router';
 import {BlogCarousel} from '@/components/BlogCarousel';
+import {FormattedMessage} from 'react-intl';
 
 export const Route = createFileRoute('/$locale_/')({
   component: HomeRoute,
 });
 
 function HomeRoute() {
+  const {locale} = Route.useParams();
+
   return (
     <Container fluid p={0}>
       <div style={{position: 'relative', height: '240px'}}>
@@ -29,39 +32,42 @@ function HomeRoute() {
           }}
         >
           <Title order={1} ta="center" mb="md">
-            Welcome to my personal website!
+            <FormattedMessage id="Home.welcome_text" defaultMessage="Welcome to my personal website!" />
           </Title>
           <Text size="lg" ta="center">
-            This is where I share my thoughts, projects, and experiences.
+             <FormattedMessage id="Home.welcome_text_2" defaultMessage="This is where I share my thoughts, projects, and experiences." />
           </Text>
           <Group grow mt="md">
             <Button
-              component="a"
-              href={`/now`}
+              component={Link}
+              to="/$locale/now"
+              params={{locale}}
               variant="gradient"
               gradient={{from: 'red', to: 'orange'}}
             >
-              What I'm doing now
+              <FormattedMessage id="Home.now_button" defaultMessage="What I'm doing now" />
             </Button>
             <Button
-              component="a"
-              href={`/projects`}
+              component={Link}
+              to="/$locale/projects"
+              params={{locale}}
               variant="gradient"
               gradient={{from: 'green', to: 'lime'}}
             >
-              My Projects
+              <FormattedMessage id="Home.project_button" defaultMessage="My Projects" />
             </Button>
             <Button
-              component="a"
-              href={`/blog`}
+              component={Link}
+              to="/$locale/blog"
+              params={{locale}}
               variant="gradient"
               gradient={{from: 'blue', to: 'cyan'}}
             >
-              My Blog
+              <FormattedMessage id="Home.blog_button" defaultMessage="My Blog" />
             </Button>
           </Group>
           <Text size="lg" fw={700} ta="center" mt="md">
-            Thanks for visiting!
+            <FormattedMessage id="Home.thanks_text" defaultMessage="Thanks for visiting!" />
           </Text>
         </Paper>
         <BlogCarousel />

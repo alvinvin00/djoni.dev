@@ -2,7 +2,11 @@ import {config} from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
-import {ColorSchemeScript, MantineProvider, mantineHtmlProps} from '@mantine/core';
+import {
+  ColorSchemeScript,
+  MantineProvider,
+  mantineHtmlProps,
+} from '@mantine/core';
 import {
   createRootRoute,
   HeadContent,
@@ -10,9 +14,17 @@ import {
   Scripts,
   useMatches,
 } from '@tanstack/react-router';
+import {IntlProvider} from 'react-intl';
 import {AppLayout} from '@/components/Layout/AppLayout';
+import enMessages from '../../messages/en.json';
+import idMessages from '../../messages/id.json';
 
 config.autoAddCss = false;
+
+const messages = {
+  en: enMessages,
+  id: idMessages,
+};
 
 export const Route = createRootRoute({
   head: () => {
@@ -48,7 +60,7 @@ export const Route = createRootRoute({
 function RootLayout() {
   const matches = useMatches();
   const localeMatch = matches.find((match) => match.params.locale);
-  const locale = localeMatch?.params.locale || 'en';
+  const locale = (localeMatch?.params.locale || 'en') as keyof typeof messages;
 
   return (
     <html lang={locale} {...mantineHtmlProps}>
@@ -58,9 +70,11 @@ function RootLayout() {
       </head>
       <body>
         <MantineProvider defaultColorScheme="auto">
-          <AppLayout>
-            <Outlet />
-          </AppLayout>
+          <IntlProvider locale={locale} messages={messages[locale]}>
+            <AppLayout>
+              <Outlet />
+            </AppLayout>
+          </IntlProvider>
         </MantineProvider>
         <Scripts />
       </body>

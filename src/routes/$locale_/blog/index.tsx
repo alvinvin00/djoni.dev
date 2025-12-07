@@ -12,14 +12,16 @@ import {
 import {createFileRoute} from '@tanstack/react-router';
 import {allBlogs} from 'content-collections';
 import dayjs from 'dayjs';
+import {FormattedMessage} from 'react-intl';
 
 export const Route = createFileRoute('/$locale_/blog/')({
   component: BlogIndexPage,
 });
 
 export function BlogIndexPage() {
+  const {locale} = Route.useParams();
   const blogs = allBlogs
-    .filter((blog) => blog.lang === 'en')
+    .filter((blog) => blog.lang === locale)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
@@ -47,11 +49,13 @@ export function BlogIndexPage() {
           <Center h="100%">
             <Stack align="center" gap={4} c="white">
               <Title order={1} fz="2rem" fw={700}>
-                Blog
+                <FormattedMessage id="Blog.header_title" defaultMessage="Blog" />
               </Title>
-              <Text size="xl">Welcome to my blog!</Text>
+              <Text size="xl">
+                <FormattedMessage id="Blog.welcome_message" defaultMessage="Welcome to my blog!" />
+              </Text>
               <Text size="lg" fw={700} c="yellow">
-                This is still a work in progress.
+                <FormattedMessage id="Blog.wip_message" defaultMessage="This is still a work in progress." />
               </Text>
             </Stack>
           </Center>

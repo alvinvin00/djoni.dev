@@ -2,6 +2,7 @@ import {AppShell, Burger, Group, Title} from '@mantine/core';
 import {useDisclosure} from '@mantine/hooks';
 import {Link, useMatches} from '@tanstack/react-router';
 import type React from 'react';
+import {FormattedMessage} from 'react-intl';
 import classes from './AppLayout.module.css';
 import {BetaDisclaimer} from './BetaDisclaimer';
 import {Footer} from './Footer';
@@ -26,37 +27,53 @@ export function AppLayout({children}: {children: React.ReactNode}) {
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Group justify="space-between" style={{flex: 1}}>
-            <Link to="/$locale" params={{locale}} style={{textDecoration: 'none', color: 'inherit'}}>
-              <Title order={2} m={0} fz="h3">Djoni&apos;s Den</Title>
+            <Link
+              to="/$locale"
+              params={{locale}}
+              style={{textDecoration: 'none', color: 'inherit'}}
+            >
+              <Title order={2} m={0} fz="h3">
+                Djoni&apos;s Den
+              </Title>
             </Link>
             <Group ml={'xl'} gap={0} visibleFrom={'sm'}>
               <Link
                 to={`/$locale/now`}
                 params={{locale}}
                 className={classes.navLink}
+                activeProps={{className: classes.navLinkActive}}
               >
-                Now
+                <FormattedMessage id="Navigation.now" defaultMessage="Now" />
               </Link>
               <Link
                 to={`/$locale/projects`}
                 params={{locale}}
                 className={classes.navLink}
+                activeProps={{className: classes.navLinkActive}}
               >
-                Projects
+                <FormattedMessage
+                  id="Navigation.projects"
+                  defaultMessage="Projects"
+                />
               </Link>
               <Link
                 to={`/$locale/blog`}
                 params={{locale}}
                 className={classes.navLink}
+                activeProps={{className: classes.navLinkActive}}
               >
-                Blog
+                <FormattedMessage id="Navigation.blog" defaultMessage="Blog" />
               </Link>
               <Link
                 to={`/$locale/about`}
                 params={{locale}}
                 className={classes.navLink}
+                activeProps={{className: classes.navLinkActive}}
               >
-                About
+                <FormattedMessage
+                  id="Navigation.about"
+                  defaultMessage="About"
+                />
               </Link>
             </Group>
           </Group>
@@ -64,32 +81,44 @@ export function AppLayout({children}: {children: React.ReactNode}) {
       </AppShell.Header>
 
       <AppShell.Navbar py="md" px="md">
-        <Link to={`/$locale/now`} params={{locale}} className={classes.navLink} onClick={close}>
-          Now
+        <Link
+          to={`/$locale/now`}
+          params={{locale}}
+          className={classes.navLink}
+          onClick={close}
+          activeProps={{className: classes.navLinkActive}}
+        >
+          <FormattedMessage id="Navigation.now" defaultMessage="Now" />
         </Link>
         <Link
           to={`/$locale/projects`}
           params={{locale}}
           className={classes.navLink}
           onClick={close}
+          activeProps={{className: classes.navLinkActive}}
         >
-          Projects
+          <FormattedMessage
+            id="Navigation.projects"
+            defaultMessage="Projects"
+          />
         </Link>
         <Link
           to={`/$locale/blog`}
           params={{locale}}
           className={classes.navLink}
           onClick={close}
+          activeProps={{className: classes.navLinkActive}}
         >
-          Blog
+          <FormattedMessage id="Navigation.blog" defaultMessage="Blog" />
         </Link>
         <Link
           to={`/$locale/about`}
           params={{locale}}
           className={classes.navLink}
           onClick={close}
+          activeProps={{className: classes.navLinkActive}}
         >
-          About
+          <FormattedMessage id="Navigation.about" defaultMessage="About" />
         </Link>
       </AppShell.Navbar>
 

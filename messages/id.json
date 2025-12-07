@@ -3,6 +3,17 @@
     "title": "Djoni's Den",
     "description": "Situs Portofolio dan tempat aman saya untuk menulis curhat dan pikiran."
   },
+  "Navigation": {
+    "home": "Beranda",
+    "now": "Sekarang",
+    "projects": "Projek",
+    "blog": "Blog",
+    "about": "Tentang"
+  },
+  "Footer": {
+    "copyright": "&copy; {year} Djoni's Den, Hak Cipta Dilindungi. <br /> Dibuat dengan cinta, Mantine, dan Tanstack Start, dihost di Vercel",
+    "socials_label": "Temukan saya di dunia maya:"
+  },
   "Home": {
     "title": "Djoni's Den",
     "beta_disclaimer": "Situs ini masih dalam tahap pengembangan. Situs ini dapat berubah kapan saja. Terima kasih atas pengertiannya.",
@@ -17,16 +28,25 @@
     "thanks_text": "Terima kasih telah mengunjungi situs saya!"
   },
   "Now": {
-    "title": "Lagi ngapain sekarang?"
+    "title": "Lagi ngapain sekarang?",
+    "last_updated": "Terakhir diperbarui:"
   },
   "Projects": {
     "title": "Projek Saya",
     "description": "Ini halaman projek saya.",
-    "project_button": "Lihat projek saya"
+    "project_button": "Lihat projek saya",
+    "header_title": "Projek",
+    "header_description": "Berikut adalah semua proyek yang pernah saya kerjakan"
   },
   "Blog": {
     "title": "Blog Saya",
     "description": "Menulis semua tentang pemrograman dan video game, kadang-kadang menulis topik lain yang membuat saya tertarik.",
-    "disclaimer_text": "DISCLAIMER: Semua pendapat yang diungkapkan di sini adalah murni pendapat penulis dan tidak mewakili siapa pun"
+    "disclaimer_text": "DISCLAIMER: Semua pendapat yang diungkapkan di sini adalah murni pendapat penulis dan tidak mewakili siapa pun",
+    "header_title": "Blog",
+    "welcome_message": "Selamat datang di blog saya!",
+    "wip_message": "Ini masih dalam proses pengerjaan."
+  },
+  "About": {
+    "role": "Rekayasa Perangkat Lunak"
   }
 }

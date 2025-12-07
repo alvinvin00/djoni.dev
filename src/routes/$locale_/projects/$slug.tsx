@@ -6,10 +6,10 @@ export const Route = createFileRoute('/$locale_/projects/$slug')({
 });
 
 function ProjectDetailPage() {
-  const {slug} = Route.useParams();
+  const {slug, locale} = Route.useParams();
 
   const project = allProjects.find(
-    (blog) => blog.slug === slug && blog.lang === 'en',
+    (blog) => blog.slug === slug && blog.lang === locale,
   );
 
   return <div className={'container'}>{project?.content}</div>;

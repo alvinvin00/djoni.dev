@@ -7,10 +7,10 @@ export const Route = createFileRoute('/$locale_/blog/$slug')({
 });
 
 function BlogContentPage() {
-  const {slug} = Route.useParams();
+  const {slug, locale} = Route.useParams();
 
   const blog = allBlogs.find(
-    (blog) => blog.slug === slug && blog.lang === 'en',
+    (blog) => blog.slug === slug && blog.lang === locale,
   );
 
   return <Container>{blog?.content}</Container>;

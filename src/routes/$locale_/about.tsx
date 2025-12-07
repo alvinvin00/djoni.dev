@@ -2,13 +2,15 @@ import {Box, Container, Paper, Text, Title} from '@mantine/core';
 import {createFileRoute} from '@tanstack/react-router';
 import {allAbouts} from 'content-collections';
 import Markdown from 'react-markdown';
+import {FormattedMessage} from 'react-intl';
 
 export const Route = createFileRoute('/$locale_/about')({
   component: AboutRoute,
 });
 
 function AboutRoute() {
-  const aboutData = allAbouts.find((about) => about.lang === 'en');
+  const {locale} = Route.useParams();
+  const aboutData = allAbouts.find((about) => about.lang === locale);
 
   return (
     <Container>
@@ -26,7 +28,7 @@ function AboutRoute() {
           </Text>
         </Title>
         <Title order={2} size="sm" fw={600}>
-          Software Engineer
+          <FormattedMessage id="About.role" defaultMessage="Software Engineer" />
         </Title>
         <br />
         <Box my="md" style={{textAlign: 'justify'}}>

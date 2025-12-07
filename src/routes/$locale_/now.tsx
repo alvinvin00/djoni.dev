@@ -1,13 +1,15 @@
 import {createFileRoute} from '@tanstack/react-router';
 import {allNows} from 'content-collections';
 import dayjs from 'dayjs';
+import {FormattedMessage} from 'react-intl';
 
 export const Route = createFileRoute('/$locale_/now')({
   component: NowRoute,
 });
 
 function NowRoute() {
-  const now = allNows.find((now) => now.lang === 'en');
+  const {locale} = Route.useParams();
+  const now = allNows.find((now) => now.lang === locale);
 
   return (
     <div className={'container'}>
@@ -18,7 +20,7 @@ function NowRoute() {
       >
         <h4 className={'text-center font-bold text-lg'}>{now?.title}</h4>
         <p className={'text-center text-sm'}>
-          Last Updated: {dayjs(now?.date).format('DD MM YYYY')}
+          <FormattedMessage id="Now.last_updated" defaultMessage="Last Updated:" /> {dayjs(now?.date).format('DD MM YYYY')}
         </p>
         <hr />
         {now?.content}

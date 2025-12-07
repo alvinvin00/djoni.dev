@@ -16,14 +16,16 @@ import {
 import {createFileRoute} from '@tanstack/react-router';
 import {allProjects} from 'content-collections';
 import dayjs from 'dayjs';
+import {FormattedMessage} from 'react-intl';
 
 export const Route = createFileRoute('/$locale_/projects/')({
   component: ProjectsPage,
 });
 
 function ProjectsPage() {
+  const {locale} = Route.useParams();
   const projects = allProjects
-    .filter((project) => project.lang === 'en')
+    .filter((project) => project.lang === locale)
     .sort((a, b) => dayjs(a.date).diff(b.date, 'day'));
 
   return (
@@ -41,10 +43,10 @@ function ProjectsPage() {
           <Center h="100%">
             <Stack align="center" gap={0} c="white">
               <Title order={1} fz="2rem" fw={700}>
-                Projects
+                <FormattedMessage id="Projects.header_title" defaultMessage="Projects" />
               </Title>
               <Text size="xl">
-                Here&apos;s all the projects that I have worked on
+                <FormattedMessage id="Projects.header_description" defaultMessage="Here's all the projects that I have worked on" />
               </Text>
             </Stack>
           </Center>
