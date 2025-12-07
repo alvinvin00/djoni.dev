@@ -1,4 +1,14 @@
-import {Card, Image, Stack, Text} from '@mantine/core';
+import {
+  Card,
+  Center,
+  Container,
+  Image,
+  Overlay,
+  SimpleGrid,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core';
 import {createFileRoute} from '@tanstack/react-router';
 import {allBlogs} from 'content-collections';
 import dayjs from 'dayjs';
@@ -13,60 +23,72 @@ export function BlogIndexPage() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    <Stack gap="md" className="my-2">
+    <Stack gap="md" py="xs">
       <Card
         shadow="sm"
         padding={0}
         radius="md"
         withBorder
-        className="relative w-full max-h-60 overflow-hidden"
+        pos="relative"
+        w="100%"
+        mah={240}
+        style={{overflow: 'hidden'}}
       >
         <Card.Section>
           <Image
             src="/assets/blog-bg.jpg"
             alt={`notebook and a laptop, courtesy of Unsplash`}
-            className="object-cover w-full h-60"
+            w="100%"
+            h={240}
+            fit="cover"
           />
         </Card.Section>
-        <div className="absolute inset-0 grid place-items-center pointer-events-none">
-          <Stack align="center" gap={4} className="text-white">
-            <h5 className="text-2xl font-bold">Blog</h5>
-            <p className="text-xl">Welcome to my blog!</p>
-            <p className="text-yellow-500 text-lg font-bold">
-              This is still a work in progress.
-            </p>
-          </Stack>
-        </div>
+        <Overlay zIndex={1} backgroundOpacity={0} style={{pointerEvents: 'none'}}>
+          <Center h="100%">
+            <Stack align="center" gap={4} c="white">
+              <Title order={1} fz="2rem" fw={700}>
+                Blog
+              </Title>
+              <Text size="xl">Welcome to my blog!</Text>
+              <Text size="lg" fw={700} c="yellow">
+                This is still a work in progress.
+              </Text>
+            </Stack>
+          </Center>
+        </Overlay>
       </Card>
 
-      <div className="container grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 z-10">
-        {blogs.map((blog) => {
-          return (
-            <Card
-              key={blog.slug}
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-              className="flex flex-col gap-2 bg-white dark:bg-gray-700 dark:text-white"
-            >
-              <Text size={'lg'} fw={'bold'} lineClamp={2}>
-                {blog.title}
-              </Text>
-              <Stack>
-                <Text size={'md'} fw={'lighter'} lineClamp={3}>
-                  {blog.description || 'No description'}
-                </Text>
-                <Stack gap={2}>
-                  <p className="text-xs font-light">
-                    {dayjs(blog.date).format('DD-MM-YYYY')}
-                  </p>
+      <Container size="xl" w="100%">
+        <SimpleGrid cols={{base: 2, md: 3, lg: 4}} spacing="md">
+          {blogs.map((blog) => {
+            return (
+              <Card
+                key={blog.slug}
+                shadow="sm"
+                padding="lg"
+                radius="md"
+                withBorder
+              >
+                <Stack gap="xs">
+                  <Text size="lg" fw={700} lineClamp={2}>
+                    {blog.title}
+                  </Text>
+                  <Stack gap="xs">
+                    <Text size="md" fw={300} lineClamp={3}>
+                      {blog.description || 'No description'}
+                    </Text>
+                    <Stack gap={2}>
+                      <Text size="xs" fw={300}>
+                        {dayjs(blog.date).format('DD-MM-YYYY')}
+                      </Text>
+                    </Stack>
+                  </Stack>
                 </Stack>
-              </Stack>
-            </Card>
-          );
-        })}
-      </div>
+              </Card>
+            );
+          })}
+        </SimpleGrid>
+      </Container>
     </Stack>
   );
 }

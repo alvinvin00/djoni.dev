@@ -1,3 +1,4 @@
+import {Box, Container, Paper, Text, Title} from '@mantine/core';
 import {createFileRoute} from '@tanstack/react-router';
 import {allAbouts} from 'content-collections';
 import Markdown from 'react-markdown';
@@ -10,22 +11,28 @@ function AboutRoute() {
   const aboutData = allAbouts.find((about) => about.lang === 'en');
 
   return (
-    <div className="container">
-      <div
-        className={
-          'rounded-lg p-2 text-center shadow-lg bg-white dark:bg-gray-600 text-black dark:text-white'
-        }
+    <Container>
+      <Paper
+        radius="lg"
+        p="sm"
+        shadow="lg"
+        withBorder
+        style={{textAlign: 'center'}}
       >
-        <h1 className={'text-xl font-bold'}>
+        <Title order={1} size="xl" fw={700}>
           Alvin Leonardo{' '}
-          <span className={'text-blue-800 dark:text-blue-200'}>Djoni</span>
-        </h1>
-        <h2 className={'text-sm font-semibold'}>Software Engineer</h2>
+          <Text span c="blue" inherit>
+            Djoni
+          </Text>
+        </Title>
+        <Title order={2} size="sm" fw={600}>
+          Software Engineer
+        </Title>
         <br />
-        <div className="my-4 text-justify">
+        <Box my="md" style={{textAlign: 'justify'}}>
           <Markdown>{aboutData?.content}</Markdown>
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Paper>
+    </Container>
   );
 }
