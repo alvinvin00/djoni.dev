@@ -1,4 +1,4 @@
-import {AppShell, Burger, Group} from '@mantine/core';
+import {AppShell, Burger, Group, Title} from '@mantine/core';
 import {useDisclosure} from '@mantine/hooks';
 import {Link, useMatches} from '@tanstack/react-router';
 import type React from 'react';
@@ -7,7 +7,7 @@ import {BetaDisclaimer} from './BetaDisclaimer';
 import {Footer} from './Footer';
 
 export function AppLayout({children}: {children: React.ReactNode}) {
-  const [opened, {toggle}] = useDisclosure();
+  const [opened, {toggle, close}] = useDisclosure();
   const matches = useMatches();
   const localeMatch = matches.find((match) => match.params.locale);
   const locale = localeMatch?.params.locale || 'en';
@@ -26,8 +26,8 @@ export function AppLayout({children}: {children: React.ReactNode}) {
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Group justify="space-between" style={{flex: 1}}>
-            <Link to="/$locale" params={{locale}} className={classes.navLink}>
-              <h2>Djoni&apos;s Den</h2>
+            <Link to="/$locale" params={{locale}} style={{textDecoration: 'none', color: 'inherit'}}>
+              <Title order={2} m={0} fz="h3">Djoni&apos;s Den</Title>
             </Link>
             <Group ml={'xl'} gap={0} visibleFrom={'sm'}>
               <Link
@@ -63,14 +63,15 @@ export function AppLayout({children}: {children: React.ReactNode}) {
         </Group>
       </AppShell.Header>
 
-      <AppShell.Navbar py="md" px={4}>
-        <Link to={`/$locale/now`} params={{locale}} className={classes.navLink}>
+      <AppShell.Navbar py="md" px="md">
+        <Link to={`/$locale/now`} params={{locale}} className={classes.navLink} onClick={close}>
           Now
         </Link>
         <Link
           to={`/$locale/projects`}
           params={{locale}}
           className={classes.navLink}
+          onClick={close}
         >
           Projects
         </Link>
@@ -78,6 +79,7 @@ export function AppLayout({children}: {children: React.ReactNode}) {
           to={`/$locale/blog`}
           params={{locale}}
           className={classes.navLink}
+          onClick={close}
         >
           Blog
         </Link>
@@ -85,6 +87,7 @@ export function AppLayout({children}: {children: React.ReactNode}) {
           to={`/$locale/about`}
           params={{locale}}
           className={classes.navLink}
+          onClick={close}
         >
           About
         </Link>

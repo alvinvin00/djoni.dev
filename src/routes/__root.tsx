@@ -2,7 +2,7 @@ import {config} from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
-import {MantineProvider, mantineHtmlProps} from '@mantine/core';
+import {ColorSchemeScript, MantineProvider, mantineHtmlProps} from '@mantine/core';
 import {
   createRootRoute,
   HeadContent,
@@ -54,6 +54,7 @@ function RootLayout() {
     <html lang={locale} {...mantineHtmlProps}>
       <head>
         <HeadContent />
+        <ColorSchemeScript />
       </head>
       <body>
         <MantineProvider defaultColorScheme="auto">
