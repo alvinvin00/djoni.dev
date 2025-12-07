@@ -1,52 +1,84 @@
+import {Carousel} from '@mantine/carousel';
+import {Card, Group, Image, Stack} from '@mantine/core';
 import {allBlogs} from 'content-collections';
 import dayjs from 'dayjs';
-import Image from 'next/image';
-import React from 'react';
-import {Card, Group, Stack} from '@mantine/core';
 
-export const BlogCarousel = ({locale}: {locale: string}) => {
-  const projects = allBlogs.filter((blog) => blog.lang === locale).slice(0, 4);
+export const BlogCarousel = () => {
+  const projects = allBlogs.slice(0, 4);
 
   return (
-    <section className="my-2">
-      <h2 className="text-2xl font-bold mb-4 text-center dark:text-white">
+    <section>
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: 700,
+          marginBottom: '1rem',
+          textAlign: 'center',
+        }}
+      >
         Latest Post
       </h2>
-      <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2'}>
+      <Carousel
+        height={200}
+        slideGap="md"
+        controlSize={26}
+        withControls
+        emblaOptions={{
+          loop: true,
+          dragFree: false,
+          align: 'center',
+        }}
+      >
         {projects.map((blog) => {
           return (
-            <Card
-              key={blog.slug}
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-              className={'bg-white dark:bg-gray-700 dark:text-white'}
-            >
-              <Card.Section className={'h-20 relative'}>
-                <Image
-                  src={blog.thumbnail}
-                  alt={blog.title}
-                  fill
-                  className={'object-cover object-top'}
-                />
-              </Card.Section>
-              <Group>
-                <h3 className="text-lg font-bold">{blog.title}</h3>
-              </Group>
-              <Stack>
-                <p className="text-sm line-clamp-3">
-                  {blog.description || 'No description'}
-                </p>
-                <div className="flex flex-row flex-nowrap justify-between text-sm text-gray-400">
-                  <p>{dayjs(blog.date).format('DD-MM-YYYY')}</p>
-                  <p>5 minute read</p>
-                </div>
-              </Stack>
-            </Card>
+            <Carousel.Slide key={blog.slug}>
+              <Card
+                key={blog.slug}
+                shadow="sm"
+                padding="lg"
+                radius="md"
+                withBorder
+              >
+                <Card.Section style={{height: 80, position: 'relative'}}>
+                  <Image
+                    src={blog.thumbnail}
+                    alt={blog.title}
+                    style={{
+                      objectFit: 'cover',
+                      objectPosition: 'top',
+                      width: '100%',
+                      height: '100%',
+                    }}
+                  />
+                </Card.Section>
+                <Group>
+                  <h3 style={{fontSize: '1.125rem', fontWeight: 700}}>
+                    {blog.title}
+                  </h3>
+                </Group>
+                <Stack gap="xs">
+                  <p style={{fontSize: '0.875rem', margin: 0}}>
+                    {blog.description || 'No description'}
+                  </p>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      fontSize: '0.875rem',
+                      color: '#9CA3AF',
+                    }}
+                  >
+                    <p style={{margin: 0}}>
+                      {dayjs(blog.date).format('DD-MM-YYYY')}
+                    </p>
+                    <p style={{margin: 0}}>5 minute read</p>
+                  </div>
+                </Stack>
+              </Card>
+            </Carousel.Slide>
           );
         })}
-      </div>
+      </Carousel>
     </section>
   );
 };

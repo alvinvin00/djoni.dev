@@ -1,27 +1,22 @@
 import {Button, Container, Group, Paper, Text, Title} from '@mantine/core';
-import type {Metadata} from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import {useTranslations} from 'next-intl';
-import {getTranslations, setRequestLocale} from 'next-intl/server';
-import React, {use} from 'react';
+import {createFileRoute, Link} from '@tanstack/react-router';
 import {BlogCarousel} from '@/components/BlogCarousel';
-import homeBg from '@/public/assets/home-bg.jpg';
+import {FormattedMessage} from 'react-intl';
 
-const Page = ({params}: {params: {locale: 'en' | 'id'}}) => {
-  const {locale} = use(params);
+export const Route = createFileRoute('/$locale_/')({
+  component: HomeRoute,
+});
 
-  setRequestLocale(locale);
-
-  const t = useTranslations('Home');
+function HomeRoute() {
+  const {locale} = Route.useParams();
 
   return (
     <Container fluid p={0}>
       <div style={{position: 'relative', height: '240px'}}>
-        <Image
-          src={homeBg}
-          alt={'Photo of a code snippet, courtesy of Unsplash'}
-          placeholder={'blur'}
+        <img
+          src={'/assets/home-bg.jpg'}
+          alt={'code snippet, courtesy of Unsplash'}
+          style={{objectFit: 'cover', width: '100%', height: '100%'}}
         />
       </div>
       <Container>
@@ -37,59 +32,46 @@ const Page = ({params}: {params: {locale: 'en' | 'id'}}) => {
           }}
         >
           <Title order={1} ta="center" mb="md">
-            {t('welcome_text')}
+            <FormattedMessage id="Home.welcome_text" defaultMessage="Welcome to my personal website!" />
           </Title>
           <Text size="lg" ta="center">
-            {t('welcome_text_2')}
+             <FormattedMessage id="Home.welcome_text_2" defaultMessage="This is where I share my thoughts, projects, and experiences." />
           </Text>
           <Group grow mt="md">
             <Button
               component={Link}
-              href={`/now`}
+              to="/$locale/now"
+              params={{locale}}
               variant="gradient"
               gradient={{from: 'red', to: 'orange'}}
             >
-              {t('now_button')}
+              <FormattedMessage id="Home.now_button" defaultMessage="What I'm doing now" />
             </Button>
             <Button
               component={Link}
-              href={`/projects`}
+              to="/$locale/projects"
+              params={{locale}}
               variant="gradient"
               gradient={{from: 'green', to: 'lime'}}
             >
-              {t('project_button')}
+              <FormattedMessage id="Home.project_button" defaultMessage="My Projects" />
             </Button>
             <Button
               component={Link}
-              href={`/blog`}
+              to="/$locale/blog"
+              params={{locale}}
               variant="gradient"
               gradient={{from: 'blue', to: 'cyan'}}
             >
-              {t('blog_button')}
+              <FormattedMessage id="Home.blog_button" defaultMessage="My Blog" />
             </Button>
           </Group>
           <Text size="lg" fw={700} ta="center" mt="md">
-            {t('thanks_text')}
+            <FormattedMessage id="Home.thanks_text" defaultMessage="Thanks for visiting!" />
           </Text>
         </Paper>
-        <BlogCarousel locale={locale} />
+        <BlogCarousel />
       </Container>
     </Container>
   );
-};
-
-export const generateMetadata = async ({
-  params,
-}: {
-  params: Promise<{locale: 'en' | 'id'}>;
-}): Promise<Metadata> => {
-  const {locale} = await params;
-
-  const t = await getTranslations({locale, namespace: 'Home'});
-
-  return {
-    title: t('title'),
-  } satisfies Metadata;
-};
-
-export default Page;
+}

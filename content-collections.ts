@@ -16,6 +16,7 @@ const blogCollection = defineCollection({
     title: z.string(),
     lang: z.enum(['en', 'id']),
     url: z.string().optional(),
+    content: z.string(),
   }),
 });
 
@@ -38,6 +39,7 @@ const projectsCollection = defineCollection({
     title: z.string(),
     lang: z.enum(['en', 'id']),
     url: z.string().optional(),
+    content: z.string(),
   }),
 });
 
@@ -50,6 +52,7 @@ const aboutCollection = defineCollection({
     date: z.string(),
     lang: z.enum(['en', 'id']),
     url: z.string().optional(),
+    content: z.string(),
   }),
 });
 
@@ -62,9 +65,11 @@ const nowCollection = defineCollection({
     date: z.string(),
     lang: z.enum(['en', 'id']),
     url: z.string().optional(),
+    content: z.string(),
   }),
   transform: (content) => {
-    const lang = content._meta.filePath.split('/')[4];
+    const fileName = content._meta.filePath.split('/').pop();
+    const lang = fileName ? fileName.split('.')[0] : 'en';
 
     return {
       ...content,

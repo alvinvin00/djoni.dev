@@ -1,19 +1,26 @@
-'use client';
-
-import { socials } from '@/config/socials';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
-import { Group, ActionIcon, Text } from '@mantine/core';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {ActionIcon, Group, Text} from '@mantine/core';
+import {Link} from '@tanstack/react-router';
+import {socials} from '@/config/socials';
+import {FormattedMessage} from 'react-intl';
 
 export const Footer = () => {
   return (
     <Group justify="space-between">
       <Text>
-        &copy; 2024 Djoni&apos;s Den, All Rights Reserved. <br />
-        Made with love and NextJS, hosted on Vercel
+        <FormattedMessage
+          id="Footer.copyright"
+          defaultMessage="&copy; {year} Djoni's Den, All Rights Reserved. <br /> Made with love, Mantine, and Tanstack Start, hosted on Vercel"
+          values={{
+            year: new Date().getFullYear(),
+            br: <br />,
+          }}
+        />
       </Text>
       <Group>
-        <Text fw={500}>Find me on Cyberspace:</Text>
+        <Text fw={500}>
+          <FormattedMessage id="Footer.socials_label" defaultMessage="Find me on Cyberspace:" />
+        </Text>
         {socials.map((social) => (
           <ActionIcon
             key={social.id}

@@ -1,9 +1,6 @@
-'use client';
-
-import React from 'react';
-import {ActionIcon, useMantineColorScheme} from '@mantine/core';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMoon, faSun} from '@fortawesome/free-regular-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {ActionIcon, useMantineColorScheme} from '@mantine/core';
 
 export const DarkModeButton = () => {
   const {colorScheme, toggleColorScheme} = useMantineColorScheme();

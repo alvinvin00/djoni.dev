@@ -3,6 +3,17 @@
     "title": "Djoni's Den",
     "description": "My Portfolio site and safe haven for writing rants and thoughts."
   },
+  "Navigation": {
+    "home": "Home",
+    "now": "Now",
+    "projects": "Projects",
+    "blog": "Blog",
+    "about": "About"
+  },
+  "Footer": {
+    "copyright": "&copy; {year} Djoni's Den, All Rights Reserved. <br /> Made with love, Mantine, and Tanstack Start, hosted on Vercel",
+    "socials_label": "Find me on Cyberspace:"
+  },
   "Home": {
     "title": "Djoni's Den",
     "beta_disclaimer": "This site is still in development, it may change overtime. Thank you for your understanding!",
@@ -17,16 +28,25 @@
     "thanks_text": "Thank you for visiting my website!"
   },
   "Now": {
-    "title": "What I'm doing now?"
+    "title": "What I'm doing now?",
+    "last_updated": "Last Updated:"
   },
   "Projects": {
     "title": "My Projects",
     "description": "This is the projects page.",
-    "project_button": "Look at my projects"
+    "project_button": "Look at my projects",
+    "header_title": "Projects",
+    "header_description": "Here's all the projects that I have worked on"
   },
   "Blog": {
     "title": "My Blog",
     "description": "Writing all about programming and video games, occasionally wrote out of topic that made me interested.",
-    "disclaimer_text": "DISCLAIMER: All opinions expressed here are solely author's opinion and not representing anyone"
+    "disclaimer_text": "DISCLAIMER: All opinions expressed here are solely author's opinion and not representing anyone",
+    "header_title": "Blog",
+    "welcome_message": "Welcome to my blog!",
+    "wip_message": "This is still a work in progress."
+  },
+  "About": {
+    "role": "Software Engineer"
   }
 }
