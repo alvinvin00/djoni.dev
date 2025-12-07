@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -33,7 +33,11 @@
       "!!**/.next",
       "!!**/out",
       "!!**/build",
-      "!!**/next-env.d.ts"
+      "!!**/dist",
+      "!!**/.tanstack",
+      "!!**/next-env.d.ts",
+      "!!src/routeTree.gen.ts",
+      "!!src/components/Layout/AppLayout.module.css"
     ]
   }
 }

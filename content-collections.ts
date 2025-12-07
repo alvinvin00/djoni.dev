@@ -64,7 +64,8 @@ const nowCollection = defineCollection({
     url: z.string().optional(),
   }),
   transform: (content) => {
-    const lang = content._meta.filePath.split('/')[4];
+    const fileName = content._meta.filePath.split('/').pop();
+    const lang = fileName ? fileName.split('.')[0] : 'en';
 
     return {
       ...content,
