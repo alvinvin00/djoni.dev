@@ -2,7 +2,7 @@ import {AppShell, Burger, Group} from '@mantine/core';
 import {useDisclosure} from '@mantine/hooks';
 import {Link} from '@tanstack/react-router';
 import type React from 'react';
-import classes from './AppLayout.module.css';
+import {DarkModeButton} from '@/components/Button/DarkMode';
 import {BetaDisclaimer} from './BetaDisclaimer';
 import {Footer} from './Footer';
 
@@ -11,7 +11,7 @@ export function AppLayout({children}: {children: React.ReactNode}) {
 
   return (
     <AppShell
-      header={{height: 60}}
+      header={{height: 70}}
       navbar={{
         width: 300,
         breakpoint: 'sm',
@@ -19,87 +19,125 @@ export function AppLayout({children}: {children: React.ReactNode}) {
       }}
       padding="md"
     >
-      <AppShell.Header>
-        <Group h="100%" px="md">
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <Group justify="space-between" style={{flex: 1}}>
-            <Link
-              to="/$locale"
-              params={{locale: 'en'}}
-              className={classes.navLink}
-            >
-              <h2>Djoni&apos;s Den</h2>
-            </Link>
-            <Group ml={'xl'} gap={0} visibleFrom={'sm'}>
-              <Link
-                to={`/$locale/now`}
-                params={{locale: 'en'}}
-                className={classes.navLink}
-              >
-                Now
-              </Link>
-              <Link
-                to={`/$locale/projects`}
-                params={{locale: 'en'}}
-                className={classes.navLink}
-              >
-                Projects
-              </Link>
-              <Link
-                to={`/$locale/blog`}
-                params={{locale: 'en'}}
-                className={classes.navLink}
-              >
-                Blog
-              </Link>
-              <Link
-                to={`/$locale/about`}
-                params={{locale: 'en'}}
-                className={classes.navLink}
-              >
-                About
-              </Link>
-            </Group>
+      <AppShell.Header className="glass-card-dark dark:glass-card border-l-4 border-neon-purple shadow-neon-purple">
+        <Group h="100%" px="md" justify="space-between">
+          <Burger
+            opened={opened}
+            onClick={toggle}
+            hiddenFrom="sm"
+            size="sm"
+            className="text-white dark:text-gray-200"
+          />
+          <Link
+            to="/$locale"
+            params={{locale: 'en'}}
+            className="group flex items-center gap-2 transition-all duration-300 hover:scale-105"
+          >
+            <h2 className="text-2xl font-bold bg-gradient-neon bg-clip-text text-transparent transition-all duration-300 group-hover:filter group-hover:brightness-125">
+              Djoni&apos;s Den
+            </h2>
+          </Link>
+          <Group ml="xl" gap="md" visibleFrom="sm" align="center">
+            <NavLink to="/$locale/now" params={{locale: 'en'}}>
+              Now
+            </NavLink>
+            <NavLink to="/$locale/projects" params={{locale: 'en'}}>
+              Projects
+            </NavLink>
+            <NavLink to="/$locale/blog" params={{locale: 'en'}}>
+              Blog
+            </NavLink>
+            <NavLink to="/$locale/about" params={{locale: 'en'}}>
+              About
+            </NavLink>
+            <DarkModeButton />
           </Group>
         </Group>
       </AppShell.Header>
 
-      <AppShell.Navbar py="md" px={4}>
-        <Link
-          to={`/$locale/now`}
-          params={{locale: 'en'}}
-          className={classes.navLink}
-        >
-          Now
-        </Link>
-        <Link
-          to={`/$locale/projects`}
-          params={{locale: 'en'}}
-          className={classes.navLink}
-        >
-          Projects
-        </Link>
-        <Link
-          to={`/$locale/blog`}
-          params={{locale: 'en'}}
-          className={classes.navLink}
-        >
-          Blog
-        </Link>
-        <Link
-          to={`/$locale/about`}
-          params={{locale: 'en'}}
-          className={classes.navLink}
-        >
-          About
-        </Link>
+      <AppShell.Navbar
+        py="md"
+        px={4}
+        className="glass-card-dark border-l-4 border-neon-purple"
+      >
+        <div className="flex flex-col gap-4 p-4">
+          <NavLinkMobile
+            to="/$locale/now"
+            params={{locale: 'en'}}
+            onClick={toggle}
+          >
+            Now
+          </NavLinkMobile>
+          <NavLinkMobile
+            to="/$locale/projects"
+            params={{locale: 'en'}}
+            onClick={toggle}
+          >
+            Projects
+          </NavLinkMobile>
+          <NavLinkMobile
+            to="/$locale/blog"
+            params={{locale: 'en'}}
+            onClick={toggle}
+          >
+            Blog
+          </NavLinkMobile>
+          <NavLinkMobile
+            to="/$locale/about"
+            params={{locale: 'en'}}
+            onClick={toggle}
+          >
+            About
+          </NavLinkMobile>
+        </div>
       </AppShell.Navbar>
 
-      <AppShell.Main>
+      <AppShell.Main className="dark:bg-dark-bg dark:text-white min-h-screen">
         <BetaDisclaimer />
         {children}
         <Footer />
       </AppShell.Main>
     </AppShell>
+  );
+}
+
+function NavLink({
+  children,
+  ...props
+}: {
+  children: React.ReactNode;
+  to: string;
+  params: Record<string, string>;
+}) {
+  return (
+    <Link
+      {...props}
+      className="relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 transition-all duration-300 hover:text-neon-purple dark:hover:text-neon-cyan group"
+    >
+      {children}
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-neon transition-all duration-300 group-hover:w-full" />
+      <span className="absolute inset-0 rounded-lg bg-neon-purple/0 transition-all duration-300 group-hover:bg-neon-purple/10" />
+    </Link>
+  );
+}
+
+function NavLinkMobile({
+  children,
+  onClick,
+  ...props
+}: {
+  children: React.ReactNode;
+  to: string;
+  params: Record<string, string>;
+  onClick?: () => void;
+}) {
+  return (
+    <Link
+      {...props}
+      onClick={onClick}
+      className="block px-6 py-4 text-lg font-medium text-gray-700 dark:text-gray-200 transition-all duration-300 hover:text-neon-purple dark:hover:text-neon-cyan hover:bg-white/5 dark:hover:bg-white/10 rounded-lg border-l-4 border-transparent hover:border-neon-purple"
+    >
+      {children}
+    </Link>
   );
 }
