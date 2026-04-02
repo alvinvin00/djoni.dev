@@ -1,8 +1,7 @@
-import {faGithub} from '@fortawesome/free-brands-svg-icons';
-import {faArrowUpRightFromSquare} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {SiGithub} from '@icons-pack/react-simple-icons';
 import {Link} from '@tanstack/react-router';
 import {allProjects} from 'content-collections';
+import {ExternalLink} from 'lucide-react';
 import {motion} from 'motion/react';
 
 export function FeaturedProjects() {
@@ -93,10 +92,7 @@ export function FeaturedProjects() {
                           className="text-gray-400 hover:text-neon-cyan transition-colors duration-300"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <FontAwesomeIcon
-                            icon={faGithub}
-                            className="text-lg"
-                          />
+                          <SiGithub className="w-5 h-5" />
                         </a>
                       )}
                       {project.link && (
@@ -107,10 +103,7 @@ export function FeaturedProjects() {
                           className="text-gray-400 hover:text-neon-purple transition-colors duration-300"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <FontAwesomeIcon
-                            icon={faArrowUpRightFromSquare}
-                            className="text-lg"
-                          />
+                          <ExternalLink className="w-5 h-5" />
                         </a>
                       )}
                     </div>

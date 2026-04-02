@@ -1,12 +1,8 @@
-import {faGithub} from '@fortawesome/free-brands-svg-icons';
-import {
-  faArrowLeft,
-  faArrowUpRightFromSquare,
-} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {SiGithub} from '@icons-pack/react-simple-icons';
 import {createFileRoute, Link} from '@tanstack/react-router';
 import {allProjects} from 'content-collections';
 import dayjs from 'dayjs';
+import {ArrowLeft, ExternalLink} from 'lucide-react';
 import {motion} from 'motion/react';
 
 export const Route = createFileRoute('/$locale_/projects/$slug')({
@@ -48,7 +44,7 @@ function ProjectDetailPage() {
           params={{locale: 'en'}}
           className="inline-flex items-center gap-2 text-gray-400 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors duration-300 mb-8"
         >
-          <FontAwesomeIcon icon={faArrowLeft} />
+          <ArrowLeft className="w-4 h-4" />
           Back to Projects
         </Link>
 
@@ -119,7 +115,7 @@ function ProjectDetailPage() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-neon-purple/30 dark:border-neon-cyan/30 text-neon-purple dark:text-neon-cyan hover:bg-neon-purple/10 dark:hover:bg-neon-cyan/10 transition-all duration-300"
                   >
-                    <FontAwesomeIcon icon={faGithub} />
+                    <SiGithub className="w-5 h-5" />
                     View Code
                   </a>
                 )}
@@ -130,7 +126,7 @@ function ProjectDetailPage() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-neon text-white hover:shadow-neon-purple-lg transition-all duration-300"
                   >
-                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                    <ExternalLink className="w-5 h-5" />
                     Live Demo
                   </a>
                 )}

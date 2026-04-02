@@ -1,4 +1,3 @@
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {ActionIcon, Anchor, Group, Stack, Text} from '@mantine/core';
 import {Link} from '@tanstack/react-router';
 import {socials} from '@/config/socials';
@@ -85,9 +84,8 @@ export const Footer = () => {
                   size="lg"
                   className="relative group overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-neon-purple dark:hover:shadow-neon-cyan"
                 >
-                  <FontAwesomeIcon
-                    icon={social.icon}
-                    className="transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
+                  <social.icon
+                    className="w-5 h-5 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
                     style={{color: social.color}}
                   />
                   <span

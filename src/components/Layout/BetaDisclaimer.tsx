@@ -1,27 +1,17 @@
-import {faTriangleExclamation} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Alert, Anchor} from '@mantine/core';
-import type React from 'react';
+import {AlertTriangle} from 'lucide-react';
 
 export const BetaDisclaimer = () => {
   return (
     <div className="container mx-auto px-4 mt-4 animate-fade-in-down">
       <Alert
         variant="filled"
-        icon={
-          <FontAwesomeIcon
-            icon={faTriangleExclamation}
-            className="animate-pulse-neon"
-          />
-        }
+        icon={<AlertTriangle className="w-5 h-5 animate-pulse-neon" />}
         className="relative overflow-hidden border-l-4 border-neon-purple dark:border-neon-cyan bg-gradient-to-r from-neon-purple/10 to-neon-cyan/10 dark:from-dark-card/80 dark:to-dark-surface/80 backdrop-blur-sm shadow-neon-purple dark:shadow-neon-cyan"
       >
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-3">
-            <FontAwesomeIcon
-              icon={faTriangleExclamation}
-              className="text-neon-purple dark:text-neon-cyan text-lg animate-pulse-neon"
-            />
+            <AlertTriangle className="w-5 h-5 text-neon-purple dark:text-neon-cyan animate-pulse-neon" />
             <p className="text-sm font-medium text-gray-800 dark:text-gray-100">
               This site is actively under development and may change frequently.
               Thank you for your patience and understanding!

@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e8806ec-e24b-485d-a427-1da665edb4e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/routes/$locale_/blog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/$locale_/blog/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/$locale_/projects/$slug.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/$locale_/projects/$slug.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GEMINI.md" beforeDir="false" afterPath="$PROJECT_DIR$/GEMINI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDESIGN_COMPLETE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/DarkMode.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/DarkMode.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FeaturedProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeaturedProjects.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/BetaDisclaimer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/BetaDisclaimer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/socials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/socials.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/$locale_/projects/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/$locale_/projects/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.mjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1775093890520</updated>
-      <workItem from="1775093894585" duration="1219000" />
+      <workItem from="1775093894585" duration="2714000" />
     </task>
     <servers />
   </component>

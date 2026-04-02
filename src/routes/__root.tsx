@@ -1,5 +1,3 @@
-import {config} from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import type React from 'react';
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
@@ -14,8 +12,6 @@ import {
   Scripts,
 } from '@tanstack/react-router';
 import {AppLayout} from '@/components/Layout/AppLayout';
-
-config.autoAddCss = false;
 
 export const Route = createRootRoute({
   head: () => {
