@@ -1,6 +1,13 @@
-import {Button, Container, Group, Paper, Text, Title} from '@mantine/core';
-import {BlogCarousel} from '@/components/BlogCarousel';
-import {createFileRoute} from '@tanstack/react-router';
+import {Button} from '@mantine/core';
+import {createFileRoute, Link} from '@tanstack/react-router';
+import {ContactForm} from '@/components/Contact/ContactForm';
+import {FeaturedProjects} from '@/components/FeaturedProjects';
+import {
+  AnimatedHeroA,
+  HeroActions,
+  HeroSubtitle,
+  HeroTitle,
+} from '@/components/Hero/AnimatedHeroA';
 
 export const Route = createFileRoute('/$locale_/')({
   component: HomeRoute,
@@ -8,65 +15,37 @@ export const Route = createFileRoute('/$locale_/')({
 
 function HomeRoute() {
   return (
-    <Container fluid p={0}>
-      <div style={{position: 'relative', height: '240px'}}>
-        <img
-          src={'/assets/home-bg.jpg'}
-          alt={'code snippet, courtesy of Unsplash'}
-          style={{objectFit: 'cover', width: '100%', height: '100%'}}
-        />
-      </div>
-      <Container>
-        <Paper
-          shadow="xl"
-          p="md"
-          radius="lg"
-          style={{
-            position: 'relative',
-            top: '-50px',
-            margin: '0 auto',
-            maxWidth: '800px',
-          }}
-        >
-          <Title order={1} ta="center" mb="md">
-            Welcome to my personal website!
-          </Title>
-          <Text size="lg" ta="center">
-            This is where I share my thoughts, projects, and experiences.
-          </Text>
-          <Group grow mt="md">
+    <main className="min-h-screen">
+      <AnimatedHeroA>
+        <HeroTitle>Djoni&apos;s Den</HeroTitle>
+        <HeroSubtitle>
+          A digital space where thoughts meet code, creativity meets technology,
+          and ideas turn into reality.
+        </HeroSubtitle>
+        <HeroActions>
+          <Link to="/$locale/projects" params={{locale: 'en'}}>
             <Button
-              component="a"
-              href={`/now`}
-              variant="gradient"
-              gradient={{from: 'red', to: 'orange'}}
+              size="lg"
+              className="bg-gradient-neon text-white font-semibold px-8 py-3 rounded-lg hover:shadow-neon-purple-lg transition-all duration-300 hover:scale-105"
             >
-              What I'm doing now
+              View Projects
             </Button>
+          </Link>
+          <Link to="/$locale/about" params={{locale: 'en'}}>
             <Button
-              component="a"
-              href={`/projects`}
-              variant="gradient"
-              gradient={{from: 'green', to: 'lime'}}
+              size="lg"
+              variant="outline"
+              className="border-2 border-neon-purple dark:border-neon-cyan text-neon-purple dark:text-neon-cyan px-8 py-3 rounded-lg hover:bg-neon-purple/10 dark:hover:bg-neon-cyan/10 transition-all duration-300"
             >
-              My Projects
+              About Me
             </Button>
-            <Button
-              component="a"
-              href={`/blog`}
-              variant="gradient"
-              gradient={{from: 'blue', to: 'cyan'}}
-            >
-              My Blog
-            </Button>
-          </Group>
-          <Text size="lg" fw={700} ta="center" mt="md">
-            Thanks for visiting!
-          </Text>
-        </Paper>
-        <BlogCarousel />
-      </Container>
-    </Container>
+          </Link>
+        </HeroActions>
+      </AnimatedHeroA>
+
+      <FeaturedProjects />
+
+      <ContactForm />
+    </main>
   );
 }
-
