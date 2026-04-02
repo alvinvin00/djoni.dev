@@ -11,6 +11,6 @@ export function getRouter() {
 declare module '@tanstack/react-router' {
   interface Register {
     // This infers the type of our router and registers it across your entire project
-    router: ReturnType<typeof createRouter>;
+    router: ReturnType<typeof getRouter>;
   }
 }

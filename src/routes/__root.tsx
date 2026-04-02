@@ -4,6 +4,9 @@ import type React from 'react';
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
 import {MantineProvider, mantineHtmlProps} from '@mantine/core';
+import '@/styles/globals.css';
+import '@/styles/futuristic.css';
+import '@/styles/animations.css';
 import {
   createRootRoute,
   HeadContent,
