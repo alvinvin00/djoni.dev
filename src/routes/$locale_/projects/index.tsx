@@ -46,8 +46,8 @@ function ProjectsPage() {
               transition={{delay: index * 0.1, duration: 0.6}}
             >
               <Link
-                to="/$locale/projects/$slug"
-                params={{locale, slug: project.slug}}
+                to="$slug"
+                params={{slug: project.slug}}
                 className="block h-full"
               >
                 <div className="h-full glass-card-dark p-6 rounded-lg border-2 border-neon-purple/20 dark:border-neon-cyan/20 transition-all duration-300 hover:border-neon-purple dark:hover:border-neon-cyan hover:shadow-neon-purple dark:hover:shadow-neon-cyan hover:scale-105">

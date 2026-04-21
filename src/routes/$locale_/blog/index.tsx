@@ -8,7 +8,7 @@ export const Route = createFileRoute('/$locale_/blog/')({
   component: BlogIndexPage,
 });
 
-export function BlogIndexPage() {
+function BlogIndexPage() {
   const {locale} = Route.useParams();
   const blogs = allBlogs
     .filter((blog) => blog.lang === locale)
@@ -44,8 +44,8 @@ export function BlogIndexPage() {
               transition={{delay: index * 0.1, duration: 0.6}}
             >
               <Link
-                to="/$locale/blog/$slug"
-                params={{locale, slug: blog.slug}}
+                to="$slug"
+                params={{slug: blog.slug}}
                 className="block h-full"
               >
                 <article className="h-full glass-card-dark p-6 rounded-lg border-2 border-neon-purple/20 dark:border-neon-cyan/20 transition-all duration-300 hover:border-neon-purple dark:hover:border-neon-cyan hover:shadow-neon-purple dark:hover:shadow-neon-cyan hover:scale-105">

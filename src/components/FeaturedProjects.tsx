@@ -40,7 +40,7 @@ export function FeaturedProjects({locale}: {locale: string}) {
             className="group"
           >
             <Link
-              to={`/$locale/projects/$slug`}
+              to="/$locale/projects/$slug"
               params={{locale, slug: project.slug}}
               className="block h-full"
             >

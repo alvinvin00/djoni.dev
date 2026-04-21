@@ -21,8 +21,7 @@ function ProjectDetailPage() {
           Project Not Found
         </h1>
         <Link
-          to="/$locale/projects"
-          params={{locale}}
+          to=".."
           className="text-neon-purple dark:text-neon-cyan hover:underline"
         >
           ← Back to Projects
@@ -40,8 +39,7 @@ function ProjectDetailPage() {
         className="container mx-auto px-4"
       >
         <Link
-          to="/$locale/projects"
-          params={{locale}}
+          to=".."
           className="inline-flex items-center gap-2 text-gray-400 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors duration-300 mb-8"
         >
           <ArrowLeft className="w-4 h-4" />

@@ -2,6 +2,7 @@ import {defineConfig} from 'vite';
 import viteReact from '@vitejs/plugin-react';
 import contentCollections from '@content-collections/vite';
 import {tanstackStart} from '@tanstack/react-start/plugin/vite';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,6 +11,7 @@ export default defineConfig({
       srcDirectory: 'src', // This is the default
     }),
     viteReact(),
+    tailwindcss(),
     contentCollections(),
   ],
   resolve: {

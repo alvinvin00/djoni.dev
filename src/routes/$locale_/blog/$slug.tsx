@@ -19,8 +19,7 @@ function BlogContentPage() {
           Blog Post Not Found
         </h1>
           <Link
-            to="/$locale/blog"
-            params={{locale}}
+            to=".."
             className="text-neon-purple dark:text-neon-cyan hover:underline"
           >
             ← Back to Blog
@@ -38,8 +37,7 @@ function BlogContentPage() {
         className="container mx-auto px-4"
       >
         <Link
-          to="/$locale/blog"
-          params={{locale}}
+          to=".."
           className="inline-flex items-center gap-2 text-gray-400 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors duration-300 mb-8"
         >
           ← Back to Blog

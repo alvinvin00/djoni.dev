@@ -103,17 +103,11 @@ export function AppLayout({children}: {children: React.ReactNode}) {
   );
 }
 
-function NavLink({
-  children,
-  ...props
-}: {
-  children: React.ReactNode;
-  to: string;
-  params: Record<string, string>;
-}) {
+function NavLink(props: React.ComponentProps<typeof Link>) {
+  const {children, ...rest} = props;
   return (
     <Link
-      {...props}
+      {...rest}
       className="relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 transition-all duration-300 hover:text-neon-purple dark:hover:text-neon-cyan group"
     >
       {children}
@@ -123,19 +117,11 @@ function NavLink({
   );
 }
 
-function NavLinkMobile({
-  children,
-  onClick,
-  ...props
-}: {
-  children: React.ReactNode;
-  to: string;
-  params: Record<string, string>;
-  onClick?: () => void;
-}) {
+function NavLinkMobile(props: React.ComponentProps<typeof Link>) {
+  const {children, onClick, ...rest} = props;
   return (
     <Link
-      {...props}
+      {...rest}
       onClick={onClick}
       className="block px-6 py-4 text-lg font-medium text-gray-700 dark:text-gray-200 transition-all duration-300 hover:text-neon-purple dark:hover:text-neon-cyan hover:bg-white/5 dark:hover:bg-white/10 rounded-lg border-l-4 border-transparent hover:border-neon-purple"
     >
