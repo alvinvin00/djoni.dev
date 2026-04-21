@@ -50,3 +50,4 @@ next-env.d.ts
 # Next Intl
 messages/*.d.json.ts
 /src/routeTree.gen.ts
+/dist
