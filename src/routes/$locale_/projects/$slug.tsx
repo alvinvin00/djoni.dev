@@ -10,9 +10,9 @@ export const Route = createFileRoute('/$locale_/projects/$slug')({
 });
 
 function ProjectDetailPage() {
-  const {slug} = Route.useParams();
+  const {slug, locale} = Route.useParams();
 
-  const project = allProjects.find((p) => p.slug === slug && p.lang === 'en');
+  const project = allProjects.find((p) => p.slug === slug && p.lang === locale);
 
   if (!project) {
     return (
@@ -22,7 +22,7 @@ function ProjectDetailPage() {
         </h1>
         <Link
           to="/$locale/projects"
-          params={{locale: 'en'}}
+          params={{locale}}
           className="text-neon-purple dark:text-neon-cyan hover:underline"
         >
           ← Back to Projects
@@ -41,7 +41,7 @@ function ProjectDetailPage() {
       >
         <Link
           to="/$locale/projects"
-          params={{locale: 'en'}}
+          params={{locale}}
           className="inline-flex items-center gap-2 text-gray-400 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors duration-300 mb-8"
         >
           <ArrowLeft className="w-4 h-4" />

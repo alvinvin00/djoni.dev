@@ -7,7 +7,8 @@ export const Route = createFileRoute('/$locale_/about')({
 });
 
 function AboutRoute() {
-  const aboutData = allAbouts.find((about) => about.lang === 'en');
+  const {locale} = Route.useParams();
+  const aboutData = allAbouts.find((about) => about.lang === locale);
 
   return (
     <div className="min-h-screen pt-8 pb-16">

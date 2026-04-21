@@ -4,9 +4,9 @@ import {allProjects} from 'content-collections';
 import {ExternalLink} from 'lucide-react';
 import {motion} from 'motion/react';
 
-export function FeaturedProjects() {
+export function FeaturedProjects({locale}: {locale: string}) {
   const featuredProjects = allProjects
-    .filter((project) => project.lang === 'en')
+    .filter((project) => project.lang === locale)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
 
@@ -41,7 +41,7 @@ export function FeaturedProjects() {
           >
             <Link
               to={`/$locale/projects/$slug`}
-              params={{locale: 'en', slug: project.slug}}
+              params={{locale, slug: project.slug}}
               className="block h-full"
             >
               <div className="h-full glass-card-dark p-6 rounded-lg border-2 border-neon-purple/20 dark:border-neon-cyan/20 transition-all duration-300 hover:border-neon-purple dark:hover:border-neon-cyan hover:shadow-neon-purple dark:hover:shadow-neon-cyan hover:scale-105">
@@ -124,7 +124,7 @@ export function FeaturedProjects() {
       >
         <Link
           to="/$locale/projects"
-          params={{locale: 'en'}}
+          params={{locale}}
           className="inline-block px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 border-2 border-neon-purple dark:border-neon-cyan text-neon-purple dark:text-neon-cyan hover:bg-neon-purple/10 dark:hover:bg-neon-cyan/10 hover:shadow-neon-purple dark:hover:shadow-neon-cyan"
         >
           View All Projects →

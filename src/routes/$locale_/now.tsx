@@ -8,7 +8,8 @@ export const Route = createFileRoute('/$locale_/now')({
 });
 
 function NowRoute() {
-  const now = allNows.find((n) => n.lang === 'en');
+  const {locale} = Route.useParams();
+  const now = allNows.find((n) => n.lang === locale);
 
   return (
     <div className="min-h-screen pt-8 pb-16">

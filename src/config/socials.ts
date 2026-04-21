@@ -1,5 +1,6 @@
-import {SiFacebook, SiInstagram, SiLinkedin, SiSteam, SiTwitter,} from '@icons-pack/react-simple-icons';
+import {LinkIcon} from "lucide-react";
 import type {ComponentType, SVGProps} from 'react';
+import {SiFacebook, SiInstagram, SiSteam, SiX} from "@icons-pack/react-simple-icons";
 
 type Social = {
     id: string;
@@ -29,7 +30,7 @@ export const socials: Social[] = [
         id: 'linkedin',
         name: 'LinkedIn',
         url: 'https://www.linkedin.com/in/alvinvin00',
-        icon: SiLinkedin,
+        icon: LinkIcon,
         color: '#0A66C2',
     },
     {
@@ -41,10 +42,10 @@ export const socials: Social[] = [
     },
     {
         id: 'twitter',
-        name: 'Twitter',
-        url: 'https://www.twitter.com/alvinvin00',
-        icon: SiTwitter,
-        color: '#1DA1F2',
-        title: 'I refused to call it X',
+        name: 'X',
+        url: 'https://www.x.com/alvinvin00',
+        icon: SiX,
+        color: '#000000',
+        title: 'Formerly Twitter',
     },
 ];

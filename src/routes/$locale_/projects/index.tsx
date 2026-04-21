@@ -11,8 +11,9 @@ export const Route = createFileRoute('/$locale_/projects/')({
 });
 
 function ProjectsPage() {
+  const {locale} = Route.useParams();
   const projects = allProjects
-    .filter((project) => project.lang === 'en')
+    .filter((project) => project.lang === locale)
     .sort((a, b) => dayjs(b.date).diff(a.date, 'day'));
 
   return (
@@ -46,7 +47,7 @@ function ProjectsPage() {
             >
               <Link
                 to="/$locale/projects/$slug"
-                params={{locale: 'en', slug: project.slug}}
+                params={{locale, slug: project.slug}}
                 className="block h-full"
               >
                 <div className="h-full glass-card-dark p-6 rounded-lg border-2 border-neon-purple/20 dark:border-neon-cyan/20 transition-all duration-300 hover:border-neon-purple dark:hover:border-neon-cyan hover:shadow-neon-purple dark:hover:shadow-neon-cyan hover:scale-105">

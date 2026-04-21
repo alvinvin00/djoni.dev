@@ -1,6 +1,6 @@
 import {AppShell, Burger, Group} from '@mantine/core';
 import {useDisclosure} from '@mantine/hooks';
-import {Link} from '@tanstack/react-router';
+import {Link, useParams} from '@tanstack/react-router';
 import type React from 'react';
 import {DarkModeButton} from '@/components/Button/DarkMode';
 import {BetaDisclaimer} from './BetaDisclaimer';
@@ -8,6 +8,8 @@ import {Footer} from './Footer';
 
 export function AppLayout({children}: {children: React.ReactNode}) {
   const [opened, {toggle}] = useDisclosure();
+  const params = useParams({strict: false});
+  const locale = (params as {locale?: string}).locale ?? 'en';
 
   return (
     <AppShell
@@ -30,7 +32,7 @@ export function AppLayout({children}: {children: React.ReactNode}) {
           />
           <Link
             to="/$locale"
-            params={{locale: 'en'}}
+            params={{locale}}
             className="group flex items-center gap-2 transition-all duration-300 hover:scale-105"
           >
             <h2 className="text-2xl font-bold bg-gradient-neon bg-clip-text text-transparent transition-all duration-300 group-hover:filter group-hover:brightness-125">
@@ -38,16 +40,16 @@ export function AppLayout({children}: {children: React.ReactNode}) {
             </h2>
           </Link>
           <Group ml="xl" gap="md" visibleFrom="sm" align="center">
-            <NavLink to="/$locale/now" params={{locale: 'en'}}>
+            <NavLink to="/$locale/now" params={{locale}}>
               Now
             </NavLink>
-            <NavLink to="/$locale/projects" params={{locale: 'en'}}>
+            <NavLink to="/$locale/projects" params={{locale}}>
               Projects
             </NavLink>
-            <NavLink to="/$locale/blog" params={{locale: 'en'}}>
+            <NavLink to="/$locale/blog" params={{locale}}>
               Blog
             </NavLink>
-            <NavLink to="/$locale/about" params={{locale: 'en'}}>
+            <NavLink to="/$locale/about" params={{locale}}>
               About
             </NavLink>
             <DarkModeButton />
@@ -63,28 +65,28 @@ export function AppLayout({children}: {children: React.ReactNode}) {
         <div className="flex flex-col gap-4 p-4">
           <NavLinkMobile
             to="/$locale/now"
-            params={{locale: 'en'}}
+            params={{locale}}
             onClick={toggle}
           >
             Now
           </NavLinkMobile>
           <NavLinkMobile
             to="/$locale/projects"
-            params={{locale: 'en'}}
+            params={{locale}}
             onClick={toggle}
           >
             Projects
           </NavLinkMobile>
           <NavLinkMobile
             to="/$locale/blog"
-            params={{locale: 'en'}}
+            params={{locale}}
             onClick={toggle}
           >
             Blog
           </NavLinkMobile>
           <NavLinkMobile
             to="/$locale/about"
-            params={{locale: 'en'}}
+            params={{locale}}
             onClick={toggle}
           >
             About

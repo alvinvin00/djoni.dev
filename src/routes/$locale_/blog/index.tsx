@@ -9,8 +9,9 @@ export const Route = createFileRoute('/$locale_/blog/')({
 });
 
 export function BlogIndexPage() {
+  const {locale} = Route.useParams();
   const blogs = allBlogs
-    .filter((blog) => blog.lang === 'en')
+    .filter((blog) => blog.lang === locale)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
@@ -44,7 +45,7 @@ export function BlogIndexPage() {
             >
               <Link
                 to="/$locale/blog/$slug"
-                params={{locale: 'en', slug: blog.slug}}
+                params={{locale, slug: blog.slug}}
                 className="block h-full"
               >
                 <article className="h-full glass-card-dark p-6 rounded-lg border-2 border-neon-purple/20 dark:border-neon-cyan/20 transition-all duration-300 hover:border-neon-purple dark:hover:border-neon-cyan hover:shadow-neon-purple dark:hover:shadow-neon-cyan hover:scale-105">

@@ -8,9 +8,9 @@ export const Route = createFileRoute('/$locale_/blog/$slug')({
 });
 
 function BlogContentPage() {
-  const {slug} = Route.useParams();
+  const {slug, locale} = Route.useParams();
 
-  const blog = allBlogs.find((b) => b.slug === slug && b.lang === 'en');
+  const blog = allBlogs.find((b) => b.slug === slug && b.lang === locale);
 
   if (!blog) {
     return (
@@ -18,13 +18,13 @@ function BlogContentPage() {
         <h1 className="text-4xl font-bold text-neon-purple dark:text-neon-cyan mb-4">
           Blog Post Not Found
         </h1>
-        <Link
-          to="/$locale/blog"
-          params={{locale: 'en'}}
-          className="text-neon-purple dark:text-neon-cyan hover:underline"
-        >
-          ← Back to Blog
-        </Link>
+          <Link
+            to="/$locale/blog"
+            params={{locale}}
+            className="text-neon-purple dark:text-neon-cyan hover:underline"
+          >
+            ← Back to Blog
+          </Link>
       </div>
     );
   }
@@ -39,7 +39,7 @@ function BlogContentPage() {
       >
         <Link
           to="/$locale/blog"
-          params={{locale: 'en'}}
+          params={{locale}}
           className="inline-flex items-center gap-2 text-gray-400 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors duration-300 mb-8"
         >
           ← Back to Blog

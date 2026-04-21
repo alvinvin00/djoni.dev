@@ -1,4 +1,4 @@
-import {defineCollection, defineConfig, defineSingleton} from '@content-collections/core';
+import {defineCollection, defineConfig} from '@content-collections/core';
 import {z} from 'zod';
 
 const blogs = defineCollection({
@@ -43,9 +43,10 @@ const projects = defineCollection({
     }),
 });
 
-const about = defineSingleton({
+const about = defineCollection({
     name: 'about',
-    filePath: './src/contents/now/en.md',
+    directory: './src/contents/about',
+    include: '*.md',
     schema: z.object({
         title: z.string(),
         content: z.string(),
@@ -55,9 +56,10 @@ const about = defineSingleton({
     }),
 });
 
-const now = defineSingleton({
+const now = defineCollection({
     name: 'now',
-    filePath: './src/contents/now/en.md',
+    directory: './src/contents/now',
+    include: '*.md',
     schema: z.object({
         title: z.string(),
         content: z.string(),

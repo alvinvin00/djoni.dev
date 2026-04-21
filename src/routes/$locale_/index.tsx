@@ -14,6 +14,8 @@ export const Route = createFileRoute('/$locale_/')({
 });
 
 function HomeRoute() {
+  const {locale} = Route.useParams();
+
   return (
     <main className="min-h-screen">
       <AnimatedHeroA>
@@ -23,7 +25,7 @@ function HomeRoute() {
           and ideas turn into reality.
         </HeroSubtitle>
         <HeroActions>
-          <Link to="/$locale/projects" params={{locale: 'en'}}>
+          <Link to="/$locale/projects" params={{locale}}>
             <Button
               size="lg"
               className="bg-gradient-neon text-white font-semibold px-8 py-3 rounded-lg hover:shadow-neon-purple-lg transition-all duration-300 hover:scale-105"
@@ -31,7 +33,7 @@ function HomeRoute() {
               View Projects
             </Button>
           </Link>
-          <Link to="/$locale/about" params={{locale: 'en'}}>
+          <Link to="/$locale/about" params={{locale}}>
             <Button
               size="lg"
               variant="outline"
@@ -43,7 +45,7 @@ function HomeRoute() {
         </HeroActions>
       </AnimatedHeroA>
 
-      <FeaturedProjects />
+      <FeaturedProjects locale={locale} />
 
       <ContactForm />
     </main>

@@ -1,9 +1,11 @@
 import {ActionIcon, Anchor, Group, Stack, Text} from '@mantine/core';
-import {Link} from '@tanstack/react-router';
+import {Link, useParams} from '@tanstack/react-router';
 import {socials} from '@/config/socials';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const params = useParams({strict: false});
+  const locale = (params as {locale?: string}).locale ?? 'en';
 
   return (
     <footer className="relative mt-20 border-t-2 border-neon-purple/30 dark:border-neon-cyan/30">
@@ -102,28 +104,28 @@ export const Footer = () => {
           <Group justify="center" gap="xl" className="flex-wrap">
             <Link
               to="/$locale"
-              params={{locale: 'en'}}
+              params={{locale}}
               className="text-sm text-gray-600 dark:text-gray-300 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors duration-300 link-underline"
             >
               Home
             </Link>
             <Link
               to="/$locale/about"
-              params={{locale: 'en'}}
+              params={{locale}}
               className="text-sm text-gray-600 dark:text-gray-300 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors duration-300 link-underline"
             >
               About
             </Link>
             <Link
               to="/$locale/blog"
-              params={{locale: 'en'}}
+              params={{locale}}
               className="text-sm text-gray-600 dark:text-gray-300 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors duration-300 link-underline"
             >
               Blog
             </Link>
             <Link
               to="/$locale/projects"
-              params={{locale: 'en'}}
+              params={{locale}}
               className="text-sm text-gray-600 dark:text-gray-300 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors duration-300 link-underline"
             >
               Projects
