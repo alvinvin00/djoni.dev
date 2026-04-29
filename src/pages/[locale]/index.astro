@@ -1,4 +1,6 @@
 ---
+import Layout from '@/layouts/Layout.astro';
+
 export function getStaticPaths() {
   return [
     { params: { locale: 'en' } },
@@ -9,13 +11,6 @@ export function getStaticPaths() {
 const { locale } = Astro.params;
 ---
 
-<html lang={locale}>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Djoni's Den</title>
-  </head>
-  <body>
-    <h1>Hello Astro — {locale}</h1>
-  </body>
-</html>
+<Layout locale={locale}>
+  <h1>Hello Astro — {locale}</h1>
+</Layout>

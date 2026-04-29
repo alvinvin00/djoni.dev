@@ -1,0 +1,59 @@
+---
+import '@/styles/globals.css';
+import '@/styles/futuristic.css';
+import '@/styles/animations.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import BetaDisclaimer from '@/components/BetaDisclaimer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  locale: string;
+}
+
+const {
+  title = "Djoni's Den",
+  description = "Djoni's Den Personal Website",
+  locale,
+} = Astro.props;
+
+const canonicalUrl = `https://djoni.dev/${locale}`;
+const alternateUrl = `https://djoni.dev/${locale === 'en' ? 'id' : 'en'}`;
+const alternateLang = locale === 'en' ? 'id' : 'en';
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:image" content="/assets/og/semarang-red.jpg" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:creator" content="@alvinvin00" />
+    <meta name="twitter:site" content="@alvinvin00" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" href={alternateUrl} hreflang={alternateLang} />
+
+    <script is:inline>
+      (function () {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="dark:bg-dark-bg dark:text-white min-h-screen">
+    <Header locale={locale} />
+    <BetaDisclaimer />
+    <main class="dark:bg-dark-bg dark:text-white min-h-screen">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>

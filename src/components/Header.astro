@@ -1,0 +1,154 @@
+---
+import { DarkModeToggle } from './DarkModeToggle';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+
+const navLinks = [
+  { href: `/${locale}/now`, label: 'Now' },
+  { href: `/${locale}/projects`, label: 'Projects' },
+  { href: `/${locale}/blog`, label: 'Blog' },
+  { href: `/${locale}/about`, label: 'About' },
+];
+---
+
+<header
+  class="glass-card-dark dark:glass-card border-l-4 border-neon-purple shadow-neon-purple sticky top-0 z-50 h-[70px]"
+>
+  <div class="h-full px-4 md:px-6 flex items-center justify-between">
+    <!-- Mobile burger -->
+    <button
+      id="mobile-menu-toggle"
+      class="sm:hidden text-white dark:text-gray-200 p-2"
+      aria-label="Toggle menu"
+    >
+      <svg
+        id="burger-icon"
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg
+        id="close-icon"
+        class="w-6 h-6 hidden"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Logo -->
+    <a
+      href={`/${locale}`}
+      class="group flex items-center gap-2 transition-all duration-300 hover:scale-105"
+    >
+      <h2
+        class="text-2xl font-bold bg-gradient-neon bg-clip-text text-transparent transition-all duration-300 group-hover:filter group-hover:brightness-125"
+      >
+        Djoni's Den
+      </h2>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden sm:flex items-center gap-1">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 transition-all duration-300 hover:text-neon-purple dark:hover:text-neon-cyan group"
+          >
+            {link.label}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-neon transition-all duration-300 group-hover:w-full" />
+            <span class="absolute inset-0 rounded-lg bg-neon-purple/0 transition-all duration-300 group-hover:bg-neon-purple/10" />
+          </a>
+        ))
+      }
+      <div class="ml-2">
+        <DarkModeToggle client:load />
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile menu panel -->
+<div id="mobile-menu" class="fixed inset-0 z-40 hidden">
+  <div
+    class="absolute inset-0 bg-black/50"
+    id="mobile-menu-backdrop"
+  >
+  </div>
+  <nav
+    class="absolute left-0 top-[70px] w-[300px] h-[calc(100vh-70px)] glass-card-dark border-l-4 border-neon-purple p-4 flex flex-col gap-2 transform -translate-x-full transition-transform duration-300"
+    id="mobile-menu-panel"
+  >
+    {
+      navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block px-6 py-4 text-lg font-medium text-gray-700 dark:text-gray-200 transition-all duration-300 hover:text-neon-purple dark:hover:text-neon-cyan hover:bg-white/5 dark:hover:bg-white/10 rounded-lg border-l-4 border-transparent hover:border-neon-purple"
+        >
+          {link.label}
+        </a>
+      ))
+    }
+    <div class="px-6 py-4">
+      <DarkModeToggle client:load />
+    </div>
+  </nav>
+</div>
+
+<script is:inline>
+  (function () {
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const panel = document.getElementById('mobile-menu-panel');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+    const burgerIcon = document.getElementById('burger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    let isOpen = false;
+
+    function updateMenu() {
+      if (isOpen) {
+        menu.classList.remove('hidden');
+        burgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          panel.classList.remove('-translate-x-full');
+        });
+      } else {
+        panel.classList.add('-translate-x-full');
+        burgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        setTimeout(() => {
+          menu.classList.add('hidden');
+        }, 300);
+      }
+    }
+
+    toggle.addEventListener('click', () => {
+      isOpen = !isOpen;
+      updateMenu();
+    });
+
+    backdrop.addEventListener('click', () => {
+      isOpen = false;
+      updateMenu();
+    });
+  })();
+</script>
