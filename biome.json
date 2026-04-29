@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -35,5 +35,26 @@
       "!!**/build",
       "!!**/next-env.d.ts"
     ]
-  }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "**/*.svelte",
+        "**/*.astro",
+        "**/*.vue"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    }
+  ]
 }
