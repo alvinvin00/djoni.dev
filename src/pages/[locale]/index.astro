@@ -1,16 +1,56 @@
 ---
+import {getCollection} from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
+import {HomeHero} from '@/components/HomeHero';
+import {FeaturedProjects} from '@/components/FeaturedProjects';
 
 export function getStaticPaths() {
   return [
-    { params: { locale: 'en' } },
-    { params: { locale: 'id' } },
+    {params: {locale: 'en'}},
+    {params: {locale: 'id'}},
   ];
 }
 
-const { locale } = Astro.params;
+const {locale} = Astro.params;
+const allProjects = await getCollection('projects');
+const featuredProjects = allProjects
+  .filter((p) => p.data.lang === locale)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3)
+  .map((p) => ({
+    slug: p.data.slug,
+    title: p.data.title,
+    description: p.data.description,
+    thumbnail: p.data.thumbnail,
+    date: p.data.date,
+    tags: p.data.tags,
+    github: p.data.github,
+    link: p.data.link,
+  }));
 ---
 
 <Layout locale={locale}>
-  <h1>Hello Astro — {locale}</h1>
+  <main class="min-h-screen">
+    <HomeHero locale={locale} client:load />
+
+    <FeaturedProjects
+      locale={locale}
+      projects={featuredProjects}
+      client:load
+    />
+
+    <section class="w-full max-w-2xl mx-auto px-4 py-20">
+      <div class="glass-card-dark p-8 md:p-12">
+        <h3
+          class="text-3xl font-bold mb-2 text-center bg-gradient-neon bg-clip-text text-transparent"
+        >
+          Get In Touch
+        </h3>
+        <p class="text-gray-400 dark:text-gray-300 text-center mb-8">
+          Have a project in mind or just want to chat? Send me a message.
+        </p>
+        <p class="text-center text-gray-500">Contact form coming soon...</p>
+      </div>
+    </section>
+  </main>
 </Layout>

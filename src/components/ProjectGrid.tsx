@@ -1,4 +1,5 @@
 import {SiGithub} from '@icons-pack/react-simple-icons';
+import dayjs from 'dayjs';
 import {ExternalLink} from 'lucide-react';
 import {motion} from 'motion/react';
 
@@ -9,37 +10,21 @@ interface Project {
   thumbnail?: string;
   date: string;
   tags?: string[];
+  status?: string;
   github?: string;
   link?: string;
 }
 
-export function FeaturedProjects({
-  locale,
+export function ProjectGrid({
   projects,
+  locale,
 }: {
-  locale: string;
   projects: Project[];
+  locale: string;
 }) {
   return (
-    <section className="w-full max-w-6xl mx-auto px-4 py-20">
-      <motion.div
-        initial={{opacity: 0, y: 20}}
-        whileInView={{opacity: 1, y: 0}}
-        viewport={{once: true}}
-        transition={{duration: 0.6}}
-      >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
-          <span className="bg-gradient-neon bg-clip-text text-transparent">
-            Featured Projects
-          </span>
-        </h2>
-        <p className="text-gray-400 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-          A selection of my recent work, showcasing various technologies and
-          creative solutions.
-        </p>
-      </motion.div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="container mx-auto px-4 pb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
           <motion.div
             key={project.slug}
@@ -47,7 +32,6 @@ export function FeaturedProjects({
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true}}
             transition={{delay: index * 0.1, duration: 0.6}}
-            className="group"
           >
             <a
               href={`/${locale}/projects/${project.slug}`}
@@ -59,16 +43,21 @@ export function FeaturedProjects({
                     <img
                       src={project.thumbnail}
                       alt={project.title}
-                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 )}
 
                 <div className="space-y-3">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-neon-purple dark:group-hover:text-neon-cyan transition-colors duration-300">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="text-2xl font-bold text-white hover:text-neon-purple dark:hover:text-neon-cyan transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <span className="text-sm text-gray-500 whitespace-nowrap">
+                      {dayjs(project.date).year()}
+                    </span>
+                  </div>
 
                   <p className="text-gray-400 line-clamp-3">
                     {project.description}
@@ -76,7 +65,7 @@ export function FeaturedProjects({
 
                   {project.tags && project.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2">
-                      {project.tags.slice(0, 3).map((tag) => (
+                      {project.tags.slice(0, 4).map((tag) => (
                         <span
                           key={tag}
                           className="px-2 py-1 text-xs font-medium rounded-md bg-neon-purple/20 dark:bg-neon-cyan/20 text-neon-purple dark:text-neon-cyan"
@@ -87,9 +76,17 @@ export function FeaturedProjects({
                     </div>
                   )}
 
-                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-700">
-                    <span className="text-sm text-gray-500">
-                      {new Date(project.date).getFullYear()}
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-700">
+                    <span
+                      className={`px-3 py-1 text-xs font-medium rounded-full ${
+                        project.status === 'active'
+                          ? 'bg-green-500/20 text-green-400'
+                          : project.status === 'archived'
+                            ? 'bg-gray-500/20 text-gray-400'
+                            : 'bg-yellow-500/20 text-yellow-400'
+                      }`}
+                    >
+                      {project.status ?? 'Completed'}
                     </span>
 
                     <div className="flex gap-3">
@@ -123,21 +120,6 @@ export function FeaturedProjects({
           </motion.div>
         ))}
       </div>
-
-      <motion.div
-        initial={{opacity: 0}}
-        whileInView={{opacity: 1}}
-        viewport={{once: true}}
-        transition={{delay: 0.4}}
-        className="text-center mt-12"
-      >
-        <a
-          href={`/${locale}/projects`}
-          className="inline-block px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 border-2 border-neon-purple dark:border-neon-cyan text-neon-purple dark:text-neon-cyan hover:bg-neon-purple/10 dark:hover:bg-neon-cyan/10 hover:shadow-neon-purple dark:hover:shadow-neon-cyan"
-        >
-          View All Projects →
-        </a>
-      </motion.div>
-    </section>
+    </div>
   );
 }

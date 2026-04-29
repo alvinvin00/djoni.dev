@@ -1,0 +1,43 @@
+---
+import {getCollection} from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import {BlogGrid} from '@/components/BlogGrid';
+
+export function getStaticPaths() {
+  return [
+    {params: {locale: 'en'}},
+    {params: {locale: 'id'}},
+  ];
+}
+
+const {locale} = Astro.params;
+const allBlogs = await getCollection('blog');
+const blogs = allBlogs
+  .filter((b) => b.data.lang === locale)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .map((b) => ({
+    slug: b.data.slug,
+    title: b.data.title,
+    description: b.data.description,
+    thumbnail: b.data.thumbnail,
+    date: b.data.date,
+    tags: b.data.tags,
+    categories: b.data.categories,
+  }));
+---
+
+<Layout locale={locale} title="Blog | Djoni's Den">
+  <div class="min-h-screen pt-8">
+    <div class="container mx-auto px-4 mb-12 animate-fade-in-down">
+      <h1 class="text-5xl md:text-6xl font-bold text-center mb-4">
+        <span class="bg-gradient-neon bg-clip-text text-transparent">Blog</span>
+      </h1>
+      <p class="text-gray-400 dark:text-gray-300 text-center max-w-2xl mx-auto text-lg">
+        Thoughts, ideas, and insights about technology, development, and
+        creative solutions.
+      </p>
+    </div>
+
+    <BlogGrid blogs={blogs} locale={locale} client:load />
+  </div>
+</Layout>
