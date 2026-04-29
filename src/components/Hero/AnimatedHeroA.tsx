@@ -1,6 +1,11 @@
 import {motion} from 'motion/react';
 import type React from 'react';
 
+function seedRandom(seed: number) {
+  const x = Math.sin(seed * 127.1 + 311.7) * 43758.5453;
+  return x - Math.floor(x);
+}
+
 export function AnimatedHeroA({children}: {children: React.ReactNode}) {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-dark">
@@ -65,65 +70,78 @@ export function AnimatedHeroA({children}: {children: React.ReactNode}) {
       </div>
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute"
-            style={{
-              width: Math.random() * 4 + 2,
-              height: Math.random() * 4 + 2,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              backgroundColor:
-                i % 2 === 0
-                  ? 'rgba(180, 0, 255, 0.3)'
-                  : 'rgba(0, 240, 255, 0.3)',
-              borderRadius: '50%',
-            }}
-            animate={{
-              opacity: [0.3, 0.8, 0.3],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: Math.random() * 3 + 2,
-              repeat: Infinity,
-              ease: 'easeInOut',
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
+        {[...Array(20)].map((_, i) => {
+          const rand1 = seedRandom(i * 3 + 1);
+          const rand2 = seedRandom(i * 3 + 2);
+          const rand3 = seedRandom(i * 3 + 3);
+          const rand4 = seedRandom(i * 3 + 4);
+          return (
+            <motion.div
+              key={i}
+              className="absolute"
+              style={{
+                width: rand1 * 4 + 2,
+                height: rand2 * 4 + 2,
+                left: `${rand3 * 100}%`,
+                top: `${rand4 * 100}%`,
+                backgroundColor:
+                  i % 2 === 0
+                    ? 'rgba(180, 0, 255, 0.3)'
+                    : 'rgba(0, 240, 255, 0.3)',
+                borderRadius: '50%',
+              }}
+              animate={{
+                opacity: [0.3, 0.8, 0.3],
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                duration: seedRandom(i * 5 + 1) * 3 + 2,
+                repeat: Infinity,
+                ease: 'easeInOut',
+                delay: seedRandom(i * 5 + 2) * 2,
+              }}
+            />
+          );
+        })}
       </div>
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={`triangle-${i}`}
-            className="absolute"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              width: 0,
-              height: 0,
-              borderLeft: `${Math.random() * 30 + 20}px solid transparent`,
-              borderRight: `${Math.random() * 30 + 20}px solid transparent`,
-              borderBottom: `${Math.random() * 35 + 25}px solid ${
-                i % 2 === 0
-                  ? 'rgba(180, 0, 255, 0.2)'
-                  : 'rgba(0, 240, 255, 0.2)'
-              }`,
-            }}
-            animate={{
-              x: [0, Math.random() * 100 - 50, 0],
-              y: [0, Math.random() * 100 - 50, 0],
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: Math.random() * 20 + 15,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          />
-        ))}
+        {[...Array(15)].map((_, i) => {
+          const rand1 = seedRandom(i * 7 + 1);
+          const rand2 = seedRandom(i * 7 + 2);
+          const rand3 = seedRandom(i * 7 + 3);
+          const rand4 = seedRandom(i * 7 + 4);
+          const rand5 = seedRandom(i * 7 + 5);
+          return (
+            <motion.div
+              key={`triangle-${i}`}
+              className="absolute"
+              style={{
+                left: `${rand1 * 100}%`,
+                top: `${rand2 * 100}%`,
+                width: 0,
+                height: 0,
+                borderLeft: `${rand3 * 30 + 20}px solid transparent`,
+                borderRight: `${rand4 * 30 + 20}px solid transparent`,
+                borderBottom: `${rand5 * 35 + 25}px solid ${
+                  i % 2 === 0
+                    ? 'rgba(180, 0, 255, 0.2)'
+                    : 'rgba(0, 240, 255, 0.2)'
+                }`,
+              }}
+              animate={{
+                x: [0, seedRandom(i * 7 + 6) * 100 - 50, 0],
+                y: [0, seedRandom(i * 7 + 7) * 100 - 50, 0],
+                rotate: [0, 360],
+              }}
+              transition={{
+                duration: seedRandom(i * 11 + 1) * 20 + 15,
+                repeat: Infinity,
+                ease: 'linear',
+              }}
+            />
+          );
+        })}
       </div>
 
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4">

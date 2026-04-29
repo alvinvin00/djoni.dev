@@ -1,6 +1,11 @@
 import {motion} from 'motion/react';
 import type React from 'react';
 
+function seedRandom(seed: number) {
+  const x = Math.sin(seed * 127.1 + 311.7) * 43758.5453;
+  return x - Math.floor(x);
+}
+
 export function AnimatedHeroB({children}: {children: React.ReactNode}) {
   const gridLines = Array.from({length: 20}, (_, i) => i);
 
@@ -72,18 +77,18 @@ export function AnimatedHeroB({children}: {children: React.ReactNode}) {
             key={`particle-${index}`}
             className="absolute w-1 h-1 bg-neon-purple dark:bg-neon-cyan rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${seedRandom(index * 3 + 1) * 100}%`,
+              top: `${seedRandom(index * 3 + 2) * 100}%`,
             }}
             animate={{
               opacity: [0.3, 1, 0.3],
               scale: [1, 2, 1],
             }}
             transition={{
-              duration: Math.random() * 2 + 1,
+              duration: seedRandom(index * 5 + 1) * 2 + 1,
               repeat: Infinity,
               ease: 'easeInOut',
-              delay: Math.random() * 2,
+              delay: seedRandom(index * 5 + 2) * 2,
             }}
           />
         ))}

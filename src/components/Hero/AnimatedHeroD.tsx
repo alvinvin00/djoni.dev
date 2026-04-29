@@ -1,11 +1,16 @@
 import {motion} from 'motion/react';
 import type React from 'react';
 
+function seedRandom(seed: number) {
+  const x = Math.sin(seed * 127.1 + 311.7) * 43758.5453;
+  return x - Math.floor(x);
+}
+
 export function AnimatedHeroD({children}: {children: React.ReactNode}) {
   const nodes = Array.from({length: 20}, (_, i) => ({
     id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
+    x: seedRandom(i * 3 + 1) * 100,
+    y: seedRandom(i * 3 + 2) * 100,
   }));
 
   return (
@@ -35,7 +40,7 @@ export function AnimatedHeroD({children}: {children: React.ReactNode}) {
               initial={{opacity: 0}}
               animate={{opacity: [0.2, 0.6, 0.2]}}
               transition={{
-                duration: 2 + Math.random() * 2,
+                duration: 2 + seedRandom(i * 7 + 1) * 2,
                 repeat: Infinity,
                 ease: 'easeInOut',
                 delay: i * 0.1,
@@ -70,18 +75,18 @@ export function AnimatedHeroD({children}: {children: React.ReactNode}) {
             key={`particle-${i}`}
             className="absolute w-1 h-1 bg-neon-purple dark:bg-neon-cyan rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${seedRandom(i * 3 + 100) * 100}%`,
+              top: `${seedRandom(i * 3 + 101) * 100}%`,
             }}
             animate={{
               opacity: [0, 1, 0],
               scale: [0, 1, 0],
             }}
             transition={{
-              duration: 2 + Math.random() * 2,
+              duration: 2 + seedRandom(i * 5 + 100) * 2,
               repeat: Infinity,
               ease: 'easeInOut',
-              delay: Math.random() * 2,
+              delay: seedRandom(i * 5 + 101) * 2,
             }}
           />
         ))}
