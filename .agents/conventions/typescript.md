@@ -12,21 +12,18 @@
 ```typescript
 @/*              → ./src/*
 @/public/*       → ./public/*
-content-collections → ./.content-collections/generated
 ```
 
 ## Import Order
 
 ```typescript
 // 1. External libraries
-import {Button} from '@mantine/core';
-import {Link} from '@tanstack/react-router';
 import {motion} from 'motion/react';
 import type React from 'react';
 
 // 2. Internal (absolute)
-import {DarkModeButton} from '@/components/Button/DarkMode';
-import {allProjects} from 'content-collections';
+import {DarkModeToggle} from '@/components/DarkModeToggle';
+import {getCollection} from 'astro:content';
 
 // 3. Relative imports
 import {Footer} from './Footer';

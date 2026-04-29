@@ -1,21 +1,31 @@
 # Component Patterns
 
-## Structure
+## Astro Components (`.astro`)
 
-```typescript
-export function ComponentName({prop}: {prop: PropType}) {
-  // 1. Hooks at the top
+Use for static markup and layout:
+
+```astro
+---
+const {title} = Astro.props;
+---
+
+<div class="tailwind-classes">
+  <h1>{title}</h1>
+  <slot />
+</div>
+```
+
+## React Islands (`.tsx`)
+
+Use for interactive components with `client:load` or `client:only`:
+
+```tsx
+export function InteractiveComponent({prop}: {prop: PropType}) {
   const [state, setState] = useState(initialValue);
-  const {data} = useQuery();
 
-  // 2. Early returns
-  if (!data) return <Loading />;
-
-  // 3. Main render
   return (
-    <div>
-      {/* Inline styles only for dynamic values */}
-      <Component className="tailwind-classes" style={{width: dynamic}} />
+    <div className="tailwind-classes">
+      <button onClick={() => setState(!state)}>Toggle</button>
     </div>
   );
 }
@@ -46,9 +56,9 @@ Use error boundaries for component errors. Use early returns for missing data.
 ## Styling in Components
 
 1. **Tailwind classes** via `className` prop (default)
-2. **Mantine `style` prop** for dynamic values
+2. **Inline `style`** for dynamic values only
 3. **Custom CSS classes** for complex styling
 
 ```typescript
-<Component className="flex items-center gap-4" style={{width: calcWidth()}} />
+<div className="flex items-center gap-4" style={{width: calcWidth()}} />
 ```

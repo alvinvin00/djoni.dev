@@ -1,23 +1,26 @@
 # Content Management
 
-## content-collections
+## Astro Content Collections
 
-Markdown content in `src/contents/`. Schemas defined in `content-collections.ts`.
+Markdown content in `src/content/`. Schemas defined in `src/content.config.ts`.
 
 **Collections**: blog, projects, about, now
 
 ## Import Patterns
 
 ```typescript
-import {allProjects} from 'content-collections';
-import {allBlogs} from 'content-collections';
+import {getCollection, render} from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const project = allProjects.find((p) => p.data.lang === 'en');
+const {Content} = await render(project);
 ```
 
 ## Filtering by Locale
 
 ```typescript
-const projects = allProjects.filter((p) => p.lang === 'en');
-const blog = allBlogs.find((b) => b.slug === slug && b.lang === 'en');
+const projects = allProjects.filter((p) => p.data.lang === 'en');
+const blog = allBlogs.find((b) => b.data.slug === slug && b.data.lang === 'en');
 ```
 
 ## Navigation
@@ -25,5 +28,5 @@ const blog = allBlogs.find((b) => b.slug === slug && b.lang === 'en');
 Default locale: `'en'`
 
 ```typescript
-params={{locale: 'en'}}
+href={`/${locale}/projects`}
 ```

@@ -2,31 +2,54 @@
 
 ## File-Based Routing
 
-Routes are in `src/routes/` using TanStack Router.
+Routes are in `src/pages/` using Astro's file-based routing.
 
 **Patterns**:
-- `$locale_/` = locale parameter
-- `$slug` = dynamic segment
+- `[locale]/` = locale parameter (`en` or `id`)
+- `[slug]` = dynamic segment
 
 **Examples**:
 
 | File | Route |
 |------|-------|
-| `src/routes/$locale_/index.tsx` | `/en` or `/id` |
-| `src/routes/$locale_/projects/index.tsx` | `/en/projects` |
-| `src/routes/$locale_/projects/$slug.tsx` | `/en/projects/my-project` |
+| `src/pages/[locale]/index.astro` | `/en` or `/id` |
+| `src/pages/[locale]/projects/index.astro` | `/en/projects` |
+| `src/pages/[locale]/projects/[slug].astro` | `/en/projects/my-project` |
 
-## Route Definition
+## getStaticPaths
 
-```typescript
-export const Route = createFileRoute('/$locale_/projects/$slug')({
-  component: ProjectDetailPage,
-});
+Dynamic routes must export `getStaticPaths`:
+
+```astro
+---
+export function getStaticPaths() {
+  return [
+    { params: { locale: 'en' } },
+    { params: { locale: 'id' } },
+  ];
+}
+---
 ```
 
 ## Access Parameters
 
-```typescript
-const {slug} = Route.useParams();
-const {locale} = Route.useParams();
+```astro
+---
+const {slug} = Astro.params;
+const {locale} = Astro.params;
+---
+```
+
+## i18n Config
+
+Configured in `astro.config.mjs`:
+
+```javascript
+i18n: {
+  defaultLocale: 'en',
+  locales: ['en', 'id'],
+  routing: {
+    prefixDefaultLocale: true,
+  },
+}
 ```

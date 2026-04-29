@@ -1,25 +1,26 @@
 # AGENTS.md
 
-Personal portfolio site using Vite + TanStack Start (SSG). Uses pnpm.
+Personal portfolio site using Astro 6 (SSG) + React islands. Uses pnpm.
 
 ## Commands
 
 ```bash
-pnpm dev          # Development server
-pnpm build        # Production build
-pnpm start        # Production server
+pnpm dev          # Development server (astro dev)
+pnpm build        # Production build (astro build)
+pnpm preview      # Preview production build (astro preview)
 pnpm lint         # Biome lint (check)
 pnpm lint:fix     # Biome lint (fix)
 pnpm format       # Biome format
-pnpm storybook    # Component documentation
 ```
 
 ## Essentials
 
-- **UI**: Mantine v8.3.5, Tailwind CSS v4
-- **Routing**: TanStack Router (file-based)
-- **Content**: content-collections (markdown in src/contents/)
-- **Package Manager**: pnpm 10.19.0
+- **Framework**: Astro 6 with static output
+- **UI**: Tailwind CSS v4, custom CSS (no component library)
+- **Islands**: React 19 + Framer Motion for interactive components
+- **Routing**: Astro file-based routing with i18n (`/en/`, `/id/`)
+- **Content**: Astro Content Collections (markdown in `src/content/`)
+- **Package Manager**: pnpm 11.0.0-rc.3
 - **No tests configured**
 
 ## Conventions
@@ -33,4 +34,4 @@ pnpm storybook    # Component documentation
 
 ## Migrations
 
-- [Mantine v9 Migration Notes](/.agents/migrations/mantine-v9.md)
+- [TanStack Start → Astro](/.agents/migrations/tanstack-to-astro.md)
