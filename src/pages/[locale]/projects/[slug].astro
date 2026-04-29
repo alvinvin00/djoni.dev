@@ -1,0 +1,119 @@
+---
+import {SiGithub} from '@icons-pack/react-simple-icons';
+import {getCollection, render} from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import dayjs from 'dayjs';
+import {ExternalLink} from 'lucide-react';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: {locale: project.data.lang, slug: project.data.slug},
+  }));
+}
+
+const {locale, slug} = Astro.params;
+const projects = await getCollection('projects');
+const project = projects.find(
+  (p) => p.data.slug === slug && p.data.lang === locale,
+);
+
+if (!project) {
+  return Astro.redirect(`/${locale}/projects`);
+}
+
+const {Content} = await render(project);
+---
+
+<Layout locale={locale} title={`${project.data.title} | Projects | Djoni's Den`}>
+  <div class="min-h-screen pt-8 pb-16">
+    <div class="container mx-auto px-4 animate-fade-in-down">
+      <a
+        href={`/${locale}/projects`}
+        class="inline-flex items-center gap-2 text-gray-400 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors duration-300 mb-8"
+      >
+        ← Back to Projects
+      </a>
+
+      <article class="max-w-4xl mx-auto">
+        <header class="mb-12 animate-fade-in-up animate-delay-100">
+          <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-neon bg-clip-text text-transparent">
+            {project.data.title}
+          </h1>
+
+          <div class="flex flex-wrap items-center gap-4 mb-6">
+            <span class="text-gray-400">
+              {dayjs(project.data.date).format('MMMM D, YYYY')}
+            </span>
+            {project.data.status && (
+              <span
+                class={`px-3 py-1 text-sm font-medium rounded-full ${
+                  project.data.status === 'active'
+                    ? 'bg-green-500/20 text-green-400'
+                    : project.data.status === 'archived'
+                      ? 'bg-gray-500/20 text-gray-400'
+                      : 'bg-yellow-500/20 text-yellow-400'
+                }`}
+              >
+                {project.data.status}
+              </span>
+            )}
+          </div>
+
+          {project.data.tags && project.data.tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mb-6">
+              {project.data.tags.map((tag: string) => (
+                <span class="px-3 py-1 text-sm font-medium rounded-md bg-neon-purple/20 dark:bg-neon-cyan/20 text-neon-purple dark:text-neon-cyan">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {(project.data.github || project.data.link) && (
+            <div class="flex gap-4 animate-fade-in-up animate-delay-200">
+              {project.data.github && (
+                <a
+                  href={project.data.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-neon-purple/30 dark:border-neon-cyan/30 text-neon-purple dark:text-neon-cyan hover:bg-neon-purple/10 dark:hover:bg-neon-cyan/10 transition-all duration-300"
+                >
+                  <SiGithub className="w-5 h-5" />
+                  View Code
+                </a>
+              )}
+              {project.data.link && (
+                <a
+                  href={project.data.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-neon text-white hover:shadow-neon-purple-lg transition-all duration-300"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  Live Demo
+                </a>
+              )}
+            </div>
+          )}
+        </header>
+
+        {project.data.thumbnail && (
+          <div class="mb-12 animate-fade-in-up animate-delay-200">
+            <img
+              src={project.data.thumbnail}
+              alt={project.data.title}
+              class="w-full h-auto rounded-lg border-2 border-neon-purple/20 dark:border-neon-cyan/20"
+            />
+          </div>
+        )}
+
+        <div class="glass-card-dark p-8 rounded-lg animate-fade-in-up animate-delay-300">
+          <div class="prose prose-invert max-w-none">
+            <Content />
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</Layout>
