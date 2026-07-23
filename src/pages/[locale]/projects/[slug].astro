@@ -1,9 +1,9 @@
 ---
-import {SiGithub} from '@icons-pack/react-simple-icons';
 import {getCollection, render} from 'astro:content';
-import Layout from '@/layouts/Layout.astro';
+import {SiGithub} from '@icons-pack/react-simple-icons';
 import dayjs from 'dayjs';
 import {ExternalLink} from 'lucide-react';
+import Layout from '@/layouts/Layout.astro';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
