@@ -5,7 +5,7 @@ date: 2026-07-23
 lang: id
 slug: stop-using-admin-panels
 thumbnail: /media/projects/taniyuk/taniyuk.png
-description: Kenapa gue capek sama workflow aaPanel dan kenapa Git-based deployment dengan Docker adalah satu-satunya cara waras buat ship kode.
+description: Gue capek sama workflow aaPanel. Git-based deployment dengan Docker adalah satu-satunya cara waras buat ship kode.
 categories:
   - devops
   - rant
@@ -17,85 +17,61 @@ tags:
   - rant
 ---
 
-Gue perlu ngeluarin ini dari dada.
+Oke gue ngomong sekarang.
 
-Kalo kamu masih deploy aplikasi dengan cara login ke admin panel, klik-klik menu, manual pull repo, jalankan `npm install` dan `npm run build` dengan tangan, terus restart service — kita perlu ngobrol.
+Admin panel kayak aaPanel emang bikin hidup keliatan "mudah." Ada GUI, file manager, satu klik ini itu. Tapi kalo kamu masih deploy aplikasi web modern lewat panel kayak masih tahun 2014, kita perlu ngobrol.
 
-## Masalah aaPanel
+## Ritualnya
 
-Kamu tau workflow-nya. Kamu push kode ke Git, terus:
+Setiap kali gue push kode, "deployment" nya kurang lebih gini:
 
-1. Buka admin panel di browser
-2. Navigate ke file manager (atau SSH)
-3. `git pull`
-4. `npm install` (atau `composer install`, atau apapun)
-5. `npm run build`
-6. Restart service (pm2 restart, systemctl restart, dll.)
-7. Berdoa nggak ada yang rusak
+Buka panel. Cari terminal atau file manager. `git pull`. Oh tunggu, dependency baru. `pnpm install`. Oh tunggu, Corepack lagi aneh lagi. Corepack katanya udah diinstall, katanya udah enabled, tapi pnpm nggak mau load. Jadi sekarang gue harus `sudo npx pnpm install` yang kedengeran kayak command yang harusnya nggak ada tapi somehow work. Terus `pnpm run build`. Terus restart pm2 atau apalah. Terus cek beneran work atau nggak. Terus berdoa.
 
 Setiap. Kali. Deploy.
 
-Dan tolong banget kalo kamu lupa step 4 dan push dependency baru. Atau kalo build gagal setengah jalan dan production kamu jadi setengah rusak. Atau kalo kamu nggak sengaja pull branch yang salah.
+Dan kalo gue lupa install deps? Production rusak. Kalo build gagal setengah jalan? Production setengah rusak. Kalo pull branch yang salah? Kamu tau lah.
 
-Ini bukan deployment. Ini ritual. Kamu ngelakuin ritual setiap kali mau ship kode.
+Ini bukan deployment. Ini ritual. Gue literally ngelakuin 7 step yang sama setiap kali kayak lagi ngadain upacara kuno buat nenangin dewa server.
 
-## Bonus: Mimpi Buruk Corepack
+## Corepack deserves its own section
 
-Dan pas kamu pikir nggak bisa lebih parah, kamu ketemu tembok Corepack.
+Gue nggak bisa cukup ngejelasin betapa annoying-nya ini. Kamu udah punya Corepack. Udah punya Node. Udah punya pnpm. Harusnya semuanya bisa kerja bareng. Tapi kadang Corepack cuma mutusin "nah, nggak hari ini." Kamu jalankan `pnpm` dan dia acting kayak pnpm nggak ada.
 
-Project kamu pake pnpm. Kamu udah install Corepack di Node version kamu. Kamu jalankan `pnpm install` di server dan... dia nolak load pnpm. Corepack bilang pnpm udah enabled, tapi dia nggak mau jalan. Nggak ada error message. Nggak ada petunjuk. Cuma vibes.
+Nggak ada error. Nggak ada penjelasan. Cuma... nggak ada.
 
-Jadi kamu ngapain? Kamu terpaksa pake command terkutuk ini:
+Kamu Google. Stack Overflow bilang `corepack enable`. Kamu jalankan. Katanya udah enabled. Oke. Terus kenapa pnpm nggak work? Nggak ada yang tau.
 
-```bash
-sudo npx pnpm install
-```
+"Solusi" yang beneran work? `sudo npx pnpm install`. Command yang kalo dibaca kayak ditulis orang lagi stroke. Tapi work. Dan di titik itu kamu berhenti nanya dan lanjut hidup.
 
-Kamu pikir ini harusnya nggak work. `npx` jalanin `pnpm` yang terus install dependencies? Dengan `sudo` karena kenapa nggak tambahin chaos aja? Tapi somehow, melawan semua logika dan akal sehat, ini work.
+Ini yang dilakukan manual deployment ke kamu. Dia bikin kamu jadi orang yang jalanin command terkutuk jam 2 pagi dan cuma bisa nerima aja.
 
-Ini yang dilakukan manual deployment ke kamu. Dia bikin kamu nulis command yang keliatan kayak di-generate oleh Markov chain yang dilatih pake jawaban Stack Overflow dari 2019.
+## "Tapi kan buat gue work"
 
-## "Tapi Kan Buat Gue Work"
+Oke. Mobil gue juga jalan fine tanpa asuransi — sampe nggak fine.
 
-Oke. Dan nyetir tanpa sabuk pengaman juga work — sampe nggak work.
+Masalahnya manual deployment itu fine kalo cuma kamu, satu deploy, satu server. Begitu angka mana pun naik di atas 1, semuanya hancur.
 
-Manual deployment itu:
+Gue udah liat sendiri. Orang beda deploy beda cara. Lupa step. Salah command. `git pull` di branch yang salah dan sekarang production jalanin fitur eksperimen seseorang. Dan nggak ada yang tau siapa deploy apa karena nggak ada log, nggak ada history, nggak ada audit trail. Cuma vibes.
 
-- **Rawan error** — Satu step kelewat dan kamu debug production jam 2 pagi
-- **Nggak reproducible** — Kolomu deploy beda cara sama kamu
-- **Nggak ada audit trail** — Siapa deploy apa? Kapan? Pake perubahan apa? ¯\\\_(ツ)\_/¯
-- **Lama** — Prosesnya makan 5-10 menit perhatian aktif
-- **Ngeri** — Kamu ragu mau deploy karena ribet
+## Yang gue lakuin sekarang
 
-Saat kamu punya lebih dari satu orang yang deploy, atau lebih dari satu server, cara ini langsung hancur.
+Gue push ke main. Itu aja. Itu deploy-nya.
 
-## Cara Git + Docker
+GitHub Actions pick up, build Docker image, push ke registry, dan server gue pull image baru dan restart container. Makan 2-3 menit. Gue nggak nyentuh server. Gue nggak buka panel. Gue nggak SSH kayak sysadmin tahun 2008.
 
-Ini seharusnya deployment kamu:
+Dan kalo ada yang rusak? Gue revert ke image sebelumnya. Detik aja. Nggak panik. Nggak "cepat, login dan benerin."
 
 ```bash
 git push origin main
 ```
 
-Itu aja. Itu deployment-nya.
+Itu command deploy gue. Satu baris. Sisanya otomatis.
 
-Sisanya — install dependency, build, restart service — terjadi otomatis di CI/CD pipeline. Kamu push, dan beberapa menit kemudian perubahan kamu udah live.
+## Docker
 
-### Cara Kerjanya
+Gue tau Docker ada learning curve-nya. Tapi dengerin.
 
-1. **Kamu push ke Git** (GitHub, GitLab, apapun)
-2. **CI pipeline jalan** (GitHub Actions, GitLab CI, dll.)
-3. **Dia build Docker image** dengan kode, dependency, dan build artifacts udah di-bake in
-4. **Dia deploy image** ke server (via SSH, Docker registry, atau deployment service)
-5. **Container lama diganti** sama yang baru
-
-Nggak ada step manual. Nggak ada "aduh lupa run build". Nggak ada SSH ke production buat benerin barang.
-
-### Kenapa Docker?
-
-Karena dia solve masalah "di gue work" permanen.
-
-Dockerfile kamu adalah resep deployment. Dia versioned. Dia reproducible. Dia sama di laptop kamu, di CI, dan di production.
+Dockerfile kamu basically resep yang bilang "ini cara build dan jalanin app ini." Dia versioned. Dia sama dimana-mana — laptop, CI, production. Nggak ada lagi "di gue work." Nggak ada lagi "oh kamu juga perlu install dependency sistem ini yang gue lupa sebut."
 
 ```dockerfile
 FROM node:20-alpine
@@ -108,26 +84,43 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-File ini kasih tau semua yang perlu kamu tau soal gimana app di-build dan di-jalanin. Nggak ada tribal knowledge. Nggak ada "oh kamu juga perlu install dependency sistem ini."
+Itu aja. Itu resep deployment-nya. Siapa aja bisa baca. Siapa aja bisa jalanin. Nggak tergantung apa yang diinstall di server, versi Node berapa, atau apakah Corepack lagi mau kerja sama hari ini.
 
-## Pipeline Deployment yang Gue Pakai
+## Orang-orang yang backup pake zip
 
-Ini setup gue sebenernya buat project:
+Gue perlu bahas ini karena gue udah liat dengan mata kepala sendiri.
 
-1. **Push ke main** di GitHub
-2. **GitHub Actions** build Docker image
-3. **Image di-push** ke container registry (Docker Hub, GHCR, dll.)
-4. **Server pull image baru** dan restart container
+"Gue backup project dengan nge-zip folder-nya."
 
-Semuanya makan 2-3 menit. Gue nggak nyentuh server. Gue nggak buka panel apapun. Gue nggak jalankan command apapun di production.
+Brother in Christ, itu bukan backup. Itu minta tolong.
 
-Kalo ada yang rusak, gue bisa revert ke image sebelumnya dalam hitungan detik. Nggak panik. Nggak "cepat, SSH dan benerin."
+Kamu tau desktop kamu kayak gimana. `project.zip`. `project-v2.zip`. `project-final.zip`. `project-final-2.zip`. `project-final-REAL.zip`. `project-final-REAL-YANG-INI.zip`. Yang mana yang terbaru? Nggak ada yang tau. Termasuk kamu.
 
-## Kesimpulan
+Dan pas kamu perlu cari kapan sesuatu berubah? Kapan bug masuk? Siapa ubah satu baris itu? Kamu buka zip satu-satu kayak arkeolog lagi ekskavasi reruntuhan kuno.
 
-Stop deploy kayak tahun 2015. Stop pakai admin panel sebagai tool deployment. Stop zip project kamu dan bilang itu backup.
+Git lakuin semua ini. Otomatis. Gratis. Dengan history, diff, branch, dan collaboration built in. Kamu commit, kamu push, selesai. Seluruh history project kamu ada di situ.
 
-Belajar Git. Belajar Docker. Setup CI/CD pipeline. Masa depan kamu akan berterima kasih.
+Zip cuma commit git yang lebih jelek yang harus kamu buat manual, kasih nama manual, dan simpan manual. Ini tahun 2026. Tolong.
+
+## "Git terlalu ribet"
+
+Kamu butuh tiga command:
+
+```bash
+git add .
+git commit -m "ngubah sesuatu"
+git push
+```
+
+Itu 90% penggunaan Git harian. Kalo kamu bisa navigate admin panel, kamu bisa belajar tiga command.
+
+## Intinya
+
+Stop deploy lewat admin panel. Stop nge-zip project. Stop jalanin `sudo npx pnpm install` jam 2 pagi.
+
+Belajar Git. Belajar Docker. Setup CI/CD. Masa depan kamu bakal berterima kasih.
+
+Dan kalo ada orang di kantor yang masih ngeyel nge-zip folder project itu backup yang valid... kirim dia post ini. Dia nggak bakal baca, tapi setelahnya kamu udah coba.
 
 ---
 
