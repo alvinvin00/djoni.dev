@@ -39,6 +39,22 @@ Dan tolong banget kalo kamu lupa step 4 dan push dependency baru. Atau kalo buil
 
 Ini bukan deployment. Ini ritual. Kamu ngelakuin ritual setiap kali mau ship kode.
 
+## Bonus: Mimpi Buruk Corepack
+
+Dan pas kamu pikir nggak bisa lebih parah, kamu ketemu tembok Corepack.
+
+Project kamu pake pnpm. Kamu udah install Corepack di Node version kamu. Kamu jalankan `pnpm install` di server dan... dia nolak load pnpm. Corepack bilang pnpm udah enabled, tapi dia nggak mau jalan. Nggak ada error message. Nggak ada petunjuk. Cuma vibes.
+
+Jadi kamu ngapain? Kamu terpaksa pake command terkutuk ini:
+
+```bash
+sudo npx pnpm install
+```
+
+Kamu pikir ini harusnya nggak work. `npx` jalanin `pnpm` yang terus install dependencies? Dengan `sudo` karena kenapa nggak tambahin chaos aja? Tapi somehow, melawan semua logika dan akal sehat, ini work.
+
+Ini yang dilakukan manual deployment ke kamu. Dia bikin kamu nulis command yang keliatan kayak di-generate oleh Markov chain yang dilatih pake jawaban Stack Overflow dari 2019.
+
 ## "Tapi Kan Buat Gue Work"
 
 Oke. Dan nyetir tanpa sabuk pengaman juga work — sampe nggak work.
