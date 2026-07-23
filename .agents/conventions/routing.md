@@ -42,7 +42,7 @@ const {locale} = Astro.params;
 
 ## i18n Config
 
-Configured in `astro.config.mjs`:
+Configured in `astro.config.ts`:
 
 ```javascript
 i18n: {
