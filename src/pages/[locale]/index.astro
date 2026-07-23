@@ -2,8 +2,8 @@
 import {getCollection} from 'astro:content';
 import {ContactForm} from '@/components/Contact/ContactForm';
 import {FeaturedProjects} from '@/components/FeaturedProjects';
-import {HomeHero} from '@/components/HomeHero';
-import {Layout} from '@/layouts/Layout.astro';
+import HomeHero from '@/components/HomeHero.astro';
+import Layout from '@/layouts/Layout.astro';
 
 export function getStaticPaths() {
   return [{params: {locale: 'en'}}, {params: {locale: 'id'}}];
