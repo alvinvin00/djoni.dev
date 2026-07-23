@@ -29,17 +29,21 @@ const projects = allProjects
 ---
 
 <Layout locale={locale} title="Projects | Djoni's Den">
-  <div class="min-h-screen pt-8">
-    <div class="container mx-auto px-4 mb-12 animate-fade-in-down">
-      <h1 class="text-5xl md:text-6xl font-bold text-center mb-4">
-        <span class="bg-gradient-neon bg-clip-text text-transparent">Projects</span>
-      </h1>
-      <p class="text-gray-400 dark:text-gray-300 text-center max-w-2xl mx-auto text-lg">
-        A collection of my work, from web applications to mobile development,
-        showcasing various technologies and creative solutions.
-      </p>
-    </div>
+  <div class="min-h-screen pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="text-center mb-16">
+        <p class="text-sm font-medium text-neon-purple mb-3 tracking-wider uppercase">
+          Portfolio
+        </p>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">
+          <span class="bg-gradient-neon bg-clip-text text-transparent">Projects</span>
+        </h1>
+        <p class="text-gray-400 max-w-xl mx-auto text-lg">
+          A collection of my work, from web applications to mobile development.
+        </p>
+      </div>
 
-    <ProjectGrid projects={projects} locale={locale} client:load />
+      <ProjectGrid projects={projects} locale={locale} client:load />
+    </div>
   </div>
 </Layout>

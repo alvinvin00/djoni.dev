@@ -16,13 +16,13 @@ const navLinks = [
 ---
 
 <header
-  class="glass-card-dark dark:glass-card border-l-4 border-neon-purple shadow-neon-purple sticky top-0 z-50 h-[70px]"
+  class="fixed top-0 left-0 right-0 z-50 h-16 border-b border-white/5 bg-dark-bg/80 backdrop-blur-xl"
 >
-  <div class="h-full px-4 md:px-6 flex items-center justify-between">
+  <div class="h-full px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between">
     <!-- Mobile burger -->
     <button
       id="mobile-menu-toggle"
-      class="sm:hidden text-white dark:text-gray-200 p-2"
+      class="sm:hidden text-gray-300 hover:text-white p-2 rounded-lg transition-colors"
       aria-label="Toggle menu"
     >
       <svg
@@ -57,11 +57,12 @@ const navLinks = [
     <a
       href={`/${locale}`}
       class="group flex items-center gap-2 transition-all duration-300 hover:scale-105"
+      data-astro-prefetch
     >
       <h2
-        class="text-2xl font-bold bg-gradient-neon bg-clip-text text-transparent transition-all duration-300 group-hover:filter group-hover:brightness-125"
+        class="text-xl font-bold bg-gradient-neon bg-clip-text text-transparent transition-all duration-300 group-hover:brightness-125"
       >
-        Djoni's Den
+        Djoni&apos;s Den
       </h2>
     </a>
 
@@ -71,11 +72,10 @@ const navLinks = [
         navLinks.map((link) => (
           <a
             href={link.href}
-            class="relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 transition-all duration-300 hover:text-neon-purple dark:hover:text-neon-cyan group"
+            class="relative px-3 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200 focus-ring rounded-lg"
+            data-astro-prefetch
           >
             {link.label}
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-neon transition-all duration-300 group-hover:w-full" />
-            <span class="absolute inset-0 rounded-lg bg-neon-purple/0 transition-all duration-300 group-hover:bg-neon-purple/10" />
           </a>
         ))
       }
@@ -87,27 +87,28 @@ const navLinks = [
 </header>
 
 <!-- Mobile menu panel -->
-<div id="mobile-menu" class="fixed inset-0 z-40 hidden">
+<div id="mobile-menu" class="fixed inset-0 z-40 hidden sm:hidden">
   <div
-    class="absolute inset-0 bg-black/50"
+    class="absolute inset-0 bg-black/60 backdrop-blur-sm"
     id="mobile-menu-backdrop"
   >
   </div>
   <nav
-    class="absolute left-0 top-[70px] w-[300px] h-[calc(100vh-70px)] glass-card-dark border-l-4 border-neon-purple p-4 flex flex-col gap-2 transform -translate-x-full transition-transform duration-300"
+    class="absolute left-0 top-16 w-72 h-[calc(100vh-4rem)] bg-dark-card/95 backdrop-blur-xl border-r border-white/10 p-4 flex flex-col gap-1 transform -translate-x-full transition-transform duration-300"
     id="mobile-menu-panel"
   >
     {
       navLinks.map((link) => (
         <a
           href={link.href}
-          class="block px-6 py-4 text-lg font-medium text-gray-700 dark:text-gray-200 transition-all duration-300 hover:text-neon-purple dark:hover:text-neon-cyan hover:bg-white/5 dark:hover:bg-white/10 rounded-lg border-l-4 border-transparent hover:border-neon-purple"
+          class="block px-4 py-3 text-base font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+          data-astro-prefetch
         >
           {link.label}
         </a>
       ))
     }
-    <div class="px-6 py-4">
+    <div class="px-4 py-3">
       <DarkModeToggle client:load />
     </div>
   </nav>
@@ -149,6 +150,14 @@ const navLinks = [
     backdrop.addEventListener('click', () => {
       isOpen = false;
       updateMenu();
+    });
+
+    // Close menu on route change (view transitions)
+    document.addEventListener('astro:before-swap', () => {
+      if (isOpen) {
+        isOpen = false;
+        updateMenu();
+      }
     });
   })();
 </script>

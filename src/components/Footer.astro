@@ -56,104 +56,52 @@ const footerLinks = [
 ];
 ---
 
-<footer class="relative mt-20 border-t-2 border-neon-purple/30 dark:border-neon-cyan/30">
-  <div
-    class="absolute inset-0 bg-gradient-to-r from-neon-purple/5 to-neon-cyan/5 dark:from-dark-bg/80 dark:to-dark-card/80 backdrop-blur-sm"
-  >
-  </div>
-  <div class="relative px-8 py-12">
-    <div
-      class="flex flex-col md:flex-row justify-between items-start gap-8"
-    >
+<footer class="border-t border-white/5 bg-dark-bg/50 backdrop-blur-sm">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-8">
       <!-- Left -->
-      <div class="flex-1 space-y-4">
-        <div>
-          <h3
-            class="text-2xl font-bold mb-2 bg-gradient-neon bg-clip-text text-transparent"
-          >
-            Djoni's Den
-          </h3>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
-            A personal space on the internet where thoughts meet code,
-            creativity meets technology, and ideas turn into reality.
-          </p>
-        </div>
-        <div class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
-          <p class="text-xs">
-            &copy; {currentYear} Djoni's Den, All Rights Reserved.
-          </p>
-          <p class="text-xs">
-            Made with{' '}
-            <span class="text-neon-purple dark:text-neon-cyan animate-pulse-neon">
-              ♥
-            </span>{' '}
-            using{' '}
-            <a
-              href="https://astro.build"
-              target="_blank"
-              class="text-neon-purple dark:text-neon-cyan hover:underline"
-            >
-              Astro
-            </a>
-            {' '}&{' '}
-            <a
-              href="https://tailwindcss.com"
-              target="_blank"
-              class="text-neon-purple dark:text-neon-cyan hover:underline"
-            >
-              Tailwind CSS
-            </a>
-            . Hosted on Vercel.
-          </p>
-        </div>
+      <div class="flex-1 space-y-3">
+        <h3 class="text-xl font-bold bg-gradient-neon bg-clip-text text-transparent">
+          Djoni's Den
+        </h3>
+        <p class="text-gray-500 text-sm max-w-sm leading-relaxed">
+          A personal space where thoughts meet code, creativity meets technology, and ideas turn into reality.
+        </p>
+        <p class="text-xs text-gray-600">
+          &copy; {currentYear} Djoni's Den
+        </p>
       </div>
 
       <!-- Right -->
-      <div class="flex-1 md:text-right space-y-4">
-        <p class="text-base font-semibold">
-          <span class="bg-gradient-neon bg-clip-text text-transparent">
-            Find me on Cyberspace
-          </span>
-        </p>
-        <div class="flex flex-wrap gap-3 md:justify-end">
+      <div class="flex flex-col md:items-end gap-4">
+        <div class="flex flex-wrap gap-2">
           {
             socials.map((social) => (
               <a
-                key={social.id}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 title={social.title ?? social.name}
-                class="relative group overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-neon-purple dark:hover:shadow-neon-cyan p-2 rounded-full"
+                class="p-2 rounded-lg text-gray-500 hover:text-white hover:bg-white/5 transition-all duration-200"
               >
-                <social.icon
-                  className="w-5 h-5 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
-                  style={{ color: social.color }}
-                />
-                <span
-                  class="absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  style={{ backgroundColor: `${social.color}20` }}
-                />
+                <social.icon className="w-5 h-5" style={{ color: social.color }} />
               </a>
             ))
           }
         </div>
-      </div>
-    </div>
-
-    <!-- Bottom nav -->
-    <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-      <div class="flex flex-wrap justify-center gap-6">
-        {
-          footerLinks.map((link) => (
-            <a
-              href={link.href}
-              class="text-sm text-gray-600 dark:text-gray-300 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors duration-300 link-underline"
-            >
-              {link.label}
-            </a>
-          ))
-        }
+        <div class="flex flex-wrap gap-4">
+          {
+            footerLinks.map((link) => (
+              <a
+                href={link.href}
+                class="text-sm text-gray-500 hover:text-gray-300 transition-colors"
+                data-astro-prefetch
+              >
+                {link.label}
+              </a>
+            ))
+          }
+        </div>
       </div>
     </div>
   </div>

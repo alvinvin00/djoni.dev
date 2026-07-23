@@ -25,6 +25,7 @@ export function DarkModeToggle() {
   if (!mounted) {
     return (
       <button
+        type="button"
         aria-label="Toggle color scheme"
         className="relative overflow-hidden rounded-full border-2 border-neon-purple/50 dark:border-neon-cyan/50 p-2 opacity-50"
       >
@@ -35,6 +36,7 @@ export function DarkModeToggle() {
 
   return (
     <button
+      type="button"
       onClick={toggle}
       aria-label="Toggle color scheme"
       className="relative overflow-hidden rounded-full border-2 border-neon-purple/50 dark:border-neon-cyan/50 transition-all duration-300 hover:border-neon-purple dark:hover:border-neon-cyan hover:shadow-neon-purple dark:hover:shadow-neon-cyan group p-2"

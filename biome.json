@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.5.5/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -10,10 +10,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
-      "nursery": {
-        "recommended": true
-      }
+      "preset": "recommended"
     }
   },
   "javascript": {
@@ -26,23 +23,21 @@
   },
   "files": {
     "includes": [
-      "**",
+      "src/**",
+      "*.json",
+      "*.ts",
+      "*.mjs",
+      "!!**/node_modules",
+      "!!**/dist",
+      "!!**/.astro",
       "!!**/.content-collections",
       "!!**/.velite",
-      "!!**/node_modules",
-      "!!**/.next",
-      "!!**/out",
-      "!!**/build",
-      "!!**/next-env.d.ts"
+      "!!**/pnpm-lock.yaml"
     ]
   },
   "overrides": [
     {
-      "includes": [
-        "**/*.svelte",
-        "**/*.astro",
-        "**/*.vue"
-      ],
+      "includes": ["**/*.astro"],
       "linter": {
         "rules": {
           "style": {
@@ -53,6 +48,15 @@
             "noUnusedVariables": "off",
             "noUnusedImports": "off"
           }
+        }
+      }
+    },
+    {
+      "includes": ["**/*.css"],
+      "css": {
+        "parser": {
+          "cssModules": true,
+          "tailwindDirectives": true
         }
       }
     }

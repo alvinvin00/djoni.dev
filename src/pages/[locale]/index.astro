@@ -1,7 +1,7 @@
 ---
 import {getCollection} from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
-import {HomeHero} from '@/components/HomeHero';
+import HomeHero from '@/components/HomeHero.astro';
 import {FeaturedProjects} from '@/components/FeaturedProjects';
 import {ContactForm} from '@/components/Contact/ContactForm';
 
@@ -31,15 +31,13 @@ const featuredProjects = allProjects
 ---
 
 <Layout locale={locale}>
-  <main class="min-h-screen">
-    <HomeHero locale={locale} client:load />
+  <HomeHero locale={locale} />
 
-    <FeaturedProjects
-      locale={locale}
-      projects={featuredProjects}
-      client:load
-    />
+  <FeaturedProjects
+    locale={locale}
+    projects={featuredProjects}
+    client:load
+  />
 
-    <ContactForm client:load />
-  </main>
+  <ContactForm client:load />
 </Layout>
