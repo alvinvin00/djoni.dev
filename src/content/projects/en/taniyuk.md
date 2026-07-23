@@ -7,7 +7,7 @@ thumbnail: /media/projects/taniyuk/taniyuk.png
 author: Alvin Leonardo
 link: https://taniyuk.com
 date: 2022-3-01
-status: active
+status: handed-off
 categories:
   - web
   - frontend

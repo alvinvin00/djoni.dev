@@ -80,12 +80,20 @@ export function ProjectGrid({
                     className={`px-2 py-1 text-xs font-medium rounded-md ${
                       project.status === 'active'
                         ? 'bg-green-500/10 text-green-400'
-                        : project.status === 'archived'
-                          ? 'bg-gray-500/10 text-gray-400'
-                          : 'bg-yellow-500/10 text-yellow-400'
+                        : project.status === 'handed-off'
+                          ? 'bg-blue-500/10 text-blue-400'
+                          : project.status === 'completed'
+                            ? 'bg-purple-500/10 text-purple-400'
+                            : 'bg-gray-500/10 text-gray-500'
                     }`}
                   >
-                    {project.status ?? 'Completed'}
+                    {project.status === 'handed-off'
+                      ? 'Handed Off'
+                      : project.status === 'completed'
+                        ? 'Completed'
+                        : project.status === 'archived'
+                          ? 'Archived'
+                          : project.status ?? 'Unknown'}
                   </span>
 
                   <div className="flex gap-3">

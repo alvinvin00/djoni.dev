@@ -65,12 +65,20 @@ const {Content} = await render(project);
               class={`px-3 py-1 text-xs font-medium rounded-full ${
                 project.data.status === 'active'
                   ? 'bg-green-500/10 text-green-400 border border-green-500/20'
-                  : project.data.status === 'archived'
-                    ? 'bg-gray-500/10 text-gray-400 border border-gray-500/20'
-                    : 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20'
+                  : project.data.status === 'handed-off'
+                    ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
+                    : project.data.status === 'completed'
+                      ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20'
+                      : 'bg-gray-500/10 text-gray-500 border border-gray-500/20'
               }`}
             >
-              {project.data.status}
+              {project.data.status === 'handed-off'
+                ? 'Handed Off'
+                : project.data.status === 'completed'
+                  ? 'Completed'
+                  : project.data.status === 'archived'
+                    ? 'Archived'
+                    : 'Active'}
             </span>
           )}
         </div>

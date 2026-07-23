@@ -2,7 +2,7 @@
 title: Taniyuk
 slug: taniyuk
 lang: id
-status: inactive
+status: handed-off
 description: Sebuah platform yang dirancang untuk menyederhanakan dan memberikan transparansi dalam proses penjualan karet oleh petani karet.
 thumbnail: /media/projects/taniyuk/taniyuk.png
 author: Alvin Leonardo
