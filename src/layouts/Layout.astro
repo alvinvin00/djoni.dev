@@ -1,0 +1,82 @@
+---
+import '@/styles/globals.css';
+import '@/styles/futuristic.css';
+import '@/styles/animations.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+
+interface Props {
+    title?: string;
+    description?: string;
+    locale: string;
+}
+
+const {
+    title = "Djoni's Den",
+    description = "Djoni's Den Personal Website",
+    locale,
+} = Astro.props;
+
+const canonicalUrl = `https://djoni.dev/${locale}`;
+const alternateUrl = `https://djoni.dev/${locale === 'en' ? 'id' : 'en'}`;
+const alternateLang = locale === 'en' ? 'id' : 'en';
+---
+
+<!doctype html>
+<html lang={locale} transition:animate="none">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{title}</title>
+    <meta name="description" content={description}/>
+    <meta property="og:image" content="/assets/og/semarang-red.jpg"/>
+    <meta property="og:url" content={canonicalUrl}/>
+    <meta name="twitter:creator" content="@alvinvin00"/>
+    <meta name="twitter:site" content="@alvinvin00"/>
+    <link rel="canonical" href={canonicalUrl}/>
+    <link rel="alternate" href={alternateUrl} hreflang={alternateLang}/>
+    <link rel="sitemap" href="/sitemap-index.xml"/>
+
+    <script is:inline>
+        (function () {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+</head>
+<body class="dark:bg-dark-bg dark:text-white min-h-screen antialiased">
+<Header locale={locale}/>
+<main class="dark:bg-dark-bg dark:text-white min-h-screen">
+    <slot/>
+</main>
+<Footer locale={locale}/>
+
+<script is:inline>
+    // Scroll-triggered reveal animations
+    (function () {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+        );
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // Re-observe after view transitions
+        document.addEventListener('astro:page-load', () => {
+            document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        });
+    })();
+</script>
+</body>
+</html>

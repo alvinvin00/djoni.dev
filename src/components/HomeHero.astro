@@ -1,0 +1,53 @@
+---
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+---
+
+<section class="relative min-h-[90vh] flex items-center justify-center px-4 overflow-hidden">
+  <!-- Subtle background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-b from-dark-bg via-dark-bg to-dark-card" />
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-purple/10 rounded-full blur-[128px]" />
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-cyan/10 rounded-full blur-[128px]" />
+  </div>
+
+  <div class="relative z-10 max-w-3xl mx-auto text-center">
+    <p class="text-sm font-medium text-neon-purple mb-4 tracking-wider uppercase reveal">
+      Software Engineer &amp; Creative Developer
+    </p>
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 reveal reveal-delay-1">
+      <span class="bg-gradient-neon bg-clip-text text-transparent">
+        Djoni&apos;s Den
+      </span>
+    </h1>
+    <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-xl mx-auto leading-relaxed reveal reveal-delay-2">
+      A digital space where thoughts meet code, creativity meets technology, and ideas turn into reality.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center reveal reveal-delay-3">
+      <a
+        href={`/${locale}/projects`}
+        class="bg-gradient-neon text-white font-semibold px-8 py-3 rounded-xl hover:shadow-neon-purple-lg transition-all duration-300 hover:scale-105 inline-block focus-ring"
+        data-astro-prefetch
+      >
+        View Projects
+      </a>
+      <a
+        href={`/${locale}/about`}
+        class="px-8 py-3 rounded-xl font-semibold border border-gray-700 text-gray-300 hover:border-neon-purple/50 hover:text-white transition-all duration-300 inline-block focus-ring"
+        data-astro-prefetch
+      >
+        About Me
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>

@@ -1,84 +1,129 @@
-import {Carousel} from '@mantine/carousel';
-import {Card, Group, Image, Stack} from '@mantine/core';
-import {allBlogs} from 'content-collections';
 import dayjs from 'dayjs';
+import useEmblaCarousel from 'embla-carousel-react';
+import {useCallback, useEffect, useState} from 'react';
 
-export const BlogCarousel = () => {
-  const projects = allBlogs.slice(0, 4);
+interface Blog {
+  slug: string;
+  title: string;
+  description?: string;
+  thumbnail?: string;
+  date: string;
+}
+
+export function BlogCarousel({blogs, locale}: {blogs: Blog[]; locale: string}) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'center',
+    dragFree: false,
+  });
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+  }, [emblaApi, onSelect]);
+
+  const latestBlogs = blogs.slice(0, 4);
 
   return (
-    <section>
-      <h2
-        style={{
-          fontSize: '1.5rem',
-          fontWeight: 700,
-          marginBottom: '1rem',
-          textAlign: 'center',
-        }}
-      >
-        Latest Post
+    <section className="w-full max-w-5xl mx-auto px-4 py-12">
+      <h2 className="text-2xl font-bold mb-6 text-center bg-gradient-neon bg-clip-text text-transparent">
+        Latest Posts
       </h2>
-      <Carousel
-        height={200}
-        slideGap="md"
-        controlSize={26}
-        withControls
-        emblaOptions={{
-          loop: true,
-          dragFree: false,
-          align: 'center',
-        }}
-      >
-        {projects.map((blog) => {
-          return (
-            <Carousel.Slide key={blog.slug}>
-              <Card
+
+      <div className="relative">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-4">
+            {latestBlogs.map((blog) => (
+              <div
                 key={blog.slug}
-                shadow="sm"
-                padding="lg"
-                radius="md"
-                withBorder
+                className="flex-[0_0_85%] sm:flex-[0_0_45%] lg:flex-[0_0_30%] min-w-0"
               >
-                <Card.Section style={{height: 80, position: 'relative'}}>
-                  <Image
-                    src={blog.thumbnail}
-                    alt={blog.title}
-                    style={{
-                      objectFit: 'cover',
-                      objectPosition: 'top',
-                      width: '100%',
-                      height: '100%',
-                    }}
-                  />
-                </Card.Section>
-                <Group>
-                  <h3 style={{fontSize: '1.125rem', fontWeight: 700}}>
+                <a
+                  href={`/${locale}/blog/${blog.slug}`}
+                  className="block h-full glass-card-dark p-4 rounded-lg border border-neon-purple/20 dark:border-neon-cyan/20 transition-all duration-300 hover:border-neon-purple dark:hover:border-neon-cyan hover:shadow-neon-purple"
+                >
+                  {blog.thumbnail && (
+                    <div className="relative mb-3 overflow-hidden rounded-lg h-32">
+                      <img
+                        src={blog.thumbnail}
+                        alt={blog.title}
+                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                      />
+                    </div>
+                  )}
+                  <h3 className="text-lg font-bold mb-2 line-clamp-2">
                     {blog.title}
                   </h3>
-                </Group>
-                <Stack gap="xs">
-                  <p style={{fontSize: '0.875rem', margin: 0}}>
-                    {blog.description || 'No description'}
-                  </p>
-                  <div
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      fontSize: '0.875rem',
-                      color: '#9CA3AF',
-                    }}
-                  >
-                    <p style={{margin: 0}}>
-                      {dayjs(blog.date).format('DD-MM-YYYY')}
+                  {blog.description && (
+                    <p className="text-sm text-gray-400 line-clamp-2 mb-3">
+                      {blog.description}
                     </p>
-                    <p style={{margin: 0}}>5 minute read</p>
+                  )}
+                  <div className="flex items-center justify-between text-xs text-gray-500">
+                    <span>{dayjs(blog.date).format('DD-MM-YYYY')}</span>
+                    <span>5 min read</span>
                   </div>
-                </Stack>
-              </Card>
-            </Carousel.Slide>
-          );
-        })}
-      </Carousel>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Controls */}
+        <button
+          onClick={scrollPrev}
+          disabled={!canScrollPrev}
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-8 h-8 flex items-center justify-center rounded-full bg-dark-card/80 border border-neon-purple/30 text-neon-purple hover:bg-neon-purple/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed z-10"
+          aria-label="Previous slide"
+        >
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <button
+          onClick={scrollNext}
+          disabled={!canScrollNext}
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-8 h-8 flex items-center justify-center rounded-full bg-dark-card/80 border border-neon-purple/30 text-neon-purple hover:bg-neon-purple/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed z-10"
+          aria-label="Next slide"
+        >
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
     </section>
   );
-};
+}

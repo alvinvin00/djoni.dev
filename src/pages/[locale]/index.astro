@@ -1,0 +1,42 @@
+---
+import {getCollection} from 'astro:content';
+import {ContactForm} from '@/components/Contact/ContactForm';
+import {FeaturedProjects} from '@/components/FeaturedProjects';
+import HomeHero from '@/components/HomeHero.astro';
+import Layout from '@/layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return [{params: {locale: 'en'}}, {params: {locale: 'id'}}];
+}
+
+const {locale} = Astro.params;
+const allProjects = await getCollection('projects');
+const featuredProjects = allProjects
+  .filter((p) => p.data.lang === locale)
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+  )
+  .slice(0, 3)
+  .map((p) => ({
+    slug: p.data.slug,
+    title: p.data.title,
+    description: p.data.description,
+    thumbnail: p.data.thumbnail,
+    date: p.data.date,
+    tags: p.data.tags,
+    github: p.data.github,
+    link: p.data.link,
+  }));
+---
+
+<Layout locale={locale}>
+  <HomeHero locale={locale} />
+
+  <FeaturedProjects
+    locale={locale}
+    projects={featuredProjects}
+    client:load
+  />
+
+  <ContactForm client:load />
+</Layout>

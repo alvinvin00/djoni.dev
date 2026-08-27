@@ -1,17 +1,17 @@
-import type {IconDefinition} from '@fortawesome/fontawesome-svg-core';
 import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-  faSteam,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons';
+  SiFacebook,
+  SiInstagram,
+  SiSteam,
+  SiX,
+} from '@icons-pack/react-simple-icons';
+import {LinkIcon} from 'lucide-react';
+import type {ComponentType, SVGProps} from 'react';
 
 type Social = {
   id: string;
   name: string;
   url: string;
-  icon: IconDefinition;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   color: string;
   title?: string;
 };
@@ -21,36 +21,36 @@ export const socials: Social[] = [
     id: 'facebook',
     name: 'Facebook',
     url: 'https://www.facebook.com/alvinvin00',
-    icon: faFacebook,
-    color: 'blue',
+    icon: SiFacebook,
+    color: '#1877F2',
   },
   {
     id: 'instagram',
     name: 'Instagram',
     url: 'https://www.instagram.com/alvinvin00',
-    icon: faInstagram,
-    color: 'pink',
+    icon: SiInstagram,
+    color: '#E4405F',
   },
   {
     id: 'linkedin',
-    name: 'Linkedin',
+    name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/alvinvin00',
-    icon: faLinkedin,
-    color: 'darkblue',
+    icon: LinkIcon,
+    color: '#0A66C2',
   },
   {
     id: 'steam',
     name: 'Steam',
     url: 'https://steamcommunity.com/id/alvinvin00/',
-    icon: faSteam,
-    color: 'grey',
+    icon: SiSteam,
+    color: '#171A21',
   },
   {
     id: 'twitter',
-    name: 'Twitter',
-    url: 'https://www.twitter.com/alvinvin00',
-    icon: faTwitter,
-    color: 'lightblue',
-    title: 'I refused to call it X',
+    name: 'X',
+    url: 'https://www.x.com/alvinvin00',
+    icon: SiX,
+    color: '#000000',
+    title: 'Formerly Twitter',
   },
 ];
