@@ -1,6 +1,6 @@
-import {useCallback, useEffect, useState} from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
 import dayjs from 'dayjs';
+import useEmblaCarousel from 'embla-carousel-react';
+import {useCallback, useEffect, useState} from 'react';
 
 interface Blog {
   slug: string;
@@ -89,8 +89,18 @@ export function BlogCarousel({blogs, locale}: {blogs: Blog[]; locale: string}) {
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-8 h-8 flex items-center justify-center rounded-full bg-dark-card/80 border border-neon-purple/30 text-neon-purple hover:bg-neon-purple/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed z-10"
           aria-label="Previous slide"
         >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </button>
         <button
@@ -99,8 +109,18 @@ export function BlogCarousel({blogs, locale}: {blogs: Blog[]; locale: string}) {
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-8 h-8 flex items-center justify-center rounded-full bg-dark-card/80 border border-neon-purple/30 text-neon-purple hover:bg-neon-purple/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed z-10"
           aria-label="Next slide"
         >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </button>
       </div>

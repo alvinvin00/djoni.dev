@@ -1,12 +1,17 @@
 ---
-import { LinkIcon } from 'lucide-react';
-import { SiFacebook, SiInstagram, SiSteam, SiX } from '@icons-pack/react-simple-icons';
+import {
+  SiFacebook,
+  SiInstagram,
+  SiSteam,
+  SiX,
+} from '@icons-pack/react-simple-icons';
+import {LinkIcon} from 'lucide-react';
 
 interface Props {
   locale: string;
 }
 
-const { locale } = Astro.props;
+const {locale} = Astro.props;
 const currentYear = new Date().getFullYear();
 
 const socials = [
@@ -49,10 +54,10 @@ const socials = [
 ];
 
 const footerLinks = [
-  { href: `/${locale}`, label: 'Home' },
-  { href: `/${locale}/about`, label: 'About' },
-  { href: `/${locale}/blog`, label: 'Blog' },
-  { href: `/${locale}/projects`, label: 'Projects' },
+  {href: `/${locale}`, label: 'Home'},
+  {href: `/${locale}/about`, label: 'About'},
+  {href: `/${locale}/blog`, label: 'Blog'},
+  {href: `/${locale}/projects`, label: 'Projects'},
 ];
 ---
 
