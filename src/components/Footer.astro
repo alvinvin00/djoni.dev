@@ -1,0 +1,113 @@
+---
+import {
+  SiFacebook,
+  SiInstagram,
+  SiSteam,
+  SiX,
+} from '@icons-pack/react-simple-icons';
+import {LinkIcon} from 'lucide-react';
+
+interface Props {
+  locale: string;
+}
+
+const {locale} = Astro.props;
+const currentYear = new Date().getFullYear();
+
+const socials = [
+  {
+    id: 'facebook',
+    name: 'Facebook',
+    url: 'https://www.facebook.com/alvinvin00',
+    icon: SiFacebook,
+    color: '#1877F2',
+  },
+  {
+    id: 'instagram',
+    name: 'Instagram',
+    url: 'https://www.instagram.com/alvinvin00',
+    icon: SiInstagram,
+    color: '#E4405F',
+  },
+  {
+    id: 'linkedin',
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/alvinvin00',
+    icon: LinkIcon,
+    color: '#0A66C2',
+  },
+  {
+    id: 'steam',
+    name: 'Steam',
+    url: 'https://steamcommunity.com/id/alvinvin00/',
+    icon: SiSteam,
+    color: '#66C0F4',
+  },
+  {
+    id: 'twitter',
+    name: 'X',
+    url: 'https://www.x.com/alvinvin00',
+    icon: SiX,
+    color: '#E7E9EA',
+    title: 'Formerly Twitter',
+  },
+];
+
+const footerLinks = [
+  {href: `/${locale}`, label: 'Home'},
+  {href: `/${locale}/about`, label: 'About'},
+  {href: `/${locale}/blog`, label: 'Blog'},
+  {href: `/${locale}/projects`, label: 'Projects'},
+];
+---
+
+<footer class="border-t border-gray-200 dark:border-white/5 bg-gray-50 dark:bg-dark-bg/50 backdrop-blur-sm">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+      <!-- Left -->
+      <div class="flex-1 space-y-3">
+        <h3 class="text-xl font-bold bg-gradient-neon bg-clip-text text-transparent">
+          Djoni's Den
+        </h3>
+        <p class="text-gray-500 text-sm max-w-sm leading-relaxed">
+          A personal space where thoughts meet code, creativity meets technology, and ideas turn into reality.
+        </p>
+        <p class="text-xs text-gray-600">
+          &copy; {currentYear} Djoni's Den
+        </p>
+      </div>
+
+      <!-- Right -->
+      <div class="flex flex-col md:items-end gap-4">
+        <div class="flex flex-wrap gap-2">
+          {
+            socials.map((social) => (
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={social.title ?? social.name}
+                class="p-2 rounded-lg text-gray-500 hover:text-white hover:bg-white/5 transition-all duration-200"
+              >
+                <social.icon className="w-5 h-5" style={{ color: social.color }} />
+              </a>
+            ))
+          }
+        </div>
+        <div class="flex flex-wrap gap-4">
+          {
+            footerLinks.map((link) => (
+              <a
+                href={link.href}
+                class="text-sm text-gray-500 hover:text-gray-300 transition-colors"
+                data-astro-prefetch
+              >
+                {link.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

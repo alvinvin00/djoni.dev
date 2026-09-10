@@ -1,0 +1,82 @@
+---
+import {getCollection, render} from 'astro:content';
+import dayjs from 'dayjs';
+import Layout from '@/layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const blogs = await getCollection('blog');
+  return blogs.map((blog) => ({
+    params: {locale: blog.data.lang, slug: blog.data.slug},
+  }));
+}
+
+const {locale, slug} = Astro.params;
+const blogs = await getCollection('blog');
+const blog = blogs.find((b) => b.data.slug === slug && b.data.lang === locale);
+
+if (!blog) {
+  return Astro.redirect(`/${locale}/blog`);
+}
+
+const {Content} = await render(blog);
+---
+
+<Layout locale={locale} title={`${blog.data.title} | Blog | Djoni's Den`}>
+    <article class="min-h-screen pt-24 pb-16">
+        <div class="max-w-3xl mx-auto px-4 md:px-8">
+            <!-- Breadcrumb -->
+            <nav class="mb-8">
+                <a
+                        href={`/${locale}/blog`}
+                        class="text-sm text-gray-500 hover:text-neon-purple transition-colors inline-flex items-center gap-1"
+                        data-astro-prefetch
+                >
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                    Back to Blog
+                </a>
+            </nav>
+
+            <!-- Header -->
+            <header class="mb-10">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {blog.data.tags?.map((tag: string) => (
+                            <span class="px-3 py-1 text-xs font-medium rounded-full bg-white/5 text-gray-400 border border-white/10">
+              {tag}
+            </span>
+                    ))}
+                </div>
+
+                <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                    {blog.data.title}
+                </h1>
+
+                <div class="flex items-center gap-4 text-sm text-gray-500">
+                    <time>{dayjs(blog.data.date).format('MMMM D, YYYY')}</time>
+                    {blog.data.author && (
+                            <span class="flex items-center gap-1">
+              <span class="w-1 h-1 rounded-full bg-gray-600"/>
+                                {blog.data.author}
+            </span>
+                    )}
+                </div>
+            </header>
+
+            {blog.data.thumbnail && (
+                    <div class="mb-10 rounded-2xl overflow-hidden border border-white/5">
+                        <img
+                                src={blog.data.thumbnail}
+                                alt={blog.data.title}
+                                class="w-full h-auto"
+                        />
+                    </div>
+            )}
+
+            <!-- Content -->
+            <div class="prose prose-invert prose-lg max-w-none">
+                <Content/>
+            </div>
+        </div>
+    </article>
+</Layout>
