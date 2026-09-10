@@ -19,6 +19,8 @@ tags:
 
 Look, I get it. Admin panels like aaPanel make things "easy." You get a nice GUI, file manager, one-click this and that. But if you're deploying a modern web app through a panel like it's 2014, we need to talk.
 
+To be clear, I'm not against dashboards. Platforms like Vercel, Netlify, or Coolify that actually support PaaS-style deployment — push to Git, it builds, it deploys — are great. That's automation. What I'm talking about is panels like aaPanel or cPanel that give you a file manager and a terminal and call that "management." No Git-based deploys, no auto-builds, no pipelines. You're still manually pulling, installing, building, and restarting — just through a web UI instead of SSH. Same ritual, different window.
+
 ## The ritual
 
 Every time I push code, the "deployment" goes something like this:
@@ -113,6 +115,8 @@ git push
 That's 90% of daily Git usage. If you can navigate an admin panel, you can learn three commands.
 
 ## Anyway
+
+If your panel automates the deployment, it's a platform. If it gives you a terminal, it's a skin over SSH. Learn the difference.
 
 Stop deploying through admin panels. Stop zipping your projects. Stop running `sudo npx pnpm install` at 2 AM.
 
