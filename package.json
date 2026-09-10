@@ -17,24 +17,24 @@
     "dayjs": "^1.11.23",
     "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
-    "lucide-react": "^1.34.0",
-    "motion": "^13.1.1",
+    "lucide-react": "^1.43.0",
+    "motion": "^13.2.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "recharts": "^3.10.1"
   },
   "devDependencies": {
-    "@astrojs/react": "6.0.4",
-    "@astrojs/sitemap": "^3.7.3",
-    "@biomejs/biome": "^2.5.10",
+    "@astrojs/react": "6.0.5",
+    "@astrojs/sitemap": "^3.7.4",
+    "@biomejs/biome": "^2.5.12",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "26.3.0",
     "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.5",
-    "astro": "7.2.8",
+    "@types/react-dom": "19.2.7",
+    "astro": "7.3.2",
     "tailwindcss": "^4.3.3",
     "typescript": "7.0.2",
-    "zod": "^4.4.3"
+    "zod": "^4.5.4"
   },
-  "packageManager": "pnpm@12.0.0+sha512.9e2e3dc3911995868dc94b8175c217c27e95408fa03b4a22749778f2b34f773b77cdd3b39ede8171b22fcd53be6a35342e9fac9948a68ef58df6488ce89a7e67"
+  "packageManager": "pnpm@12.4.0+sha512.37536c26ed40ab4134b6511e09f6b27f3ebb45687468f2406ca3805279a4e5ca158c1931350ad9774d6ab2108d71b3dbaeb39943159294375e4d053e8e05685c"
 }
