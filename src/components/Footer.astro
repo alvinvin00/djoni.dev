@@ -5,7 +5,7 @@ import {
   SiSteam,
   SiX,
 } from '@icons-pack/react-simple-icons';
-import {LinkIcon} from 'lucide-react';
+import {FileText, LinkIcon} from 'lucide-react';
 
 interface Props {
   locale: string;
@@ -35,6 +35,14 @@ const socials = [
     url: 'https://www.linkedin.com/in/alvinvin00',
     icon: LinkIcon,
     color: '#0A66C2',
+  },
+  {
+    id: 'resume',
+    name: 'Reactive Resume',
+    url: 'https://djoni.dev/resume',
+    icon: FileText,
+    color: '#22D3EE',
+    title: 'RxResume',
   },
   {
     id: 'steam',
@@ -94,6 +102,13 @@ const footerLinks = [
             ))
           }
         </div>
+        <p class="text-xs text-gray-600 max-w-xs md:text-right">
+          {
+            locale === 'id'
+              ? 'Jika Reactive Resume (RxResume) dan LinkedIn menampilkan informasi yang berbeda, RxResume yang berlaku.'
+              : 'In the event Reactive Resume (RxResume) and LinkedIn differ, RxResume shall prevail.'
+          }
+        </p>
         <div class="flex flex-wrap gap-4">
           {
             footerLinks.map((link) => (
