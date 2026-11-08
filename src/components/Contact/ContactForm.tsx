@@ -99,7 +99,9 @@ export function ContactForm() {
       {/* Modal */}
       {opened && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div
+          <button
+            type="button"
+            aria-label="Close disclaimer"
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
             onClick={() => setOpened(false)}
           />
@@ -109,11 +111,12 @@ export function ContactForm() {
                 Important Disclaimer
               </h3>
               <button
+                type="button"
                 onClick={() => setOpened(false)}
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Close"
               >
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg aria-hidden="true" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -161,12 +164,14 @@ export function ContactForm() {
 
               <div className="flex justify-end gap-3 mt-4">
                 <button
+                  type="button"
                   onClick={() => setOpened(false)}
                   className="px-4 py-2 text-gray-400 hover:text-white transition-colors"
                 >
                   Cancel
                 </button>
                 <button
+                  type="button"
                   onClick={() => setOpened(false)}
                   disabled={!disclaimerChecked}
                   className="px-4 py-2 bg-gradient-neon text-white rounded-lg hover:shadow-neon-purple-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"

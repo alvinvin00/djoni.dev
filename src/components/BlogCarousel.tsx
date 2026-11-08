@@ -84,12 +84,14 @@ export function BlogCarousel({blogs, locale}: {blogs: Blog[]; locale: string}) {
 
         {/* Controls */}
         <button
+          type="button"
           onClick={scrollPrev}
           disabled={!canScrollPrev}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-8 h-8 flex items-center justify-center rounded-full bg-dark-card/80 border border-neon-purple/30 text-neon-purple hover:bg-neon-purple/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed z-10"
           aria-label="Previous slide"
         >
           <svg
+            aria-hidden="true"
             className="w-4 h-4"
             fill="none"
             viewBox="0 0 24 24"
@@ -104,12 +106,14 @@ export function BlogCarousel({blogs, locale}: {blogs: Blog[]; locale: string}) {
           </svg>
         </button>
         <button
+          type="button"
           onClick={scrollNext}
           disabled={!canScrollNext}
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-8 h-8 flex items-center justify-center rounded-full bg-dark-card/80 border border-neon-purple/30 text-neon-purple hover:bg-neon-purple/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed z-10"
           aria-label="Next slide"
         >
           <svg
+            aria-hidden="true"
             className="w-4 h-4"
             fill="none"
             viewBox="0 0 24 24"

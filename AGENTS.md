@@ -20,7 +20,7 @@ pnpm format       # Biome format
 - **Islands**: React 19 + Framer Motion for interactive components
 - **Routing**: Astro file-based routing with i18n (`/en/`, `/id/`)
 - **Content**: Astro Content Collections (markdown in `src/content/`)
-- **Package Manager**: pnpm 11.0.0-rc.3
+- **Package Manager**: pnpm 12.4.0
 - **No tests configured**
 
 ## Conventions
