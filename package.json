@@ -12,30 +12,30 @@
     "lint:fix": "biome lint ./src"
   },
   "dependencies": {
-    "@astrojs/vercel": "^11.0.10",
+    "@astrojs/vercel": "^11.0.20",
     "@icons-pack/react-simple-icons": "^13.15.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.23",
     "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
-    "lucide-react": "^1.43.0",
-    "motion": "^13.2.0",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
+    "lucide-react": "^1.70.0",
+    "motion": "^14.10.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
     "recharts": "^3.10.1"
   },
   "devDependencies": {
-    "@astrojs/react": "6.0.5",
+    "@astrojs/react": "7.1.4",
     "@astrojs/sitemap": "^3.7.4",
-    "@biomejs/biome": "^2.5.12",
-    "@tailwindcss/vite": "^4.3.3",
-    "@types/node": "26.3.0",
-    "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.7",
-    "astro": "7.3.2",
-    "tailwindcss": "^4.3.3",
+    "@biomejs/biome": "^2.6.6",
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "astro": "7.4.7",
+    "tailwindcss": "^4.3.5",
     "typescript": "7.0.2",
-    "zod": "^4.5.4"
+    "zod": "^4.6.7"
   },
   "packageManager": "pnpm@12.4.0+sha512.37536c26ed40ab4134b6511e09f6b27f3ebb45687468f2406ca3805279a4e5ca158c1931350ad9774d6ab2108d71b3dbaeb39943159294375e4d053e8e05685c"
 }
