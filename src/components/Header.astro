@@ -1,17 +1,17 @@
 ---
-import { DarkModeToggle } from './DarkModeToggle';
+import {DarkModeToggle} from './DarkModeToggle';
 
 interface Props {
   locale: string;
 }
 
-const { locale } = Astro.props;
+const {locale} = Astro.props;
 
 const navLinks = [
-  { href: `/${locale}/now`, label: 'Now' },
-  { href: `/${locale}/projects`, label: 'Projects' },
-  { href: `/${locale}/blog`, label: 'Blog' },
-  { href: `/${locale}/about`, label: 'About' },
+  {href: `/${locale}/now`, label: 'Now'},
+  {href: `/${locale}/projects`, label: 'Projects'},
+  {href: `/${locale}/blog`, label: 'Blog'},
+  {href: `/${locale}/about`, label: 'About'},
 ];
 ---
 

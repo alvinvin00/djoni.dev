@@ -116,8 +116,19 @@ export function ContactForm() {
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Close"
               >
-                <svg aria-hidden="true" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  aria-hidden="true"
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>
@@ -128,15 +139,15 @@ export function ContactForm() {
                   ⚠️ Government Officials Notice
                 </h4>
                 <p className="text-gray-700 dark:text-gray-200 text-sm">
-                  Government Officials are barred from contacting me for Government
-                  projects for any reason.
+                  Government Officials are barred from contacting me for
+                  Government projects for any reason.
                 </p>
               </div>
 
               <p className="text-gray-600 dark:text-gray-200 text-sm">
                 This is a principled stance regarding government corruption and
-                ethical practices in the IT sector. I will not accept projects from
-                government entities or officials.
+                ethical practices in the IT sector. I will not accept projects
+                from government entities or officials.
               </p>
 
               <a

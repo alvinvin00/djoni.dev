@@ -1,4 +1,1 @@
-declare module '@icons-pack/react-simple-icons' {
-
-
-}
+declare module '@icons-pack/react-simple-icons' {}

@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@utility bg-gradient-neon {
+  background-image: linear-gradient(135deg, #b400ff 0%, #00f0ff 100%);
+}
+
+@utility bg-gradient-neon-reverse {
+  background-image: linear-gradient(135deg, #00f0ff 0%, #b400ff 100%);
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {

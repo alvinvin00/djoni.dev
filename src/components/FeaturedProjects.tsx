@@ -32,7 +32,8 @@ export function FeaturedProjects({
           </span>
         </h2>
         <p className="text-gray-400 max-w-xl mx-auto">
-          A selection of my recent work, showcasing various technologies and creative solutions.
+          A selection of my recent work, showcasing various technologies and
+          creative solutions.
         </p>
       </div>
 
@@ -45,77 +46,76 @@ export function FeaturedProjects({
             viewport={{once: true}}
             transition={{delay: index * 0.1, duration: 0.5}}
           >
-            <a
-              href={`/${locale}/projects/${project.slug}`}
-              className="group block h-full"
-            >
-              <article className="h-full bg-dark-card/50 border border-white/5 rounded-2xl overflow-hidden hover:border-neon-purple/30 transition-all duration-300 hover-lift">
-                {project.thumbnail && (
-                  <div className="relative aspect-video overflow-hidden">
-                    <img
-                      src={project.thumbnail}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent" />
+            <article className="group relative h-full bg-dark-card/50 border border-white/5 rounded-2xl overflow-hidden hover:border-neon-purple/30 transition-all duration-300 hover-lift">
+              {project.thumbnail && (
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={project.thumbnail}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent" />
+                </div>
+              )}
+
+              <div className="p-6 space-y-3">
+                <h3 className="text-xl font-bold text-white group-hover:text-neon-purple transition-colors duration-300">
+                  {project.title}
+                </h3>
+
+                <p className="text-gray-400 text-sm line-clamp-2 leading-relaxed">
+                  {project.description}
+                </p>
+
+                {project.tags && project.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.tags.slice(0, 3).map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 text-xs font-medium rounded-md bg-white/5 text-gray-400 border border-white/10"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 )}
 
-                <div className="p-6 space-y-3">
-                  <h3 className="text-xl font-bold text-white group-hover:text-neon-purple transition-colors duration-300">
-                    {project.title}
-                  </h3>
+                <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                  <span className="text-xs text-gray-600">
+                    {new Date(project.date).getFullYear()}
+                  </span>
 
-                  <p className="text-gray-400 text-sm line-clamp-2 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {project.tags && project.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 pt-2">
-                      {project.tags.slice(0, 3).map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-1 text-xs font-medium rounded-md bg-white/5 text-gray-400 border border-white/10"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                    <span className="text-xs text-gray-600">
-                      {new Date(project.date).getFullYear()}
-                    </span>
-
-                    <div className="flex gap-3">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-neon-cyan transition-colors"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <SiGithub className="w-4 h-4" />
-                        </a>
-                      )}
-                      {project.link && (
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-neon-purple transition-colors"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      )}
-                    </div>
+                  <div className="flex gap-3">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative z-10 text-gray-600 hover:text-neon-cyan transition-colors"
+                      >
+                        <SiGithub className="w-4 h-4" />
+                      </a>
+                    )}
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative z-10 text-gray-600 hover:text-neon-purple transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
                   </div>
                 </div>
-              </article>
-            </a>
+              </div>
+              <a
+                href={`/${locale}/projects/${project.slug}`}
+                className="absolute inset-0 z-[1]"
+              >
+                <span className="sr-only">{project.title}</span>
+              </a>
+            </article>
           </motion.div>
         ))}
       </div>
@@ -126,8 +126,19 @@ export function FeaturedProjects({
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-gray-400 hover:text-white border border-gray-800 hover:border-neon-purple/30 transition-all duration-300 focus-ring"
         >
           View All Projects
-          <svg aria-hidden="true" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          <svg
+            aria-hidden="true"
+            className="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
           </svg>
         </a>
       </div>

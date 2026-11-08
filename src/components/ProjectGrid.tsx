@@ -93,7 +93,7 @@ export function ProjectGrid({
                         ? 'Completed'
                         : project.status === 'archived'
                           ? 'Archived'
-                          : project.status ?? 'Unknown'}
+                          : (project.status ?? 'Unknown')}
                   </span>
 
                   <div className="flex gap-3">

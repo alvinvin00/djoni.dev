@@ -28,6 +28,7 @@
       "*.ts",
       "*.mjs",
       "!!**/node_modules",
+      "!!src/**/*.md",
       "!!**/dist",
       "!!**/.astro",
       "!!**/.content-collections",

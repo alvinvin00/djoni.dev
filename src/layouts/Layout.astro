@@ -6,15 +6,15 @@ import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 
 interface Props {
-    title?: string;
-    description?: string;
-    locale: string;
+  title?: string;
+  description?: string;
+  locale: string;
 }
 
 const {
-    title = "Djoni's Den",
-    description = "Djoni's Den Personal Website",
-    locale,
+  title = "Djoni's Den",
+  description = "Djoni's Den Personal Website",
+  locale,
 } = Astro.props;
 
 const canonicalUrl = `https://djoni.dev/${locale}`;
