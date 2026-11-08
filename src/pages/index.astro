@@ -1,0 +1,39 @@
+---
+// Locale gate: mirrors the old TanStack Start "/" route.
+// Reads locale_preference cookie, falls back to browser language, then redirects.
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Djoni's Den</title>
+  </head>
+  <body>
+    <noscript>
+      <a href="/en/">English</a> · <a href="/id/">Bahasa Indonesia</a>
+    </noscript>
+    <script is:inline>
+      const locales = ['en', 'id'];
+
+      function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+        return match ? decodeURIComponent(match[1]) : undefined;
+      }
+
+      function setCookie(name, value, days) {
+        const expires = new Date(Date.now() + days * 864e5).toUTCString();
+        document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+      }
+
+      let locale = getCookie('locale_preference');
+      if (!locale || !locales.includes(locale)) {
+        locale = navigator.language.split('-')[0];
+        if (!locales.includes(locale)) locale = 'en';
+        setCookie('locale_preference', locale, 365);
+      }
+      location.replace(`/${locale}/`);
+    </script>
+  </body>
+</html>
