@@ -5,11 +5,13 @@ lang: en
 description: A brief introduction about me, my background, and my interests.
 ---
 
-I'm a software engineer from Indonesia, currently working as a System Development Staff at **Thamrin Group**. I've been building things for the web and mobile since 2020 — starting with Flutter for mobile apps, then expanding into the React/Next.js ecosystem for web development.
+I'm a software engineer from Indonesia, currently working as a System Development Staff at **Thamrin Group**. For 5+ years I've been designing and delivering full-stack web and mobile products — starting with Flutter for mobile apps, then expanding into the React/Next.js ecosystem for web. My work spans **Dart, PHP, JavaScript and TypeScript** across **Flutter, Laravel and React** (plus Next.js and the modern JavaScript ecosystem), with hands-on **Docker, CI/CD pipelines, AWS** and MySQL.
 
 ## What I Do
 
 Most of my work revolves around frontend development — turning designs into functional interfaces, building component systems, and making sure the code stays maintainable as the project grows. I've also dipped into backend work with Laravel, Express.js, and PostgreSQL when the situation calls for it.
+
+Lately that reaches into infrastructure too: building CI/CD pipelines for our Flutter apps with Forgejo Actions, managing Docker-based private servers, and deploying on AWS. Full-stack delivery, with infrastructure kept close to the apps it runs.
 
 I care about **code quality and maintainability**. I've spent time refactoring legacy codebases, migrating JavaScript to TypeScript, and adopting better project structures. Not because it's trendy, but because someone (often future me) has to work with this code later.
 
@@ -26,11 +28,12 @@ Most of my projects serve Indonesian communities — farmers, malls, universitie
 
 ## Tech I Work With
 
-**Frontend:** React, Next.js, TypeScript, Tailwind CSS, Astro
-**Mobile:** Flutter, Dart
-**Backend:** Laravel, Express.js, Node.js
-**Database:** PostgreSQL
-**DevOps:** Docker, Git
+**Frontend:** React, Next.js, JavaScript, TypeScript, Gatsby, Remix, Astro, Tailwind CSS
+**Mobile:** Flutter, Dart, Android, Kotlin
+**Backend:** Laravel, PHP, Express.js, Node.js, Firebase
+**Database:** MySQL, PostgreSQL
+**DevOps & Cloud:** Docker, CI/CD, AWS, Git
+**Languages:** JavaScript, TypeScript, Dart, PHP, Python, Kotlin
 **Tools:** Biome, VS Code
 
 I'm always exploring new tools and frameworks, but I try to go deep rather than wide. The best technology is the one that solves the problem without creating new ones.
