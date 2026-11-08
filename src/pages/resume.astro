@@ -1,0 +1,23 @@
+---
+// Redirects to the public Reactive Resume (RxResume) share URL.
+const target = 'https://rxresu.me/alvinvin00/frontend-developer';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <link rel="canonical" href={target} />
+    <title>Redirecting to Reactive Resume</title>
+    <script is:inline>
+      location.replace('https://rxresu.me/alvinvin00/frontend-developer');
+    </script>
+  </head>
+  <body>
+    <p>
+      Continue to <a href={target}>my Reactive Resume</a>.
+    </p>
+  </body>
+</html>
