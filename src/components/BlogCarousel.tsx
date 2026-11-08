@@ -53,7 +53,7 @@ export function BlogCarousel({blogs, locale}: {blogs: Blog[]; locale: string}) {
               >
                 <a
                   href={`/${locale}/blog/${blog.slug}`}
-                  className="block h-full glass-card-dark p-4 rounded-lg border border-neon-purple/20 dark:border-neon-cyan/20 transition-all duration-300 hover:border-neon-purple dark:hover:border-neon-cyan hover:shadow-neon-purple"
+                  className="block h-full glass-card-light p-4 rounded-lg border border-neon-purple/20 dark:glass-card-dark dark:border-neon-cyan/20 transition-all duration-300 hover:border-neon-purple dark:hover:border-neon-cyan hover:shadow-neon-purple"
                 >
                   {blog.thumbnail && (
                     <div className="relative mb-3 overflow-hidden rounded-lg h-32">
@@ -68,7 +68,7 @@ export function BlogCarousel({blogs, locale}: {blogs: Blog[]; locale: string}) {
                     {blog.title}
                   </h3>
                   {blog.description && (
-                    <p className="text-sm text-gray-400 line-clamp-2 mb-3">
+                    <p className="text-sm text-gray-600 line-clamp-2 mb-3 dark:text-gray-400">
                       {blog.description}
                     </p>
                   )}
@@ -87,7 +87,7 @@ export function BlogCarousel({blogs, locale}: {blogs: Blog[]; locale: string}) {
           type="button"
           onClick={scrollPrev}
           disabled={!canScrollPrev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-8 h-8 flex items-center justify-center rounded-full bg-dark-card/80 border border-neon-purple/30 text-neon-purple hover:bg-neon-purple/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed z-10"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 border border-neon-purple/30 text-neon-purple hover:bg-neon-purple/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed z-10 dark:bg-dark-card/80"
           aria-label="Previous slide"
         >
           <svg
@@ -109,7 +109,7 @@ export function BlogCarousel({blogs, locale}: {blogs: Blog[]; locale: string}) {
           type="button"
           onClick={scrollNext}
           disabled={!canScrollNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-8 h-8 flex items-center justify-center rounded-full bg-dark-card/80 border border-neon-purple/30 text-neon-purple hover:bg-neon-purple/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed z-10"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 border border-neon-purple/30 text-neon-purple hover:bg-neon-purple/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed z-10 dark:bg-dark-card/80"
           aria-label="Next slide"
         >
           <svg

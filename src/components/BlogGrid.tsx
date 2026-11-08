@@ -26,7 +26,7 @@ export function BlogGrid({blogs, locale}: {blogs: Blog[]; locale: string}) {
             href={`/${locale}/blog/${blog.slug}`}
             className="group block h-full"
           >
-            <article className="h-full bg-dark-card/50 border border-white/5 rounded-2xl overflow-hidden hover:border-neon-purple/30 transition-all duration-300 hover-lift">
+            <article className="h-full bg-white border border-gray-200 shadow-sm rounded-2xl overflow-hidden hover:border-neon-purple/30 transition-all duration-300 hover-lift dark:bg-dark-card/50 dark:border-white/5 dark:shadow-none">
               {blog.thumbnail && (
                 <div className="relative aspect-video overflow-hidden">
                   <img
@@ -34,21 +34,21 @@ export function BlogGrid({blogs, locale}: {blogs: Blog[]; locale: string}) {
                     alt={blog.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent dark:from-dark-card" />
                 </div>
               )}
 
               <div className="p-6 space-y-3">
-                <time className="text-xs text-gray-600">
+                <time className="text-xs text-gray-500 dark:text-gray-600">
                   {dayjs(blog.date).format('MMMM D, YYYY')}
                 </time>
 
-                <h2 className="text-lg font-bold text-white group-hover:text-neon-purple transition-colors duration-300 line-clamp-2">
+                <h2 className="text-lg font-bold text-gray-900 group-hover:text-neon-purple transition-colors duration-300 line-clamp-2 dark:text-white">
                   {blog.title}
                 </h2>
 
                 {blog.description && (
-                  <p className="text-gray-400 text-sm line-clamp-3 leading-relaxed">
+                  <p className="text-gray-600 text-sm line-clamp-3 leading-relaxed dark:text-gray-400">
                     {blog.description}
                   </p>
                 )}
@@ -58,7 +58,7 @@ export function BlogGrid({blogs, locale}: {blogs: Blog[]; locale: string}) {
                     {blog.tags.slice(0, 3).map((tag: string) => (
                       <span
                         key={tag}
-                        className="px-2 py-1 text-xs font-medium rounded-md bg-white/5 text-gray-400 border border-white/10"
+                        className="px-2 py-1 text-xs font-medium rounded-md bg-gray-100 text-gray-600 border border-gray-200 dark:bg-white/5 dark:text-gray-400 dark:border-white/10"
                       >
                         {tag}
                       </span>

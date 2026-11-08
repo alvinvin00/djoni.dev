@@ -20,11 +20,11 @@ export function ContactForm() {
 
   return (
     <section className="w-full max-w-2xl mx-auto px-4 py-20">
-      <div className="glass-card-dark p-8 md:p-12">
+      <div className="glass-card-light p-8 md:p-12 dark:glass-card-dark">
         <h3 className="text-3xl font-bold mb-2 text-center bg-gradient-neon bg-clip-text text-transparent">
           Get In Touch
         </h3>
-        <p className="text-gray-400 dark:text-gray-300 text-center mb-8">
+        <p className="text-gray-600 dark:text-gray-300 text-center mb-8">
           Have a project in mind or just want to chat? Send me a message.
         </p>
 
@@ -32,7 +32,7 @@ export function ContactForm() {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium mb-2 text-gray-200"
+              className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-200"
             >
               Name
             </label>
@@ -43,14 +43,14 @@ export function ContactForm() {
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
               required
-              className="w-full bg-white/5 dark:bg-white/5 border-2 border-neon-purple/30 dark:border-neon-cyan/30 text-gray-900 dark:text-white placeholder-gray-500 focus:border-neon-purple dark:focus:border-neon-cyan transition-all duration-300 rounded-lg px-4 py-3 outline-none"
+              className="w-full bg-white/70 dark:bg-white/5 border-2 border-neon-purple/30 dark:border-neon-cyan/30 text-gray-900 dark:text-white placeholder-gray-500 focus:border-neon-purple dark:focus:border-neon-cyan transition-all duration-300 rounded-lg px-4 py-3 outline-none"
             />
           </div>
 
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium mb-2 text-gray-200"
+              className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-200"
             >
               Email
             </label>
@@ -63,14 +63,14 @@ export function ContactForm() {
                 setFormData({...formData, email: e.target.value})
               }
               required
-              className="w-full bg-white/5 dark:bg-white/5 border-2 border-neon-purple/30 dark:border-neon-cyan/30 text-gray-900 dark:text-white placeholder-gray-500 focus:border-neon-purple dark:focus:border-neon-cyan transition-all duration-300 rounded-lg px-4 py-3 outline-none"
+              className="w-full bg-white/70 dark:bg-white/5 border-2 border-neon-purple/30 dark:border-neon-cyan/30 text-gray-900 dark:text-white placeholder-gray-500 focus:border-neon-purple dark:focus:border-neon-cyan transition-all duration-300 rounded-lg px-4 py-3 outline-none"
             />
           </div>
 
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium mb-2 text-gray-200"
+              className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-200"
             >
               Message
             </label>
@@ -83,7 +83,7 @@ export function ContactForm() {
               }
               required
               rows={5}
-              className="w-full bg-white/5 dark:bg-white/5 border-2 border-neon-purple/30 dark:border-neon-cyan/30 text-gray-900 dark:text-white placeholder-gray-500 focus:border-neon-purple dark:focus:border-neon-cyan transition-all duration-300 rounded-lg px-4 py-3 outline-none resize-none"
+              className="w-full bg-white/70 dark:bg-white/5 border-2 border-neon-purple/30 dark:border-neon-cyan/30 text-gray-900 dark:text-white placeholder-gray-500 focus:border-neon-purple dark:focus:border-neon-cyan transition-all duration-300 rounded-lg px-4 py-3 outline-none resize-none"
             />
           </div>
 
@@ -105,7 +105,7 @@ export function ContactForm() {
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
             onClick={() => setOpened(false)}
           />
-          <div className="relative glass-card-dark border-2 border-neon-purple/50 rounded-xl p-6 w-full max-w-lg animate-scale-in">
+          <div className="relative glass-card-light border-2 border-neon-purple/50 rounded-xl p-6 w-full max-w-lg animate-scale-in dark:glass-card-dark">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-2xl font-bold bg-gradient-neon bg-clip-text text-transparent">
                 Important Disclaimer
@@ -113,7 +113,7 @@ export function ContactForm() {
               <button
                 type="button"
                 onClick={() => setOpened(false)}
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-500 hover:text-gray-900 transition-colors dark:text-gray-400 dark:hover:text-white"
                 aria-label="Close"
               >
                 <svg
@@ -135,7 +135,7 @@ export function ContactForm() {
 
             <div className="space-y-4">
               <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/30 dark:bg-red-500/20">
-                <h4 className="font-bold text-red-400 mb-2">
+                <h4 className="font-bold text-red-600 mb-2 dark:text-red-400">
                   ⚠️ Government Officials Notice
                 </h4>
                 <p className="text-gray-700 dark:text-gray-200 text-sm">
@@ -154,7 +154,7 @@ export function ContactForm() {
                 href="https://en.wikipedia.org/wiki/Amsal_Sitepu_case"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neon-cyan hover:text-neon-purple transition-colors duration-300 underline text-sm inline-block"
+                className="text-neon-purple hover:text-neon-purple-dark transition-colors duration-300 underline text-sm inline-block dark:text-neon-cyan dark:hover:text-neon-purple"
               >
                 Learn more about the Amsal Sitepu case →
               </a>
@@ -177,7 +177,7 @@ export function ContactForm() {
                 <button
                   type="button"
                   onClick={() => setOpened(false)}
-                  className="px-4 py-2 text-gray-400 hover:text-white transition-colors"
+                  className="px-4 py-2 text-gray-500 hover:text-gray-900 transition-colors dark:text-gray-400 dark:hover:text-white"
                 >
                   Cancel
                 </button>

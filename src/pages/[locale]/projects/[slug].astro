@@ -46,7 +46,7 @@ const {Content} = await render(project);
       <header class="mb-10">
         <div class="flex flex-wrap gap-2 mb-4">
           {project.data.tags?.map((tag: string) => (
-            <span class="px-3 py-1 text-xs font-medium rounded-full bg-white/5 text-gray-400 border border-white/10">
+            <span class="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-600 border border-gray-200 dark:bg-white/5 dark:text-gray-400 dark:border-white/10">
               {tag}
             </span>
           ))}
@@ -64,12 +64,12 @@ const {Content} = await render(project);
             <span
               class={`px-3 py-1 text-xs font-medium rounded-full ${
                 project.data.status === 'active'
-                  ? 'bg-green-500/10 text-green-400 border border-green-500/20'
+                  ? 'bg-green-500/10 text-green-600 border border-green-500/20 dark:text-green-400'
                   : project.data.status === 'handed-off'
-                    ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
+                    ? 'bg-blue-500/10 text-blue-600 border border-blue-500/20 dark:text-blue-400'
                     : project.data.status === 'completed'
-                      ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20'
-                      : 'bg-gray-500/10 text-gray-500 border border-gray-500/20'
+                      ? 'bg-purple-500/10 text-purple-600 border border-purple-500/20 dark:text-purple-400'
+                      : 'bg-gray-500/10 text-gray-600 border border-gray-500/20 dark:text-gray-500'
               }`}
             >
               {project.data.status === 'handed-off'
@@ -89,7 +89,7 @@ const {Content} = await render(project);
               href={project.data.github}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-neon-purple/30 transition-all text-sm"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 border border-gray-200 text-gray-700 hover:text-gray-900 hover:border-neon-purple/30 transition-all text-sm dark:bg-white/5 dark:border-white/10 dark:text-gray-300 dark:hover:text-white"
             >
               <SiGithub className="w-4 h-4" />
               View Code
@@ -110,7 +110,7 @@ const {Content} = await render(project);
       </header>
 
       {project.data.thumbnail && (
-        <div class="mb-10 rounded-2xl overflow-hidden border border-white/5">
+        <div class="mb-10 rounded-2xl overflow-hidden border border-gray-200 dark:border-white/5">
           <img
             src={project.data.thumbnail}
             alt={project.data.title}
@@ -120,7 +120,7 @@ const {Content} = await render(project);
       )}
 
       <!-- Content -->
-      <div class="prose prose-invert prose-lg max-w-none">
+      <div class="prose prose-lg max-w-none dark:prose-invert">
         <Content />
       </div>
     </div>
